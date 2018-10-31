@@ -44,21 +44,6 @@ function timer() {
   KeywordTyper();
 }
 
-// Менятель размеров
-/*
-var sizeSelector = document.getElementById('selector-size');
-var sizeChanger = document.getElementById('changer-size');
-var oldClasses = Array.from(sizeChanger.classList);
-
-for (let i = 0; i < sizeSelector.getElementsByTagName('input').length; i++) {
-  sizeSelector.getElementsByTagName('input')[i].addEventListener('change', function() {
-    if (this.checked) {
-      sizeChanger.className = oldClasses + ' ' + this.value;
-    }
-  })
-}
-*/
-
 // Рандомайзер бонусов
 
 var bonusRotator = document.getElementById('bonus-rotator');
@@ -67,7 +52,6 @@ var bonusRotatorChildren = bonusRotator.getElementsByClassName('bonus-rotator-it
 for (let i = bonusRotatorChildren.length; i >= 0; i--) {
   bonusRotator.appendChild(bonusRotatorChildren[Math.random() * i | 0]);
 }
-
 
 
 // Появлялка-убиралка бонусов по ховеру на описание
@@ -84,27 +68,31 @@ for (let i = 0; i < bonusesHighlightenedDescriptions.length; i++) {
 }
 
 
-
 // Вращатель бонусов
 
 document.getElementById('get-bonus-button').addEventListener('click', DoPseudoRandomAnimationCycle);
 var randomStep = 34;
+var frameTime = 750;
+
 function DoPseudoRandomAnimationCycle() {
-	if (randomStep == 0) {randomStep = 34; bonusRotator.classList.toggle('animation-finished');}
-	var animationStep = function() {
-		if (--randomStep > 0){
-			if (randomStep!=33) {
-				document.getElementById('random-item-'+(randomStep+1)).classList.remove('checked');
-			}
-			document.getElementById('random-item-'+randomStep).classList.add('checked');
-			console.log('inc timeout: '+750*(1+(randomStep-34)/34));
-			window.setTimeout(animationStep, 750*(1+(randomStep-34)/34));
-		} else {
-			document.getElementById('random-item-1').classList.remove('checked');
-			bonusRotator.classList.toggle('animation-finished');
-		}
-	}
-	animationStep();
+  if (randomStep == 0) {
+    randomStep = 34;
+    bonusRotator.classList.toggle('animation-finished');
+  }
+  var animationStep = function() {
+    if (--randomStep > 0) {
+      if (randomStep != 33) {
+        document.getElementById('random-item-' + (randomStep++)).classList.remove('checked');
+      }
+      document.getElementById('random-item-' + randomStep).classList.add('checked');
+      console.log('inc timeout: ' + 750 * (1 + (randomStep - 34) / 34));
+      window.setTimeout(animationStep, 750 * (1 + (randomStep - 34) / 34));
+    } else {
+      document.getElementById('random-item-1').classList.remove('checked');
+      bonusRotator.classList.toggle('animation-finished');
+    }
+  }
+  animationStep();
 }
 
 
@@ -118,73 +106,74 @@ ApplyListener('berries');
 
 
 function ApplyListener(tasteType) {
-	let pointer;
-	let radioButtons = null;
-	radioButtons = document.getElementsByName(tasteType);
-	switch(tasteType)
-	{
-		case 'mint':
-			pointer = 0;
-			break
-		case 'desserts':
-			pointer = 1;
-			break
-		case 'exotic':
-			pointer = 2;
-			break
-		case 'fruits':
-			pointer = 3;
-			break
-		case 'tobacco':
-			pointer = 4;
-			break
-		case 'berries':
-			pointer = 5;
-			break
-		default:
-			pointer = -1;
-			radioButtons = null;
-			break
-	}
-	    for(var i = 0; i < radioButtons.length; i++) {
-        radioButtons[i].onclick = function() {
-            (prev[pointer])? console.log(prev[pointer].value):null;
-            if(this !== prev[pointer]) {
-               composePreferences();
-            }
-            console.log(this.value)
-        };
-    }
+  let pointer;
+  let radioButtons = null;
+  radioButtons = document.getElementsByName(tasteType);
+  switch (tasteType) {
+    case 'mint':
+      pointer = 0;
+      break
+    case 'desserts':
+      pointer = 1;
+      break
+    case 'exotic':
+      pointer = 2;
+      break
+    case 'fruits':
+      pointer = 3;
+      break
+    case 'tobacco':
+      pointer = 4;
+      break
+    case 'berries':
+      pointer = 5;
+      break
+    default:
+      pointer = -1;
+      radioButtons = null;
+      break
+  }
+  for (var i = 0; i < radioButtons.length; i++) {
+    radioButtons[i].onclick = function() {
+      (prev[pointer]) ? console.log(prev[pointer].value): null;
+      if (this !== prev[pointer]) {
+        composePreferences();
+      }
+      console.log(this.value)
+    };
+  }
 }
 
 
 var addressButtons = document.getElementsByName('country');
 var previous = null;
-for(var i = 0; i < addressButtons.length; i++) {
-        addressButtons[i].onclick = function() {
-        (previous)? console.log(previous.value):null;
-        if(this !== previous) {
-             previous = this;
-			 reflectChoiceOnMap();
-        }
-        console.log(this.value)
-    };
+for (var i = 0; i < addressButtons.length; i++) {
+  addressButtons[i].onclick = function() {
+    (previous) ? console.log(previous.value): null;
+    if (this !== previous) {
+      previous = this;
+      reflectChoiceOnMap();
+    }
+    console.log(this.value)
+  };
 }
 
 function CompileOrderData() {
-	var orderData = {};
-	let orderSizeData = null;
-	orderRadio = document.getElementsByName('box');
-	for (let i=0; i<orderRadio.length; i++) {
-		console.log(orderRadio[i].value+" is "+orderRadio[i].checked);
-		if (orderRadio[i].checked) {orderSizeData=orderRadio[i].value;}
-	}
-	orderData.orderSize = orderSizeData;
-	orderData.tastePreferences = composePreferences();
-	orderData.shippingInfo = GetCountryData();
-	orderData.clientName = document.getElementById('name-input').value;
-	orderData.clientPhone = document.getElementById('phone-input').value;
-	orderData.clientEmail = document.getElementById('email-input').value;
-	//figure out something with countrycodes
-	console.log(orderData);
+  var orderData = {};
+  let orderSizeData = null;
+  orderRadio = document.getElementsByName('box');
+  for (let i = 0; i < orderRadio.length; i++) {
+    console.log(orderRadio[i].value + " is " + orderRadio[i].checked);
+    if (orderRadio[i].checked) {
+      orderSizeData = orderRadio[i].value;
+    }
+  }
+  orderData.orderSize = orderSizeData;
+  orderData.tastePreferences = composePreferences();
+  orderData.shippingInfo = GetCountryData();
+  orderData.clientName = document.getElementById('name-input').value;
+  orderData.clientPhone = document.getElementById('phone-input').value;
+  orderData.clientEmail = document.getElementById('email-input').value;
+  //figure out something with countrycodes
+  console.log(orderData);
 }

@@ -9,7 +9,6 @@ body {
 
 img {
   width: 100%;
-  color: red;
   min-width: 1px;
   height: auto;
   object-fit: contain;
@@ -942,7 +941,6 @@ input:valid:not(:placeholder-shown) {
   left: 0;
   background-color: hsla(0, 0%, 100%, .8);
   transition: transform .4s;
-  transform: none;
   padding: 1rem;
   box-sizing: border-box;
   -webkit-backdrop-filter: blur(.5rem);
