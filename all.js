@@ -46,6 +46,8 @@ function timer() {
 
 // Рандомайзер бонусов
 
+/* Мейби склеить с анимацией */
+
 var bonusRotator = document.getElementById('bonus-rotator');
 var bonusRotatorChildren = bonusRotator.getElementsByClassName('bonus-rotator-item');
 
@@ -179,3 +181,26 @@ function CompileOrderData() {
   //figure out something with countrycodes
   console.log(orderData);
 }
+
+// Менятель размеров коробки
+
+var sizeSelector = document.getElementById('size-selector');
+var sizeSelectorInputs = sizeSelector.getElementsByTagName('input');
+
+var sizeChanger = document.getElementById('changer-size');
+var sizeChangerDefaultClasses = sizeChanger.className;
+
+for (i = 0; i < sizeSelectorInputs.length; i++) {
+  sizeSelectorInputs[i].addEventListener('change', function() {
+    sizeChanger.className = sizeChangerDefaultClasses + ' ' + this.value;
+  });
+}
+
+
+
+
+
+
+
+
+/**/

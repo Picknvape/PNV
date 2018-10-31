@@ -14,6 +14,8 @@ function RequestLocation() {
   }
 }
 
+// Сделой чтоб в кнопку прям высирало "Seems like you're in Russia or Belarus. We deliver there from <a href='https://picknvape.ru/' target='_blank'>picknvape.ru</a>"
+
 var countryButtons = document.querySelectorAll("[data-iso-code]");
 
 function PositionRequestOK(position) {
@@ -49,7 +51,7 @@ function PositionRequestOK(position) {
     }
   },
   function () {console.log('error');});
-  
+
 }
 
 function GetCountryData() {
@@ -84,13 +86,13 @@ function loadJSON(filePath, success, error)
     	xhr.send();
     }
 
-function reflectChoiceOnMap() 
+function reflectChoiceOnMap()
 {
 	let countryToLightUp = '';
 	let map = document.getElementsByName('country');
 	for (let i = 0; i < map.length; i++)
 	{
-		if (map[i].checked) 
+		if (map[i].checked)
 		{
 			countryToLightUp = map[i].value;
 		}
