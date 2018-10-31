@@ -9,6 +9,7 @@ body {
 
 img {
   width: 100%;
+  color: red;
   min-width: 1px;
   height: auto;
   object-fit: contain;

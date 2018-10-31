@@ -104,7 +104,7 @@ function DoPseudoRandomAnimationCycle() {
 			bonusRotator.classList.toggle('animation-finished');
 		}
 	}
-	animationStep();			
+	animationStep();
 }
 
 
@@ -115,7 +115,7 @@ ApplyListener('exotic');
 ApplyListener('fruits');
 ApplyListener('tobacco');
 ApplyListener('berries');
-	
+
 
 function ApplyListener(tasteType) {
 	let pointer;
