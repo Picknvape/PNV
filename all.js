@@ -70,8 +70,10 @@ for (let i = 0; i < bonusesHighlightenedDescriptions.length; i++) {
 
 // Вращатель бонусов
 
+/* число степов из количества чайлдов + квадратичную функцию в тайимнг */
+
 document.getElementById('get-bonus-button').addEventListener('click', DoPseudoRandomAnimationCycle);
-var randomStep = 34;
+var randomStep = 25;
 var frameTime = 750;
 
 function DoPseudoRandomAnimationCycle() {
@@ -81,12 +83,12 @@ function DoPseudoRandomAnimationCycle() {
   }
   var animationStep = function() {
     if (--randomStep > 0) {
-      if (randomStep != 33) {
+      if (randomStep != 24) {
         document.getElementById('random-item-' + (randomStep++)).classList.remove('checked');
       }
       document.getElementById('random-item-' + randomStep).classList.add('checked');
-      console.log('inc timeout: ' + 750 * (1 + (randomStep - 34) / 34));
-      window.setTimeout(animationStep, 750 * (1 + (randomStep - 34) / 34));
+      console.log('inc timeout: ' + 750 * (1 + (randomStep - 25) / 25));
+      window.setTimeout(animationStep, 750 * (1 + (randomStep - 25) / 25));
     } else {
       document.getElementById('random-item-1').classList.remove('checked');
       bonusRotator.classList.toggle('animation-finished');
