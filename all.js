@@ -96,7 +96,7 @@ function DoPseudoRandomAnimationCycle() {
 }
 
 
-var prev = [1,1,1,1,1,1];
+var prev = [1, 1, 1, 1, 1, 1];
 ApplyListener('mint');
 ApplyListener('desserts');
 ApplyListener('exotic');
