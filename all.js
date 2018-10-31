@@ -182,6 +182,8 @@ function CompileOrderData() {
   console.log(orderData);
 }
 
+
+
 // Менятель размеров коробки
 
 var sizeSelector = document.getElementById('size-selector');
