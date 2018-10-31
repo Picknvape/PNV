@@ -242,10 +242,15 @@ header {
 }
 
 .changer-size {
-	transition: transform .6s cubic-bezier(.75, -1, .25, 2);
+	transition-property: transform;
 	position: relative;
 	width: 100%;
 	height: 40ch;
+}
+
+.changer-size, .changer-size-item {
+  transition-duration: .6s;
+  transition-timing-function: cubic-bezier(.75, -1, .25, 2);
 }
 
 .changer-size-item {
@@ -256,7 +261,7 @@ header {
 	height: 100%;
 	transform: translate(-50%, -50%);
   opacity: 0;
-  transition: opacity .6s cubic-bezier(.6, -1, .4, 2);
+  transition-property: opacity;
 }
 
 .changer-size.small {
@@ -872,7 +877,7 @@ header {
 .contacts-selector {
   display: flex;
   flex-wrap: wrap;
-  margin: -.5rem -1rem;
+  margin: 0 -1rem;
 }
 
 .contacts-selector-block {
@@ -930,7 +935,7 @@ input:valid:not(:placeholder-shown) {
 .review-order-block.send-order {
   display: flex;
   justify-content: space-between;
-  margin: -.5rem;
+  margin: 0 -.5rem;
 }
 
 .review-order-item {
@@ -1143,4 +1148,25 @@ aside .fieldset.div {
 .aside-size-input:checked~.overlay {
   transform: none;
   opacity: 1;
+}
+
+
+.brands-block {
+	overflow-x: scroll;
+	display: flex;
+	flex-basis: auto;
+}
+
+.brands-item {
+	margin: 0 2rem;
+	flex-shrink: 0;
+	flex-basis: 20ch;
+}
+
+.brands-item:first-child {
+  margin-left: 0;
+}
+
+.brands-item:last-child {
+  margin-right: 0;
 }
