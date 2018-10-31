@@ -45,7 +45,7 @@ function timer() {
 }
 
 // Менятель размеров
-
+/*
 var sizeSelector = document.getElementById('selector-size');
 var sizeChanger = document.getElementById('changer-size');
 var oldClasses = Array.from(sizeChanger.classList);
@@ -57,6 +57,7 @@ for (let i = 0; i < sizeSelector.getElementsByTagName('input').length; i++) {
     }
   })
 }
+*/
 
 // Рандомайзер бонусов
 
@@ -157,7 +158,7 @@ function ApplyListener(tasteType) {
 }
 
 
-var addressButtons = document.getElementsByName('sizeSelector');
+var addressButtons = document.getElementsByName('country');
 var previous = null;
 for(var i = 0; i < addressButtons.length; i++) {
         addressButtons[i].onclick = function() {
@@ -173,8 +174,9 @@ for(var i = 0; i < addressButtons.length; i++) {
 function CompileOrderData() {
 	var orderData = {};
 	let orderSizeData = null;
-	orderRadio = document.getElementsByName('sizeSelector');
+	orderRadio = document.getElementsByName('box');
 	for (let i=0; i<orderRadio.length; i++) {
+		console.log(orderRadio[i].value+" is "+orderRadio[i].checked);
 		if (orderRadio[i].checked) {orderSizeData=orderRadio[i].value;}
 	}
 	orderData.orderSize = orderSizeData;
