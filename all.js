@@ -188,7 +188,8 @@ var sizeSelector = document.getElementById('size-selector');
 var sizeSelectorInputs = sizeSelector.getElementsByTagName('input');
 
 var sizeChanger = document.getElementById('changer-size');
-var sizeChangerDefaultClasses = sizeChanger.className;
+// Алярм - если в индексе поменять checked на другой инпут, всё сломается
+var sizeChangerDefaultClasses = sizeChanger.className.replace('large', '');
 
 for (i = 0; i < sizeSelectorInputs.length; i++) {
   sizeSelectorInputs[i].addEventListener('change', function() {

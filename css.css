@@ -260,7 +260,7 @@ header {
 }
 
 .changer-size.small {
-  transform: scale(.5);
+  transform: scale(.6);
 }
 
 .changer-size.small .changer-size-item.small {
@@ -268,7 +268,7 @@ header {
 }
 
 .changer-size.medium {
-  transform: scale(.75);
+  transform: scale(.8);
 }
 
 .changer-size.medium .changer-size-item.medium {
@@ -298,16 +298,14 @@ header {
 
 .changer-tastes {
   display: flex;
-  padding: 1rem;
-  border: 1px solid hsla(0, 0%, 0%, .2);
-  border-radius: .5em;
+  margin: -.5rem;
   flex-wrap: wrap;
   align-items: flex-end;
   justify-content: space-between;
 }
 
 .changer-tastes-item {
-  margin: .5em;
+  margin: .5rem;
   transition: opacity 1s;
   opacity: .4;
   flex: 0 1 3ch;
