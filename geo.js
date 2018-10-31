@@ -19,7 +19,8 @@ var countryButtons = document.querySelectorAll("[data-iso-code]");
 function PositionRequestOK(position) {
   loadJSON("https://geocode-maps.yandex.ru/1.x/?format=json&lang=en_US&geocode=" + position.coords.longitude + "," + position.coords.latitude, function(data) {
     let response = data.response.GeoObjectCollection.featureMember[0].GeoObject.metaDataProperty.GeocoderMetaData.Address;
-	console.log(response.formatted);
+	console.log(response.Components[0].name);
+	console.log('country:'+response.country);
     let countryFound = false;
     for (i = 0; i < countryButtons.length; i++) {
       if (response.country_code == countryButtons[i].getAttribute('data-iso-code')) {
@@ -30,7 +31,7 @@ function PositionRequestOK(position) {
     if (countryFound) {
 		document.getElementById('address-input').value = response.formatted;
 		document.getElementById('zip-code-input').value = response.postal_code;
-		countryData.country = response.country_code;
+		countryData.country = response.Components[0].name;
 		countryData.zip = response.postal_code;
 		countryData.address = response.formatted;
     }
@@ -38,10 +39,12 @@ function PositionRequestOK(position) {
 		//cleanup
 		document.getElementById('address-input').value = response.formatted;
 		document.getElementById('zip-code-input').value = response.postal_code;
-		//
+		console.log(response.postal_code);
 		countryData.country = response.country_code;
 		countryData.zip = response.postal_code;
 		countryData.address = response.formatted;
+		//
+
 		getLocationButton.childNodes[0].nodeValue = "❓ Seems you're not in Europe. Try again?";
     }
   },
@@ -51,9 +54,14 @@ function PositionRequestOK(position) {
 
 function GetCountryData() {
 	//countryData.country = response.country_code;
-	//countryData.zip = 	document.getElementById('zip-code-input').value
-	//countryData.address = document.getElementById('address-input').value;
-	  
+	countryData.zip = 	document.getElementById('zip-code-input').value
+	countryData.address = document.getElementById('address-input').value;
+	countryData.country
+	countryRadioList = document.getElementsByName('country');
+	for (let i=0; i<countryRadioList.length; i++) {
+		if (countryRadioList[i].checked) {countryData.country = countryRadioList[i].value; return countryData;}
+	}
+	console.log(countryData);
 	return countryData;
 }
 
