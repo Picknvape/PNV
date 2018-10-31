@@ -1,0 +1,1493 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+	<meta charset='utf-8'>
+	<meta name='viewport' content='width=device-width, initial-scale=1'>
+	<title>Pick n' Vape</title>
+	<link rel='stylesheet' type='text/css' href='css.css'>
+	<script defer src='all.js'></script>
+	<script defer src='geo.js'></script>
+	<script defer src='order_data_builder.js'></script>
+
+	<script defer src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+
+</head>
+
+<body>
+	<header>
+		<div class='header-block logo'>
+			<img class='header-item img' src='logo.svg'>
+		</div>
+		<div class='header-block links'>
+			<span class='header-item'>Delivery and payment</span>
+			<span class='header-item'>FAQ</span>
+		</div>
+		<a class='header-block button' href='#order'>
+			<span class='header-item'>
+				Order
+			</span>
+			<span class='overlay'></span>
+		</a>
+	</header>
+	<main>
+		<section class='slide heading'>
+			<div class='side left'>
+				<h1>
+					<span>Try</span>
+					<span id='typing-heading' class='bold'></span>
+					<span>juices for up to</span>
+					<span class='bold colored'>40% cheaper</span>
+				</h1>
+				<p>Pick n' Vape is an e-liquids delivery service. In our boxes we put liquids according to your taste. But you never know what exactly it’ll be.</p>
+			</div>
+			<div class='side right'>
+				<img src='img.png'>
+			</div>
+		</section>
+		<section class='slide size'>
+			<div class='side left'>
+				<h2>Save money</h2>
+				<p>Pick n' Vape offes only russian liquids. We discovered that such liquids offer quality equal with american our european at lower price.</p>
+				<form>
+					<div class='review-order-block size'>
+						<fieldset>
+							<div class='box-selector'>
+								<label class='box-selector-item small'>
+									<input type='radio' name='box' value='small'>
+									<div class='box-selector-row heading'>
+										<span class='box-selector-heading'>Small</span>
+										<span class='box-selector-volume'>150 ml</span>
+									</div>
+									<div class='box-selector-row img'>
+										<img src='box-small.svg'>
+									</div>
+									<div class='box-selector-row description'>
+										<span class='box-selector-juices'>2 common juices, 1 premium</span>
+										<span class='box-selector-bonuses'>
+											<span class='box-selector-bonus little'>
+												Little bonus
+											</span>
+										</span>
+										<span class='box-selector-button'>Pick for 20 €</span>
+									</div>
+									<span class='overlay'></span>
+								</label>
+								<label class='box-selector-item medium'>
+									<input type='radio' name='box' value='medium'>
+									<div class='box-selector-row heading'>
+										<span class='box-selector-heading'>Medium</span>
+										<span class='box-selector-volume'>210 ml</span>
+									</div>
+									<div class='box-selector-row img'>
+										<img src='box-small.svg'>
+									</div>
+									<div class='box-selector-row description'>
+										<span class='box-selector-juices'>2 common juices, 2 premium</span>
+										<span class='box-selector-bonuses'>
+											<span class='box-selector-bonus little'>
+												Little bonus
+											</span>
+											+ a chance of
+											<span class='box-selector-bonus big'>
+												big bonus
+											</span>
+										</span>
+										<span class='box-selector-button'>Pick for 30 €</span>
+									</div>
+									<span class='overlay'></span>
+								</label>
+								<label class='box-selector-item large'>
+									<input type='radio' name='box' checked value='large'>
+									<div class='box-selector-row heading'>
+										<span class='box-selector-heading'>Large</span>
+										<span class='box-selector-volume'>300 ml</span>
+									</div>
+									<div class='box-selector-row img'>
+										<img src='box-small.svg'>
+									</div>
+									<div class='box-selector-row description'>
+										<span class='box-selector-juices'>3 common juices, 3 premium</span>
+										<span class='box-selector-bonuses'>
+											<span class='box-selector-bonus little'>
+												Little bonus
+											</span>
+											+ a chance of
+											<span class='box-selector-bonus big'>
+												big bonus
+											</span>
+										</span>
+										<span class='box-selector-button'>Pick for 45 €</span>
+									</div>
+									<span class='overlay'></span>
+								</label>
+							</div>
+						</fieldset>
+					</div>
+				</form>
+			</div>
+			<div class='side right'>
+				<img id='changer-size' class='changer-size' src='box.png'>
+		</section>
+		<section class='slide tastes'>
+			<div class='side left'>
+				<h2>For your taste</h2>
+				<p>We're the team behind <i>ViVA la Cloud</i> — one of leading russian vaping medias. <a href='https://vivalacloud.ru/category/reviews/juices/' target="_blank">Have a look</a> — in past 3 years we’ve reviewed around 2 300 russian liquids. For
+					Pick n' Vape we selected only 100 of them. It’s the best.</p>
+				<p>Pick n' Vape’s fits you. Every box is unique: we assemble them based on your tastes.</p>
+				<form>
+					<div id='select-tastes' class='tastes-selector'>
+						<div class='tastes-selector-block negative'>
+							<span class='tastes-selector-block-description'>😞</span>
+							<fieldset>
+								<div class='tastes-selector-element'>
+									<label class='tastes-selector-item mint'>
+										<input type='radio' name='mint' value='negative'>
+										<span class='tastes-selector-item-description'>Mint</span>
+									</label>
+									<label class='tastes-selector-item desserts'>
+										<input type='radio' name='desserts' value='negative'>
+										<span class='tastes-selector-item-description'>Desserts</span>
+									</label>
+									<label class='tastes-selector-item exotic'>
+										<input type='radio' name='exotic' value='negative'>
+										<span class='tastes-selector-item-description'>Exotic</span>
+									</label>
+									<label class='tastes-selector-item fruits'>
+										<input type='radio' name='fruits' value='negative'>
+										<span class='tastes-selector-item-description'>Fruits</span>
+									</label>
+									<label class='tastes-selector-item tobacco'>
+										<input type='radio' name='tobacco' value='negative'>
+										<span class='tastes-selector-item-description'>Tobacco</span>
+									</label>
+									<label class='tastes-selector-item berries'>
+										<input type='radio' name='berries' value='negative'>
+										<span class='tastes-selector-item-description'>Berries</span>
+									</label>
+								</div>
+							</fieldset>
+						</div>
+						<div class='tastes-selector-block neutral'>
+							<span class='tastes-selector-block-description'>😐</span>
+							<fieldset>
+								<div class='tastes-selector-element neutral'>
+									<label class='tastes-selector-item mint'>
+										<input type='radio' name='mint' checked value='neutral'>
+										<span class='tastes-selector-item-description'>Mint</span>
+									</label>
+									<label class='tastes-selector-item desserts'>
+										<input type='radio' name='desserts' checked value='neutral'>
+										<span class='tastes-selector-item-description'>Desserts</span>
+									</label>
+									<label class='tastes-selector-item exotic'>
+										<input type='radio' name='exotic' checked value='neutral'>
+										<span class='tastes-selector-item-description'>Exotic</span>
+									</label>
+									<label class='tastes-selector-item fruits'>
+										<input type='radio' name='fruits' checked value='neutral'>
+										<span class='tastes-selector-item-description'>Fruits</span>
+									</label>
+									<label class='tastes-selector-item tobacco'>
+										<input type='radio' name='tobacco' checked value='neutral'>
+										<span class='tastes-selector-item-description'>Tobacco</span>
+									</label>
+									<label class='tastes-selector-item berries'>
+										<input type='radio' name='berries' checked value='neutral'>
+										<span class='tastes-selector-item-description'>Berries</span>
+									</label>
+								</div>
+							</fieldset>
+						</div>
+						<div class='tastes-selector-block positive'>
+							<span class='tastes-selector-block-description'>😋</span>
+							<fieldset>
+								<div class='tastes-selector-element positive'>
+									<label class='tastes-selector-item mint'>
+										<input type='radio' name='mint' value='positive'>
+										<span class='tastes-selector-item-description'>Mint</span>
+									</label>
+									<label class='tastes-selector-item desserts'>
+										<input type='radio' name='desserts' value='positive'>
+										<span class='tastes-selector-item-description'>Desserts</span>
+									</label>
+									<label class='tastes-selector-item exotic'>
+										<input type='radio' name='exotic' value='positive'>
+										<span class='tastes-selector-item-description'>Exotic</span>
+									</label>
+									<label class='tastes-selector-item fruits'>
+										<input type='radio' name='fruits' value='positive'>
+										<span class='tastes-selector-item-description'>Fruits</span>
+									</label>
+									<label class='tastes-selector-item tobacco'>
+										<input type='radio' name='tobacco' value='positive'>
+										<span class='tastes-selector-item-description'>Tobacco</span>
+									</label>
+									<label class='tastes-selector-item berries'>
+										<input type='radio' name='berries' value='positive'>
+										<span class='tastes-selector-item-description'>Berries</span>
+									</label>
+								</div>
+							</fieldset>
+						</div>
+					</div>
+				</form>
+			</div>
+			<div class='side right'>
+				<div id='changer-tastes' class='changer-tastes'>
+					<img class='changer-tastes-item tobacco' src='captain.png'>
+					<img class='changer-tastes-item fruits' src='cinderella.png'>
+					<img class='changer-tastes-item exotic' src='lemon-twist.png'>
+					<img class='changer-tastes-item mint' src='shoria.png'>
+					<img class='changer-tastes-item berries' src='smoke-kitchen.png'>
+					<img class='changer-tastes-item tobacco' src='captain.png'>
+					<img class='changer-tastes-item fruits' src='cinderella.png'>
+					<img class='changer-tastes-item exotic' src='lemon-twist.png'>
+					<img class='changer-tastes-item mint' src='shoria.png'>
+					<img class='changer-tastes-item berries' src='smoke-kitchen.png'>
+					<img class='changer-tastes-item' src='captain.png'>
+					<img class='changer-tastes-item fruits' src='cinderella.png'>
+					<img class='changer-tastes-item exotic' src='lemon-twist.png'>
+					<img class='changer-tastes-item mint' src='shoria.png'>
+					<img class='changer-tastes-item berries' src='smoke-kitchen.png'>
+					<img class='changer-tastes-item' src='captain.png'>
+					<img class='changer-tastes-item fruits' src='cinderella.png'>
+					<img class='changer-tastes-item exotic' src='lemon-twist.png'>
+					<img class='changer-tastes-item mint' src='shoria.png'>
+					<img class='changer-tastes-item berries' src='smoke-kitchen.png'>
+					<img class='changer-tastes-item' src='captain.png'>
+					<img class='changer-tastes-item fruits' src='cinderella.png'>
+					<img class='changer-tastes-item exotic' src='lemon-twist.png'>
+					<img class='changer-tastes-item mint' src='shoria.png'>
+					<img class='changer-tastes-item berries' src='smoke-kitchen.png'>
+					<img class='changer-tastes-item' src='captain.png'>
+					<img class='changer-tastes-item fruits' src='cinderella.png'>
+					<img class='changer-tastes-item exotic' src='lemon-twist.png'>
+					<img class='changer-tastes-item mint' src='shoria.png'>
+					<img class='changer-tastes-item berries' src='smoke-kitchen.png'>
+					<img class='changer-tastes-item' src='captain.png'>
+					<img class='changer-tastes-item fruits' src='cinderella.png'>
+					<img class='changer-tastes-item exotic' src='lemon-twist.png'>
+					<img class='changer-tastes-item mint' src='shoria.png'>
+					<img class='changer-tastes-item berries' src='smoke-kitchen.png'>
+					<img class='changer-tastes-item' src='captain.png'>
+					<img class='changer-tastes-item fruits' src='cinderella.png'>
+					<img class='changer-tastes-item exotic' src='lemon-twist.png'>
+					<img class='changer-tastes-item mint' src='shoria.png'>
+					<img class='changer-tastes-item berries' src='smoke-kitchen.png'>
+					<img class='changer-tastes-item' src='captain.png'>
+					<img class='changer-tastes-item fruits' src='cinderella.png'>
+					<img class='changer-tastes-item exotic' src='lemon-twist.png'>
+					<img class='changer-tastes-item mint' src='shoria.png'>
+				</div>
+			</div>
+		</section>
+		<section class='slide bonuses'>
+			<div class='side left'>
+				<h2>Test your luck</h2>
+				<p>Each Pick n' Vape box contains bonuses. It could be
+					<span class='bonuses-description-highlighted wires'>wires</span>,
+					<span class='bonuses-description-highlighted wicks'>wicks</span>,
+					<span class='bonuses-description-highlighted vape-bands'>vape bands</span>,
+					<span class='bonuses-description-highlighted stickers'>stickers</span> or
+					<span class='bonuses-description-highlighted extra-liquid'>extra e-liquid<span>.</p>
+				<p>With large boxes one could get atomisers:
+					<span class='bonuses-description-highlighted rda'>RDA</span>,
+					<span class='bonuses-description-highlighted rdta'>RDTA</span>,
+					<span class='bonuses-description-highlighted rta'>RTA</span>,
+					<span class='bonuses-description-highlighted boxmods'>boxmods</span> or even
+					<span class='bonuses-description-highlighted mechmods'>mechmods</span>.</p>
+				<button id='get-bonus-button' type='button' class='bonus-selector-button'>
+					What i'll get?
+					<span class='overlay'></span>
+				</button>
+			</div>
+			<div class='side right'>
+				<div class='bonus-rotator-container'>
+					<div id='bonus-rotator' class='bonus-rotator'>
+						<svg class='bonus-rotator-item boxmod' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 40'>
+							<path fill-rule='evenodd' d='M2 0h16a2 2 0 0 1 2 2v36a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2C0 .9.9 0 2 0zm7.4 36a1 1 0 0 0-.7.3L8 37a.6.6 0 0 0 .4 1h3.2a.6.6 0 0 0 .4-1l-.7-.7a1 1 0 0 0-.7-.3H9.4zm3.6-6a1 1 0 0 0-1 1v2c0 .6.4 1 1 1h2c.6 0 1-.4 1-1v-2c0-.6-.4-1-1-1h-2zm-8 0a1 1 0 0 0-1 1v2c0 .6.4 1 1 1h2c.6 0 1-.4 1-1v-2c0-.6-.4-1-1-1H5zm0-18a1 1 0 0 0-1 1v14c0 .6.4 1 1 1h10c.6 0 1-.4 1-1V13c0-.6-.4-1-1-1H5zm5-10a4 4 0 1 0 0 8 4 4 0 0 0 0-8z' /></svg>
+						<svg class='bonus-rotator-item boxmod' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 40'>
+							<path fill-rule='evenodd' d='M2 0h16a2 2 0 0 1 2 2v36a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2C0 .9.9 0 2 0zm7.4 36a1 1 0 0 0-.7.3L8 37a.6.6 0 0 0 .4 1h3.2a.6.6 0 0 0 .4-1l-.7-.7a1 1 0 0 0-.7-.3H9.4zm5.6-6a1 1 0 0 0-1 1v2c0 .6.4 1 1 1h2c.6 0 1-.4 1-1v-2c0-.6-.4-1-1-1h-2zM3 30a1 1 0 0 0-1 1v2c0 .6.4 1 1 1h2c.6 0 1-.4 1-1v-2c0-.6-.4-1-1-1H3zm6-18a1 1 0 0 0-1 1v14c0 .6.4 1 1 1h2c.6 0 1-.4 1-1V13c0-.6-.4-1-1-1H9zm0-8a1 1 0 0 0-1 1v2c0 .6.4 1 1 1h2c.6 0 1-.4 1-1V5c0-.6-.4-1-1-1H9z' /></svg>
+						<svg class='bonus-rotator-item boxmod' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 40'>
+							<path fill-rule='evenodd' d='M2 0h9l.3.3c.4.4 1 .4 1.4 0L13 0h5a2 2 0 0 1 2 2v24l-.3.3a1 1 0 0 0 0 1.4l.3.3v10a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2C0 .9.9 0 2 0zm12.5 2.5c-.3.3-.3.7 0 1l2 2a.7.7 0 0 0 1-1l-2-2a.7.7 0 0 0-1 0zm0 4c-.3.3-.3.7 0 1l2 2a.7.7 0 0 0 1-1l-2-2a.7.7 0 0 0-1 0zM15 11a1 1 0 0 0-1 1v12c0 .6.4 1 1 1h2c.6 0 1-.4 1-1V12c0-.6-.4-1-1-1h-2z' />
+						</svg>
+						<svg class='bonus-rotator-item juice' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 40'>
+							<path fill-rule='evenodd' d='M0 38V20.9a5 5 0 0 1 2.5-4.3l4-2.4c.3-.1.5-.4.5-.7 0-.3-.2-.5-.5-.5H5a1 1 0 0 1-1-1v-2c0-.6.4-1 1-1h.5C6.3 9 7 8.3 7 7.5V3a3 3 0 0 1 6 0v4.5c0 .8.7 1.5 1.5 1.5h.5c.6 0 1 .4 1 1v2c0 .6-.4 1-1 1h-1.5c-.3 0-.5.2-.5.5s.2.6.4.7l4 2.4a5 5 0 0 1 2.6 4.3V38a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm4 0h12a2 2 0 0 0 2-2V22.7a5 5 0 0 0-2.2-4.2L13.6 17a1 1 0 0 0-1.6.9V34a2 2 0 0 1-4 0V17.9a1 1 0 0 0-1.6-.9l-2.2 1.5A5 5 0 0 0 2 22.7V36c0 1.1.9 2 2 2z' />
+						</svg>
+						<svg class='bonus-rotator-item juice' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 40'>
+							<path fill-rule='evenodd' d='M0 38V17c0-1.1.9-2 2-2h2V5.7c0-.5.2-.9.4-1.2L7.7.4c.2-.3.5-.4.8-.4h3c.3 0 .6.1.8.4l3.3 4c.2.4.4.8.4 1.3V15h2a2 2 0 0 1 2 2v21a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm4-21a2 2 0 0 0-2 2v17c0 1.1.9 2 2 2h12a2 2 0 0 0 2-2V19a2 2 0 0 0-2-2H4z' />
+						</svg>
+						<svg class='bonus-rotator-item juice' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 60'>
+							<path fill-rule='evenodd' d='M0 58V17.4c0-.3.1-.5.3-.7l.2-.2c.3-.3.3-.7 0-1l-.2-.2a1 1 0 0 1-.3-.7V8.2a2 2 0 0 1 1.1-1.8l1-.4a10 10 0 0 0 3.3-2.7l2-2.5A2 2 0 0 1 9 0h2a2 2 0 0 1 1.6.8l2 2.5c1 1.1 2 2 3.4 2.7l.9.4A2 2 0 0 1 20 8.2v6.4c0 .3-.1.5-.3.7l-.2.2c-.3.3-.3.7 0 1l.2.2c.2.2.3.4.3.7V58a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm4 0h12a2 2 0 0 0 2-2V21a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v35c0 1.1.9 2 2 2z' />
+						</svg>
+						<svg class='bonus-rotator-item mechmod' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 60'>
+							<path fill-rule='evenodd' d='M2 0h16a2 2 0 0 1 2 2v24.4c0 .4-.2.7-.6.9l-.8.4a1 1 0 0 0-.6 1v2.7c0 .4.2.7.6.9l.8.4c.4.2.6.5.6 1V39l-.3.3a1 1 0 0 0 0 1.4l.3.3v17a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V41l.3-.3c.4-.4.4-1 0-1.4L0 39v-5.4c0-.4.2-.7.6-.9l.8-.4c.4-.2.6-.5.6-1v-2.7a1 1 0 0 0-.6-.9l-.8-.4a1 1 0 0 1-.6-1V2C0 .9.9 0 2 0z' />
+						</svg>
+						<svg class='bonus-rotator-item mechmod' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 60'>
+							<path fill-rule='evenodd' d='M2 0h16a2 2 0 0 1 2 2v8l-.3.3a1 1 0 0 0 0 1.4l.3.3a163 163 0 0 0 0 36l-.3.3a1 1 0 0 0 0 1.4l.3.3v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-8l.3-.3c.4-.4.4-1 0-1.4L0 48c1.3-12 1.3-24 0-36l.3-.3c.4-.4.4-1 0-1.4L0 10V2C0 .9.9 0 2 0z' />
+						</svg>
+						<svg class='bonus-rotator-item mechmod' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 60'>
+							<path fill-rule='evenodd' d='M2 0h16a2 2 0 0 1 2 2v7.2c0 .5-.2 1-.6 1.4l-.4.4c-.6.6-.6 1.4 0 2l.4.4c.4.4.6.9.6 1.4v12.4c0 .5-.2 1-.6 1.4l-.4.4c-.6.6-.6 1.4 0 2l.4.4c.4.4.6.9.6 1.4v12.4c0 .5-.2 1-.6 1.4l-.4.4c-.6.6-.6 1.4 0 2l.4.4c.4.4.6.9.6 1.4V58a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-7.2c0-.5.2-1 .6-1.4L1 49c.6-.6.6-1.4 0-2l-.4-.4a2 2 0 0 1-.6-1.4V32.8c0-.5.2-1 .6-1.4L1 31c.6-.6.6-1.4 0-2l-.4-.4a2 2 0 0 1-.6-1.4V14.8c0-.5.2-1 .6-1.4L1 13c.6-.6.6-1.4 0-2l-.4-.4A2 2 0 0 1 0 9.2V2C0 .9.9 0 2 0z' />
+						</svg>
+						<svg class='bonus-rotator-item rda' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 30'>
+							<path fill-rule='evenodd' fill-rule='evenodd' d='M0 26v-1l.3-.3c.4-.4.4-1 0-1.4L0 23V11l.3-.3c.4-.4.4-1 0-1.4L0 9V7.7c0-.4.2-.8.6-1L5 5V1c0-.6.4-1 1-1h8c.6 0 1 .4 1 1v4l4.4 1.7c.4.2.6.6.6 1V9l-.3.3a1 1 0 0 0 0 1.4l.3.3v12l-.3.3a1 1 0 0 0 0 1.4l.3.3v1c0 .6-.4 1-1 1h-6v1c0 .6-.4 1-1 1 0 .6-.4 1-1 1H9a1 1 0 0 1-1-1 1 1 0 0 1-1-1v-1H1a1 1 0 0 1-1-1zm5-11a2 2 0 1 1 0 4 2 2 0 1 1 0-4zm5 0a2 2 0 1 1 0 4 2 2 0 1 1 0-4zm5 0a2 2 0 1 1 0 4 2 2 0 1 1 0-4z' />
+						</svg>
+						<svg class='bonus-rotator-item rda' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 30'>
+							<path fill-rule='evenodd' d='M0 26v-3l.3-.3c.4-.4.4-1 0-1.4L0 21V7c0-1.1.9-2 2-2h3V1c0-.6.4-1 1-1h8c.6 0 1 .4 1 1v4h3a2 2 0 0 1 2 2v14l-.3.3a1 1 0 0 0 0 1.4l.3.3v3c0 .6-.4 1-1 1h-6v1c0 .6-.4 1-1 1 0 .6-.4 1-1 1H9a1 1 0 0 1-1-1 1 1 0 0 1-1-1v-1H1a1 1 0 0 1-1-1zm8-3a1 1 0 0 0 0 2h4a1 1 0 0 0 0-2H8z' />
+						</svg>
+						<svg class='bonus-rotator-item rda' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 30'>
+							<path fill-rule='evenodd' d='M0 26v-1l.3-.3c.4-.4.4-1 0-1.4L0 23V9l.3-.3c.4-.4.4-1 0-1.4L0 7V6c0-.6.4-1 1-1h4V1c0-.6.4-1 1-1h8c.6 0 1 .4 1 1v4h4c.6 0 1 .4 1 1v1l-.3.3a1 1 0 0 0 0 1.4l.3.3v14l-.3.3a1 1 0 0 0 0 1.4l.3.3v1c0 .6-.4 1-1 1h-6v1c0 .6-.4 1-1 1 0 .6-.4 1-1 1H9a1 1 0 0 1-1-1 1 1 0 0 1-1-1v-1H1a1 1 0 0 1-1-1zm10-10a1 1 0 1 0 0 2 1 1 0 0 0 0-2z' />
+						</svg>
+						<svg class='bonus-rotator-item rdta' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 40'>
+							<path fill-rule='evenodd' d='M0 36v-1l.3-.3c.4-.4.4-1 0-1.4L0 33V23l.3-.3c.4-.4.4-1 0-1.4L0 21V6c0-.6.4-1 1-1h4V1c0-.6.4-1 1-1h8c.6 0 1 .4 1 1v4h4c.6 0 1 .4 1 1v15l-.3.3a1 1 0 0 0 0 1.4l.3.3v10l-.3.3a1 1 0 0 0 0 1.4l.3.3v1c0 .6-.4 1-1 1h-6v1c0 .6-.4 1-1 1 0 .6-.4 1-1 1H9a1 1 0 0 1-1-1 1 1 0 0 1-1-1v-1H1a1 1 0 0 1-1-1zm2-4c0 .6.4 1 1 1h4c.6 0 1-.4 1-1v-8c0-.6-.4-1-1-1H3a1 1 0 0 0-1 1v8zm10 0c0 .6.4 1 1 1h4c.6 0 1-.4 1-1v-8c0-.6-.4-1-1-1h-4a1 1 0 0 0-1 1v8zm4-19c0-.6-.4-1-1-1H5a1 1 0 0 0 0 2h10c.6 0 1-.4 1-1z' />
+						</svg>
+						<svg class='bonus-rotator-item rdta' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 40'>
+							<path fill-rule='evenodd' d='M0 36v-1l.3-.3c.4-.4.4-1 0-1.4L0 33v-9l.3-.3c.4-.4.4-1 0-1.4L0 22V12h1a1 1 0 0 0 0-2H0V7.7c0-.4.2-.8.6-1L5 5V1c0-.6.4-1 1-1h8c.6 0 1 .4 1 1v4l4.4 1.7c.4.2.6.6.6 1V10h-1a1 1 0 0 0 0 2h1v10l-.3.3a1 1 0 0 0 0 1.4l.3.3v9l-.3.3a1 1 0 0 0 0 1.4l.3.3v1c0 .6-.4 1-1 1h-6v1c0 .6-.4 1-1 1 0 .6-.4 1-1 1H9a1 1 0 0 1-1-1 1 1 0 0 1-1-1v-1H1a1 1 0 0 1-1-1zm2-5c0 .6.4 1 1 1h4c.6 0 1-.4 1-1v-5c0-.6-.4-1-1-1H3a1 1 0 0 0-1 1v5zm10 0c0 .6.4 1 1 1h4c.6 0 1-.4 1-1v-5c0-.6-.4-1-1-1h-4a1 1 0 0 0-1 1v5z' />
+						</svg>
+						<svg class='bonus-rotator-item rdta' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 40'>
+							<path fill-rule='evenodd' d='M0 36v-1l.3-.3c.4-.4.4-1 0-1.4L0 33V20l.3-.3c.4-.4.4-1 0-1.4L0 18v-8a5 5 0 0 1 5-5V1c0-.6.4-1 1-1h8c.6 0 1 .4 1 1v4a5 5 0 0 1 5 5v8l-.3.3a1 1 0 0 0 0 1.4l.3.3v13l-.3.3a1 1 0 0 0 0 1.4l.3.3v1c0 .6-.4 1-1 1h-6v1c0 .6-.4 1-1 1 0 .6-.4 1-1 1H9a1 1 0 0 1-1-1 1 1 0 0 1-1-1v-1H1a1 1 0 0 1-1-1zm5-21a1 1 0 1 0 0 2h10a1 1 0 1 0 0-2H5zM2 32c0 .6.4 1 1 1h4c.6 0 1-.4 1-1V22c0-.5-.4-1-1-1H3a1 1 0 0 0-1 1v10zm10 0c0 .6.4 1 1 1h4c.6 0 1-.4 1-1V22c0-.5-.4-1-1-1h-4a1 1 0 0 0-1 1v10z' />
+						</svg>
+						<svg class='bonus-rotator-item rta' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 40'>
+							<path fill-rule='evenodd' d='M0 36v-3l.3-.3c.4-.4.4-1 0-1.4L0 31V11l.3-.3c.4-.4.4-1 0-1.4L0 9V7.7c0-.4.2-.8.6-1L5 5V1c0-.6.4-1 1-1h8c.6 0 1 .4 1 1v4l4.4 1.7c.4.2.6.6.6 1V9l-.3.3a1 1 0 0 0 0 1.4l.3.3v20l-.3.3a1 1 0 0 0 0 1.4l.3.3v3c0 .6-.4 1-1 1h-6v1c0 .6-.4 1-1 1 0 .6-.4 1-1 1H9a1 1 0 0 1-1-1 1 1 0 0 1-1-1v-1H1a1 1 0 0 1-1-1zm2-6c0 .6.4 1 1 1h1c.6 0 1-.4 1-1V20c0-.6.4-1 1-1h1c.6 0 1-.4 1-1v-5c0-.6-.4-1-1-1H3a1 1 0 0 0-1 1v17zm16 0V13c0-.6-.4-1-1-1h-4a1 1 0 0 0-1 1v5c0 .6.4 1 1 1h1c.6 0 1 .4 1 1v10c0 .6.4 1 1 1h1c.6 0 1-.4 1-1zm-9-1a1 1 0 0 0 0 2h2a1 1 0 0 0 0-2H9zm-1 4a1 1 0 0 0 0 2h4a1 1 0 0 0 0-2H8z' />
+						</svg>
+						<svg class='bonus-rotator-item rta' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 40'>
+							<path fill-rule='evenodd' d='M0 36v-1l.3-.3c.4-.4.4-1 0-1.4L0 33V11l.3-.3c.4-.4.4-1 0-1.4L0 9V6c0-.6.4-1 1-1h4V1c0-.6.4-1 1-1h8c.6 0 1 .4 1 1v4h4c.6 0 1 .4 1 1v3l-.3.3a1 1 0 0 0 0 1.4l.3.3v22l-.3.3a1 1 0 0 0 0 1.4l.3.3v1c0 .6-.4 1-1 1h-6v1c0 .6-.4 1-1 1 0 .6-.4 1-1 1H9a1 1 0 0 1-1-1 1 1 0 0 1-1-1v-1H1a1 1 0 0 1-1-1zM8 7a1 1 0 0 0 0 2h4a1 1 0 0 0 0-2H8zM2 30c0 .6.4 1 1 1h1c.6 0 1-.4 1-1v-6c0-.6.4-1 1-1h1c.6 0 1-.4 1-1v-9c0-.6-.4-1-1-1H3a1 1 0 0 0-1 1v17zm16 0V13c0-.6-.4-1-1-1h-4a1 1 0 0 0-1 1v9c0 .6.4 1 1 1h1c.6 0 1 .4 1 1v6c0 .6.4 1 1 1h1c.6 0 1-.4 1-1zM8 29c.6 0 1 .4 1 1s-.4 1-1 1a1 1 0 0 1 0-2zm4 0c.6 0 1 .4 1 1s-.4 1-1 1a1 1 0 0 1 0-2z' />
+						</svg>
+						<svg class='bonus-rotator-item rta' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 40'>
+							<path fill-rule='evenodd' d='M0 36v-3l.3-.3c.4-.4.4-1 0-1.4L0 31V13l.3-.3c.4-.4.4-1 0-1.4L0 11V9.5c0-.3.1-.6.4-.8L5 5V1c0-.6.4-1 1-1h8c.6 0 1 .4 1 1v4l4.6 3.7c.3.2.4.5.4.8V11l-.3.3a1 1 0 0 0 0 1.4l.3.3v18l-.3.3a1 1 0 0 0 0 1.4l.3.3v3c0 .6-.4 1-1 1h-6v1c0 .6-.4 1-1 1 0 .6-.4 1-1 1H9a1 1 0 0 1-1-1 1 1 0 0 1-1-1v-1H1a1 1 0 0 1-1-1zm2-6c0 .6.4 1 1 1h1c.6 0 1-.4 1-1v-7.2c0-1.1.6-2.2 1.5-2.8 1-.6 1.5-1.7 1.5-2.8V16c0-.6-.4-1-1-1H3a1 1 0 0 0-1 1v14zm16 0V16c0-.6-.4-1-1-1h-4a1 1 0 0 0-1 1v1.2c0 1.1.6 2.2 1.5 2.8 1 .6 1.5 1.7 1.5 2.8V30c0 .6.4 1 1 1h1c.6 0 1-.4 1-1zM8 25a1 1 0 0 0-1 1v4a1 1 0 1 0 2 0v-4c0-.6-.4-1-1-1zm4 0a1 1 0 0 0-1 1v4a1 1 0 1 0 2 0v-4c0-.6-.4-1-1-1zm-9 8a1 1 0 1 0 0 2h14a1 1 0 1 0 0-2H3z' />
+						</svg>
+						<svg class='bonus-rotator-item sticker' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'>
+							<path fill-rule='evenodd' d='M15.2 0l-2.8 2.9 5 5L20 5.4V15c0 .6-.4 1-1 1h-1a2 2 0 0 0-2 2v1c0 .6-.4 1-1 1H2a2 2 0 0 1-2-2v-1.3l5.8 2.9 1-1-3.3-6.8-1.1 1 2.7 5-5-2.7-.1.1V2C0 .9.9 0 2 0h13.2zM17 0h1a2 2 0 0 1 2 2v1.6L17.6 6l-1.3-1.3 2.4-2.5-.8-.9-2.5 2.5-1.1-1L17 0zM7.8 13.8L6.4 11l2.7 1.4-1.3 1.3zm-3.1-3.3l3.2 7 1.2-1.2-.7-1.4 1.8-1.8 1.4.7 1.2-1.2-7-3.3-1.1 1.2zM12.5 6c.2.3.3.5.3.8 0 .3-.1.5-.4.8l-1 1L10 7l1-1 .8-.5c.2 0 .5.1.8.4zm1-1c-.5-.6-1.1-.9-1.7-.8-.5 0-1 .3-1.6.8L8 7.2l5 5.1 1.1-1-1.8-1.9 1-1c.7-.6 1-1.2 1-1.7 0-.6-.2-1.2-.8-1.8z' />
+						</svg>
+						<svg class='bonus-rotator-item sticker' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'>
+							<path fill-rule='evenodd' d='M20 11.4l-2.2 2.2-1.5-1.5 3-3-1-1.2-3.1 3-1.4-1.3 3.4-3.3L16 5.1 11.3 10l6.3 6.3 2.3-2.3a7.5 7.5 0 0 1-6.8 6l-2-1.8 1.5-1.5.9-1.2.2-1.1c0-.4-.1-.7-.3-1a3.4 3.4 0 0 0-1.5-1.5 2.5 2.5 0 0 0-2.1 0c-.4 0-.8.4-1.2.8l-2.9 2.8 4.6 4.6H5a1 1 0 0 1-1-1v-1a2 2 0 0 0-2-2H1a1 1 0 0 1-1-1v-5l6.4 3.3 1.5-1.6-4.2-8.4-1.4 1.4 3 5.9L0 8v-.4C0 3.4 3.4 0 7.5 0h5C16.6 0 20 3.4 20 7.5v4zM9 5.8L7.3 2.7l3.2 1.5-1.7 1.6zm-3.8-4l4 8.7 1.3-1.4-.9-1.9L12 4.8l1.9 1 1.4-1.5-8.7-4-1.4 1.5zM10.1 17l-1.9-2 1-1 .6-.4.5-.3h.6l.6.4.3.6v.6c0 .2 0 .3-.2.5l-.4.5-1.1 1z' />
+						</svg>
+						<svg class='bonus-rotator-item sticker' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 20'>
+							<path fill-rule='evenodd' d='M11.6 1.6l-.7.6-.9-.9.5-.4c.3 0 .7.3 1 .5v.2zm.6.6l1 1-.6.7-1-1 .6-.7zM14 4l1.6 1.6-1.5 1.5 2.5 2.6c0 .4 0 1 .4 1.3l.3.3c.4.4.4 1 0 1.4l-5.9 5.9a2 2 0 0 1-1.5.6l-2.6-5.3-1 1L8.2 18 4 14l.3-.4-2.6-5.3.8-.8L5 12.9l1-.8-.7-1.3 1.5-1.5 1.3.6L9 9 3.5 6.5 5 5l4 4 .9-1-1.5-1.4 1-.9.5-.8.2-.7-.2-.6a2.2 2.2 0 0 0-1-1 1.6 1.6 0 0 0-1.4 0h-.2l1.2-1 4 4L14 4zm2.3 2.3l1 1-.7.6-.9-1 .6-.6zm1.3 2l-.2.3h-.1l.3-.3zM2.4 12.4l-1-1a2 2 0 0 1-.5-2l1.5 3zm2.5-2.5L4 8l2 1-1 1zm2.9-4L6.5 4.7l.7-.7.3-.2.4-.2h.3c.2 0 .3.1.4.3l.3.3v.4l-.2.3-.3.4-.6.6zm2.8 9.7l-1-2 2 1-1 1zM8.2 13l2.5 5.6.9-.9-.6-1.2 1.5-1.5 1.2.6 1-1L9 12.2l-1 1zm5.2-1.4l-1.2-1.2.7-.7.3-.3.3-.1h.4l.4.2.2.4v.4l-.1.3-.3.3-.7.7zm-2.8-1l4 4 1-.9-1.5-1.4 1-1 .5-.7.1-.7c0-.3 0-.5-.2-.7a2.2 2.2 0 0 0-1-1 1.6 1.6 0 0 0-1.3 0l-.8.6-1.8 1.8z' />
+						</svg>
+						<svg class='bonus-rotator-item vape-band' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 10'>
+							<path fill-rule='evenodd' d='M2 0h16a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2C0 .9.9 0 2 0zM1 2h1.6l.7 4.5.6-4.5h1.7L4.3 8h-2L1 2zm6.8 1.2l-.4 2.6h.8l-.4-2.6zm1-1.2l1.4 6H8.6l-.2-1H7.2L7 8H5.4l1.4-6h2zM12 4.6h.3c.2 0 .3 0 .5-.2l.1-.5c0-.5-.2-.8-.6-.8H12v1.5zM10.4 2h2.4l.8.1a1.5 1.5 0 0 1 .8 1l.1.7c0 .7-.1 1.1-.5 1.4-.3.4-.8.5-1.4.5H12V8h-1.6V2zM15 2h3.6v1.3h-2v1h1.8v1.2h-1.8v1.2h2V8H15V2z' />
+						</svg>
+						<svg class='bonus-rotator-item wick' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 30'>
+							<path fill-rule='evenodd' d='M8.2 11.6L3 12.8a1 1 0 0 0-.8 1.2l2.6 12a1 1 0 0 0 1.2.8l7-1.6c.6-.1 1-.6.8-1.2v-.3L7 22.2a1 1 0 0 1-.8-1.2l2-9.4zM0 29V7l.3-.3c.4-.4.4-1 0-1.4L0 5V1c0-.6.4-1 1-1h18c.6 0 1 .4 1 1v4l-.3.3a1 1 0 0 0 0 1.4l.3.3v22c0 .6-.4 1-1 1H1a1 1 0 0 1-1-1zm8.2-17.4l1.8-.4a1 1 0 0 1 1.2.8l2.5 11.7h.3a1 1 0 0 0 1.2-.7l2.6-12a1 1 0 0 0-.8-1.2l-7-1.6a1 1 0 0 0-1.2.8l-.6 2.6z' />
+						</svg>
+						<svg class='bonus-rotator-item wick' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 30'>
+							<path fill-rule='evenodd' d='M11.8 23.4l-1.8.4a1 1 0 0 1-1.2-.8L6.3 11.3H6a1 1 0 0 0-1.2.7L2.2 24c-.1.6.2 1.1.8 1.2l7 1.6a1 1 0 0 0 1.2-.8l.6-2.6zM0 29V7l.3-.3c.4-.4.4-1 0-1.4L0 5V1c0-.6.4-1 1-1h18c.6 0 1 .4 1 1v4l-.3.3a1 1 0 0 0 0 1.4l.3.3v22c0 .6-.4 1-1 1H1a1 1 0 0 1-1-1zm11.8-5.6l5.2-1.2c.6-.1 1-.6.8-1.2L15.2 9a1 1 0 0 0-1.2-.8L7 9.8a1 1 0 0 0-.8 1.2v.3l6.8 1.5c.6.1 1 .6.8 1.2l-2 9.4z' />
+						</svg>
+						<svg class='bonus-rotator-item wire' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'>
+							<path fill-rule='evenodd' d='M1 0c.6 0 1 .4 1 1v18a1 1 0 1 1-2 0V1c0-.6.4-1 1-1zm3 0c.6 0 1 .4 1 1v8a1 1 0 0 1-2 0V1c0-.6.4-1 1-1zm3 0c.6 0 1 .4 1 1v8a1 1 0 1 1-2 0V1c0-.6.4-1 1-1zm3 0c.6 0 1 .4 1 1v8a1 1 0 0 1-2 0V1c0-.6.4-1 1-1zm3 0c.6 0 1 .4 1 1v8a1 1 0 1 1-2 0V1c0-.6.4-1 1-1zm3 0c.6 0 1 .4 1 1v8a1 1 0 0 1-2 0V1c0-.6.4-1 1-1zm3 0c.6 0 1 .4 1 1v18a1 1 0 1 1-2 0V1c0-.6.4-1 1-1z' />
+						</svg>
+						<svg class='bonus-rotator-item boxmod' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 40'>
+							<path fill-rule='evenodd' d='M2 0h16a2 2 0 0 1 2 2v36a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2C0 .9.9 0 2 0zm7.4 36a1 1 0 0 0-.7.3L8 37a.6.6 0 0 0 .4 1h3.2a.6.6 0 0 0 .4-1l-.7-.7a1 1 0 0 0-.7-.3H9.4zm3.6-6a1 1 0 0 0-1 1v2c0 .6.4 1 1 1h2c.6 0 1-.4 1-1v-2c0-.6-.4-1-1-1h-2zm-8 0a1 1 0 0 0-1 1v2c0 .6.4 1 1 1h2c.6 0 1-.4 1-1v-2c0-.6-.4-1-1-1H5zm0-18a1 1 0 0 0-1 1v14c0 .6.4 1 1 1h10c.6 0 1-.4 1-1V13c0-.6-.4-1-1-1H5zm5-10a4 4 0 1 0 0 8 4 4 0 0 0 0-8z' /></svg>
+						<svg class='bonus-rotator-item boxmod' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 40'>
+							<path fill-rule='evenodd' d='M2 0h16a2 2 0 0 1 2 2v36a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2C0 .9.9 0 2 0zm7.4 36a1 1 0 0 0-.7.3L8 37a.6.6 0 0 0 .4 1h3.2a.6.6 0 0 0 .4-1l-.7-.7a1 1 0 0 0-.7-.3H9.4zm5.6-6a1 1 0 0 0-1 1v2c0 .6.4 1 1 1h2c.6 0 1-.4 1-1v-2c0-.6-.4-1-1-1h-2zM3 30a1 1 0 0 0-1 1v2c0 .6.4 1 1 1h2c.6 0 1-.4 1-1v-2c0-.6-.4-1-1-1H3zm6-18a1 1 0 0 0-1 1v14c0 .6.4 1 1 1h2c.6 0 1-.4 1-1V13c0-.6-.4-1-1-1H9zm0-8a1 1 0 0 0-1 1v2c0 .6.4 1 1 1h2c.6 0 1-.4 1-1V5c0-.6-.4-1-1-1H9z' /></svg>
+						<svg class='bonus-rotator-item boxmod' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 40'>
+							<path fill-rule='evenodd' d='M2 0h9l.3.3c.4.4 1 .4 1.4 0L13 0h5a2 2 0 0 1 2 2v24l-.3.3a1 1 0 0 0 0 1.4l.3.3v10a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2C0 .9.9 0 2 0zm12.5 2.5c-.3.3-.3.7 0 1l2 2a.7.7 0 0 0 1-1l-2-2a.7.7 0 0 0-1 0zm0 4c-.3.3-.3.7 0 1l2 2a.7.7 0 0 0 1-1l-2-2a.7.7 0 0 0-1 0zM15 11a1 1 0 0 0-1 1v12c0 .6.4 1 1 1h2c.6 0 1-.4 1-1V12c0-.6-.4-1-1-1h-2z' />
+						</svg>
+						<svg class='bonus-rotator-item juice' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 40'>
+							<path fill-rule='evenodd' d='M0 38V20.9a5 5 0 0 1 2.5-4.3l4-2.4c.3-.1.5-.4.5-.7 0-.3-.2-.5-.5-.5H5a1 1 0 0 1-1-1v-2c0-.6.4-1 1-1h.5C6.3 9 7 8.3 7 7.5V3a3 3 0 0 1 6 0v4.5c0 .8.7 1.5 1.5 1.5h.5c.6 0 1 .4 1 1v2c0 .6-.4 1-1 1h-1.5c-.3 0-.5.2-.5.5s.2.6.4.7l4 2.4a5 5 0 0 1 2.6 4.3V38a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm4 0h12a2 2 0 0 0 2-2V22.7a5 5 0 0 0-2.2-4.2L13.6 17a1 1 0 0 0-1.6.9V34a2 2 0 0 1-4 0V17.9a1 1 0 0 0-1.6-.9l-2.2 1.5A5 5 0 0 0 2 22.7V36c0 1.1.9 2 2 2z' />
+						</svg>
+						<svg class='bonus-rotator-item juice' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 40'>
+							<path fill-rule='evenodd' d='M0 38V17c0-1.1.9-2 2-2h2V5.7c0-.5.2-.9.4-1.2L7.7.4c.2-.3.5-.4.8-.4h3c.3 0 .6.1.8.4l3.3 4c.2.4.4.8.4 1.3V15h2a2 2 0 0 1 2 2v21a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm4-21a2 2 0 0 0-2 2v17c0 1.1.9 2 2 2h12a2 2 0 0 0 2-2V19a2 2 0 0 0-2-2H4z' />
+						</svg>
+						<svg class='bonus-rotator-item juice' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 60'>
+							<path fill-rule='evenodd' d='M0 58V17.4c0-.3.1-.5.3-.7l.2-.2c.3-.3.3-.7 0-1l-.2-.2a1 1 0 0 1-.3-.7V8.2a2 2 0 0 1 1.1-1.8l1-.4a10 10 0 0 0 3.3-2.7l2-2.5A2 2 0 0 1 9 0h2a2 2 0 0 1 1.6.8l2 2.5c1 1.1 2 2 3.4 2.7l.9.4A2 2 0 0 1 20 8.2v6.4c0 .3-.1.5-.3.7l-.2.2c-.3.3-.3.7 0 1l.2.2c.2.2.3.4.3.7V58a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm4 0h12a2 2 0 0 0 2-2V21a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v35c0 1.1.9 2 2 2z' />
+						</svg>
+						<svg class='bonus-rotator-item mechmod' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 60'>
+							<path fill-rule='evenodd' d='M2 0h16a2 2 0 0 1 2 2v24.4c0 .4-.2.7-.6.9l-.8.4a1 1 0 0 0-.6 1v2.7c0 .4.2.7.6.9l.8.4c.4.2.6.5.6 1V39l-.3.3a1 1 0 0 0 0 1.4l.3.3v17a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V41l.3-.3c.4-.4.4-1 0-1.4L0 39v-5.4c0-.4.2-.7.6-.9l.8-.4c.4-.2.6-.5.6-1v-2.7a1 1 0 0 0-.6-.9l-.8-.4a1 1 0 0 1-.6-1V2C0 .9.9 0 2 0z' />
+						</svg>
+						<svg class='bonus-rotator-item mechmod' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 60'>
+							<path fill-rule='evenodd' d='M2 0h16a2 2 0 0 1 2 2v8l-.3.3a1 1 0 0 0 0 1.4l.3.3a163 163 0 0 0 0 36l-.3.3a1 1 0 0 0 0 1.4l.3.3v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-8l.3-.3c.4-.4.4-1 0-1.4L0 48c1.3-12 1.3-24 0-36l.3-.3c.4-.4.4-1 0-1.4L0 10V2C0 .9.9 0 2 0z' />
+						</svg>
+						<svg class='bonus-rotator-item mechmod' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 60'>
+							<path fill-rule='evenodd' d='M2 0h16a2 2 0 0 1 2 2v7.2c0 .5-.2 1-.6 1.4l-.4.4c-.6.6-.6 1.4 0 2l.4.4c.4.4.6.9.6 1.4v12.4c0 .5-.2 1-.6 1.4l-.4.4c-.6.6-.6 1.4 0 2l.4.4c.4.4.6.9.6 1.4v12.4c0 .5-.2 1-.6 1.4l-.4.4c-.6.6-.6 1.4 0 2l.4.4c.4.4.6.9.6 1.4V58a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-7.2c0-.5.2-1 .6-1.4L1 49c.6-.6.6-1.4 0-2l-.4-.4a2 2 0 0 1-.6-1.4V32.8c0-.5.2-1 .6-1.4L1 31c.6-.6.6-1.4 0-2l-.4-.4a2 2 0 0 1-.6-1.4V14.8c0-.5.2-1 .6-1.4L1 13c.6-.6.6-1.4 0-2l-.4-.4A2 2 0 0 1 0 9.2V2C0 .9.9 0 2 0z' />
+						</svg>
+						<svg class='bonus-rotator-item rda' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 30'>
+							<path fill-rule='evenodd' fill-rule='evenodd' d='M0 26v-1l.3-.3c.4-.4.4-1 0-1.4L0 23V11l.3-.3c.4-.4.4-1 0-1.4L0 9V7.7c0-.4.2-.8.6-1L5 5V1c0-.6.4-1 1-1h8c.6 0 1 .4 1 1v4l4.4 1.7c.4.2.6.6.6 1V9l-.3.3a1 1 0 0 0 0 1.4l.3.3v12l-.3.3a1 1 0 0 0 0 1.4l.3.3v1c0 .6-.4 1-1 1h-6v1c0 .6-.4 1-1 1 0 .6-.4 1-1 1H9a1 1 0 0 1-1-1 1 1 0 0 1-1-1v-1H1a1 1 0 0 1-1-1zm5-11a2 2 0 1 1 0 4 2 2 0 1 1 0-4zm5 0a2 2 0 1 1 0 4 2 2 0 1 1 0-4zm5 0a2 2 0 1 1 0 4 2 2 0 1 1 0-4z' />
+						</svg>
+						<svg class='bonus-rotator-item rda' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 30'>
+							<path fill-rule='evenodd' d='M0 26v-3l.3-.3c.4-.4.4-1 0-1.4L0 21V7c0-1.1.9-2 2-2h3V1c0-.6.4-1 1-1h8c.6 0 1 .4 1 1v4h3a2 2 0 0 1 2 2v14l-.3.3a1 1 0 0 0 0 1.4l.3.3v3c0 .6-.4 1-1 1h-6v1c0 .6-.4 1-1 1 0 .6-.4 1-1 1H9a1 1 0 0 1-1-1 1 1 0 0 1-1-1v-1H1a1 1 0 0 1-1-1zm8-3a1 1 0 0 0 0 2h4a1 1 0 0 0 0-2H8z' />
+						</svg>
+						<svg class='bonus-rotator-item rda' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 30'>
+							<path fill-rule='evenodd' d='M0 26v-1l.3-.3c.4-.4.4-1 0-1.4L0 23V9l.3-.3c.4-.4.4-1 0-1.4L0 7V6c0-.6.4-1 1-1h4V1c0-.6.4-1 1-1h8c.6 0 1 .4 1 1v4h4c.6 0 1 .4 1 1v1l-.3.3a1 1 0 0 0 0 1.4l.3.3v14l-.3.3a1 1 0 0 0 0 1.4l.3.3v1c0 .6-.4 1-1 1h-6v1c0 .6-.4 1-1 1 0 .6-.4 1-1 1H9a1 1 0 0 1-1-1 1 1 0 0 1-1-1v-1H1a1 1 0 0 1-1-1zm10-10a1 1 0 1 0 0 2 1 1 0 0 0 0-2z' />
+						</svg>
+						<svg class='bonus-rotator-item rdta' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 40'>
+							<path fill-rule='evenodd' d='M0 36v-1l.3-.3c.4-.4.4-1 0-1.4L0 33V23l.3-.3c.4-.4.4-1 0-1.4L0 21V6c0-.6.4-1 1-1h4V1c0-.6.4-1 1-1h8c.6 0 1 .4 1 1v4h4c.6 0 1 .4 1 1v15l-.3.3a1 1 0 0 0 0 1.4l.3.3v10l-.3.3a1 1 0 0 0 0 1.4l.3.3v1c0 .6-.4 1-1 1h-6v1c0 .6-.4 1-1 1 0 .6-.4 1-1 1H9a1 1 0 0 1-1-1 1 1 0 0 1-1-1v-1H1a1 1 0 0 1-1-1zm2-4c0 .6.4 1 1 1h4c.6 0 1-.4 1-1v-8c0-.6-.4-1-1-1H3a1 1 0 0 0-1 1v8zm10 0c0 .6.4 1 1 1h4c.6 0 1-.4 1-1v-8c0-.6-.4-1-1-1h-4a1 1 0 0 0-1 1v8zm4-19c0-.6-.4-1-1-1H5a1 1 0 0 0 0 2h10c.6 0 1-.4 1-1z' />
+						</svg>
+						<svg class='bonus-rotator-item rdta' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 40'>
+							<path fill-rule='evenodd' d='M0 36v-1l.3-.3c.4-.4.4-1 0-1.4L0 33v-9l.3-.3c.4-.4.4-1 0-1.4L0 22V12h1a1 1 0 0 0 0-2H0V7.7c0-.4.2-.8.6-1L5 5V1c0-.6.4-1 1-1h8c.6 0 1 .4 1 1v4l4.4 1.7c.4.2.6.6.6 1V10h-1a1 1 0 0 0 0 2h1v10l-.3.3a1 1 0 0 0 0 1.4l.3.3v9l-.3.3a1 1 0 0 0 0 1.4l.3.3v1c0 .6-.4 1-1 1h-6v1c0 .6-.4 1-1 1 0 .6-.4 1-1 1H9a1 1 0 0 1-1-1 1 1 0 0 1-1-1v-1H1a1 1 0 0 1-1-1zm2-5c0 .6.4 1 1 1h4c.6 0 1-.4 1-1v-5c0-.6-.4-1-1-1H3a1 1 0 0 0-1 1v5zm10 0c0 .6.4 1 1 1h4c.6 0 1-.4 1-1v-5c0-.6-.4-1-1-1h-4a1 1 0 0 0-1 1v5z' />
+						</svg>
+						<svg class='bonus-rotator-item rdta' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 40'>
+							<path fill-rule='evenodd' d='M0 36v-1l.3-.3c.4-.4.4-1 0-1.4L0 33V20l.3-.3c.4-.4.4-1 0-1.4L0 18v-8a5 5 0 0 1 5-5V1c0-.6.4-1 1-1h8c.6 0 1 .4 1 1v4a5 5 0 0 1 5 5v8l-.3.3a1 1 0 0 0 0 1.4l.3.3v13l-.3.3a1 1 0 0 0 0 1.4l.3.3v1c0 .6-.4 1-1 1h-6v1c0 .6-.4 1-1 1 0 .6-.4 1-1 1H9a1 1 0 0 1-1-1 1 1 0 0 1-1-1v-1H1a1 1 0 0 1-1-1zm5-21a1 1 0 1 0 0 2h10a1 1 0 1 0 0-2H5zM2 32c0 .6.4 1 1 1h4c.6 0 1-.4 1-1V22c0-.5-.4-1-1-1H3a1 1 0 0 0-1 1v10zm10 0c0 .6.4 1 1 1h4c.6 0 1-.4 1-1V22c0-.5-.4-1-1-1h-4a1 1 0 0 0-1 1v10z' />
+						</svg>
+						<svg class='bonus-rotator-item rta' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 40'>
+							<path fill-rule='evenodd' d='M0 36v-3l.3-.3c.4-.4.4-1 0-1.4L0 31V11l.3-.3c.4-.4.4-1 0-1.4L0 9V7.7c0-.4.2-.8.6-1L5 5V1c0-.6.4-1 1-1h8c.6 0 1 .4 1 1v4l4.4 1.7c.4.2.6.6.6 1V9l-.3.3a1 1 0 0 0 0 1.4l.3.3v20l-.3.3a1 1 0 0 0 0 1.4l.3.3v3c0 .6-.4 1-1 1h-6v1c0 .6-.4 1-1 1 0 .6-.4 1-1 1H9a1 1 0 0 1-1-1 1 1 0 0 1-1-1v-1H1a1 1 0 0 1-1-1zm2-6c0 .6.4 1 1 1h1c.6 0 1-.4 1-1V20c0-.6.4-1 1-1h1c.6 0 1-.4 1-1v-5c0-.6-.4-1-1-1H3a1 1 0 0 0-1 1v17zm16 0V13c0-.6-.4-1-1-1h-4a1 1 0 0 0-1 1v5c0 .6.4 1 1 1h1c.6 0 1 .4 1 1v10c0 .6.4 1 1 1h1c.6 0 1-.4 1-1zm-9-1a1 1 0 0 0 0 2h2a1 1 0 0 0 0-2H9zm-1 4a1 1 0 0 0 0 2h4a1 1 0 0 0 0-2H8z' />
+						</svg>
+						<svg class='bonus-rotator-item rta' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 40'>
+							<path fill-rule='evenodd' d='M0 36v-1l.3-.3c.4-.4.4-1 0-1.4L0 33V11l.3-.3c.4-.4.4-1 0-1.4L0 9V6c0-.6.4-1 1-1h4V1c0-.6.4-1 1-1h8c.6 0 1 .4 1 1v4h4c.6 0 1 .4 1 1v3l-.3.3a1 1 0 0 0 0 1.4l.3.3v22l-.3.3a1 1 0 0 0 0 1.4l.3.3v1c0 .6-.4 1-1 1h-6v1c0 .6-.4 1-1 1 0 .6-.4 1-1 1H9a1 1 0 0 1-1-1 1 1 0 0 1-1-1v-1H1a1 1 0 0 1-1-1zM8 7a1 1 0 0 0 0 2h4a1 1 0 0 0 0-2H8zM2 30c0 .6.4 1 1 1h1c.6 0 1-.4 1-1v-6c0-.6.4-1 1-1h1c.6 0 1-.4 1-1v-9c0-.6-.4-1-1-1H3a1 1 0 0 0-1 1v17zm16 0V13c0-.6-.4-1-1-1h-4a1 1 0 0 0-1 1v9c0 .6.4 1 1 1h1c.6 0 1 .4 1 1v6c0 .6.4 1 1 1h1c.6 0 1-.4 1-1zM8 29c.6 0 1 .4 1 1s-.4 1-1 1a1 1 0 0 1 0-2zm4 0c.6 0 1 .4 1 1s-.4 1-1 1a1 1 0 0 1 0-2z' />
+						</svg>
+						<svg class='bonus-rotator-item rta' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 40'>
+							<path fill-rule='evenodd' d='M0 36v-3l.3-.3c.4-.4.4-1 0-1.4L0 31V13l.3-.3c.4-.4.4-1 0-1.4L0 11V9.5c0-.3.1-.6.4-.8L5 5V1c0-.6.4-1 1-1h8c.6 0 1 .4 1 1v4l4.6 3.7c.3.2.4.5.4.8V11l-.3.3a1 1 0 0 0 0 1.4l.3.3v18l-.3.3a1 1 0 0 0 0 1.4l.3.3v3c0 .6-.4 1-1 1h-6v1c0 .6-.4 1-1 1 0 .6-.4 1-1 1H9a1 1 0 0 1-1-1 1 1 0 0 1-1-1v-1H1a1 1 0 0 1-1-1zm2-6c0 .6.4 1 1 1h1c.6 0 1-.4 1-1v-7.2c0-1.1.6-2.2 1.5-2.8 1-.6 1.5-1.7 1.5-2.8V16c0-.6-.4-1-1-1H3a1 1 0 0 0-1 1v14zm16 0V16c0-.6-.4-1-1-1h-4a1 1 0 0 0-1 1v1.2c0 1.1.6 2.2 1.5 2.8 1 .6 1.5 1.7 1.5 2.8V30c0 .6.4 1 1 1h1c.6 0 1-.4 1-1zM8 25a1 1 0 0 0-1 1v4a1 1 0 1 0 2 0v-4c0-.6-.4-1-1-1zm4 0a1 1 0 0 0-1 1v4a1 1 0 1 0 2 0v-4c0-.6-.4-1-1-1zm-9 8a1 1 0 1 0 0 2h14a1 1 0 1 0 0-2H3z' />
+						</svg>
+						<svg class='bonus-rotator-item sticker' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'>
+							<path fill-rule='evenodd' d='M15.2 0l-2.8 2.9 5 5L20 5.4V15c0 .6-.4 1-1 1h-1a2 2 0 0 0-2 2v1c0 .6-.4 1-1 1H2a2 2 0 0 1-2-2v-1.3l5.8 2.9 1-1-3.3-6.8-1.1 1 2.7 5-5-2.7-.1.1V2C0 .9.9 0 2 0h13.2zM17 0h1a2 2 0 0 1 2 2v1.6L17.6 6l-1.3-1.3 2.4-2.5-.8-.9-2.5 2.5-1.1-1L17 0zM7.8 13.8L6.4 11l2.7 1.4-1.3 1.3zm-3.1-3.3l3.2 7 1.2-1.2-.7-1.4 1.8-1.8 1.4.7 1.2-1.2-7-3.3-1.1 1.2zM12.5 6c.2.3.3.5.3.8 0 .3-.1.5-.4.8l-1 1L10 7l1-1 .8-.5c.2 0 .5.1.8.4zm1-1c-.5-.6-1.1-.9-1.7-.8-.5 0-1 .3-1.6.8L8 7.2l5 5.1 1.1-1-1.8-1.9 1-1c.7-.6 1-1.2 1-1.7 0-.6-.2-1.2-.8-1.8z' />
+						</svg>
+						<svg class='bonus-rotator-item sticker' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'>
+							<path fill-rule='evenodd' d='M20 11.4l-2.2 2.2-1.5-1.5 3-3-1-1.2-3.1 3-1.4-1.3 3.4-3.3L16 5.1 11.3 10l6.3 6.3 2.3-2.3a7.5 7.5 0 0 1-6.8 6l-2-1.8 1.5-1.5.9-1.2.2-1.1c0-.4-.1-.7-.3-1a3.4 3.4 0 0 0-1.5-1.5 2.5 2.5 0 0 0-2.1 0c-.4 0-.8.4-1.2.8l-2.9 2.8 4.6 4.6H5a1 1 0 0 1-1-1v-1a2 2 0 0 0-2-2H1a1 1 0 0 1-1-1v-5l6.4 3.3 1.5-1.6-4.2-8.4-1.4 1.4 3 5.9L0 8v-.4C0 3.4 3.4 0 7.5 0h5C16.6 0 20 3.4 20 7.5v4zM9 5.8L7.3 2.7l3.2 1.5-1.7 1.6zm-3.8-4l4 8.7 1.3-1.4-.9-1.9L12 4.8l1.9 1 1.4-1.5-8.7-4-1.4 1.5zM10.1 17l-1.9-2 1-1 .6-.4.5-.3h.6l.6.4.3.6v.6c0 .2 0 .3-.2.5l-.4.5-1.1 1z' />
+						</svg>
+						<svg class='bonus-rotator-item sticker' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 20'>
+							<path fill-rule='evenodd' d='M11.6 1.6l-.7.6-.9-.9.5-.4c.3 0 .7.3 1 .5v.2zm.6.6l1 1-.6.7-1-1 .6-.7zM14 4l1.6 1.6-1.5 1.5 2.5 2.6c0 .4 0 1 .4 1.3l.3.3c.4.4.4 1 0 1.4l-5.9 5.9a2 2 0 0 1-1.5.6l-2.6-5.3-1 1L8.2 18 4 14l.3-.4-2.6-5.3.8-.8L5 12.9l1-.8-.7-1.3 1.5-1.5 1.3.6L9 9 3.5 6.5 5 5l4 4 .9-1-1.5-1.4 1-.9.5-.8.2-.7-.2-.6a2.2 2.2 0 0 0-1-1 1.6 1.6 0 0 0-1.4 0h-.2l1.2-1 4 4L14 4zm2.3 2.3l1 1-.7.6-.9-1 .6-.6zm1.3 2l-.2.3h-.1l.3-.3zM2.4 12.4l-1-1a2 2 0 0 1-.5-2l1.5 3zm2.5-2.5L4 8l2 1-1 1zm2.9-4L6.5 4.7l.7-.7.3-.2.4-.2h.3c.2 0 .3.1.4.3l.3.3v.4l-.2.3-.3.4-.6.6zm2.8 9.7l-1-2 2 1-1 1zM8.2 13l2.5 5.6.9-.9-.6-1.2 1.5-1.5 1.2.6 1-1L9 12.2l-1 1zm5.2-1.4l-1.2-1.2.7-.7.3-.3.3-.1h.4l.4.2.2.4v.4l-.1.3-.3.3-.7.7zm-2.8-1l4 4 1-.9-1.5-1.4 1-1 .5-.7.1-.7c0-.3 0-.5-.2-.7a2.2 2.2 0 0 0-1-1 1.6 1.6 0 0 0-1.3 0l-.8.6-1.8 1.8z' />
+						</svg>
+						<svg class='bonus-rotator-item vape-band' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 10'>
+							<path fill-rule='evenodd' d='M2 0h16a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2C0 .9.9 0 2 0zM1 2h1.6l.7 4.5.6-4.5h1.7L4.3 8h-2L1 2zm6.8 1.2l-.4 2.6h.8l-.4-2.6zm1-1.2l1.4 6H8.6l-.2-1H7.2L7 8H5.4l1.4-6h2zM12 4.6h.3c.2 0 .3 0 .5-.2l.1-.5c0-.5-.2-.8-.6-.8H12v1.5zM10.4 2h2.4l.8.1a1.5 1.5 0 0 1 .8 1l.1.7c0 .7-.1 1.1-.5 1.4-.3.4-.8.5-1.4.5H12V8h-1.6V2zM15 2h3.6v1.3h-2v1h1.8v1.2h-1.8v1.2h2V8H15V2z' />
+						</svg>
+						<svg class='bonus-rotator-item wick' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 30'>
+							<path fill-rule='evenodd' d='M8.2 11.6L3 12.8a1 1 0 0 0-.8 1.2l2.6 12a1 1 0 0 0 1.2.8l7-1.6c.6-.1 1-.6.8-1.2v-.3L7 22.2a1 1 0 0 1-.8-1.2l2-9.4zM0 29V7l.3-.3c.4-.4.4-1 0-1.4L0 5V1c0-.6.4-1 1-1h18c.6 0 1 .4 1 1v4l-.3.3a1 1 0 0 0 0 1.4l.3.3v22c0 .6-.4 1-1 1H1a1 1 0 0 1-1-1zm8.2-17.4l1.8-.4a1 1 0 0 1 1.2.8l2.5 11.7h.3a1 1 0 0 0 1.2-.7l2.6-12a1 1 0 0 0-.8-1.2l-7-1.6a1 1 0 0 0-1.2.8l-.6 2.6z' />
+						</svg>
+						<svg class='bonus-rotator-item wick' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 30'>
+							<path fill-rule='evenodd' d='M11.8 23.4l-1.8.4a1 1 0 0 1-1.2-.8L6.3 11.3H6a1 1 0 0 0-1.2.7L2.2 24c-.1.6.2 1.1.8 1.2l7 1.6a1 1 0 0 0 1.2-.8l.6-2.6zM0 29V7l.3-.3c.4-.4.4-1 0-1.4L0 5V1c0-.6.4-1 1-1h18c.6 0 1 .4 1 1v4l-.3.3a1 1 0 0 0 0 1.4l.3.3v22c0 .6-.4 1-1 1H1a1 1 0 0 1-1-1zm11.8-5.6l5.2-1.2c.6-.1 1-.6.8-1.2L15.2 9a1 1 0 0 0-1.2-.8L7 9.8a1 1 0 0 0-.8 1.2v.3l6.8 1.5c.6.1 1 .6.8 1.2l-2 9.4z' />
+						</svg>
+						<svg class='bonus-rotator-item wire' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'>
+							<path fill-rule='evenodd' d='M1 0c.6 0 1 .4 1 1v18a1 1 0 1 1-2 0V1c0-.6.4-1 1-1zm3 0c.6 0 1 .4 1 1v8a1 1 0 0 1-2 0V1c0-.6.4-1 1-1zm3 0c.6 0 1 .4 1 1v8a1 1 0 1 1-2 0V1c0-.6.4-1 1-1zm3 0c.6 0 1 .4 1 1v8a1 1 0 0 1-2 0V1c0-.6.4-1 1-1zm3 0c.6 0 1 .4 1 1v8a1 1 0 1 1-2 0V1c0-.6.4-1 1-1zm3 0c.6 0 1 .4 1 1v8a1 1 0 0 1-2 0V1c0-.6.4-1 1-1zm3 0c.6 0 1 .4 1 1v18a1 1 0 1 1-2 0V1c0-.6.4-1 1-1z' />
+						</svg>
+						<svg class='bonus-rotator-item boxmod' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 40'>
+							<path fill-rule='evenodd' d='M2 0h16a2 2 0 0 1 2 2v36a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2C0 .9.9 0 2 0zm7.4 36a1 1 0 0 0-.7.3L8 37a.6.6 0 0 0 .4 1h3.2a.6.6 0 0 0 .4-1l-.7-.7a1 1 0 0 0-.7-.3H9.4zm3.6-6a1 1 0 0 0-1 1v2c0 .6.4 1 1 1h2c.6 0 1-.4 1-1v-2c0-.6-.4-1-1-1h-2zm-8 0a1 1 0 0 0-1 1v2c0 .6.4 1 1 1h2c.6 0 1-.4 1-1v-2c0-.6-.4-1-1-1H5zm0-18a1 1 0 0 0-1 1v14c0 .6.4 1 1 1h10c.6 0 1-.4 1-1V13c0-.6-.4-1-1-1H5zm5-10a4 4 0 1 0 0 8 4 4 0 0 0 0-8z' /></svg>
+						<svg class='bonus-rotator-item boxmod' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 40'>
+							<path fill-rule='evenodd' d='M2 0h16a2 2 0 0 1 2 2v36a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2C0 .9.9 0 2 0zm7.4 36a1 1 0 0 0-.7.3L8 37a.6.6 0 0 0 .4 1h3.2a.6.6 0 0 0 .4-1l-.7-.7a1 1 0 0 0-.7-.3H9.4zm5.6-6a1 1 0 0 0-1 1v2c0 .6.4 1 1 1h2c.6 0 1-.4 1-1v-2c0-.6-.4-1-1-1h-2zM3 30a1 1 0 0 0-1 1v2c0 .6.4 1 1 1h2c.6 0 1-.4 1-1v-2c0-.6-.4-1-1-1H3zm6-18a1 1 0 0 0-1 1v14c0 .6.4 1 1 1h2c.6 0 1-.4 1-1V13c0-.6-.4-1-1-1H9zm0-8a1 1 0 0 0-1 1v2c0 .6.4 1 1 1h2c.6 0 1-.4 1-1V5c0-.6-.4-1-1-1H9z' /></svg>
+						<svg class='bonus-rotator-item boxmod' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 40'>
+							<path fill-rule='evenodd' d='M2 0h9l.3.3c.4.4 1 .4 1.4 0L13 0h5a2 2 0 0 1 2 2v24l-.3.3a1 1 0 0 0 0 1.4l.3.3v10a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2C0 .9.9 0 2 0zm12.5 2.5c-.3.3-.3.7 0 1l2 2a.7.7 0 0 0 1-1l-2-2a.7.7 0 0 0-1 0zm0 4c-.3.3-.3.7 0 1l2 2a.7.7 0 0 0 1-1l-2-2a.7.7 0 0 0-1 0zM15 11a1 1 0 0 0-1 1v12c0 .6.4 1 1 1h2c.6 0 1-.4 1-1V12c0-.6-.4-1-1-1h-2z' />
+						</svg>
+						<svg class='bonus-rotator-item juice' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 40'>
+							<path fill-rule='evenodd' d='M0 38V20.9a5 5 0 0 1 2.5-4.3l4-2.4c.3-.1.5-.4.5-.7 0-.3-.2-.5-.5-.5H5a1 1 0 0 1-1-1v-2c0-.6.4-1 1-1h.5C6.3 9 7 8.3 7 7.5V3a3 3 0 0 1 6 0v4.5c0 .8.7 1.5 1.5 1.5h.5c.6 0 1 .4 1 1v2c0 .6-.4 1-1 1h-1.5c-.3 0-.5.2-.5.5s.2.6.4.7l4 2.4a5 5 0 0 1 2.6 4.3V38a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm4 0h12a2 2 0 0 0 2-2V22.7a5 5 0 0 0-2.2-4.2L13.6 17a1 1 0 0 0-1.6.9V34a2 2 0 0 1-4 0V17.9a1 1 0 0 0-1.6-.9l-2.2 1.5A5 5 0 0 0 2 22.7V36c0 1.1.9 2 2 2z' />
+						</svg>
+						<svg class='bonus-rotator-item juice' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 40'>
+							<path fill-rule='evenodd' d='M0 38V17c0-1.1.9-2 2-2h2V5.7c0-.5.2-.9.4-1.2L7.7.4c.2-.3.5-.4.8-.4h3c.3 0 .6.1.8.4l3.3 4c.2.4.4.8.4 1.3V15h2a2 2 0 0 1 2 2v21a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm4-21a2 2 0 0 0-2 2v17c0 1.1.9 2 2 2h12a2 2 0 0 0 2-2V19a2 2 0 0 0-2-2H4z' />
+						</svg>
+						<svg class='bonus-rotator-item juice' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 60'>
+							<path fill-rule='evenodd' d='M0 58V17.4c0-.3.1-.5.3-.7l.2-.2c.3-.3.3-.7 0-1l-.2-.2a1 1 0 0 1-.3-.7V8.2a2 2 0 0 1 1.1-1.8l1-.4a10 10 0 0 0 3.3-2.7l2-2.5A2 2 0 0 1 9 0h2a2 2 0 0 1 1.6.8l2 2.5c1 1.1 2 2 3.4 2.7l.9.4A2 2 0 0 1 20 8.2v6.4c0 .3-.1.5-.3.7l-.2.2c-.3.3-.3.7 0 1l.2.2c.2.2.3.4.3.7V58a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm4 0h12a2 2 0 0 0 2-2V21a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v35c0 1.1.9 2 2 2z' />
+						</svg>
+						<svg class='bonus-rotator-item mechmod' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 60'>
+							<path fill-rule='evenodd' d='M2 0h16a2 2 0 0 1 2 2v24.4c0 .4-.2.7-.6.9l-.8.4a1 1 0 0 0-.6 1v2.7c0 .4.2.7.6.9l.8.4c.4.2.6.5.6 1V39l-.3.3a1 1 0 0 0 0 1.4l.3.3v17a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V41l.3-.3c.4-.4.4-1 0-1.4L0 39v-5.4c0-.4.2-.7.6-.9l.8-.4c.4-.2.6-.5.6-1v-2.7a1 1 0 0 0-.6-.9l-.8-.4a1 1 0 0 1-.6-1V2C0 .9.9 0 2 0z' />
+						</svg>
+						<svg class='bonus-rotator-item mechmod' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 60'>
+							<path fill-rule='evenodd' d='M2 0h16a2 2 0 0 1 2 2v8l-.3.3a1 1 0 0 0 0 1.4l.3.3a163 163 0 0 0 0 36l-.3.3a1 1 0 0 0 0 1.4l.3.3v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-8l.3-.3c.4-.4.4-1 0-1.4L0 48c1.3-12 1.3-24 0-36l.3-.3c.4-.4.4-1 0-1.4L0 10V2C0 .9.9 0 2 0z' />
+						</svg>
+						<svg class='bonus-rotator-item mechmod' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 60'>
+							<path fill-rule='evenodd' d='M2 0h16a2 2 0 0 1 2 2v7.2c0 .5-.2 1-.6 1.4l-.4.4c-.6.6-.6 1.4 0 2l.4.4c.4.4.6.9.6 1.4v12.4c0 .5-.2 1-.6 1.4l-.4.4c-.6.6-.6 1.4 0 2l.4.4c.4.4.6.9.6 1.4v12.4c0 .5-.2 1-.6 1.4l-.4.4c-.6.6-.6 1.4 0 2l.4.4c.4.4.6.9.6 1.4V58a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-7.2c0-.5.2-1 .6-1.4L1 49c.6-.6.6-1.4 0-2l-.4-.4a2 2 0 0 1-.6-1.4V32.8c0-.5.2-1 .6-1.4L1 31c.6-.6.6-1.4 0-2l-.4-.4a2 2 0 0 1-.6-1.4V14.8c0-.5.2-1 .6-1.4L1 13c.6-.6.6-1.4 0-2l-.4-.4A2 2 0 0 1 0 9.2V2C0 .9.9 0 2 0z' />
+						</svg>
+						<svg class='bonus-rotator-item rda' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 30'>
+							<path fill-rule='evenodd' fill-rule='evenodd' d='M0 26v-1l.3-.3c.4-.4.4-1 0-1.4L0 23V11l.3-.3c.4-.4.4-1 0-1.4L0 9V7.7c0-.4.2-.8.6-1L5 5V1c0-.6.4-1 1-1h8c.6 0 1 .4 1 1v4l4.4 1.7c.4.2.6.6.6 1V9l-.3.3a1 1 0 0 0 0 1.4l.3.3v12l-.3.3a1 1 0 0 0 0 1.4l.3.3v1c0 .6-.4 1-1 1h-6v1c0 .6-.4 1-1 1 0 .6-.4 1-1 1H9a1 1 0 0 1-1-1 1 1 0 0 1-1-1v-1H1a1 1 0 0 1-1-1zm5-11a2 2 0 1 1 0 4 2 2 0 1 1 0-4zm5 0a2 2 0 1 1 0 4 2 2 0 1 1 0-4zm5 0a2 2 0 1 1 0 4 2 2 0 1 1 0-4z' />
+						</svg>
+						<svg class='bonus-rotator-item rda' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 30'>
+							<path fill-rule='evenodd' d='M0 26v-3l.3-.3c.4-.4.4-1 0-1.4L0 21V7c0-1.1.9-2 2-2h3V1c0-.6.4-1 1-1h8c.6 0 1 .4 1 1v4h3a2 2 0 0 1 2 2v14l-.3.3a1 1 0 0 0 0 1.4l.3.3v3c0 .6-.4 1-1 1h-6v1c0 .6-.4 1-1 1 0 .6-.4 1-1 1H9a1 1 0 0 1-1-1 1 1 0 0 1-1-1v-1H1a1 1 0 0 1-1-1zm8-3a1 1 0 0 0 0 2h4a1 1 0 0 0 0-2H8z' />
+						</svg>
+						<svg class='bonus-rotator-item rda' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 30'>
+							<path fill-rule='evenodd' d='M0 26v-1l.3-.3c.4-.4.4-1 0-1.4L0 23V9l.3-.3c.4-.4.4-1 0-1.4L0 7V6c0-.6.4-1 1-1h4V1c0-.6.4-1 1-1h8c.6 0 1 .4 1 1v4h4c.6 0 1 .4 1 1v1l-.3.3a1 1 0 0 0 0 1.4l.3.3v14l-.3.3a1 1 0 0 0 0 1.4l.3.3v1c0 .6-.4 1-1 1h-6v1c0 .6-.4 1-1 1 0 .6-.4 1-1 1H9a1 1 0 0 1-1-1 1 1 0 0 1-1-1v-1H1a1 1 0 0 1-1-1zm10-10a1 1 0 1 0 0 2 1 1 0 0 0 0-2z' />
+						</svg>
+						<svg class='bonus-rotator-item rdta' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 40'>
+							<path fill-rule='evenodd' d='M0 36v-1l.3-.3c.4-.4.4-1 0-1.4L0 33V23l.3-.3c.4-.4.4-1 0-1.4L0 21V6c0-.6.4-1 1-1h4V1c0-.6.4-1 1-1h8c.6 0 1 .4 1 1v4h4c.6 0 1 .4 1 1v15l-.3.3a1 1 0 0 0 0 1.4l.3.3v10l-.3.3a1 1 0 0 0 0 1.4l.3.3v1c0 .6-.4 1-1 1h-6v1c0 .6-.4 1-1 1 0 .6-.4 1-1 1H9a1 1 0 0 1-1-1 1 1 0 0 1-1-1v-1H1a1 1 0 0 1-1-1zm2-4c0 .6.4 1 1 1h4c.6 0 1-.4 1-1v-8c0-.6-.4-1-1-1H3a1 1 0 0 0-1 1v8zm10 0c0 .6.4 1 1 1h4c.6 0 1-.4 1-1v-8c0-.6-.4-1-1-1h-4a1 1 0 0 0-1 1v8zm4-19c0-.6-.4-1-1-1H5a1 1 0 0 0 0 2h10c.6 0 1-.4 1-1z' />
+						</svg>
+						<svg class='bonus-rotator-item rdta' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 40'>
+							<path fill-rule='evenodd' d='M0 36v-1l.3-.3c.4-.4.4-1 0-1.4L0 33v-9l.3-.3c.4-.4.4-1 0-1.4L0 22V12h1a1 1 0 0 0 0-2H0V7.7c0-.4.2-.8.6-1L5 5V1c0-.6.4-1 1-1h8c.6 0 1 .4 1 1v4l4.4 1.7c.4.2.6.6.6 1V10h-1a1 1 0 0 0 0 2h1v10l-.3.3a1 1 0 0 0 0 1.4l.3.3v9l-.3.3a1 1 0 0 0 0 1.4l.3.3v1c0 .6-.4 1-1 1h-6v1c0 .6-.4 1-1 1 0 .6-.4 1-1 1H9a1 1 0 0 1-1-1 1 1 0 0 1-1-1v-1H1a1 1 0 0 1-1-1zm2-5c0 .6.4 1 1 1h4c.6 0 1-.4 1-1v-5c0-.6-.4-1-1-1H3a1 1 0 0 0-1 1v5zm10 0c0 .6.4 1 1 1h4c.6 0 1-.4 1-1v-5c0-.6-.4-1-1-1h-4a1 1 0 0 0-1 1v5z' />
+						</svg>
+						<svg class='bonus-rotator-item rdta' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 40'>
+							<path fill-rule='evenodd' d='M0 36v-1l.3-.3c.4-.4.4-1 0-1.4L0 33V20l.3-.3c.4-.4.4-1 0-1.4L0 18v-8a5 5 0 0 1 5-5V1c0-.6.4-1 1-1h8c.6 0 1 .4 1 1v4a5 5 0 0 1 5 5v8l-.3.3a1 1 0 0 0 0 1.4l.3.3v13l-.3.3a1 1 0 0 0 0 1.4l.3.3v1c0 .6-.4 1-1 1h-6v1c0 .6-.4 1-1 1 0 .6-.4 1-1 1H9a1 1 0 0 1-1-1 1 1 0 0 1-1-1v-1H1a1 1 0 0 1-1-1zm5-21a1 1 0 1 0 0 2h10a1 1 0 1 0 0-2H5zM2 32c0 .6.4 1 1 1h4c.6 0 1-.4 1-1V22c0-.5-.4-1-1-1H3a1 1 0 0 0-1 1v10zm10 0c0 .6.4 1 1 1h4c.6 0 1-.4 1-1V22c0-.5-.4-1-1-1h-4a1 1 0 0 0-1 1v10z' />
+						</svg>
+						<svg class='bonus-rotator-item rta' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 40'>
+							<path fill-rule='evenodd' d='M0 36v-3l.3-.3c.4-.4.4-1 0-1.4L0 31V11l.3-.3c.4-.4.4-1 0-1.4L0 9V7.7c0-.4.2-.8.6-1L5 5V1c0-.6.4-1 1-1h8c.6 0 1 .4 1 1v4l4.4 1.7c.4.2.6.6.6 1V9l-.3.3a1 1 0 0 0 0 1.4l.3.3v20l-.3.3a1 1 0 0 0 0 1.4l.3.3v3c0 .6-.4 1-1 1h-6v1c0 .6-.4 1-1 1 0 .6-.4 1-1 1H9a1 1 0 0 1-1-1 1 1 0 0 1-1-1v-1H1a1 1 0 0 1-1-1zm2-6c0 .6.4 1 1 1h1c.6 0 1-.4 1-1V20c0-.6.4-1 1-1h1c.6 0 1-.4 1-1v-5c0-.6-.4-1-1-1H3a1 1 0 0 0-1 1v17zm16 0V13c0-.6-.4-1-1-1h-4a1 1 0 0 0-1 1v5c0 .6.4 1 1 1h1c.6 0 1 .4 1 1v10c0 .6.4 1 1 1h1c.6 0 1-.4 1-1zm-9-1a1 1 0 0 0 0 2h2a1 1 0 0 0 0-2H9zm-1 4a1 1 0 0 0 0 2h4a1 1 0 0 0 0-2H8z' />
+						</svg>
+						<svg class='bonus-rotator-item rta' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 40'>
+							<path fill-rule='evenodd' d='M0 36v-1l.3-.3c.4-.4.4-1 0-1.4L0 33V11l.3-.3c.4-.4.4-1 0-1.4L0 9V6c0-.6.4-1 1-1h4V1c0-.6.4-1 1-1h8c.6 0 1 .4 1 1v4h4c.6 0 1 .4 1 1v3l-.3.3a1 1 0 0 0 0 1.4l.3.3v22l-.3.3a1 1 0 0 0 0 1.4l.3.3v1c0 .6-.4 1-1 1h-6v1c0 .6-.4 1-1 1 0 .6-.4 1-1 1H9a1 1 0 0 1-1-1 1 1 0 0 1-1-1v-1H1a1 1 0 0 1-1-1zM8 7a1 1 0 0 0 0 2h4a1 1 0 0 0 0-2H8zM2 30c0 .6.4 1 1 1h1c.6 0 1-.4 1-1v-6c0-.6.4-1 1-1h1c.6 0 1-.4 1-1v-9c0-.6-.4-1-1-1H3a1 1 0 0 0-1 1v17zm16 0V13c0-.6-.4-1-1-1h-4a1 1 0 0 0-1 1v9c0 .6.4 1 1 1h1c.6 0 1 .4 1 1v6c0 .6.4 1 1 1h1c.6 0 1-.4 1-1zM8 29c.6 0 1 .4 1 1s-.4 1-1 1a1 1 0 0 1 0-2zm4 0c.6 0 1 .4 1 1s-.4 1-1 1a1 1 0 0 1 0-2z' />
+						</svg>
+						<svg class='bonus-rotator-item rta' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 40'>
+							<path fill-rule='evenodd' d='M0 36v-3l.3-.3c.4-.4.4-1 0-1.4L0 31V13l.3-.3c.4-.4.4-1 0-1.4L0 11V9.5c0-.3.1-.6.4-.8L5 5V1c0-.6.4-1 1-1h8c.6 0 1 .4 1 1v4l4.6 3.7c.3.2.4.5.4.8V11l-.3.3a1 1 0 0 0 0 1.4l.3.3v18l-.3.3a1 1 0 0 0 0 1.4l.3.3v3c0 .6-.4 1-1 1h-6v1c0 .6-.4 1-1 1 0 .6-.4 1-1 1H9a1 1 0 0 1-1-1 1 1 0 0 1-1-1v-1H1a1 1 0 0 1-1-1zm2-6c0 .6.4 1 1 1h1c.6 0 1-.4 1-1v-7.2c0-1.1.6-2.2 1.5-2.8 1-.6 1.5-1.7 1.5-2.8V16c0-.6-.4-1-1-1H3a1 1 0 0 0-1 1v14zm16 0V16c0-.6-.4-1-1-1h-4a1 1 0 0 0-1 1v1.2c0 1.1.6 2.2 1.5 2.8 1 .6 1.5 1.7 1.5 2.8V30c0 .6.4 1 1 1h1c.6 0 1-.4 1-1zM8 25a1 1 0 0 0-1 1v4a1 1 0 1 0 2 0v-4c0-.6-.4-1-1-1zm4 0a1 1 0 0 0-1 1v4a1 1 0 1 0 2 0v-4c0-.6-.4-1-1-1zm-9 8a1 1 0 1 0 0 2h14a1 1 0 1 0 0-2H3z' />
+						</svg>
+						<svg class='bonus-rotator-item sticker' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'>
+							<path fill-rule='evenodd' d='M15.2 0l-2.8 2.9 5 5L20 5.4V15c0 .6-.4 1-1 1h-1a2 2 0 0 0-2 2v1c0 .6-.4 1-1 1H2a2 2 0 0 1-2-2v-1.3l5.8 2.9 1-1-3.3-6.8-1.1 1 2.7 5-5-2.7-.1.1V2C0 .9.9 0 2 0h13.2zM17 0h1a2 2 0 0 1 2 2v1.6L17.6 6l-1.3-1.3 2.4-2.5-.8-.9-2.5 2.5-1.1-1L17 0zM7.8 13.8L6.4 11l2.7 1.4-1.3 1.3zm-3.1-3.3l3.2 7 1.2-1.2-.7-1.4 1.8-1.8 1.4.7 1.2-1.2-7-3.3-1.1 1.2zM12.5 6c.2.3.3.5.3.8 0 .3-.1.5-.4.8l-1 1L10 7l1-1 .8-.5c.2 0 .5.1.8.4zm1-1c-.5-.6-1.1-.9-1.7-.8-.5 0-1 .3-1.6.8L8 7.2l5 5.1 1.1-1-1.8-1.9 1-1c.7-.6 1-1.2 1-1.7 0-.6-.2-1.2-.8-1.8z' />
+						</svg>
+						<svg class='bonus-rotator-item sticker' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'>
+							<path fill-rule='evenodd' d='M20 11.4l-2.2 2.2-1.5-1.5 3-3-1-1.2-3.1 3-1.4-1.3 3.4-3.3L16 5.1 11.3 10l6.3 6.3 2.3-2.3a7.5 7.5 0 0 1-6.8 6l-2-1.8 1.5-1.5.9-1.2.2-1.1c0-.4-.1-.7-.3-1a3.4 3.4 0 0 0-1.5-1.5 2.5 2.5 0 0 0-2.1 0c-.4 0-.8.4-1.2.8l-2.9 2.8 4.6 4.6H5a1 1 0 0 1-1-1v-1a2 2 0 0 0-2-2H1a1 1 0 0 1-1-1v-5l6.4 3.3 1.5-1.6-4.2-8.4-1.4 1.4 3 5.9L0 8v-.4C0 3.4 3.4 0 7.5 0h5C16.6 0 20 3.4 20 7.5v4zM9 5.8L7.3 2.7l3.2 1.5-1.7 1.6zm-3.8-4l4 8.7 1.3-1.4-.9-1.9L12 4.8l1.9 1 1.4-1.5-8.7-4-1.4 1.5zM10.1 17l-1.9-2 1-1 .6-.4.5-.3h.6l.6.4.3.6v.6c0 .2 0 .3-.2.5l-.4.5-1.1 1z' />
+						</svg>
+						<svg class='bonus-rotator-item sticker' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 20'>
+							<path fill-rule='evenodd' d='M11.6 1.6l-.7.6-.9-.9.5-.4c.3 0 .7.3 1 .5v.2zm.6.6l1 1-.6.7-1-1 .6-.7zM14 4l1.6 1.6-1.5 1.5 2.5 2.6c0 .4 0 1 .4 1.3l.3.3c.4.4.4 1 0 1.4l-5.9 5.9a2 2 0 0 1-1.5.6l-2.6-5.3-1 1L8.2 18 4 14l.3-.4-2.6-5.3.8-.8L5 12.9l1-.8-.7-1.3 1.5-1.5 1.3.6L9 9 3.5 6.5 5 5l4 4 .9-1-1.5-1.4 1-.9.5-.8.2-.7-.2-.6a2.2 2.2 0 0 0-1-1 1.6 1.6 0 0 0-1.4 0h-.2l1.2-1 4 4L14 4zm2.3 2.3l1 1-.7.6-.9-1 .6-.6zm1.3 2l-.2.3h-.1l.3-.3zM2.4 12.4l-1-1a2 2 0 0 1-.5-2l1.5 3zm2.5-2.5L4 8l2 1-1 1zm2.9-4L6.5 4.7l.7-.7.3-.2.4-.2h.3c.2 0 .3.1.4.3l.3.3v.4l-.2.3-.3.4-.6.6zm2.8 9.7l-1-2 2 1-1 1zM8.2 13l2.5 5.6.9-.9-.6-1.2 1.5-1.5 1.2.6 1-1L9 12.2l-1 1zm5.2-1.4l-1.2-1.2.7-.7.3-.3.3-.1h.4l.4.2.2.4v.4l-.1.3-.3.3-.7.7zm-2.8-1l4 4 1-.9-1.5-1.4 1-1 .5-.7.1-.7c0-.3 0-.5-.2-.7a2.2 2.2 0 0 0-1-1 1.6 1.6 0 0 0-1.3 0l-.8.6-1.8 1.8z' />
+						</svg>
+						<svg class='bonus-rotator-item vape-band' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 10'>
+							<path fill-rule='evenodd' d='M2 0h16a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2C0 .9.9 0 2 0zM1 2h1.6l.7 4.5.6-4.5h1.7L4.3 8h-2L1 2zm6.8 1.2l-.4 2.6h.8l-.4-2.6zm1-1.2l1.4 6H8.6l-.2-1H7.2L7 8H5.4l1.4-6h2zM12 4.6h.3c.2 0 .3 0 .5-.2l.1-.5c0-.5-.2-.8-.6-.8H12v1.5zM10.4 2h2.4l.8.1a1.5 1.5 0 0 1 .8 1l.1.7c0 .7-.1 1.1-.5 1.4-.3.4-.8.5-1.4.5H12V8h-1.6V2zM15 2h3.6v1.3h-2v1h1.8v1.2h-1.8v1.2h2V8H15V2z' />
+						</svg>
+						<svg class='bonus-rotator-item wick' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 30'>
+							<path fill-rule='evenodd' d='M8.2 11.6L3 12.8a1 1 0 0 0-.8 1.2l2.6 12a1 1 0 0 0 1.2.8l7-1.6c.6-.1 1-.6.8-1.2v-.3L7 22.2a1 1 0 0 1-.8-1.2l2-9.4zM0 29V7l.3-.3c.4-.4.4-1 0-1.4L0 5V1c0-.6.4-1 1-1h18c.6 0 1 .4 1 1v4l-.3.3a1 1 0 0 0 0 1.4l.3.3v22c0 .6-.4 1-1 1H1a1 1 0 0 1-1-1zm8.2-17.4l1.8-.4a1 1 0 0 1 1.2.8l2.5 11.7h.3a1 1 0 0 0 1.2-.7l2.6-12a1 1 0 0 0-.8-1.2l-7-1.6a1 1 0 0 0-1.2.8l-.6 2.6z' />
+						</svg>
+						<svg class='bonus-rotator-item wick' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 30'>
+							<path fill-rule='evenodd' d='M11.8 23.4l-1.8.4a1 1 0 0 1-1.2-.8L6.3 11.3H6a1 1 0 0 0-1.2.7L2.2 24c-.1.6.2 1.1.8 1.2l7 1.6a1 1 0 0 0 1.2-.8l.6-2.6zM0 29V7l.3-.3c.4-.4.4-1 0-1.4L0 5V1c0-.6.4-1 1-1h18c.6 0 1 .4 1 1v4l-.3.3a1 1 0 0 0 0 1.4l.3.3v22c0 .6-.4 1-1 1H1a1 1 0 0 1-1-1zm11.8-5.6l5.2-1.2c.6-.1 1-.6.8-1.2L15.2 9a1 1 0 0 0-1.2-.8L7 9.8a1 1 0 0 0-.8 1.2v.3l6.8 1.5c.6.1 1 .6.8 1.2l-2 9.4z' />
+						</svg>
+						<svg class='bonus-rotator-item wire' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'>
+							<path fill-rule='evenodd' d='M1 0c.6 0 1 .4 1 1v18a1 1 0 1 1-2 0V1c0-.6.4-1 1-1zm3 0c.6 0 1 .4 1 1v8a1 1 0 0 1-2 0V1c0-.6.4-1 1-1zm3 0c.6 0 1 .4 1 1v8a1 1 0 1 1-2 0V1c0-.6.4-1 1-1zm3 0c.6 0 1 .4 1 1v8a1 1 0 0 1-2 0V1c0-.6.4-1 1-1zm3 0c.6 0 1 .4 1 1v8a1 1 0 1 1-2 0V1c0-.6.4-1 1-1zm3 0c.6 0 1 .4 1 1v8a1 1 0 0 1-2 0V1c0-.6.4-1 1-1zm3 0c.6 0 1 .4 1 1v18a1 1 0 1 1-2 0V1c0-.6.4-1 1-1z' />
+						</svg>
+						<svg class='bonus-rotator-item boxmod' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 40'>
+							<path fill-rule='evenodd' d='M2 0h16a2 2 0 0 1 2 2v36a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2C0 .9.9 0 2 0zm7.4 36a1 1 0 0 0-.7.3L8 37a.6.6 0 0 0 .4 1h3.2a.6.6 0 0 0 .4-1l-.7-.7a1 1 0 0 0-.7-.3H9.4zm3.6-6a1 1 0 0 0-1 1v2c0 .6.4 1 1 1h2c.6 0 1-.4 1-1v-2c0-.6-.4-1-1-1h-2zm-8 0a1 1 0 0 0-1 1v2c0 .6.4 1 1 1h2c.6 0 1-.4 1-1v-2c0-.6-.4-1-1-1H5zm0-18a1 1 0 0 0-1 1v14c0 .6.4 1 1 1h10c.6 0 1-.4 1-1V13c0-.6-.4-1-1-1H5zm5-10a4 4 0 1 0 0 8 4 4 0 0 0 0-8z' /></svg>
+						<svg class='bonus-rotator-item boxmod' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 40'>
+							<path fill-rule='evenodd' d='M2 0h16a2 2 0 0 1 2 2v36a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2C0 .9.9 0 2 0zm7.4 36a1 1 0 0 0-.7.3L8 37a.6.6 0 0 0 .4 1h3.2a.6.6 0 0 0 .4-1l-.7-.7a1 1 0 0 0-.7-.3H9.4zm5.6-6a1 1 0 0 0-1 1v2c0 .6.4 1 1 1h2c.6 0 1-.4 1-1v-2c0-.6-.4-1-1-1h-2zM3 30a1 1 0 0 0-1 1v2c0 .6.4 1 1 1h2c.6 0 1-.4 1-1v-2c0-.6-.4-1-1-1H3zm6-18a1 1 0 0 0-1 1v14c0 .6.4 1 1 1h2c.6 0 1-.4 1-1V13c0-.6-.4-1-1-1H9zm0-8a1 1 0 0 0-1 1v2c0 .6.4 1 1 1h2c.6 0 1-.4 1-1V5c0-.6-.4-1-1-1H9z' /></svg>
+						<svg class='bonus-rotator-item boxmod' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 40'>
+							<path fill-rule='evenodd' d='M2 0h9l.3.3c.4.4 1 .4 1.4 0L13 0h5a2 2 0 0 1 2 2v24l-.3.3a1 1 0 0 0 0 1.4l.3.3v10a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2C0 .9.9 0 2 0zm12.5 2.5c-.3.3-.3.7 0 1l2 2a.7.7 0 0 0 1-1l-2-2a.7.7 0 0 0-1 0zm0 4c-.3.3-.3.7 0 1l2 2a.7.7 0 0 0 1-1l-2-2a.7.7 0 0 0-1 0zM15 11a1 1 0 0 0-1 1v12c0 .6.4 1 1 1h2c.6 0 1-.4 1-1V12c0-.6-.4-1-1-1h-2z' />
+						</svg>
+						<svg class='bonus-rotator-item juice' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 40'>
+							<path fill-rule='evenodd' d='M0 38V20.9a5 5 0 0 1 2.5-4.3l4-2.4c.3-.1.5-.4.5-.7 0-.3-.2-.5-.5-.5H5a1 1 0 0 1-1-1v-2c0-.6.4-1 1-1h.5C6.3 9 7 8.3 7 7.5V3a3 3 0 0 1 6 0v4.5c0 .8.7 1.5 1.5 1.5h.5c.6 0 1 .4 1 1v2c0 .6-.4 1-1 1h-1.5c-.3 0-.5.2-.5.5s.2.6.4.7l4 2.4a5 5 0 0 1 2.6 4.3V38a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm4 0h12a2 2 0 0 0 2-2V22.7a5 5 0 0 0-2.2-4.2L13.6 17a1 1 0 0 0-1.6.9V34a2 2 0 0 1-4 0V17.9a1 1 0 0 0-1.6-.9l-2.2 1.5A5 5 0 0 0 2 22.7V36c0 1.1.9 2 2 2z' />
+						</svg>
+						<svg class='bonus-rotator-item juice' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 40'>
+							<path fill-rule='evenodd' d='M0 38V17c0-1.1.9-2 2-2h2V5.7c0-.5.2-.9.4-1.2L7.7.4c.2-.3.5-.4.8-.4h3c.3 0 .6.1.8.4l3.3 4c.2.4.4.8.4 1.3V15h2a2 2 0 0 1 2 2v21a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm4-21a2 2 0 0 0-2 2v17c0 1.1.9 2 2 2h12a2 2 0 0 0 2-2V19a2 2 0 0 0-2-2H4z' />
+						</svg>
+						<svg class='bonus-rotator-item juice' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 60'>
+							<path fill-rule='evenodd' d='M0 58V17.4c0-.3.1-.5.3-.7l.2-.2c.3-.3.3-.7 0-1l-.2-.2a1 1 0 0 1-.3-.7V8.2a2 2 0 0 1 1.1-1.8l1-.4a10 10 0 0 0 3.3-2.7l2-2.5A2 2 0 0 1 9 0h2a2 2 0 0 1 1.6.8l2 2.5c1 1.1 2 2 3.4 2.7l.9.4A2 2 0 0 1 20 8.2v6.4c0 .3-.1.5-.3.7l-.2.2c-.3.3-.3.7 0 1l.2.2c.2.2.3.4.3.7V58a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm4 0h12a2 2 0 0 0 2-2V21a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v35c0 1.1.9 2 2 2z' />
+						</svg>
+						<svg class='bonus-rotator-item mechmod' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 60'>
+							<path fill-rule='evenodd' d='M2 0h16a2 2 0 0 1 2 2v24.4c0 .4-.2.7-.6.9l-.8.4a1 1 0 0 0-.6 1v2.7c0 .4.2.7.6.9l.8.4c.4.2.6.5.6 1V39l-.3.3a1 1 0 0 0 0 1.4l.3.3v17a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V41l.3-.3c.4-.4.4-1 0-1.4L0 39v-5.4c0-.4.2-.7.6-.9l.8-.4c.4-.2.6-.5.6-1v-2.7a1 1 0 0 0-.6-.9l-.8-.4a1 1 0 0 1-.6-1V2C0 .9.9 0 2 0z' />
+						</svg>
+						<svg class='bonus-rotator-item mechmod' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 60'>
+							<path fill-rule='evenodd' d='M2 0h16a2 2 0 0 1 2 2v8l-.3.3a1 1 0 0 0 0 1.4l.3.3a163 163 0 0 0 0 36l-.3.3a1 1 0 0 0 0 1.4l.3.3v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-8l.3-.3c.4-.4.4-1 0-1.4L0 48c1.3-12 1.3-24 0-36l.3-.3c.4-.4.4-1 0-1.4L0 10V2C0 .9.9 0 2 0z' />
+						</svg>
+						<svg class='bonus-rotator-item mechmod' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 60'>
+							<path fill-rule='evenodd' d='M2 0h16a2 2 0 0 1 2 2v7.2c0 .5-.2 1-.6 1.4l-.4.4c-.6.6-.6 1.4 0 2l.4.4c.4.4.6.9.6 1.4v12.4c0 .5-.2 1-.6 1.4l-.4.4c-.6.6-.6 1.4 0 2l.4.4c.4.4.6.9.6 1.4v12.4c0 .5-.2 1-.6 1.4l-.4.4c-.6.6-.6 1.4 0 2l.4.4c.4.4.6.9.6 1.4V58a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-7.2c0-.5.2-1 .6-1.4L1 49c.6-.6.6-1.4 0-2l-.4-.4a2 2 0 0 1-.6-1.4V32.8c0-.5.2-1 .6-1.4L1 31c.6-.6.6-1.4 0-2l-.4-.4a2 2 0 0 1-.6-1.4V14.8c0-.5.2-1 .6-1.4L1 13c.6-.6.6-1.4 0-2l-.4-.4A2 2 0 0 1 0 9.2V2C0 .9.9 0 2 0z' />
+						</svg>
+						<svg class='bonus-rotator-item rda' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 30'>
+							<path fill-rule='evenodd' fill-rule='evenodd' d='M0 26v-1l.3-.3c.4-.4.4-1 0-1.4L0 23V11l.3-.3c.4-.4.4-1 0-1.4L0 9V7.7c0-.4.2-.8.6-1L5 5V1c0-.6.4-1 1-1h8c.6 0 1 .4 1 1v4l4.4 1.7c.4.2.6.6.6 1V9l-.3.3a1 1 0 0 0 0 1.4l.3.3v12l-.3.3a1 1 0 0 0 0 1.4l.3.3v1c0 .6-.4 1-1 1h-6v1c0 .6-.4 1-1 1 0 .6-.4 1-1 1H9a1 1 0 0 1-1-1 1 1 0 0 1-1-1v-1H1a1 1 0 0 1-1-1zm5-11a2 2 0 1 1 0 4 2 2 0 1 1 0-4zm5 0a2 2 0 1 1 0 4 2 2 0 1 1 0-4zm5 0a2 2 0 1 1 0 4 2 2 0 1 1 0-4z' />
+						</svg>
+						<svg class='bonus-rotator-item rda' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 30'>
+							<path fill-rule='evenodd' d='M0 26v-3l.3-.3c.4-.4.4-1 0-1.4L0 21V7c0-1.1.9-2 2-2h3V1c0-.6.4-1 1-1h8c.6 0 1 .4 1 1v4h3a2 2 0 0 1 2 2v14l-.3.3a1 1 0 0 0 0 1.4l.3.3v3c0 .6-.4 1-1 1h-6v1c0 .6-.4 1-1 1 0 .6-.4 1-1 1H9a1 1 0 0 1-1-1 1 1 0 0 1-1-1v-1H1a1 1 0 0 1-1-1zm8-3a1 1 0 0 0 0 2h4a1 1 0 0 0 0-2H8z' />
+						</svg>
+						<svg class='bonus-rotator-item rda' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 30'>
+							<path fill-rule='evenodd' d='M0 26v-1l.3-.3c.4-.4.4-1 0-1.4L0 23V9l.3-.3c.4-.4.4-1 0-1.4L0 7V6c0-.6.4-1 1-1h4V1c0-.6.4-1 1-1h8c.6 0 1 .4 1 1v4h4c.6 0 1 .4 1 1v1l-.3.3a1 1 0 0 0 0 1.4l.3.3v14l-.3.3a1 1 0 0 0 0 1.4l.3.3v1c0 .6-.4 1-1 1h-6v1c0 .6-.4 1-1 1 0 .6-.4 1-1 1H9a1 1 0 0 1-1-1 1 1 0 0 1-1-1v-1H1a1 1 0 0 1-1-1zm10-10a1 1 0 1 0 0 2 1 1 0 0 0 0-2z' />
+						</svg>
+						<svg class='bonus-rotator-item rdta' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 40'>
+							<path fill-rule='evenodd' d='M0 36v-1l.3-.3c.4-.4.4-1 0-1.4L0 33V23l.3-.3c.4-.4.4-1 0-1.4L0 21V6c0-.6.4-1 1-1h4V1c0-.6.4-1 1-1h8c.6 0 1 .4 1 1v4h4c.6 0 1 .4 1 1v15l-.3.3a1 1 0 0 0 0 1.4l.3.3v10l-.3.3a1 1 0 0 0 0 1.4l.3.3v1c0 .6-.4 1-1 1h-6v1c0 .6-.4 1-1 1 0 .6-.4 1-1 1H9a1 1 0 0 1-1-1 1 1 0 0 1-1-1v-1H1a1 1 0 0 1-1-1zm2-4c0 .6.4 1 1 1h4c.6 0 1-.4 1-1v-8c0-.6-.4-1-1-1H3a1 1 0 0 0-1 1v8zm10 0c0 .6.4 1 1 1h4c.6 0 1-.4 1-1v-8c0-.6-.4-1-1-1h-4a1 1 0 0 0-1 1v8zm4-19c0-.6-.4-1-1-1H5a1 1 0 0 0 0 2h10c.6 0 1-.4 1-1z' />
+						</svg>
+						<svg class='bonus-rotator-item rdta' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 40'>
+							<path fill-rule='evenodd' d='M0 36v-1l.3-.3c.4-.4.4-1 0-1.4L0 33v-9l.3-.3c.4-.4.4-1 0-1.4L0 22V12h1a1 1 0 0 0 0-2H0V7.7c0-.4.2-.8.6-1L5 5V1c0-.6.4-1 1-1h8c.6 0 1 .4 1 1v4l4.4 1.7c.4.2.6.6.6 1V10h-1a1 1 0 0 0 0 2h1v10l-.3.3a1 1 0 0 0 0 1.4l.3.3v9l-.3.3a1 1 0 0 0 0 1.4l.3.3v1c0 .6-.4 1-1 1h-6v1c0 .6-.4 1-1 1 0 .6-.4 1-1 1H9a1 1 0 0 1-1-1 1 1 0 0 1-1-1v-1H1a1 1 0 0 1-1-1zm2-5c0 .6.4 1 1 1h4c.6 0 1-.4 1-1v-5c0-.6-.4-1-1-1H3a1 1 0 0 0-1 1v5zm10 0c0 .6.4 1 1 1h4c.6 0 1-.4 1-1v-5c0-.6-.4-1-1-1h-4a1 1 0 0 0-1 1v5z' />
+						</svg>
+						<svg class='bonus-rotator-item rdta' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 40'>
+							<path fill-rule='evenodd' d='M0 36v-1l.3-.3c.4-.4.4-1 0-1.4L0 33V20l.3-.3c.4-.4.4-1 0-1.4L0 18v-8a5 5 0 0 1 5-5V1c0-.6.4-1 1-1h8c.6 0 1 .4 1 1v4a5 5 0 0 1 5 5v8l-.3.3a1 1 0 0 0 0 1.4l.3.3v13l-.3.3a1 1 0 0 0 0 1.4l.3.3v1c0 .6-.4 1-1 1h-6v1c0 .6-.4 1-1 1 0 .6-.4 1-1 1H9a1 1 0 0 1-1-1 1 1 0 0 1-1-1v-1H1a1 1 0 0 1-1-1zm5-21a1 1 0 1 0 0 2h10a1 1 0 1 0 0-2H5zM2 32c0 .6.4 1 1 1h4c.6 0 1-.4 1-1V22c0-.5-.4-1-1-1H3a1 1 0 0 0-1 1v10zm10 0c0 .6.4 1 1 1h4c.6 0 1-.4 1-1V22c0-.5-.4-1-1-1h-4a1 1 0 0 0-1 1v10z' />
+						</svg>
+						<svg class='bonus-rotator-item rta' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 40'>
+							<path fill-rule='evenodd' d='M0 36v-3l.3-.3c.4-.4.4-1 0-1.4L0 31V11l.3-.3c.4-.4.4-1 0-1.4L0 9V7.7c0-.4.2-.8.6-1L5 5V1c0-.6.4-1 1-1h8c.6 0 1 .4 1 1v4l4.4 1.7c.4.2.6.6.6 1V9l-.3.3a1 1 0 0 0 0 1.4l.3.3v20l-.3.3a1 1 0 0 0 0 1.4l.3.3v3c0 .6-.4 1-1 1h-6v1c0 .6-.4 1-1 1 0 .6-.4 1-1 1H9a1 1 0 0 1-1-1 1 1 0 0 1-1-1v-1H1a1 1 0 0 1-1-1zm2-6c0 .6.4 1 1 1h1c.6 0 1-.4 1-1V20c0-.6.4-1 1-1h1c.6 0 1-.4 1-1v-5c0-.6-.4-1-1-1H3a1 1 0 0 0-1 1v17zm16 0V13c0-.6-.4-1-1-1h-4a1 1 0 0 0-1 1v5c0 .6.4 1 1 1h1c.6 0 1 .4 1 1v10c0 .6.4 1 1 1h1c.6 0 1-.4 1-1zm-9-1a1 1 0 0 0 0 2h2a1 1 0 0 0 0-2H9zm-1 4a1 1 0 0 0 0 2h4a1 1 0 0 0 0-2H8z' />
+						</svg>
+						<svg class='bonus-rotator-item rta' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 40'>
+							<path fill-rule='evenodd' d='M0 36v-1l.3-.3c.4-.4.4-1 0-1.4L0 33V11l.3-.3c.4-.4.4-1 0-1.4L0 9V6c0-.6.4-1 1-1h4V1c0-.6.4-1 1-1h8c.6 0 1 .4 1 1v4h4c.6 0 1 .4 1 1v3l-.3.3a1 1 0 0 0 0 1.4l.3.3v22l-.3.3a1 1 0 0 0 0 1.4l.3.3v1c0 .6-.4 1-1 1h-6v1c0 .6-.4 1-1 1 0 .6-.4 1-1 1H9a1 1 0 0 1-1-1 1 1 0 0 1-1-1v-1H1a1 1 0 0 1-1-1zM8 7a1 1 0 0 0 0 2h4a1 1 0 0 0 0-2H8zM2 30c0 .6.4 1 1 1h1c.6 0 1-.4 1-1v-6c0-.6.4-1 1-1h1c.6 0 1-.4 1-1v-9c0-.6-.4-1-1-1H3a1 1 0 0 0-1 1v17zm16 0V13c0-.6-.4-1-1-1h-4a1 1 0 0 0-1 1v9c0 .6.4 1 1 1h1c.6 0 1 .4 1 1v6c0 .6.4 1 1 1h1c.6 0 1-.4 1-1zM8 29c.6 0 1 .4 1 1s-.4 1-1 1a1 1 0 0 1 0-2zm4 0c.6 0 1 .4 1 1s-.4 1-1 1a1 1 0 0 1 0-2z' />
+						</svg>
+						<svg class='bonus-rotator-item rta' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 40'>
+							<path fill-rule='evenodd' d='M0 36v-3l.3-.3c.4-.4.4-1 0-1.4L0 31V13l.3-.3c.4-.4.4-1 0-1.4L0 11V9.5c0-.3.1-.6.4-.8L5 5V1c0-.6.4-1 1-1h8c.6 0 1 .4 1 1v4l4.6 3.7c.3.2.4.5.4.8V11l-.3.3a1 1 0 0 0 0 1.4l.3.3v18l-.3.3a1 1 0 0 0 0 1.4l.3.3v3c0 .6-.4 1-1 1h-6v1c0 .6-.4 1-1 1 0 .6-.4 1-1 1H9a1 1 0 0 1-1-1 1 1 0 0 1-1-1v-1H1a1 1 0 0 1-1-1zm2-6c0 .6.4 1 1 1h1c.6 0 1-.4 1-1v-7.2c0-1.1.6-2.2 1.5-2.8 1-.6 1.5-1.7 1.5-2.8V16c0-.6-.4-1-1-1H3a1 1 0 0 0-1 1v14zm16 0V16c0-.6-.4-1-1-1h-4a1 1 0 0 0-1 1v1.2c0 1.1.6 2.2 1.5 2.8 1 .6 1.5 1.7 1.5 2.8V30c0 .6.4 1 1 1h1c.6 0 1-.4 1-1zM8 25a1 1 0 0 0-1 1v4a1 1 0 1 0 2 0v-4c0-.6-.4-1-1-1zm4 0a1 1 0 0 0-1 1v4a1 1 0 1 0 2 0v-4c0-.6-.4-1-1-1zm-9 8a1 1 0 1 0 0 2h14a1 1 0 1 0 0-2H3z' />
+						</svg>
+						<svg class='bonus-rotator-item sticker' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'>
+							<path fill-rule='evenodd' d='M15.2 0l-2.8 2.9 5 5L20 5.4V15c0 .6-.4 1-1 1h-1a2 2 0 0 0-2 2v1c0 .6-.4 1-1 1H2a2 2 0 0 1-2-2v-1.3l5.8 2.9 1-1-3.3-6.8-1.1 1 2.7 5-5-2.7-.1.1V2C0 .9.9 0 2 0h13.2zM17 0h1a2 2 0 0 1 2 2v1.6L17.6 6l-1.3-1.3 2.4-2.5-.8-.9-2.5 2.5-1.1-1L17 0zM7.8 13.8L6.4 11l2.7 1.4-1.3 1.3zm-3.1-3.3l3.2 7 1.2-1.2-.7-1.4 1.8-1.8 1.4.7 1.2-1.2-7-3.3-1.1 1.2zM12.5 6c.2.3.3.5.3.8 0 .3-.1.5-.4.8l-1 1L10 7l1-1 .8-.5c.2 0 .5.1.8.4zm1-1c-.5-.6-1.1-.9-1.7-.8-.5 0-1 .3-1.6.8L8 7.2l5 5.1 1.1-1-1.8-1.9 1-1c.7-.6 1-1.2 1-1.7 0-.6-.2-1.2-.8-1.8z' />
+						</svg>
+						<svg class='bonus-rotator-item sticker' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'>
+							<path fill-rule='evenodd' d='M20 11.4l-2.2 2.2-1.5-1.5 3-3-1-1.2-3.1 3-1.4-1.3 3.4-3.3L16 5.1 11.3 10l6.3 6.3 2.3-2.3a7.5 7.5 0 0 1-6.8 6l-2-1.8 1.5-1.5.9-1.2.2-1.1c0-.4-.1-.7-.3-1a3.4 3.4 0 0 0-1.5-1.5 2.5 2.5 0 0 0-2.1 0c-.4 0-.8.4-1.2.8l-2.9 2.8 4.6 4.6H5a1 1 0 0 1-1-1v-1a2 2 0 0 0-2-2H1a1 1 0 0 1-1-1v-5l6.4 3.3 1.5-1.6-4.2-8.4-1.4 1.4 3 5.9L0 8v-.4C0 3.4 3.4 0 7.5 0h5C16.6 0 20 3.4 20 7.5v4zM9 5.8L7.3 2.7l3.2 1.5-1.7 1.6zm-3.8-4l4 8.7 1.3-1.4-.9-1.9L12 4.8l1.9 1 1.4-1.5-8.7-4-1.4 1.5zM10.1 17l-1.9-2 1-1 .6-.4.5-.3h.6l.6.4.3.6v.6c0 .2 0 .3-.2.5l-.4.5-1.1 1z' />
+						</svg>
+						<svg class='bonus-rotator-item sticker' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 20'>
+							<path fill-rule='evenodd' d='M11.6 1.6l-.7.6-.9-.9.5-.4c.3 0 .7.3 1 .5v.2zm.6.6l1 1-.6.7-1-1 .6-.7zM14 4l1.6 1.6-1.5 1.5 2.5 2.6c0 .4 0 1 .4 1.3l.3.3c.4.4.4 1 0 1.4l-5.9 5.9a2 2 0 0 1-1.5.6l-2.6-5.3-1 1L8.2 18 4 14l.3-.4-2.6-5.3.8-.8L5 12.9l1-.8-.7-1.3 1.5-1.5 1.3.6L9 9 3.5 6.5 5 5l4 4 .9-1-1.5-1.4 1-.9.5-.8.2-.7-.2-.6a2.2 2.2 0 0 0-1-1 1.6 1.6 0 0 0-1.4 0h-.2l1.2-1 4 4L14 4zm2.3 2.3l1 1-.7.6-.9-1 .6-.6zm1.3 2l-.2.3h-.1l.3-.3zM2.4 12.4l-1-1a2 2 0 0 1-.5-2l1.5 3zm2.5-2.5L4 8l2 1-1 1zm2.9-4L6.5 4.7l.7-.7.3-.2.4-.2h.3c.2 0 .3.1.4.3l.3.3v.4l-.2.3-.3.4-.6.6zm2.8 9.7l-1-2 2 1-1 1zM8.2 13l2.5 5.6.9-.9-.6-1.2 1.5-1.5 1.2.6 1-1L9 12.2l-1 1zm5.2-1.4l-1.2-1.2.7-.7.3-.3.3-.1h.4l.4.2.2.4v.4l-.1.3-.3.3-.7.7zm-2.8-1l4 4 1-.9-1.5-1.4 1-1 .5-.7.1-.7c0-.3 0-.5-.2-.7a2.2 2.2 0 0 0-1-1 1.6 1.6 0 0 0-1.3 0l-.8.6-1.8 1.8z' />
+						</svg>
+						<svg class='bonus-rotator-item vape-band' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 10'>
+							<path fill-rule='evenodd' d='M2 0h16a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2C0 .9.9 0 2 0zM1 2h1.6l.7 4.5.6-4.5h1.7L4.3 8h-2L1 2zm6.8 1.2l-.4 2.6h.8l-.4-2.6zm1-1.2l1.4 6H8.6l-.2-1H7.2L7 8H5.4l1.4-6h2zM12 4.6h.3c.2 0 .3 0 .5-.2l.1-.5c0-.5-.2-.8-.6-.8H12v1.5zM10.4 2h2.4l.8.1a1.5 1.5 0 0 1 .8 1l.1.7c0 .7-.1 1.1-.5 1.4-.3.4-.8.5-1.4.5H12V8h-1.6V2zM15 2h3.6v1.3h-2v1h1.8v1.2h-1.8v1.2h2V8H15V2z' />
+						</svg>
+						<svg class='bonus-rotator-item wick' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 30'>
+							<path fill-rule='evenodd' d='M8.2 11.6L3 12.8a1 1 0 0 0-.8 1.2l2.6 12a1 1 0 0 0 1.2.8l7-1.6c.6-.1 1-.6.8-1.2v-.3L7 22.2a1 1 0 0 1-.8-1.2l2-9.4zM0 29V7l.3-.3c.4-.4.4-1 0-1.4L0 5V1c0-.6.4-1 1-1h18c.6 0 1 .4 1 1v4l-.3.3a1 1 0 0 0 0 1.4l.3.3v22c0 .6-.4 1-1 1H1a1 1 0 0 1-1-1zm8.2-17.4l1.8-.4a1 1 0 0 1 1.2.8l2.5 11.7h.3a1 1 0 0 0 1.2-.7l2.6-12a1 1 0 0 0-.8-1.2l-7-1.6a1 1 0 0 0-1.2.8l-.6 2.6z' />
+						</svg>
+						<svg class='bonus-rotator-item wick' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 30'>
+							<path fill-rule='evenodd' d='M11.8 23.4l-1.8.4a1 1 0 0 1-1.2-.8L6.3 11.3H6a1 1 0 0 0-1.2.7L2.2 24c-.1.6.2 1.1.8 1.2l7 1.6a1 1 0 0 0 1.2-.8l.6-2.6zM0 29V7l.3-.3c.4-.4.4-1 0-1.4L0 5V1c0-.6.4-1 1-1h18c.6 0 1 .4 1 1v4l-.3.3a1 1 0 0 0 0 1.4l.3.3v22c0 .6-.4 1-1 1H1a1 1 0 0 1-1-1zm11.8-5.6l5.2-1.2c.6-.1 1-.6.8-1.2L15.2 9a1 1 0 0 0-1.2-.8L7 9.8a1 1 0 0 0-.8 1.2v.3l6.8 1.5c.6.1 1 .6.8 1.2l-2 9.4z' />
+						</svg>
+						<svg class='bonus-rotator-item wire' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'>
+							<path fill-rule='evenodd' d='M1 0c.6 0 1 .4 1 1v18a1 1 0 1 1-2 0V1c0-.6.4-1 1-1zm3 0c.6 0 1 .4 1 1v8a1 1 0 0 1-2 0V1c0-.6.4-1 1-1zm3 0c.6 0 1 .4 1 1v8a1 1 0 1 1-2 0V1c0-.6.4-1 1-1zm3 0c.6 0 1 .4 1 1v8a1 1 0 0 1-2 0V1c0-.6.4-1 1-1zm3 0c.6 0 1 .4 1 1v8a1 1 0 1 1-2 0V1c0-.6.4-1 1-1zm3 0c.6 0 1 .4 1 1v8a1 1 0 0 1-2 0V1c0-.6.4-1 1-1zm3 0c.6 0 1 .4 1 1v18a1 1 0 1 1-2 0V1c0-.6.4-1 1-1z' />
+						</svg>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class='slide delivery'>
+			<div class='side left'>
+				<h2>Where to</h2>
+				<p>We ship to all of Europe expect Strana and Strana. In takes about 1 week and costs around 10 valuyta.</p>
+				<form id='adress-selector' class='address-selector'>
+					<button id='get-location-button' type='button' class='address-selector-geo-button'>
+						📍️ Get my location
+						<span class='overlay'></span>
+					</button>
+					<fieldset>
+						<div class='address-selector-country'>
+							<label>
+								<input type='radio' name='country' value='Albania'>
+								<span class='address-selector-country-item flag'>🇦🇱</span>
+								<span class='address-selector-country-item country'>Albania</span>
+								<span class='overlay'></span>
+							</label>
+							<label>
+								<input type='radio' name='country' value='Austria'>
+								<span class='address-selector-country-item flag'>🇦🇹</span>
+								<span class='address-selector-country-item country'>Austria</span>
+								<span class='overlay'></span>
+							</label>
+							<label>
+								<input type='radio' name='country' value='Belgium'>
+								<span class='address-selector-country-item flag'>🇧🇪</span>
+								<span class='address-selector-country-item'>Belgium</span>
+								<span class='overlay'></span>
+							</label>
+							<label>
+								<input type='radio' name='country' value='BosniaAndHerzegovina'>
+								<span class='address-selector-country-item flag'>🇧🇦</span>
+								<span class='address-selector-country-item'>Bosnia and Herzegovina</span>
+								<span class='overlay'></span>
+							</label>
+							<label>
+								<input type='radio' name='country' value='Bulgaria'>
+								<span class='address-selector-country-item flag'>🇧🇬</span>
+								<span class='address-selector-country-item'>Bulgaria</span>
+								<span class='overlay'></span>
+							</label>
+							<label>
+								<input type='radio' name='country' value='Croatia'>
+								<span class='address-selector-country-item flag'>🇭🇷</span>
+								<span class='address-selector-country-item'>Croatia</span>
+								<span class='overlay'></span>
+							</label>
+							<label>
+								<input type='radio' name='country' value='Cyprus'>
+								<span class='address-selector-country-item flag'>🇨🇾</span>
+								<span class='address-selector-country-item'>Cyprus</span>
+								<span class='overlay'></span>
+							</label>
+							<label>
+								<input type='radio' name='country' value='Czechia'>
+								<span class='address-selector-country-item flag'>🇨🇿</span>
+								<span class='address-selector-country-item'>Czechia</span>
+								<span class='overlay'></span>
+							</label>
+							<label>
+								<input type='radio' name='country' value='Denmark'>
+								<span class='address-selector-country-item flag'>🇩🇰</span>
+								<span class='address-selector-country-item'>Denmark</span>
+								<span class='overlay'></span>
+							</label>
+							<label>
+								<input type='radio' name='country' value='Estonia'>
+								<span class='address-selector-country-item flag'>🇪🇪</span>
+								<span class='address-selector-country-item'>Estonia</span>
+								<span class='overlay'></span>
+							</label>
+							<label>
+								<input type='radio' name='country' value='Finland'>
+								<span class='address-selector-country-item flag'>🇫🇮</span>
+								<span class='address-selector-country-item'>Finland</span>
+								<span class='overlay'></span>
+							</label>
+							<label>
+								<input type='radio' name='country' value='France'>
+								<span class='address-selector-country-item flag'>🇫🇷</span>
+								<span class='address-selector-country-item'>France</span>
+								<span class='overlay'></span>
+							</label>
+							<label>
+								<input type='radio' name='country' value='Germany'>
+								<span class='address-selector-country-item flag'>🇩🇪</span>
+								<span class='address-selector-country-item'>Germany</span>
+								<span class='overlay'></span>
+							</label>
+							<label>
+								<input type='radio' name='country' value='Greece'>
+								<span class='address-selector-country-item flag'>🇬🇷</span>
+								<span class='address-selector-country-item'>Greece</span>
+								<span class='overlay'></span>
+							</label>
+							<label>
+								<input type='radio' name='country' value='Hungary'>
+								<span class='address-selector-country-item flag'>🇭🇺</span>
+								<span class='address-selector-country-item'>Hungary</span>
+								<span class='overlay'></span>
+							</label>
+							<label>
+								<input type='radio' name='country' value='Iceland'>
+								<span class='address-selector-country-item flag'>🇮🇸</span>
+								<span class='address-selector-country-item'>Iceland</span>
+								<span class='overlay'></span>
+							</label>
+							<label>
+								<input type='radio' name='country' value='Ireland'>
+								<span class='address-selector-country-item flag'>🇮🇪</span>
+								<span class='address-selector-country-item'>Ireland</span>
+								<span class='overlay'></span>
+							</label>
+							<label>
+								<input type='radio' name='country' value='Italy'>
+								<span class='address-selector-country-item flag'>🇮🇹</span>
+								<span class='address-selector-country-item'>Italy</span>
+								<span class='overlay'></span>
+							</label>
+							<label>
+								<input type='radio' name='country' value='Kosovo'>
+								<span class='address-selector-country-item flag'>🇽🇰</span>
+								<span class='address-selector-country-item'>Kosovo</span>
+								<span class='overlay'></span>
+							</label>
+							<label>
+								<input type='radio' name='country' value='Latvia'>
+								<span class='address-selector-country-item flag'>🇱🇻</span>
+								<span class='address-selector-country-item'>Latvia</span>
+								<span class='overlay'></span>
+							</label>
+							<label>
+								<input type='radio' name='country' value='Liechtenstein'>
+								<span class='address-selector-country-item flag'>🇱🇮</span>
+								<span class='address-selector-country-item'>Liechtenstein</span>
+								<span class='overlay'></span>
+							</label>
+							<label>
+								<input type='radio' name='country' value='Lithuania'>
+								<span class='address-selector-country-item flag'>🇱🇹</span>
+								<span class='address-selector-country-item'>Lithuania</span>
+								<span class='overlay'></span>
+							</label>
+							<label>
+								<input type='radio' name='country' value='Luxembourg'>
+								<span class='address-selector-country-item flag'>🇱🇺</span>
+								<span class='address-selector-country-item'>Luxembourg</span>
+								<span class='overlay'></span>
+							</label>
+							<label>
+								<input type='radio' name='country' value='Macedonia'>
+								<span class='address-selector-country-item flag'>🇲🇰</span>
+								<span class='address-selector-country-item'>Macedonia</span>
+								<span class='overlay'></span>
+							</label>
+							<label>
+								<input type='radio' name='country' value='Malta'>
+								<span class='address-selector-country-item flag'>🇲🇹</span>
+								<span class='address-selector-country-item'>Malta</span>
+								<span class='overlay'></span>
+							</label>
+							<label>
+								<input type='radio' name='country' value='Moldavia'>
+								<span class='address-selector-country-item flag'>🇲🇩</span>
+								<span class='address-selector-country-item'>Moldavia</span>
+								<span class='overlay'></span>
+							</label>
+							<label>
+								<input type='radio' name='country' value='Monaco'>
+								<span class='address-selector-country-item flag'>🇲🇨</span>
+								<span class='address-selector-country-item'>Monaco</span>
+								<span class='overlay'></span>
+							</label>
+							<label>
+								<input type='radio' name='country' value='Montenegro'>
+								<span class='address-selector-country-item flag'>🇲🇪</span>
+								<span class='address-selector-country-item'>Montenegro</span>
+								<span class='overlay'></span>
+							</label>
+							<label>
+								<input type='radio' name='country' value='Netherlands'>
+								<span class='address-selector-country-item flag'>🇳🇱</span>
+								<span class='address-selector-country-item'>Netherlands</span>
+								<span class='overlay'></span>
+							</label>
+							<label>
+								<input type='radio' name='country' value='Norway'>
+								<span class='address-selector-country-item flag'>🇳🇴</span>
+								<span class='address-selector-country-item'>Norway</span>
+								<span class='overlay'></span>
+							</label>
+							<label>
+								<input type='radio' name='country' value='Poland'>
+								<span class='address-selector-country-item flag'>🇵🇱</span>
+								<span class='address-selector-country-item'>Poland</span>
+								<span class='overlay'></span>
+							</label>
+							<label>
+								<input type='radio' name='country' value='Portugal'>
+								<span class='address-selector-country-item flag'>🇵🇹</span>
+								<span class='address-selector-country-item'>Portugal</span>
+								<span class='overlay'></span>
+							</label>
+							<label>
+								<input type='radio' name='country' value='Romania'>
+								<span class='address-selector-country-item flag'>🇷🇴</span>
+								<span class='address-selector-country-item'>Romania</span>
+								<span class='overlay'></span>
+							</label>
+							<label>
+								<input type='radio' name='country' value='SanMarino'>
+								<span class='address-selector-country-item flag'>🇸🇲</span>
+								<span class='address-selector-country-item'>San Marino</span>
+								<span class='overlay'></span>
+							</label>
+							<label>
+								<input type='radio' name='country' value='Serbia'>
+								<span class='address-selector-country-item flag'>🇷🇸</span>
+								<span class='address-selector-country-item'>Serbia</span>
+								<span class='overlay'></span>
+							</label>
+							<label>
+								<input type='radio' name='country' value='Slovakia'>
+								<span class='address-selector-country-item flag'>🇸🇰</span>
+								<span class='address-selector-country-item'>Slovakia</span>
+								<span class='overlay'></span>
+							</label>
+							<label>
+								<input type='radio' name='country' value='Slovenia'>
+								<span class='address-selector-country-item flag'>🇸🇮</span>
+								<span class='address-selector-country-item'>Slovenia</span>
+								<span class='overlay'></span>
+							</label>
+							<label>
+								<input type='radio' name='country' value='Spain'>
+								<span class='address-selector-country-item flag'>🇪🇸</span>
+								<span class='address-selector-country-item'>Spain</span>
+								<span class='overlay'></span>
+							</label>
+							<label>
+								<input type='radio' name='country' value='Sweden'>
+								<span class='address-selector-country-item flag'>🇸🇪</span>
+								<span class='address-selector-country-item'>Sweden</span>
+								<span class='overlay'></span>
+							</label>
+							<label>
+								<input type='radio' name='country' value='Switzerland'>
+								<span class='address-selector-country-item flag'>🇨🇭</span>
+								<span class='address-selector-country-item'>Switzerland</span>
+								<span class='overlay'></span>
+							</label>
+							<label>
+								<input type='radio' name='country' value='UK'>
+								<span class='address-selector-country-item flag'>🇬🇧</span>
+								<span class='address-selector-country-item'>UK</span>
+								<span class='overlay'></span>
+							</label>
+							<label>
+								<input type='radio' name='country' value='Vatican'>
+								<span class='address-selector-country-item flag'>🇻🇦</span>
+								<span class='address-selector-country-item'>Vatican</span>
+								<span class='overlay'></span>
+							</label>
+						</div>
+					</fieldset>
+					<fieldset>
+						<div class='address-selector-address'>
+							<label class='address-selector-address-block address'>
+								<input id='address-input' type='text' name='address' class='address-selector-address-item input' placeholder='City, street, building, apt etc.'>
+								<span class='address-selector-address-item description'>Address</span>
+							</label>
+							<label class='address-selector-address-block postal'>
+								<input id='zip-code-input' type='number' pattern='[0-9]*' inputmode='numeric' name='postal' class='address-selector-address-item input' placeholder='Postal code'>
+								<span class='address-selector-address-item description'>Postal code</span>
+							</label>
+						</div>
+					</fieldset>
+				</form>
+			</div>
+			<div class='side right'>
+				<svg id='changer-map' class='changer-map' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 422 415" fill="hsla(0, 0%, 0%, .2)">
+					<path id="path-albania" d="M286 346l-6-7-3-7 2-8 2-1 2 5 3 1 4 9 6 4-5 9z" />
+					<path id="path-austria" d="M196 286l18-5 2-12 11-2 6-4 10-2 3 9-6 3v10l-9 4-4 4-4-1-7-1-9-3-9 3z" />
+					<path id="path-belgium" d="M142 258l-5-7-6-2 5-6 4 1 5-1 7 1 5 4v8l-2 7z" />
+					<path id="path-bosnia-and-herzegovina" d="M260 323l-15-10-5-8 8-3 13-1 4 1 5 7 1 6-7 9z" />
+					<path id="path-bulgaria" d="M305 323l-5-1 2-9-2-11 13-2 12-7 12-5 7 1v4l-2 6v7l-8 13-21 8z" />
+					<path id="path-croatia" d="M245 322l-8-7 1-1-4-4-2-4-3 2-4-1v-4l5-2 2 1 4-1 2-6 5-8 3 1 6 4 4 1 6-3v6l2 5-3-1-13 1-9 3v2l5 8 15 10h-4l-6-4z" />
+					<path id="path-cyprus" d="M407 379l7 3 8-8-5 2h-7z" />
+					<path id="path-czechia" d="M216 268l-7-11-1-7 16-12 19 8 14 3-8 7-6 4-10 2-6 4z" />
+					<path id="path-denmark" d="M173 204l-4-11v-11l10-8 4 1-1 10 2 3-4 4-2 10 2 4-7-2zm7-5l2-4 3 4-2 4-3-4zm10 4l-1-4h-2l-1-5 2-3 1 3h1l1-3 3-2 1 7-3 3v3l-2 1zm18-5l4 1-2 2-3-1 1-2zM76 122v-2h4l-2 3-2-1z" />
+					<path id="path-estonia" d="M246 145l5-4 4 2-4 3-5-1zm14 1v-3l-7-5 1-7 10-7 12-1 4 14 3 4-4 3-19 2zm-14-9l2-1 2 3-4 1v-3z" />
+					<path id="path-finland" d="M232 115l-7-16 11-29-11-22-16-13-5-2 2-2 7 1 7-4 1-14 6-1 13 17 22 40 12 11-4 23-10 13-15 10z" />
+					<path id="path-france" d="M187 346l5-7 2 7-1 8-6-8zm-58 0l-6-4h-12l-10-8 5-27-10-16-14-5-1-3v-5l4-2 12 2 7-3-1-8 8 3 10-6 9-14 6 2 5 7 10 4 11 4 14 4-4 15-8 8-2 5 1 3 8 2-2 5 2 12 5 7-1 1-2-1-3 3 1 2-13 3-9-2-8 4v8h-12z" />
+					<path id="path-germany" d="M174 286l3-16-15-4-4-11v-9l5-13v-11l2-4 7 4 4-8-2-4-1-5 14 4 21 2 4 6v4l11 16-16 12 1 8 7 11-2 12-22 6z" />
+					<path id="path-greece" d="M332 395l4-3 22-3-6 4-16 3-4-1zm-21-13l-3-8-5-3 3-3 8-1 6-2-15 2-13-15 9-16 13-8 20-8 3 13-6-5-13 6 3 4-12 6 10 8-4 6 7 3 6 2v6l-4-3-4 3 3 3-5 1 4 10-11-1zm46-3l4-4v4l-3 3-1-3zm-40-21l3-4 10 5 3 5-2 1-3-3-11-4z" />
+					<path id="path-hungary" d="M252 291l-5-4-3-1-3-2v-10l6-3 10-2 1-4 14-10 6 2 3-2 6 3-5 10-5 13-6 1-15 10z" />
+					<path id="path-iceland" d="M16 94l-8-8H4l-1-9-3-5h10l-1-5-7-3 4-1v-3l5 3-1-3 3-1 1 13 6-5 10 3 1-2 10-3v2l5 12-1 8-11 5-11 3z" />
+					<path id="path-ireland" d="M49 241l-4-5h-2l5-3-3-1 3-5 1-8v-9l10-2 2-2 1-5 6-1-5 6 3 6 3-2 3 5-1 17-10 4-9 6z" />
+					<path id="path-italy" fill-rule="evenodd" d="M256 379l2-7-9-11-48-27-6-11-8-3-10 7-5-6-2-12 2-5 10-5 2 2h4l1-2h7l2-9 9-3 9 3 6 1-1 8-8 4 1 9 10 12 6 9 12 8 6-1 3 4 17 5 7 7-3 1-6-4-7 6 5 9-3 10-4 5-1-4zm-40-57l2 3 3-2-2-2-3 1zm8 24l2 1 2-2-2-1-2 2zm-34 34l-3-14v-4l4-3 8 12-2 7-7 2zm52 16l-15-9 18-2 6-3v5l1 10-10-1z" />
+					<path id="path-kosovo" d="M282 323l2 4 3 1 7-3 1-6-4 1-6-4z" />
+					<path id="path-latvia" d="M245 170v-7l5-10 7 5 5-2-2-9 19-2 4-3 9 14-4 4-23 2z" />
+					<path id="path-liechtenstein" d="M194 289h3l-2-3-2 1z" />
+					<path id="path-lithuania" d="M268 189l-5 1-1-7h-10l-7-12 20-8 23-2-7 16-8 18z" />
+					<path id="path-luxembourg" d="M156 263l2-6 2 8z" />
+					<path id="path-macedonia" d="M291 337l-4-8 13-6 5 1 7 4-12 7-4 6z" />
+					<path id="path-malta" d="M247 412l-2-3 4-1 2 4h-4zm-3-3l-2 1-1-2 2-1 1 2z" />
+					<path id="path-moldavia" d="M334 269l3-15-15-15-8 8 14 9z" />
+					<path id="path-monaco" d="M171 331l1 1 2-2-1-1z" />
+					<path id="path-montenegro" d="M265 325l7-9 4 3 4 1 1 2-3 2-2 8-5-5z" />
+					<path id="path-netherlands" d="M145 242l-5 1-3-1 4-5 4-12 2-1v6l5-1 1-9 6-2 3 4v11l-5 14-5-4z" />
+					<path id="path-norway" d="M149 160l2-5-2-4-3 1 3-10-4-2 11-3-11-1-1-6 2-5 4-1v-8l8-5 1-5 14-9-6 1 4-7 5-9V66l7-17 5-6-10 1 3-5 8-2-3-4 8-6 4 1 3-16 3 6 6-13 2 2 1 8 2-11 4-4h7l7 3-5 5 7 3-2 8-6-7-7 1-1 14-6 4-8-1-8 10-6 3-5 12-3 29 1 8-4 3-3 15 7 25-4 22-4-16-1 8-12 17z" />
+					<path id="path-poland" d="M243 245l-19-8-10-17v-13l20-15 9 5 25-7 8 12 6 32-1 10-22 4z" />
+					<path id="path-portugal" d="M37 401l-2-3 1-7-4-13 9-32 10 5 10 3-11 22v19l-2 8z" />
+					<path id="path-romania" d="M300 301l-5-8-10-1-7-5-6-4 6-1 5-14 6-11 8-1 16-8 14 9 7 16 11-5 1 7-4 1 2 12-7-1-12 5-12 7z" />
+					<path id="path-san-marino" d="M217 322l1 2 2-1-1-1z" />
+					<path id="path-serbia" d="M282 321l-2-2-4-1-4-3-1-6-5-7-3-6v-7l8-5 14 9 9 1 5 8 2 11-2 9-4 2 1-6-5 1-6-4z" />
+					<path id="path-slovakia" d="M247 270l-3-9 6-4 9-8 22-4v9l-3 2-6-2-15 10-1 4z" />
+					<path id="path-slovenia" d="M224 302l-2-3 1-8 4 1 4-4 9-4 2 2-5 9-2 5-3 1-2-1z" />
+					<path id="path-spain" d="M58 414l-9-11 2-8v-18l12-24-12-3-10-5-3-8 10-6 10 1 42 2 11 9h11l6 4h13l-2 8-21 15-4 20-8 12-6 2-3 5-18 1-14 5-7-1zm84-36l-4 4-3-1v-2h-3l6-4v2l4 1z" />
+					<path id="path-sweden" fill-rule="nonzero" d="M196 184l2-4-13-20-4-2 4-23-7-25 3-14 4-4-1-8 3-29 5-11 6-3 5-7 4 2 17 13v14l-5 2v15l-9 21v22l13 11-7 21v13l-9 19-6 6-5-9zm29-19l-1-5 4-2 2 3-3 8-2-4z" />
+					<path id="path-switzerland" d="M171 303l-7-2-1-2 2-4 8-8h19l1 3h4l-1 5-1 3h-7l-1 2h-3l-2-2z" />
+					<path id="path-uk" d="M75 259v-2l8-6 12-6-8-2-8-4 6-4v-6l-2-3 3-3h8l1-6-3-12-5 1-4-4 2-9h-5l-1-3 2-20 10-7 5 1-4 4-3 7 8-1 4 7-4 6-3 5 7 3 12 21 3 12 10 5-4 8v5h2l-2 4-10 3H97l-9 4-13 2zm-6-50l-3 2-2-5 5-6 8 5v6l-4 4-4-6zm14 5l1-2 1 1-1 1h-1zm-9-38l1-2 2 2-2 1-1-1zm-2-7l1-2 2-2h2l-2 3-3 1zm23-10l1-3 3-1 1 2-2 1-1 2-2-1zm11-14l2-6 2 1-3 7-1-2z" />
+					<path id="path-vatican" d="M225 346h1l1-1h-1z" />
+				</svg>
+			</div>
+		</section>
+		<section class='slide review'>
+			<a id='order'></a>
+			<div class='side'>
+				<h2>Review your order</h2>
+				<form id='review-order'>
+					<div class='review-order-block size'>
+						<h3>Size</h3>
+						<fieldset>
+							<div class='box-selector'>
+								<label class='box-selector-item small'>
+									<input type='radio' name='box' value='small'>
+									<div class='box-selector-row heading'>
+										<span class='box-selector-heading'>Small</span>
+										<span class='box-selector-volume'>150 ml</span>
+									</div>
+									<div class='box-selector-row img'>
+										<img src='box-small.svg'>
+									</div>
+									<div class='box-selector-row description'>
+										<span class='box-selector-juices'>2 common juices, 1 premium</span>
+										<span class='box-selector-bonuses'>
+											<span class='box-selector-bonus little'>
+												Little bonus
+											</span>
+										</span>
+										<span class='box-selector-button'>Pick for 20 €</span>
+									</div>
+									<span class='overlay'></span>
+								</label>
+								<label class='box-selector-item medium'>
+									<input type='radio' name='box' value='medium'>
+									<div class='box-selector-row heading'>
+										<span class='box-selector-heading'>Medium</span>
+										<span class='box-selector-volume'>210 ml</span>
+									</div>
+									<div class='box-selector-row img'>
+										<img src='box-small.svg'>
+									</div>
+									<div class='box-selector-row description'>
+										<span class='box-selector-juices'>2 common juices, 2 premium</span>
+										<span class='box-selector-bonuses'>
+											<span class='box-selector-bonus little'>
+												Little bonus
+											</span>
+											+ a chance of
+											<span class='box-selector-bonus big'>
+												big bonus
+											</span>
+										</span>
+										<span class='box-selector-button'>Pick for 30 €</span>
+									</div>
+									<span class='overlay'></span>
+								</label>
+								<label class='box-selector-item large'>
+									<input type='radio' name='box' checked value='large'>
+									<div class='box-selector-row heading'>
+										<span class='box-selector-heading'>Large</span>
+										<span class='box-selector-volume'>300 ml</span>
+									</div>
+									<div class='box-selector-row img'>
+										<img src='box-small.svg'>
+									</div>
+									<div class='box-selector-row description'>
+										<span class='box-selector-juices'>3 common juices, 3 premium</span>
+										<span class='box-selector-bonuses'>
+											<span class='box-selector-bonus little'>
+												Little bonus
+											</span>
+											+ a chance of
+											<span class='box-selector-bonus big'>
+												big bonus
+											</span>
+										</span>
+										<span class='box-selector-button'>Pick for 45 €</span>
+									</div>
+									<span class='overlay'></span>
+								</label>
+							</div>
+						</fieldset>
+					</div>
+					<div class='review-order-block tastes'>
+						<h3>Tastes</h3>
+						<div id='select-tastes' class='tastes-selector'>
+							<div class='tastes-selector-block negative'>
+								<span class='tastes-selector-block-description'>😞</span>
+								<fieldset>
+									<div class='tastes-selector-element'>
+										<label class='tastes-selector-item mint'>
+											<input type='radio' name='mint' value='negative'>
+											<span class='tastes-selector-item-description'>Mint</span>
+										</label>
+										<label class='tastes-selector-item desserts'>
+											<input type='radio' name='desserts' value='negative'>
+											<span class='tastes-selector-item-description'>Desserts</span>
+										</label>
+										<label class='tastes-selector-item exotic'>
+											<input type='radio' name='exotic' value='negative'>
+											<span class='tastes-selector-item-description'>Exotic</span>
+										</label>
+										<label class='tastes-selector-item fruits'>
+											<input type='radio' name='fruits' value='negative'>
+											<span class='tastes-selector-item-description'>Fruits</span>
+										</label>
+										<label class='tastes-selector-item tobacco'>
+											<input type='radio' name='tobacco' value='negative'>
+											<span class='tastes-selector-item-description'>Tobacco</span>
+										</label>
+										<label class='tastes-selector-item berries'>
+											<input type='radio' name='berries' value='negative'>
+											<span class='tastes-selector-item-description'>Berries</span>
+										</label>
+									</div>
+								</fieldset>
+							</div>
+							<div class='tastes-selector-block neutral'>
+								<span class='tastes-selector-block-description'>😐</span>
+								<fieldset>
+									<div class='tastes-selector-element neutral'>
+										<label class='tastes-selector-item mint'>
+											<input type='radio' name='mint' checked value='neutral'>
+											<span class='tastes-selector-item-description'>Mint</span>
+										</label>
+										<label class='tastes-selector-item desserts'>
+											<input type='radio' name='desserts' checked value='neutral'>
+											<span class='tastes-selector-item-description'>Desserts</span>
+										</label>
+										<label class='tastes-selector-item exotic'>
+											<input type='radio' name='exotic' checked value='neutral'>
+											<span class='tastes-selector-item-description'>Exotic</span>
+										</label>
+										<label class='tastes-selector-item fruits'>
+											<input type='radio' name='fruits' checked value='neutral'>
+											<span class='tastes-selector-item-description'>Fruits</span>
+										</label>
+										<label class='tastes-selector-item tobacco'>
+											<input type='radio' name='tobacco' checked value='neutral'>
+											<span class='tastes-selector-item-description'>Tobacco</span>
+										</label>
+										<label class='tastes-selector-item berries'>
+											<input type='radio' name='berries' checked value='neutral'>
+											<span class='tastes-selector-item-description'>Berries</span>
+										</label>
+									</div>
+								</fieldset>
+							</div>
+							<div class='tastes-selector-block positive'>
+								<span class='tastes-selector-block-description'>😋</span>
+								<fieldset>
+									<div class='tastes-selector-element positive'>
+										<label class='tastes-selector-item mint'>
+											<input type='radio' name='mint' value='positive'>
+											<span class='tastes-selector-item-description'>Mint</span>
+										</label>
+										<label class='tastes-selector-item desserts'>
+											<input type='radio' name='desserts' value='positive'>
+											<span class='tastes-selector-item-description'>Desserts</span>
+										</label>
+										<label class='tastes-selector-item exotic'>
+											<input type='radio' name='exotic' value='positive'>
+											<span class='tastes-selector-item-description'>Exotic</span>
+										</label>
+										<label class='tastes-selector-item fruits'>
+											<input type='radio' name='fruits' value='positive'>
+											<span class='tastes-selector-item-description'>Fruits</span>
+										</label>
+										<label class='tastes-selector-item tobacco'>
+											<input type='radio' name='tobacco' value='positive'>
+											<span class='tastes-selector-item-description'>Tobacco</span>
+										</label>
+										<label class='tastes-selector-item berries'>
+											<input type='radio' name='berries' value='positive'>
+											<span class='tastes-selector-item-description'>Berries</span>
+										</label>
+									</div>
+								</fieldset>
+							</div>
+						</div>
+					</div>
+					<div class='review-order-block delivery'>
+						<h3>Delivery</h3>
+						<fieldset>
+							<div class='address-selector-country'>
+								<label>
+									<input type='radio' name='country' value='Albania'>
+									<span class='address-selector-country-item flag'>🇦🇱</span>
+									<span class='address-selector-country-item country'>Albania</span>
+									<span class='overlay'></span>
+								</label>
+								<label>
+									<input type='radio' name='country' value='Austria'>
+									<span class='address-selector-country-item flag'>🇦🇹</span>
+									<span class='address-selector-country-item country'>Austria</span>
+									<span class='overlay'></span>
+								</label>
+								<label>
+									<input type='radio' name='country' value='Belgium'>
+									<span class='address-selector-country-item flag'>🇧🇪</span>
+									<span class='address-selector-country-item'>Belgium</span>
+									<span class='overlay'></span>
+								</label>
+								<label>
+									<input type='radio' name='country' value='BosniaAndHerzegovina'>
+									<span class='address-selector-country-item flag'>🇧🇦</span>
+									<span class='address-selector-country-item'>Bosnia and Herzegovina</span>
+									<span class='overlay'></span>
+								</label>
+								<label>
+									<input type='radio' name='country' value='Bulgaria'>
+									<span class='address-selector-country-item flag'>🇧🇬</span>
+									<span class='address-selector-country-item'>Bulgaria</span>
+									<span class='overlay'></span>
+								</label>
+								<label>
+									<input type='radio' name='country' value='Croatia'>
+									<span class='address-selector-country-item flag'>🇭🇷</span>
+									<span class='address-selector-country-item'>Croatia</span>
+									<span class='overlay'></span>
+								</label>
+								<label>
+									<input type='radio' name='country' value='Cyprus'>
+									<span class='address-selector-country-item flag'>🇨🇾</span>
+									<span class='address-selector-country-item'>Cyprus</span>
+									<span class='overlay'></span>
+								</label>
+								<label>
+									<input type='radio' name='country' value='Czechia'>
+									<span class='address-selector-country-item flag'>🇨🇿</span>
+									<span class='address-selector-country-item'>Czechia</span>
+									<span class='overlay'></span>
+								</label>
+								<label>
+									<input type='radio' name='country' value='Denmark'>
+									<span class='address-selector-country-item flag'>🇩🇰</span>
+									<span class='address-selector-country-item'>Denmark</span>
+									<span class='overlay'></span>
+								</label>
+								<label>
+									<input type='radio' name='country' value='Estonia'>
+									<span class='address-selector-country-item flag'>🇪🇪</span>
+									<span class='address-selector-country-item'>Estonia</span>
+									<span class='overlay'></span>
+								</label>
+								<label>
+									<input type='radio' name='country' value='Finland'>
+									<span class='address-selector-country-item flag'>🇫🇮</span>
+									<span class='address-selector-country-item'>Finland</span>
+									<span class='overlay'></span>
+								</label>
+								<label>
+									<input type='radio' name='country' value='France'>
+									<span class='address-selector-country-item flag'>🇫🇷</span>
+									<span class='address-selector-country-item'>France</span>
+									<span class='overlay'></span>
+								</label>
+								<label>
+									<input type='radio' name='country' value='Germany'>
+									<span class='address-selector-country-item flag'>🇩🇪</span>
+									<span class='address-selector-country-item'>Germany</span>
+									<span class='overlay'></span>
+								</label>
+								<label>
+									<input type='radio' name='country' value='Greece'>
+									<span class='address-selector-country-item flag'>🇬🇷</span>
+									<span class='address-selector-country-item'>Greece</span>
+									<span class='overlay'></span>
+								</label>
+								<label>
+									<input type='radio' name='country' value='Hungary'>
+									<span class='address-selector-country-item flag'>🇭🇺</span>
+									<span class='address-selector-country-item'>Hungary</span>
+									<span class='overlay'></span>
+								</label>
+								<label>
+									<input type='radio' name='country' value='Iceland'>
+									<span class='address-selector-country-item flag'>🇮🇸</span>
+									<span class='address-selector-country-item'>Iceland</span>
+									<span class='overlay'></span>
+								</label>
+								<label>
+									<input type='radio' name='country' value='Ireland'>
+									<span class='address-selector-country-item flag'>🇮🇪</span>
+									<span class='address-selector-country-item'>Ireland</span>
+									<span class='overlay'></span>
+								</label>
+								<label>
+									<input type='radio' name='country' value='Italy'>
+									<span class='address-selector-country-item flag'>🇮🇹</span>
+									<span class='address-selector-country-item'>Italy</span>
+									<span class='overlay'></span>
+								</label>
+								<label>
+									<input type='radio' name='country' value='Kosovo'>
+									<span class='address-selector-country-item flag'>🇽🇰</span>
+									<span class='address-selector-country-item'>Kosovo</span>
+									<span class='overlay'></span>
+								</label>
+								<label>
+									<input type='radio' name='country' value='Latvia'>
+									<span class='address-selector-country-item flag'>🇱🇻</span>
+									<span class='address-selector-country-item'>Latvia</span>
+									<span class='overlay'></span>
+								</label>
+								<label>
+									<input type='radio' name='country' value='Liechtenstein'>
+									<span class='address-selector-country-item flag'>🇱🇮</span>
+									<span class='address-selector-country-item'>Liechtenstein</span>
+									<span class='overlay'></span>
+								</label>
+								<label>
+									<input type='radio' name='country' value='Lithuania'>
+									<span class='address-selector-country-item flag'>🇱🇹</span>
+									<span class='address-selector-country-item'>Lithuania</span>
+									<span class='overlay'></span>
+								</label>
+								<label>
+									<input type='radio' name='country' value='Luxembourg'>
+									<span class='address-selector-country-item flag'>🇱🇺</span>
+									<span class='address-selector-country-item'>Luxembourg</span>
+									<span class='overlay'></span>
+								</label>
+								<label>
+									<input type='radio' name='country' value='Macedonia'>
+									<span class='address-selector-country-item flag'>🇲🇰</span>
+									<span class='address-selector-country-item'>Macedonia</span>
+									<span class='overlay'></span>
+								</label>
+								<label>
+									<input type='radio' name='country' value='Malta'>
+									<span class='address-selector-country-item flag'>🇲🇹</span>
+									<span class='address-selector-country-item'>Malta</span>
+									<span class='overlay'></span>
+								</label>
+								<label>
+									<input type='radio' name='country' value='Moldavia'>
+									<span class='address-selector-country-item flag'>🇲🇩</span>
+									<span class='address-selector-country-item'>Moldavia</span>
+									<span class='overlay'></span>
+								</label>
+								<label>
+									<input type='radio' name='country' value='Monaco'>
+									<span class='address-selector-country-item flag'>🇲🇨</span>
+									<span class='address-selector-country-item'>Monaco</span>
+									<span class='overlay'></span>
+								</label>
+								<label>
+									<input type='radio' name='country' value='Montenegro'>
+									<span class='address-selector-country-item flag'>🇲🇪</span>
+									<span class='address-selector-country-item'>Montenegro</span>
+									<span class='overlay'></span>
+								</label>
+								<label>
+									<input type='radio' name='country' value='Netherlands'>
+									<span class='address-selector-country-item flag'>🇳🇱</span>
+									<span class='address-selector-country-item'>Netherlands</span>
+									<span class='overlay'></span>
+								</label>
+								<label>
+									<input type='radio' name='country' value='Norway'>
+									<span class='address-selector-country-item flag'>🇳🇴</span>
+									<span class='address-selector-country-item'>Norway</span>
+									<span class='overlay'></span>
+								</label>
+								<label>
+									<input type='radio' name='country' value='Poland'>
+									<span class='address-selector-country-item flag'>🇵🇱</span>
+									<span class='address-selector-country-item'>Poland</span>
+									<span class='overlay'></span>
+								</label>
+								<label>
+									<input type='radio' name='country' value='Portugal'>
+									<span class='address-selector-country-item flag'>🇵🇹</span>
+									<span class='address-selector-country-item'>Portugal</span>
+									<span class='overlay'></span>
+								</label>
+								<label>
+									<input type='radio' name='country' value='Romania'>
+									<span class='address-selector-country-item flag'>🇷🇴</span>
+									<span class='address-selector-country-item'>Romania</span>
+									<span class='overlay'></span>
+								</label>
+								<label>
+									<input type='radio' name='country' value='SanMarino'>
+									<span class='address-selector-country-item flag'>🇸🇲</span>
+									<span class='address-selector-country-item'>San Marino</span>
+									<span class='overlay'></span>
+								</label>
+								<label>
+									<input type='radio' name='country' value='Serbia'>
+									<span class='address-selector-country-item flag'>🇷🇸</span>
+									<span class='address-selector-country-item'>Serbia</span>
+									<span class='overlay'></span>
+								</label>
+								<label>
+									<input type='radio' name='country' value='Slovakia'>
+									<span class='address-selector-country-item flag'>🇸🇰</span>
+									<span class='address-selector-country-item'>Slovakia</span>
+									<span class='overlay'></span>
+								</label>
+								<label>
+									<input type='radio' name='country' value='Slovenia'>
+									<span class='address-selector-country-item flag'>🇸🇮</span>
+									<span class='address-selector-country-item'>Slovenia</span>
+									<span class='overlay'></span>
+								</label>
+								<label>
+									<input type='radio' name='country' value='Spain'>
+									<span class='address-selector-country-item flag'>🇪🇸</span>
+									<span class='address-selector-country-item'>Spain</span>
+									<span class='overlay'></span>
+								</label>
+								<label>
+									<input type='radio' name='country' value='Sweden'>
+									<span class='address-selector-country-item flag'>🇸🇪</span>
+									<span class='address-selector-country-item'>Sweden</span>
+									<span class='overlay'></span>
+								</label>
+								<label>
+									<input type='radio' name='country' value='Switzerland'>
+									<span class='address-selector-country-item flag'>🇨🇭</span>
+									<span class='address-selector-country-item'>Switzerland</span>
+									<span class='overlay'></span>
+								</label>
+								<label>
+									<input type='radio' name='country' value='UK'>
+									<span class='address-selector-country-item flag'>🇬🇧</span>
+									<span class='address-selector-country-item'>UK</span>
+									<span class='overlay'></span>
+								</label>
+								<label>
+									<input type='radio' name='country' value='Vatican'>
+									<span class='address-selector-country-item flag'>🇻🇦</span>
+									<span class='address-selector-country-item'>Vatican</span>
+									<span class='overlay'></span>
+								</label>
+							</div>
+						</fieldset>
+						<fieldset>
+							<div class='address-selector-address'>
+								<label class='address-selector-address-block address'>
+									<input id='address-input' type='text' name='address-string' class='address-selector-address-item input' placeholder='City, street, building, apt etc.' autocomplete="street-address" required>
+									<span class='address-selector-address-item description'>Address</span>
+								</label>
+								<label class='address-selector-address-block postal'>
+									<input id='zip-code-input' type='number' pattern='[0-9]*' inputmode='numeric' name='postal-code' class='address-selector-address-item input' placeholder='Postal code' autocomplete="postal-code" required>
+									<span class='address-selector-address-item description'>Postal code</span>
+								</label>
+							</div>
+						</fieldset>
+					</div>
+					<div class='review-order-block contacts'>
+						<h3>Contacts</h3>
+						<fieldset>
+							<div class='contacts-selector'>
+								<label class='contacts-selector-block name'>
+									<input id='name-input' type='text' pattern='\p{L}' name='name' class='contacts-selector-item input' placeholder='Name & surname. For delivery' autocomplete="name" required>
+									<span class='address-selector-address-item description'>Name & surname. For delivery</span>
+								</label>
+								<label class='contacts-selector-block contact-method-phone'>
+									<input id='phone-input' type='tel' name='contactMethodPhone' class='contacts-selector-item input' placeholder='Phone number. For delivery' autocomplete="tel" required pattern='[0-9]*'>
+									<span class='address-selector-address-item description'>Phone number. For delivery</span>
+								</label>
+								<label class='contacts-selector-block contact-method-email'>
+									<input id='email-input' type='email' name='contactMethodEmail' class='contacts-selector-item input' placeholder="Email. We'll send you order statuses" autocomplete="email" required>
+									<span class='address-selector-address-item description'>Email. We'll send you order statuses</span>
+								</label>
+								<label class='contacts-selector-block contact-method-email-repeat'>
+									<input id='email-input' type='email' name='contactMethodEmailRepeat' class='contacts-selector-item input' placeholder="Email once more, so there aren't any mistakes" autocomplete="email" required>
+									<span class='address-selector-address-item description'>Email once more, so there aren't any mistakes</span>
+								</label>
+							</div>
+						</fieldset>
+					</div>
+					<div class='review-order-block send-order'>
+						<button id='add-box-button' class='review-order-item add-more' type='button'>
+							Add 1 more box
+							<div class='overlay'>
+						</button>
+						<button id='send-order-button' type='button' class='review-order-item send-button'>
+							Send order
+							<div class='overlay'>
+						</button>
+					</div>
+				</form>
+			</div>
+		</section>
+	</main>
+	<div id='after-order-overlay' class='after-order-overlay'>
+		<div class='after-order-overlay-block'>
+			<div class='after-order-overlay-element heading'>
+				<div class='after-order-overlay-item heading'>
+					<h2>Got it</h2>
+					<svg id='hide-after-order-overlay-button' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+						<path d="M0 8l3-3-3-3 2-2 3 3 3-3 2 2-3 3 3 3-2 2-3-3-3 3z" />
+					</svg>
+				</div>
+				<p>We'll send your order as soon as possible</p>
+			</div>
+			<div class='after-order-overlay-element discount'>
+				<span>Meanwhile, have a discount link.</span>
+				<a id='discount-link' class='after-order-overlay-item discount-link'>https://pickandnvape.com/QWERVF</a>
+				<p>Share it with your bro (or sis). He (or she)'ll get 5% on first order. You'll get 3% for every bro (or sis); overall up to 39%.</p>
+			</div>
+			<div id='share-facebook' class='after-order-overlay-element shares'>
+				<div class='after-order-overlay-item facebook'>
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 40">
+						<path d="M6 40V21H0v-7h6V9c0-6 3-9 10-9h4v7h-4c-2 0-3 1-3 3v4h6l-1 7h-5v19H6z" />
+					</svg>
+				</div>
+				<div id='share-twitter' class='after-order-overlay-item twitter'>
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 15">
+						<path d="M18 3.7v.5C18 9.2 13.8 15 6.3 15 4 15 1.8 14.4 0 13.3a9 9 0 0 0 6-1.6 4 4 0 0 1-3.7-2.6H4C2.2 8.6.8 7 .8 5.2l1.9.5A3.6 3.6 0 0 1 1.4.7c2 2.3 5 3.8 8.4 4v-1c0-1.5 1-2.9 2.6-3.4 1.5-.6 3.3-.2 4.4.9a8 8 0 0 0 2.7-1 4 4 0 0 1-1.8 2.2c.8-.1 1.6-.3 2.3-.6a8 8 0 0 1-2 2z" />
+					</svg>
+				</div>
+				<div id='share-copy' class='after-order-overlay-item copy'>
+					<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 25'>
+						<path d='M15 21v4H0V5h4v16h11zM14 6V0H5v20h15V6h-6zm1-6v5h5l-5-5z' /></svg>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--
+	<aside>
+		<span>Fast order</span>
+		<form>
+			<div class='form div'>
+				<fieldset>
+					<div class='fieldset div'>
+						<label class='aside-size-item small'>
+							<input class='aside-size-input' type='radio' name='box' value='sizeSmall'>
+							<span class='aside-size-description'>Small</span>
+							<span class='overlay'></span>
+						</label>
+						<label class='aside-size-item medium'>
+							<input class='aside-size-input' type='radio' name='box' value='sizeMedium'>
+							<span class='aside-size-description'>Medium</span>
+							<span class='overlay'></span>
+						</label>
+						<label class='aside-size-item large'>
+							<input class='aside-size-input' type='radio' name='box' value='sizeLarge'>
+							<span class='aside-size-description'>Large</span>
+							<span class='overlay'></span>
+						</label>
+						<label for="pet-select">Size:
+							<select>
+								<option checked value="sizeSmall">Small</option>
+								<option value="sizeMedium">Medium</option>
+								<option value="sizeLarge">Large</option>
+							</select>
+						</label>
+					</div>
+				</fieldset>
+				<fieldset>
+					tastes
+				</fieldset>
+				<fieldset>
+					delivery
+				</fieldset>
+			</div>
+		</form>
+	</aside>
+->
+</body>
+
+</html>
