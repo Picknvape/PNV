@@ -44,30 +44,29 @@ function timer() {
   KeywordTyper();
 }
 
-// Рандомайзер бонусов
-
-/* Мейби склеить с анимацией */
-
-var bonusRotator = document.getElementById('bonus-rotator');
-var bonusRotatorChildren = bonusRotator.getElementsByClassName('bonus-rotator-item');
-
-for (let i = bonusRotatorChildren.length; i >= 0; i--) {
-  bonusRotator.appendChild(bonusRotatorChildren[Math.random() * i | 0]);
-}
 
 
 // Появлялка-убиралка бонусов по ховеру на описание
-
-var bonusesHighlightenedDescriptions = document.getElementsByClassName('bonuses-description-highlighted');
-
-for (let i = 0; i < bonusesHighlightenedDescriptions.length; i++) {
-  let oldClasses = bonusRotator.className;
-  let newClass = oldClasses + ' highlight ' + bonusesHighlightenedDescriptions[i].classList[1];
-
-  bonusesHighlightenedDescriptions[i].addEventListener('click', function() {
-    bonusRotator.className = newClass;
-  })
+var randomItemsContainerBaseClass = document.getElementById('bonus-rotator').className;
+function RandomUISetup(firstInit=false) {
+	var randomItemsContainer = document.getElementById('bonus-rotator');
+	var randomItemsContainerChildren = randomItemsContainer.getElementsByClassName('bonus-rotator-item');
+	var bonusesHighlightenedDescriptions = document.getElementsByClassName('bonuses-description-highlighted');
+	if (firstInit) {
+		firstInit = false;
+		for (let i = 0; i < bonusesHighlightenedDescriptions.length; i++) {
+			let oldClasses = randomItemsContainer.className;
+			let newClass = oldClasses + ' highlight ' + bonusesHighlightenedDescriptions[i].classList[1];
+			bonusesHighlightenedDescriptions[i].addEventListener('click', function() {
+				randomItemsContainer.className = newClass;
+			});	
+		}
+	}
+	for (let i = randomItemsContainerChildren.length; i >= 0; i--) {
+		randomItemsContainer.appendChild(randomItemsContainerChildren[Math.random() * i | 0]);
+	}
 }
+RandomUISetup(true);
 
 
 // Вращатель бонусов
@@ -80,10 +79,13 @@ var randomStep = maxStep;
 var frameTime = 750;
 
 function DoPseudoRandomAnimationCycle() {
-  if (randomStep == 0) {
-    randomStep = maxStep;
-    bonusRotator.classList.toggle('animation-finished');
-  }
+	let randomItemsContainer = document.getElementById('bonus-rotator');
+	randomItemsContainer.className = randomItemsContainerBaseClass;
+	if (randomStep == 0) {
+		randomItemsContainer.className = randomItemsContainerBaseClass;
+		RandomUISetup();
+		randomStep = maxStep;	
+	}
   var animationStep = function() {
     if (--randomStep > 0) {
       if (randomStep != maxStep-1) {
@@ -94,7 +96,7 @@ function DoPseudoRandomAnimationCycle() {
       window.setTimeout(animationStep, 750 * (1 + (randomStep - maxStep) / maxStep));
     } else {
       document.getElementById('random-item-1').classList.remove('checked');
-      bonusRotator.classList.toggle('animation-finished');
+	  randomItemsContainer.classList.toggle('animation-finished');
     }
   }
   animationStep();
