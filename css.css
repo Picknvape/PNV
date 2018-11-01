@@ -39,11 +39,11 @@ header {
 }
 
 .header-block {
-  margin: .5rem;
+	margin: 1rem;
 }
 
 .header-block.logo {
-  flex-basis: 7.5rem;
+  flex-basis: 5rem;
 }
 
 .header-block.links {
