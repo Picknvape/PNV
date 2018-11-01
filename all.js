@@ -75,22 +75,23 @@ for (let i = 0; i < bonusesHighlightenedDescriptions.length; i++) {
 /* число степов из количества чайлдов + квадратичную функцию в тайимнг */
 
 document.getElementById('get-bonus-button').addEventListener('click', DoPseudoRandomAnimationCycle);
-var randomStep = 25;
+var maxStep = 25 //changeable, use as public editable variable to adjust amount of steps in animation according to baked elements count
+var randomStep = maxStep;
 var frameTime = 750;
 
 function DoPseudoRandomAnimationCycle() {
   if (randomStep == 0) {
-    randomStep = 34;
+    randomStep = maxStep;
     bonusRotator.classList.toggle('animation-finished');
   }
   var animationStep = function() {
     if (--randomStep > 0) {
-      if (randomStep != 24) {
-        document.getElementById('random-item-' + (randomStep++)).classList.remove('checked');
+      if (randomStep != maxStep-1) {
+        document.getElementById('random-item-' + (randomStep+1)).classList.remove('checked');
       }
       document.getElementById('random-item-' + randomStep).classList.add('checked');
-      console.log('inc timeout: ' + 750 * (1 + (randomStep - 25) / 25));
-      window.setTimeout(animationStep, 750 * (1 + (randomStep - 25) / 25));
+      console.log('inc timeout: ' + 750 * (1 + (randomStep - maxStep) / maxStep));
+      window.setTimeout(animationStep, 750 * (1 + (randomStep - maxStep) / maxStep));
     } else {
       document.getElementById('random-item-1').classList.remove('checked');
       bonusRotator.classList.toggle('animation-finished');
