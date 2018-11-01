@@ -186,6 +186,8 @@ function CompileOrderData() {
 
 // Менятель размеров коробки
 
+// Нужно поправить, чтобы он считывал изначально checked инпут. Еще учти, что он есть дефолтно-поставленный, а есть просто при перезагрузке (если человек выбрал маленький и перезагрузил, останется маленький)
+
 var sizeSelector = document.getElementById('size-selector');
 var sizeSelectorInputs = sizeSelector.getElementsByTagName('input');
 
