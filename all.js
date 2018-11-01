@@ -68,11 +68,6 @@ function RandomUISetup(firstInit=false) {
 }
 RandomUISetup(true);
 
-
-// Вращатель бонусов
-
-/* число степов из количества чайлдов + квадратичную функцию в тайимнг */
-
 document.getElementById('get-bonus-button').addEventListener('click', DoPseudoRandomAnimationCycle);
 var maxStep = document.getElementById('bonus-rotator').children.length; //changeable, use as public editable variable to adjust amount of steps in animation according to baked elements count
 var randomStep = maxStep;
@@ -97,7 +92,7 @@ function DoPseudoRandomAnimationCycle() {
 	  var newFrameTime = frameTime*((-(Math.pow((randomStep-intMod),powMod) / Math.pow(intMod,powMod)))+0.95);
 	  console.log("step"+randomStep+" NFT:"+newFrameTime);
       window.setTimeout(animationStep, newFrameTime);
-	  if (randomStep == Math.floor(maxStep / 5)) {
+	  if (randomStep == Math.floor(maxStep / 4)) {
 		randomItemsContainer.classList.toggle('animation-finished');
 	  }
     } else {
@@ -206,12 +201,3 @@ for (i = 0; i < sizeSelectorInputs.length; i++) {
     sizeChanger.className = sizeChangerDefaultClasses + ' ' + this.value;
   });
 }
-
-
-
-
-
-
-
-
-/**/
