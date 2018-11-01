@@ -13,9 +13,6 @@ function RequestLocation() {
     getLocationButton.childNodes[0].nodeValue = "❌ Service down. Try entering manually";
   }
 }
-
-// Сделой чтоб в кнопку прям высирало "Seems like you're in Russia or Belarus. We deliver there from <a href='https://picknvape.ru/' target='_blank'>picknvape.ru</a>"
-
 var countryButtons = document.querySelectorAll("[data-iso-code]");
 
 function PositionRequestOK(position) {
@@ -37,8 +34,13 @@ function PositionRequestOK(position) {
 		countryData.zip = response.postal_code;
 		countryData.address = response.formatted;
     }
+	else if (response.country_code == 'RU' || response.country_code == 'BY') {
+		getLocationButton.childNodes[0].nodeValue = "Seems like you're in "+response.Components[0].name+ ". Click this button to visit local version of Pick N Vape or enter european address manually.";
+		getLocationButton.removeEventListener('click', RequestLocation);
+		getLocationButton.addEventListener('click', function () {window.location = 'https:\\picknvape.ru';},false);
+	}
     else {
-		//cleanup
+		//cleanup, just for development
 		document.getElementById('address-input').value = response.formatted;
 		document.getElementById('zip-code-input').value = response.postal_code;
 		console.log(response.postal_code);
@@ -47,7 +49,7 @@ function PositionRequestOK(position) {
 		countryData.address = response.formatted;
 		//
 
-		getLocationButton.childNodes[0].nodeValue = "❓ Seems you're not in Europe. Try again?";
+		getLocationButton.childNodes[0].nodeValue = "❓ Seems you're not in Europe. Try again or enter european address manually";
     }
   },
   function () {console.log('error');});
