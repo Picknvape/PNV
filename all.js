@@ -44,56 +44,59 @@ function timer() {
   KeywordTyper();
 }
 
-// Рандомайзер бонусов
-
-/* Мейби склеить с анимацией */
-
-var bonusRotator = document.getElementById('bonus-rotator');
-var bonusRotatorChildren = bonusRotator.getElementsByClassName('bonus-rotator-item');
-
-for (let i = bonusRotatorChildren.length; i >= 0; i--) {
-  bonusRotator.appendChild(bonusRotatorChildren[Math.random() * i | 0]);
-}
 
 
 // Появлялка-убиралка бонусов по ховеру на описание
-
-var bonusesHighlightenedDescriptions = document.getElementsByClassName('bonuses-description-highlighted');
-
-for (let i = 0; i < bonusesHighlightenedDescriptions.length; i++) {
-  let oldClasses = bonusRotator.className;
-  let newClass = oldClasses + ' highlight ' + bonusesHighlightenedDescriptions[i].classList[1];
-
-  bonusesHighlightenedDescriptions[i].addEventListener('click', function() {
-    bonusRotator.className = newClass;
-  })
+var randomItemsContainerBaseClass = document.getElementById('bonus-rotator').className;
+function RandomUISetup(firstInit=false) {
+	var randomItemsContainer = document.getElementById('bonus-rotator');
+	var randomItemsContainerChildren = randomItemsContainer.getElementsByClassName('bonus-rotator-item');
+	var bonusesHighlightenedDescriptions = document.getElementsByClassName('bonuses-description-highlighted');
+	if (firstInit) {
+		firstInit = false;
+		for (let i = 0; i < bonusesHighlightenedDescriptions.length; i++) {
+			let oldClasses = randomItemsContainer.className;
+			let newClass = oldClasses + ' highlight ' + bonusesHighlightenedDescriptions[i].classList[1];
+			bonusesHighlightenedDescriptions[i].addEventListener('click', function() {
+				randomItemsContainer.className = newClass;
+			});	
+		}
+	}
+	for (let i = randomItemsContainerChildren.length; i >= 0; i--) {
+		randomItemsContainer.appendChild(randomItemsContainerChildren[Math.random() * i | 0]);
+	}
 }
-
-
-// Вращатель бонусов
-
-/* число степов из количества чайлдов + квадратичную функцию в тайимнг */
+RandomUISetup(true);
 
 document.getElementById('get-bonus-button').addEventListener('click', DoPseudoRandomAnimationCycle);
-var randomStep = 25;
+var maxStep = document.getElementById('bonus-rotator').children.length; //changeable, use as public editable variable to adjust amount of steps in animation according to baked elements count
+var randomStep = maxStep;
 var frameTime = 750;
 
 function DoPseudoRandomAnimationCycle() {
-  if (randomStep == 0) {
-    randomStep = 34;
-    bonusRotator.classList.toggle('animation-finished');
-  }
+	let randomItemsContainer = document.getElementById('bonus-rotator');
+	randomItemsContainer.className = randomItemsContainerBaseClass;
+	if (randomStep == 0) {
+		randomItemsContainer.className = randomItemsContainerBaseClass;
+		RandomUISetup();
+		randomStep = maxStep;	
+	}
   var animationStep = function() {
     if (--randomStep > 0) {
-      if (randomStep != 24) {
-        document.getElementById('random-item-' + (randomStep++)).classList.remove('checked');
+      if (randomStep != maxStep-1) {
+        document.getElementById('random-item-' + (randomStep+1)).classList.remove('checked');
       }
       document.getElementById('random-item-' + randomStep).classList.add('checked');
-      console.log('inc timeout: ' + 750 * (1 + (randomStep - 25) / 25));
-      window.setTimeout(animationStep, 750 * (1 + (randomStep - 25) / 25));
+	  let powMod = 2;
+	  let intMod = maxStep;
+	  var newFrameTime = frameTime*((-(Math.pow((randomStep-intMod),powMod) / Math.pow(intMod,powMod)))+0.95);
+	  console.log("step"+randomStep+" NFT:"+newFrameTime);
+      window.setTimeout(animationStep, newFrameTime);
+	  if (randomStep == Math.floor(maxStep / 4)) {
+		randomItemsContainer.classList.toggle('animation-finished');
+	  }
     } else {
       document.getElementById('random-item-1').classList.remove('checked');
-      bonusRotator.classList.toggle('animation-finished');
     }
   }
   animationStep();
@@ -200,12 +203,3 @@ for (i = 0; i < sizeSelectorInputs.length; i++) {
     sizeChanger.className = sizeChangerDefaultClasses + ' ' + this.value;
   });
 }
-
-
-
-
-
-
-
-
-/**/
