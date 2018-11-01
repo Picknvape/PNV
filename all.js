@@ -89,9 +89,9 @@ function DoPseudoRandomAnimationCycle() {
       }
       document.getElementById('random-item-' + randomStep).classList.add('checked');
       let powMod = 2;
-      var newFrameTime = ( -Math.pow((randomStep - maxStep / 2), powMod) / Math.pow(maxStep / 2, powMod) + 1.75) * frameTime;
+      var newFrameTime = (-Math.pow((randomStep - maxStep / 2), powMod) / Math.pow(maxStep / 2, powMod) + 1.75) * frameTime;
       // Math.round((Math.pow((i - iterations / 2), multiplier) / Math.pow(iterations / 2, multiplier) + .25) * frameDurarionMs);
-      console.log("step" + randomStep + " NFT:" + newFrameTime + " funcResult: " + ( -Math.pow((randomStep - maxStep / 2), powMod) / Math.pow(maxStep / 2, powMod) + 1));
+      console.log("step" + randomStep + " NFT:" + newFrameTime + " funcResult: " + (-Math.pow((randomStep - maxStep / 2), powMod) / Math.pow(maxStep / 2, powMod) + 1));
       window.setTimeout(animationStep, newFrameTime);
       if (randomStep == Math.floor(maxStep / 6)) {
         randomItemsContainer.classList.toggle('animation-finished');
@@ -139,7 +139,7 @@ function ApplyListener(tasteType) {
     default:
       pointer = -1;
       radioButtons = null;
-      break
+      break;
   }
   for (var i = 0; i < radioButtons.length; i++) {
     radioButtons[i].onclick = function() {
