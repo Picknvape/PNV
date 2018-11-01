@@ -63,8 +63,9 @@ function composePreferences() {
 	reflectToUI(preferences);
 	return preferences;
 }
-
+var juiceContainerClassString = 'changer-tastes';
 function reflectToUI(preferences) {
+	juiceContainerClassString = 'changer-tastes';
 	getIcons('tobacco',preferences);
 	getIcons('mint',preferences);
 	getIcons('desserts',preferences);
@@ -73,10 +74,10 @@ function reflectToUI(preferences) {
 	getIcons('exotic',preferences);
 }
 
-function getIcons(iconType, iconDataArray)
+function getIcons(juiceType, iconDataArray)
 {
 	var pointer = -1;
-	switch(iconType)
+	switch(juiceType)
 	{
 		case 'mint':
 			pointer = 0;
@@ -101,30 +102,21 @@ function getIcons(iconType, iconDataArray)
 			break
 	}
 	
-	var workingList = document.getElementsByClassName("changer-tastes-item "+iconType);
+	var juiceContainer = document.getElementById('changer-tastes');
+	
 	if (iconDataArray[pointer]==0) {
-		for (var i=0; i<workingList.length; i++) {
-		if (!workingList[i].classList.contains("negative"))
-			{
-				workingList[i].className = "changer-tastes-item "+iconType+" negative";
-			}
-		}
+		juiceContainerClassString += ' '+juiceType+'-negative';
+		console.log('juice: '+juiceType+" meh");
 	}
 	if (iconDataArray[pointer]==1) {
-		for (var i=0; i<workingList.length; i++) {
-		if (!workingList[i].classList.contains("neutral"))
-			{
-				workingList[i].className = "changer-tastes-item "+iconType+" neutral";
-			}
-		}
+		juiceContainerClassString += ' '+juiceType+'-neutral';
+		console.log('juice: '+juiceType+" ok");
 	}
 	if (iconDataArray[pointer]==2) {
-		for (var i=0; i<workingList.length; i++) {
-		if (!workingList[i].classList.contains("positive"))
-			{
-				workingList[i].className = "changer-tastes-item "+iconType+" positive";
-			}
-		}
+		juiceContainerClassString += ' '+juiceType+'-positive';
+		console.log('juice: '+juiceType+" yay");
 	}
+	
+	juiceContainer.className = juiceContainerClassString;
 	
 }
