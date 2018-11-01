@@ -74,7 +74,7 @@ RandomUISetup(true);
 /* число степов из количества чайлдов + квадратичную функцию в тайимнг */
 
 document.getElementById('get-bonus-button').addEventListener('click', DoPseudoRandomAnimationCycle);
-var maxStep = 25 //changeable, use as public editable variable to adjust amount of steps in animation according to baked elements count
+var maxStep = document.getElementById('bonus-rotator').children.length; //changeable, use as public editable variable to adjust amount of steps in animation according to baked elements count
 var randomStep = maxStep;
 var frameTime = 750;
 
@@ -92,11 +92,16 @@ function DoPseudoRandomAnimationCycle() {
         document.getElementById('random-item-' + (randomStep+1)).classList.remove('checked');
       }
       document.getElementById('random-item-' + randomStep).classList.add('checked');
-      console.log('inc timeout: ' + 750 * (1 + (randomStep - maxStep) / maxStep));
-      window.setTimeout(animationStep, 750 * (1 + (randomStep - maxStep) / maxStep));
+	  let powMod = 2;
+	  let intMod = maxStep;
+	  var newFrameTime = frameTime*((-(Math.pow((randomStep-intMod),powMod) / Math.pow(intMod,powMod)))+0.95);
+	  console.log("step"+randomStep+" NFT:"+newFrameTime);
+      window.setTimeout(animationStep, newFrameTime);
+	  if (randomStep == Math.floor(maxStep / 5)) {
+		randomItemsContainer.classList.toggle('animation-finished');
+	  }
     } else {
       document.getElementById('random-item-1').classList.remove('checked');
-	  randomItemsContainer.classList.toggle('animation-finished');
     }
   }
   animationStep();
