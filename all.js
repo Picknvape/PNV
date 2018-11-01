@@ -72,7 +72,7 @@ RandomUISetup(true);
 document.getElementById('get-bonus-button').addEventListener('click', DoPseudoRandomAnimationCycle);
 var maxStep = document.getElementById('bonus-rotator').children.length; //changeable, use as public editable variable to adjust amount of steps in animation according to baked elements count
 var randomStep = maxStep;
-var frameTime = 400;
+var frameTime = 200;
 
 function DoPseudoRandomAnimationCycle() {
   let randomItemsContainer = document.getElementById('bonus-rotator');
@@ -89,7 +89,7 @@ function DoPseudoRandomAnimationCycle() {
       }
       document.getElementById('random-item-' + randomStep).classList.add('checked');
       let powMod = 2;
-      var newFrameTime = ( -Math.pow((randomStep - maxStep / 2), powMod) / Math.pow(maxStep / 2, powMod) + 1) * frameTime;
+      var newFrameTime = ( -Math.pow((randomStep - maxStep / 2), powMod) / Math.pow(maxStep / 2, powMod) + 1.75) * frameTime;
       // Math.round((Math.pow((i - iterations / 2), multiplier) / Math.pow(iterations / 2, multiplier) + .25) * frameDurarionMs);
       console.log("step" + randomStep + " NFT:" + newFrameTime + " funcResult: " + ( -Math.pow((randomStep - maxStep / 2), powMod) / Math.pow(maxStep / 2, powMod) + 1));
       window.setTimeout(animationStep, newFrameTime);

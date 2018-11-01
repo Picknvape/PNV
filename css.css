@@ -477,7 +477,7 @@ header {
   width: 100%;
   height: 100%;
   content: 'Nope. It\'s a secret.';
-  transition: opacity 2s;
+  transition: opacity 1s;
   opacity: 0;
   border: 1px solid hsla(0, 0%, 0%, .2);
   border-radius: .5em;
