@@ -405,12 +405,12 @@
 		</section>
 		<section class='slide order'>
 			<div class='side'>
-				<h2>Save money</h2>
-				<p>Pick&amp;Vape offes only russian liquids. We discovered that such liquids offer quality equal with american our european at lower price.</p>
 				<form>
-					<div id='size-selector' class='size-selector'>
+					<div class='order block'>
+						<h2>Save money</h2>
+						<p>Pick&amp;Vape offes only russian liquids. We discovered that such liquids offer quality equal with american our european at lower price.</p>
 						<fieldset>
-							<div class='box-selector'>
+							<div id='size-selector' class='size-selector'>
 								<label class='box-selector-item small'>
 									<input type='radio' name='boxSize' value='small'>
 									<div class='box-selector-row heading'>
@@ -424,7 +424,7 @@
 										<img src='box-small.png'>
 									</div>
 									<div class='box-selector-row description'>
-										<span class='box-selector-juices'>3 russian juices</span>
+										<span class='box-selector-juices'>3 juices</span>
 										<span class='box-selector-bonuses'>
 											<span class='box-selector-bonus little'>
 												Little bonus
@@ -447,7 +447,7 @@
 										<img src='box-medium.png'>
 									</div>
 									<div class='box-selector-row description'>
-										<span class='box-selector-juices'>4 incredible russian juices</span>
+										<span class='box-selector-juices'>4 juices</span>
 										<span class='box-selector-bonuses'>
 											<span class='box-selector-bonus little'>
 												Little bonus
@@ -474,7 +474,7 @@
 										<img src='box-large.png'>
 									</div>
 									<div class='box-selector-row description'>
-										<span class='box-selector-juices'>6 awesomely incredible russian juices</span>
+										<span class='box-selector-juices'>6 juices</span>
 										<span class='box-selector-bonuses'>
 											<span class='box-selector-bonus little'>
 												Little bonus
@@ -490,203 +490,92 @@
 								</label>
 							</div>
 						</fieldset>
-					</div>
-				</form>
-				<h3>Delivery</h3>
-				<p>We ship to all of Europe expect Strana and Strana. In takes about 1 week and costs around 10 valuyta.</p>
-				<form id='adress-selector' class='address-selector'>
-					<button id='get-location-button' type='button' class='address-selector-geo-button'>
-						📍️ Get my location
-						<span class='overlay'></span>
-					</button>
-					<fieldset>
-						<div class='address-selector-address'>
-							<label class='address-selector-address-block country'>
-								<input id='country-input' class='address-selector-address-item input' autocomplete="country" name="country-name" placeholder="Country" required list="countries-selector-list" />
-								<datalist id="countries-selector-list">
-									<option data-country-name='Albania' value="🇦🇱 Albania">
-									<option data-country-name='Austria' value="🇦🇹 Austria">
-									<option data-country-name='Belgium' value="🇧🇪 Belgium">
-									<option data-country-name='BosniaAndHerzegovina' value="🇧🇦 Bosnia and Herzegovina">
-									<option data-country-name='Bulgaria' value="🇧🇬 Bulgaria">
-									<option data-country-name='Croatia' value="🇭🇷 Croatia">
-									<option data-country-name='Cyprus' value="🇨🇾 Cyprus">
-									<option data-country-name='Czechia' value="🇨🇿 Czechia">
-									<option data-country-name='Denmark' value="🇩🇰 Denmark">
-									<option data-country-name='Estonia' value="🇪🇪 Estonia">
-									<option data-country-name='Finland' value="🇫🇮 Finland">
-									<option data-country-name='France' value="🇫🇷 France">
-									<option data-country-name='Germany' value="🇩🇪 Germany">
-									<option data-country-name='Greece' value="🇬🇷 Greece">
-									<option data-country-name='Hungary' value="🇭🇺 Hungary">
-									<option data-country-name='Iceland' value="🇮🇸 Iceland">
-									<option data-country-name='Ireland' value="🇮🇪 Ireland">
-									<option data-country-name='Italy' value="🇮🇹 Italy">
-									<option data-country-name='Kosovo' value="🇽🇰 Kosovo">
-									<option data-country-name='Latvia' value="🇱🇻 Latvia">
-									<option data-country-name='Liechtenstein' value="🇱🇮 Liechtenstein">
-									<option data-country-name='Lithuania' value="🇱🇹 Lithuania">
-									<option data-country-name='Luxembourg' value="🇱🇺 Luxembourg">
-									<option data-country-name='Macedonia' value="🇲🇰 Macedonia">
-									<option data-country-name='Malta' value="🇲🇹 Malta">
-									<option data-country-name='Moldavia' value="🇲🇩 Moldavia">
-									<option data-country-name='Monaco' value="🇲🇨 Monaco">
-									<option data-country-name='Montenegro' value="🇲🇪 Montenegro">
-									<option data-country-name='Netherlands' value="🇳🇱 Netherlands">
-									<option data-country-name='Norway' value="🇳🇴 Norway">
-									<option data-country-name='Poland' value="🇵🇱 Poland">
-									<option data-country-name='Portugal' value="🇵🇹 Portugal">
-									<option data-country-name='Romania' value="🇷🇴 Romania">
-									<option data-country-name='SanMarino' value="🇸🇲 San Marino">
-									<option data-country-name='Serbia' value="🇷🇸 Serbia">
-									<option data-country-name='Slovakia' value="🇸🇰 Slovakia">
-									<option data-country-name='Slovenia' value="🇸🇮 Slovenia">
-									<option data-country-name='Spain' value="🇪🇸 Spain">
-									<option data-country-name='Sweden' value="🇸🇪 Sweden">
-									<option data-country-name='Switzerland' value="🇨🇭 Switzerland">
-									<option data-country-name='UnitedKingdom' value="🇬🇧 UK">
-									<option data-country-name='Vatican' value="🇻🇦 Vatican">
-								</datalist>
-							</label>
-							<label class='address-selector-address-block postal'>
-								<input id='zip-code-input' class='address-selector-address-item input' type='number' name='postal' pattern='[0-9]*' inputmode='numeric' placeholder='Postal code' required>
-								<span class='address-selector-address-item description'>Postal code</span>
-							</label>
-							<label class='address-selector-address-block address'>
-								<input id='address-input' class='address-selector-address-item input' autocomplete="street-address" type='text' name='address' placeholder='City, street, building, apt etc.' required>
-								<span class='address-selector-address-item description'>Address</span>
-							</label>
-						</div>
-					</fieldset>
-				</form>
-				<h3>Contacts</h3>
-				<form>
-					<fieldset>
-						<div class='contacts-selector'>
-							<label class='contacts-selector-block contact-method-name'>
-								<input id='name-input' type='text' name='name' class='contacts-selector-item input' placeholder='Name & surname' autocomplete="name" required pattern='\w+\s\w+'>
-								<span class='address-selector-address-item description'>Name & surnamey</span>
-							</label>
-							<label class='contacts-selector-block contact-method-phone'>
-								<input id='phone-input' type='tel' name='contactMethodPhone' class='contacts-selector-item input' placeholder='Phone number' autocomplete="tel" required pattern='[0-9]+'>
-								<span class='address-selector-address-item description'>Phone number</span>
-							</label>
-							<label class='contacts-selector-block contact-method-email'>
-								<input id='email-input' type='email' name='contactMethodEmail' class='contacts-selector-item input' placeholder="Email" autocomplete="email" required>
-								<span class='address-selector-address-item description'>Email</span>
-							</label>
-							<label class='contacts-selector-block contact-method-email-repeat'>
-								<input id='email-input-verify' type='email' name='contactMethodEmailRepeat' class='contacts-selector-item input' placeholder="Email again" autocomplete="email" required>
-								<span class='address-selector-address-item description'>Email again</span>
-							</label>
-						</div>
-					</fieldset>
-					<div class='review-order-block send-order'>
-						<button id='add-box-button' class='review-order-item add-more' type='button'>
-							Add 1 more box
-							<div class='overlay'></div>
-						</button>
-						<button id='send-order-button' class='review-order-item send-button'>
-							Vape it all for
-							<!-- <span id='send-order-button-price'></span> сюда цену -->
-							<div class='overlay'></div>
-						</button>
-					</div>
-				</form>
-			</div>
-		</section>
-		<section class='slide delivery review'>
-			<div class='side left'>
-				<h3>Delivery</h3>
-				<p>We ship to all of Europe expect Strana and Strana. In takes about 1 week and costs around 10 valuyta.</p>
-				<form id='adress-selector' class='address-selector'>
-					<button id='get-location-button' type='button' class='address-selector-geo-button'>
-						📍️ Get my location
-						<span class='overlay'></span>
-					</button>
-					<fieldset>
-						<div class='address-selector-address'>
-							<label class='address-selector-address-block country'>
-								<input id='country-input' class='address-selector-address-item input' autocomplete="country" name="country-name" placeholder="Country" required list="countries-selector-list" />
-								<datalist id="countries-selector-list">
-									<option data-country-name='Albania' value="🇦🇱 Albania">
-									<option data-country-name='Austria' value="🇦🇹 Austria">
-									<option data-country-name='Belgium' value="🇧🇪 Belgium">
-									<option data-country-name='BosniaAndHerzegovina' value="🇧🇦 Bosnia and Herzegovina">
-									<option data-country-name='Bulgaria' value="🇧🇬 Bulgaria">
-									<option data-country-name='Croatia' value="🇭🇷 Croatia">
-									<option data-country-name='Cyprus' value="🇨🇾 Cyprus">
-									<option data-country-name='Czechia' value="🇨🇿 Czechia">
-									<option data-country-name='Denmark' value="🇩🇰 Denmark">
-									<option data-country-name='Estonia' value="🇪🇪 Estonia">
-									<option data-country-name='Finland' value="🇫🇮 Finland">
-									<option data-country-name='France' value="🇫🇷 France">
-									<option data-country-name='Germany' value="🇩🇪 Germany">
-									<option data-country-name='Greece' value="🇬🇷 Greece">
-									<option data-country-name='Hungary' value="🇭🇺 Hungary">
-									<option data-country-name='Iceland' value="🇮🇸 Iceland">
-									<option data-country-name='Ireland' value="🇮🇪 Ireland">
-									<option data-country-name='Italy' value="🇮🇹 Italy">
-									<option data-country-name='Kosovo' value="🇽🇰 Kosovo">
-									<option data-country-name='Latvia' value="🇱🇻 Latvia">
-									<option data-country-name='Liechtenstein' value="🇱🇮 Liechtenstein">
-									<option data-country-name='Lithuania' value="🇱🇹 Lithuania">
-									<option data-country-name='Luxembourg' value="🇱🇺 Luxembourg">
-									<option data-country-name='Macedonia' value="🇲🇰 Macedonia">
-									<option data-country-name='Malta' value="🇲🇹 Malta">
-									<option data-country-name='Moldavia' value="🇲🇩 Moldavia">
-									<option data-country-name='Monaco' value="🇲🇨 Monaco">
-									<option data-country-name='Montenegro' value="🇲🇪 Montenegro">
-									<option data-country-name='Netherlands' value="🇳🇱 Netherlands">
-									<option data-country-name='Norway' value="🇳🇴 Norway">
-									<option data-country-name='Poland' value="🇵🇱 Poland">
-									<option data-country-name='Portugal' value="🇵🇹 Portugal">
-									<option data-country-name='Romania' value="🇷🇴 Romania">
-									<option data-country-name='SanMarino' value="🇸🇲 San Marino">
-									<option data-country-name='Serbia' value="🇷🇸 Serbia">
-									<option data-country-name='Slovakia' value="🇸🇰 Slovakia">
-									<option data-country-name='Slovenia' value="🇸🇮 Slovenia">
-									<option data-country-name='Spain' value="🇪🇸 Spain">
-									<option data-country-name='Sweden' value="🇸🇪 Sweden">
-									<option data-country-name='Switzerland' value="🇨🇭 Switzerland">
-									<option data-country-name='UnitedKingdom' value="🇬🇧 UK">
-									<option data-country-name='Vatican' value="🇻🇦 Vatican">
-								</datalist>
-							</label>
-							<label class='address-selector-address-block postal'>
-								<input id='zip-code-input' class='address-selector-address-item input' type='number' name='postal' pattern='[0-9]*' inputmode='numeric' placeholder='Postal code' required>
-								<span class='address-selector-address-item description'>Postal code</span>
-							</label>
-							<label class='address-selector-address-block address'>
-								<input id='address-input' class='address-selector-address-item input' autocomplete="street-address" type='text' name='address' placeholder='City, street, building, apt etc.' required>
-								<span class='address-selector-address-item description'>Address</span>
-							</label>
-						</div>
-					</fieldset>
-				</form>
-				<h3>Contacts</h3>
-				<form>
-					<fieldset>
-						<div class='contacts-selector'>
-							<label class='contacts-selector-block contact-method-name'>
-								<input id='name-input' type='text' name='name' class='contacts-selector-item input' placeholder='Name & surname' autocomplete="name" required pattern='\w+\s\w+'>
-								<span class='address-selector-address-item description'>Name & surnamey</span>
-							</label>
-							<label class='contacts-selector-block contact-method-phone'>
-								<input id='phone-input' type='tel' name='contactMethodPhone' class='contacts-selector-item input' placeholder='Phone number' autocomplete="tel" required pattern='[0-9]+'>
-								<span class='address-selector-address-item description'>Phone number</span>
-							</label>
-							<label class='contacts-selector-block contact-method-email'>
-								<input id='email-input' type='email' name='contactMethodEmail' class='contacts-selector-item input' placeholder="Email" autocomplete="email" required>
-								<span class='address-selector-address-item description'>Email</span>
-							</label>
-							<label class='contacts-selector-block contact-method-email-repeat'>
-								<input id='email-input-verify' type='email' name='contactMethodEmailRepeat' class='contacts-selector-item input' placeholder="Email again" autocomplete="email" required>
-								<span class='address-selector-address-item description'>Email again</span>
-							</label>
-						</div>
-					</fieldset>
-					<div class='review-order-block send-order'>
+						<h3>Delivery</h3>
+						<p>We ship to all of Europe expect Strana and Strana. In takes about 1 week and costs around 10 valuyta.</p>
+						<fieldset>
+							<div id='adress-selector' class='address-selector'>
+								<button id='get-location-button' type='button' class='address-selector-geo-button'>
+									📍️ Get my location
+									<span class='overlay'></span>
+								</button>
+								<label class='address-selector-address-block country'>
+									<input id='country-input' class='address-selector-address-item input' autocomplete="country" name="country-name" placeholder="Country" required list="countries-selector-list" />
+									<datalist id="countries-selector-list">
+										<option data-country-name='Albania' value="🇦🇱 Albania">
+										<option data-country-name='Austria' value="🇦🇹 Austria">
+										<option data-country-name='Belgium' value="🇧🇪 Belgium">
+										<option data-country-name='BosniaAndHerzegovina' value="🇧🇦 Bosnia and Herzegovina">
+										<option data-country-name='Bulgaria' value="🇧🇬 Bulgaria">
+										<option data-country-name='Croatia' value="🇭🇷 Croatia">
+										<option data-country-name='Cyprus' value="🇨🇾 Cyprus">
+										<option data-country-name='Czechia' value="🇨🇿 Czechia">
+										<option data-country-name='Denmark' value="🇩🇰 Denmark">
+										<option data-country-name='Estonia' value="🇪🇪 Estonia">
+										<option data-country-name='Finland' value="🇫🇮 Finland">
+										<option data-country-name='France' value="🇫🇷 France">
+										<option data-country-name='Germany' value="🇩🇪 Germany">
+										<option data-country-name='Greece' value="🇬🇷 Greece">
+										<option data-country-name='Hungary' value="🇭🇺 Hungary">
+										<option data-country-name='Iceland' value="🇮🇸 Iceland">
+										<option data-country-name='Ireland' value="🇮🇪 Ireland">
+										<option data-country-name='Italy' value="🇮🇹 Italy">
+										<option data-country-name='Kosovo' value="🇽🇰 Kosovo">
+										<option data-country-name='Latvia' value="🇱🇻 Latvia">
+										<option data-country-name='Liechtenstein' value="🇱🇮 Liechtenstein">
+										<option data-country-name='Lithuania' value="🇱🇹 Lithuania">
+										<option data-country-name='Luxembourg' value="🇱🇺 Luxembourg">
+										<option data-country-name='Macedonia' value="🇲🇰 Macedonia">
+										<option data-country-name='Malta' value="🇲🇹 Malta">
+										<option data-country-name='Moldavia' value="🇲🇩 Moldavia">
+										<option data-country-name='Monaco' value="🇲🇨 Monaco">
+										<option data-country-name='Montenegro' value="🇲🇪 Montenegro">
+										<option data-country-name='Netherlands' value="🇳🇱 Netherlands">
+										<option data-country-name='Norway' value="🇳🇴 Norway">
+										<option data-country-name='Poland' value="🇵🇱 Poland">
+										<option data-country-name='Portugal' value="🇵🇹 Portugal">
+										<option data-country-name='Romania' value="🇷🇴 Romania">
+										<option data-country-name='SanMarino' value="🇸🇲 San Marino">
+										<option data-country-name='Serbia' value="🇷🇸 Serbia">
+										<option data-country-name='Slovakia' value="🇸🇰 Slovakia">
+										<option data-country-name='Slovenia' value="🇸🇮 Slovenia">
+										<option data-country-name='Spain' value="🇪🇸 Spain">
+										<option data-country-name='Sweden' value="🇸🇪 Sweden">
+										<option data-country-name='Switzerland' value="🇨🇭 Switzerland">
+										<option data-country-name='UnitedKingdom' value="🇬🇧 UK">
+										<option data-country-name='Vatican' value="🇻🇦 Vatican">
+									</datalist>
+								</label>
+								<label class='address-selector-address-block postal'>
+									<input id='zip-code-input' class='address-selector-address-item input' type='number' name='postal' pattern='[0-9]*' inputmode='numeric' placeholder='Postal code' required>
+									<span class='address-selector-address-item description'>Postal code</span>
+								</label>
+								<label class='address-selector-address-block address'>
+									<input id='address-input' class='address-selector-address-item input' autocomplete="street-address" type='text' name='address' placeholder='City, street, building, apt etc.' required>
+									<span class='address-selector-address-item description'>Address</span>
+								</label>
+							</div>
+						</fieldset>
+						<h3>Contacts</h3>
+						<fieldset>
+							<div id='contacts-selector' class='contacts-selector'>
+								<label class='contacts-selector-block contact-method-name'>
+									<input id='name-input' type='text' name='name' class='contacts-selector-item input' placeholder='Name & surname' autocomplete="name" required pattern='\w+\s\w+'>
+									<span class='address-selector-address-item description'>Name & surnamey</span>
+								</label>
+								<label class='contacts-selector-block contact-method-phone'>
+									<input id='phone-input' type='tel' name='contactMethodPhone' class='contacts-selector-item input' placeholder='Phone number' autocomplete="tel" required pattern='[0-9]+'>
+									<span class='address-selector-address-item description'>Phone number</span>
+								</label>
+								<label class='contacts-selector-block contact-method-email'>
+									<input id='email-input' type='email' name='contactMethodEmail' class='contacts-selector-item input' placeholder="Email" autocomplete="email" required>
+									<span class='address-selector-address-item description'>Email</span>
+								</label>
+								<label class='contacts-selector-block contact-method-email-repeat'>
+									<input id='email-input-verify' type='email' name='contactMethodEmailRepeat' class='contacts-selector-item input' placeholder="Email again" autocomplete="email" required>
+									<span class='address-selector-address-item description'>Email again</span>
+								</label>
+							</div>
+						</fieldset>
 						<button id='add-box-button' class='review-order-item add-more' type='button'>
 							Add 1 more box
 							<div class='overlay'></div>
@@ -715,6 +604,16 @@
 			</div>
 		</section>
 	</main>
+
+
+
+
+
+
+
+
+
+
 	<aside id='after-order-overlay' class='after-order-overlay'>
 		<div class='after-order-overlay-block'>
 			<div class='after-order-overlay-element heading'>

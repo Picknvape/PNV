@@ -149,11 +149,9 @@ header {
 }
 
 .size-selector {
-  display: flex;
-  margin: -.25rem;
-  padding: unset;
-  border: none;
-  flex-wrap: wrap;
+	display: flex;
+	margin: -.125rem;
+	flex-wrap: wrap;
 }
 
 .size-selector-button {
@@ -551,10 +549,13 @@ header {
   fill: hsla(0, 0%, 0%, 1);
 }
 
+
 .address-selector {
-  display: flex;
-  flex-direction: column;
-  border-radius: .5em;
+	display: flex;
+	margin: -.25rem -1rem;
+	margin-top: .25rem;
+	flex-wrap: wrap;
+	justify-content: space-between;
 }
 
 .address-selector-geo-button {
@@ -632,13 +633,6 @@ header {
   opacity: 1;
 }
 
-.address-selector-address {
-	display: flex;
-	margin: -.25rem -1rem;
-	margin-top: .25rem;
-	flex-wrap: wrap;
-	justify-content: space-between;
-}
 
 .address-selector-address-block {
   margin: .25rem 1rem;

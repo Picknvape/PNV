@@ -1,6 +1,5 @@
 # PNV
 Eng version
-<<<<<<< HEAD
 
 Сделать:
 
