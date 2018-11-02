@@ -111,3 +111,18 @@ function reflectChoiceOnMap() {
   }
   prevCountry = countryToLightUp;
 }
+
+
+
+var addressButtons = document.getElementsByName('country');
+var previous = null;
+for (var i = 0; i < addressButtons.length; i++) {
+  addressButtons[i].onclick = function() {
+    (previous) ? console.log(previous.value): null;
+    if (this !== previous) {
+      previous = this;
+      reflectChoiceOnMap();
+    }
+    console.log(this.value)
+  };
+}
