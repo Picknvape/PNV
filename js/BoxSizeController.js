@@ -1,5 +1,3 @@
-//separate function for box size management
-
 function GetChosenBoxSize() 
 {
 	let orderRadio = document.getElementsByName('boxSize');
@@ -19,4 +17,8 @@ for (i = 0; i < sizeSelectorInputs.length; i++) {
   sizeSelectorInputs[i].addEventListener('change', function() {
     sizeChanger.className = sizeChangerDefaultClasses + ' ' + this.value;
   });
+}
+
+function UpdateBoxVisual() {
+	sizeChanger.className =  sizeChangerDefaultClasses + ' ' + GetChosenBoxSize();
 }

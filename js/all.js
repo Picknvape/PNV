@@ -5,6 +5,7 @@ function IsEmailVerified() {
 function InitialRadioReader() {
 	reflectChoiceOnMap();
 	reflectToUI(GetPreferences(true));
+	UpdateBoxVisual();
 }	
 function CompileOrderData() {
   var orderData = {};
