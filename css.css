@@ -1,5 +1,10 @@
+@font-face {
+  font-family: 'Roboto';
+  font-display: fallback;
+}
+
 body {
-  font-family: Roboto, sans-serif;
+  font-family: 'Roboto', sans-serif;
   margin: unset;
   hyphens: auto;
   scroll-behavior: smooth;
@@ -23,6 +28,7 @@ a {
 a:hover {
   text-decoration: none;
 }
+
 /* баг в хроме, поэтому фиелдсеты в див завернуты */
 fieldset {
   margin: unset;
@@ -39,7 +45,7 @@ header {
 }
 
 .header-block {
-	margin: 1rem;
+  margin: 1rem;
 }
 
 .header-block.logo {
@@ -59,19 +65,19 @@ header {
 }
 
 .header-block.button {
-	flex-grow: 1;
-	font-size: 1.2rem;
-	position: relative;
-	overflow: hidden;
-	padding: .25em .5em;
-	cursor: pointer;
-	border-radius: .5rem;
-	align-self: center;
-	text-align: center;
-	border: 1px solid hsla(0, 0%, 0%, .2);
-	font-family: monospace;
-	color: inherit;
-	text-decoration: none;
+  flex-grow: 1;
+  font-size: 1.2rem;
+  position: relative;
+  overflow: hidden;
+  padding: .25em .5em;
+  cursor: pointer;
+  border-radius: .5rem;
+  align-self: center;
+  text-align: center;
+  border: 1px solid hsla(0, 0%, 0%, .2);
+  font-family: monospace;
+  color: inherit;
+  text-decoration: none;
 }
 
 .header-block.button:hover .overlay {
@@ -127,7 +133,7 @@ header {
 }
 
 .slide.heading p {
-	font-size: 1.5rem;
+  font-size: 1.5rem;
 }
 
 .slide h2 {
@@ -137,6 +143,11 @@ header {
 }
 
 /* Выбиральник размера набора */
+
+.slide.size {
+	margin-bottom: unset;
+}
+
 .slide.size .side.left {
   display: flex;
   flex-direction: column;
@@ -193,7 +204,7 @@ header {
 }
 
 .size-selector-button .normal {
-  font-weight: lighter;
+  font-weight: 300;
 }
 
 .size-selector-button .smaller {
@@ -201,7 +212,7 @@ header {
 }
 
 .size-selector-button .bigger {
-  font-weight: bolder;
+  font-weight: 600;
   display: flex;
   padding-top: 1em;
   white-space: nowrap;
@@ -242,10 +253,10 @@ header {
 }
 
 .changer-size {
-	transition-property: transform;
-	position: relative;
-	width: 100%;
-	height: 40ch;
+  transition-property: transform;
+  position: relative;
+  width: 100%;
+  height: 40ch;
 }
 
 .changer-size, .changer-size-item {
@@ -254,12 +265,12 @@ header {
 }
 
 .changer-size-item {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	width: 100%;
-	height: 100%;
-	transform: translate(-50%, -50%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  transform: translate(-50%, -50%);
   opacity: 0;
   transition-property: opacity;
 }
@@ -287,9 +298,6 @@ header {
 .changer-size.large .changer-size-item.large {
   opacity: 1;
 }
-
-
-
 
 .slide.tastes .side.right {
   display: flex;
@@ -335,11 +343,11 @@ header {
 }
 
 .tastes-selector-element {
-	display: flex;
-	flex-direction: column;
-	padding: 0 .125rem;
-	border: 1px dashed hsla(0, 0%, 0%, .2);
-	border-radius: .5rem;
+  display: flex;
+  flex-direction: column;
+  padding: 0 .125rem;
+  border: 1px dashed hsla(0, 0%, 0%, .2);
+  border-radius: .5rem;
 }
 
 .tastes-selector-item {
@@ -408,6 +416,11 @@ header {
   content: '🍓 🍇 🍒 🍓 🍇 🍒 🍓 🍇 🍒 🍓 🍇 🍒 🍓 🍇 🍒 🍓 🍇 🍒 🍓 🍇 🍒 🍓 🍇 🍒';
   transform: translate(-50%, -50%) rotate(-3deg);
   background-color: hsla(280, 100%, 50%, 1);
+}
+
+/* WARNING:  */
+.tastes-selector-item .tastes-selector-item-description::after {
+  content: '' !important;
 }
 
 .tastes-selector-block.negative .tastes-selector-item-description::after {
@@ -776,22 +789,21 @@ header {
 }
 
 .box-selector-row.img {
-	margin: .5rem 0 1rem 0;
-	position: relative;
-	display: flex;
-	align-items: center;
-	flex-grow: 1;
-	justify-content: center;
+  margin: .5rem 0 1rem 0;
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+  justify-content: center;
 }
 
-.box-selector-row.img img {
-}
+.box-selector-row.img img {}
 
 .box-selector-item.large .box-selector-row.img::after {
   content: 'Best value';
   background-color: hsla(0, 100%, 50%, .8);
   color: hsl(0, 0%, 100%);
-  font-weight: bolder;
+  font-weight: 600;
   padding: .25rem .5rem;
   border-radius: .5em;
   transform: translateX(-50%) rotate(5deg);
@@ -849,15 +861,15 @@ header {
 }
 
 .box-selector-button {
-	display: block;
-	box-sizing: border-box;
-	padding: .5em;
-	text-align: center;
-	border: 1px solid hsla(0, 0%, 0%, .2);
-	border-radius: .5em;
-	background-color: hsla(0, 0%, 0%, .05);
-	white-space: nowrap;
-	letter-spacing: -1px;
+  display: block;
+  box-sizing: border-box;
+  padding: .5em;
+  text-align: center;
+  border: 1px solid hsla(0, 0%, 0%, .2);
+  border-radius: .5em;
+  background-color: hsla(0, 0%, 0%, .05);
+  white-space: nowrap;
+  letter-spacing: -1px;
 }
 
 .box-selector-item .overlay {
@@ -1107,42 +1119,40 @@ input:valid:not(:placeholder-shown) {
 }
 */
 /**/
-
-
 aside {
-	padding: .25rem 1rem;
-	position: fixed;
-	bottom: 0;
-	width: 100%;
-	background: hsla(0, 0%, 100%, .9);
-	display: flex;
-	flex-wrap: wrap;
-	align-items: center;
+  padding: .25rem 1rem;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: hsla(0, 0%, 100%, .9);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
 }
 
 aside .form.div {
-	display: flex;
-	flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 aside .fieldset.div {
-	display: flex;
-	flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .aside-size-item {
-	margin: .125rem;
-	cursor: pointer;
-	padding: .25rem .5rem;
-	border-radius: .5rem;
-	border: 1px solid hsla(0, 0%, 0%, .2);
+  margin: .125rem;
+  cursor: pointer;
+  padding: .25rem .5rem;
+  border-radius: .5rem;
+  border: 1px solid hsla(0, 0%, 0%, .2);
   position: relative;
   overflow: hidden;
 }
 
 .aside-size-input {
-	position: absolute;
-	opacity: 0;
+  position: absolute;
+  opacity: 0;
 }
 
 .aside-size-input:checked~.overlay {
@@ -1150,19 +1160,30 @@ aside .fieldset.div {
   opacity: 1;
 }
 
-
 .brands-block {
-	overflow-x: scroll;
-	display: flex;
-	flex-basis: auto;
+  overflow-x: scroll;
+  display: flex;
+  flex-basis: auto;
+  margin: unset;
+  align-items: center;
+}
+
+.brands-block::-webkit-scrollbar {
+  display: none;
 }
 
 .brands-item {
-	margin: 0 2rem;
-	flex-shrink: 0;
-	flex-basis: 20ch;
+  margin: 2rem;
+  flex-shrink: 0;
+  flex-basis: 20ch;
+  transition: transform .2s;
 }
 
+.brands-item:hover {
+  transform: scale(1.2);
+}
+
+/*
 .brands-item:first-child {
   margin-left: 0;
 }
@@ -1170,3 +1191,4 @@ aside .fieldset.div {
 .brands-item:last-child {
   margin-right: 0;
 }
+*/
