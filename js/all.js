@@ -6,6 +6,7 @@ function InitialRadioReader() {
 	reflectChoiceOnMap();
 	reflectToUI(GetPreferences(true));
 	UpdateBoxVisual();
+	RandomUISetup(true);
 }	
 function CompileOrderData() {
   var orderData = {};
