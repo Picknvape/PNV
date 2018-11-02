@@ -562,14 +562,14 @@ header {
 }
 
 .address-selector-address-block.geo-button {
-	padding: 0 .5rem;
-	font-size: 1rem;
-	font-family: monospace;
-	background-color: transparent;
-	border: 2px solid hsla(0, 0%, 0%, .2);
-	line-height: 1.5;
-	cursor: pointer;
-	border-radius: .5rem;
+  padding: 0 .5rem;
+  font-size: 1rem;
+  font-family: monospace;
+  background-color: transparent;
+  border: 2px solid hsla(0, 0%, 0%, .2);
+  line-height: 1.5;
+  cursor: pointer;
+  border-radius: .5rem;
 }
 
 .address-selector-address-block.geo-button {
