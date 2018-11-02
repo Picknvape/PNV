@@ -16,9 +16,17 @@
 	<meta name="theme-color" content="#fa0">
 	<title>Pick&amp;Vape</title>
 	<link rel='stylesheet' type='text/css' href='css.css'>
-	<script defer src='all.js'></script>
-	<script defer src='geo.js'></script>
-	<script defer src='order_data_builder.js'></script>
+	
+	<script defer src='js/BoxSizeController.js'></script>
+	<script defer src='js/TitleController.js'></script>
+	<script defer src='js/TasteSelectorController.js'></script>
+	<script defer src='js/MapController.js'></script>
+	<script defer src='js/AnimationController.js'></script>
+	
+	
+	<script defer src='js/all.js'></script>
+	
+	
 </head>
 
 <body>
@@ -726,7 +734,7 @@
 					<fieldset>
 						<div class='contacts-selector'>
 							<label class='contacts-selector-block name'>
-								<input id='name-input' type='text' pattern='\p{L}' name='name' class='contacts-selector-item input' placeholder='Name & surname. For delivery' autocomplete="name" required>
+								<input id='name-input' type='text' name='name' class='contacts-selector-item input' placeholder='Name & surname. For delivery' autocomplete="name" required>
 								<span class='address-selector-address-item description'>Name & surname. For delivery</span>
 							</label>
 							<label class='contacts-selector-block contact-method-phone'>
@@ -738,7 +746,7 @@
 								<span class='address-selector-address-item description'>Email. We'll send you order statuses</span>
 							</label>
 							<label class='contacts-selector-block contact-method-email-repeat'>
-								<input id='email-input' type='email' name='contactMethodEmailRepeat' class='contacts-selector-item input' placeholder="Email once more, so there aren't any mistakes" autocomplete="email" required>
+								<input id='email-input-verify' type='email' name='contactMethodEmailRepeat' class='contacts-selector-item input' placeholder="Email once more, so there aren't any mistakes" autocomplete="email" required>
 								<span class='address-selector-address-item description'>Email once more, so there aren't any mistakes</span>
 							</label>
 						</div>
