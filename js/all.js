@@ -10,7 +10,6 @@ function CompileOrderData() {
   orderData.clientName = document.getElementById('name-input').value;
   orderData.clientPhone = document.getElementById('phone-input').value;
   orderData.clientEmail = document.getElementById('email-input').value;
-  //figure out something with countrycodes
-  console.log(orderData);
+  return orderData;
 }
 InitialRadioReader();

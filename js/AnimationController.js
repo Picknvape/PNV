@@ -1,4 +1,8 @@
 var randomItemsContainerBaseClass = document.getElementById('bonus-rotator').className;
+document.getElementById('get-bonus-button').addEventListener('click', DoPseudoRandomAnimationCycle);
+var maxStep = document.getElementById('bonus-rotator').children.length; //changeable, use as public editable variable to adjust amount of steps in animation according to baked elements count
+var randomStep = maxStep;
+var frameTime = 200;
 
 function RandomUISetup(firstInit = false) {
   var randomItemsContainer = document.getElementById('bonus-rotator');
@@ -18,14 +22,9 @@ function RandomUISetup(firstInit = false) {
     randomItemsContainer.appendChild(randomItemsContainerChildren[Math.random() * i | 0]);
   }
 }
-RandomUISetup(true);
-
-document.getElementById('get-bonus-button').addEventListener('click', DoPseudoRandomAnimationCycle);
-var maxStep = document.getElementById('bonus-rotator').children.length; //changeable, use as public editable variable to adjust amount of steps in animation according to baked elements count
-var randomStep = maxStep;
-var frameTime = 200;
 
 function DoPseudoRandomAnimationCycle() {
+	document.getElementById('get-bonus-button').removeEventListener('click', DoPseudoRandomAnimationCycle);
   let randomItemsContainer = document.getElementById('bonus-rotator');
   randomItemsContainer.className = randomItemsContainerBaseClass;
   if (randomStep == 0) {
@@ -41,13 +40,13 @@ function DoPseudoRandomAnimationCycle() {
       document.getElementById('random-item-' + randomStep).classList.add('checked');
       let powMod = 2;
       var newFrameTime = (-Math.pow((randomStep - maxStep / 2), powMod) / Math.pow(maxStep / 2, powMod) + 1.75) * frameTime;
-      // Math.round((Math.pow((i - iterations / 2), multiplier) / Math.pow(iterations / 2, multiplier) + .25) * frameDurarionMs);
       window.setTimeout(animationStep, newFrameTime);
       if (randomStep == Math.floor(maxStep / 6)) {
         randomItemsContainer.classList.toggle('animation-finished');
       }
     } else {
-      document.getElementById('random-item-1').classList.remove('checked');
+		document.getElementById('get-bonus-button').addEventListener('click', DoPseudoRandomAnimationCycle);
+		document.getElementById('random-item-1').classList.remove('checked');
     }
   }
   animationStep();
