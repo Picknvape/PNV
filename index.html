@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang='en'>
+
 <head>
 	<meta charset='utf-8'>
 	<meta name='viewport' content='width=device-width, initial-scale=1'>
@@ -339,7 +340,10 @@
 										<span class='box-selector-volume'>150 ml</span>
 									</div>
 									<div class='box-selector-row img'>
+										<!--
 										<img src='box-small-icon.svg'>
+									-->
+									<img src='box-small.png'>
 									</div>
 									<div class='box-selector-row description'>
 										<span class='box-selector-juices'>3 russian juices</span>
@@ -359,7 +363,10 @@
 										<span class='box-selector-volume'>210 ml</span>
 									</div>
 									<div class='box-selector-row img'>
+										<!--
 										<img src='box-medium-icon.svg'>
+									-->
+										<img src='box-medium.png'>
 									</div>
 									<div class='box-selector-row description'>
 										<span class='box-selector-juices'>4 incredible russian juices</span>
@@ -383,7 +390,10 @@
 										<span class='box-selector-volume'>300 ml</span>
 									</div>
 									<div class='box-selector-row img'>
+										<!--
 										<img src='box-large-icon.svg'>
+									-->
+									<img src='box-large.png'>
 									</div>
 									<div class='box-selector-row description'>
 										<span class='box-selector-juices'>6 awesomely incredible russian juices</span>
@@ -421,6 +431,18 @@
 						📍️ Get my location
 						<span class='overlay'></span>
 					</button>
+
+					<label for="ice-cream-choice">
+						<input list="ice-cream-flavors" id="ice-cream-choice" name="country" placeholder="Country"/>
+						<datalist id="ice-cream-flavors">
+							<option value="🇦🇱 Albania">
+							<option value="🇦🇹 Austria">
+							<option value="🇧🇪 Belgium">
+							<option value="🇧🇦 Bosnia and Herzegovina">
+							<option value="🇧🇬 Bulgaria">
+						</datalist>
+					</label>
+					<!--
 					<fieldset>
 						<div class='address-selector-country'>
 							<label>
@@ -677,6 +699,7 @@
 							</label>
 						</div>
 					</fieldset>
+				-->
 					<fieldset>
 						<div class='address-selector-address'>
 							<label class='address-selector-address-block address'>
@@ -690,41 +713,42 @@
 						</div>
 					</fieldset>
 				</form>
-				<div class='side review-order-block contacts'>
-					<h3>Contacts</h3>
-					<form>
-						<fieldset>
-							<div class='contacts-selector'>
-								<label class='contacts-selector-block name'>
-									<input id='name-input' type='text' name='name' class='contacts-selector-item input' placeholder='Name & surname. For delivery' autocomplete="name" required pattern='\w+\s\w+'>
-									<span class='address-selector-address-item description'>Name & surname. For delivery</span>
-								</label>
-								<label class='contacts-selector-block contact-method-phone'>
-									<input id='phone-input' type='tel' name='contactMethodPhone' class='contacts-selector-item input' placeholder='Phone number. For delivery' autocomplete="tel" required pattern='[0-9]+'>
-									<span class='address-selector-address-item description'>Phone number. For delivery</span>
-								</label>
-								<label class='contacts-selector-block contact-method-email'>
-									<input id='email-input' type='email' name='contactMethodEmail' class='contacts-selector-item input' placeholder="Email. We'll send you order statuses" autocomplete="email" required>
-									<span class='address-selector-address-item description'>Email. We'll send you order statuses</span>
-								</label>
-								<label class='contacts-selector-block contact-method-email-repeat'>
-									<input id='email-input-verify' type='email' name='contactMethodEmailRepeat' class='contacts-selector-item input' placeholder="Email once more, so there aren't any mistakes" autocomplete="email" required>
-									<span class='address-selector-address-item description'>Email once more, so there aren't any mistakes</span>
-								</label>
-							</div>
-						</fieldset>
-						<div class='review-order-block send-order'>
-							<button id='add-box-button' class='review-order-item add-more' type='button'>
-								Add 1 more box
-								<div class='overlay'></div>
-							</button>
-							<button id='send-order-button' class='review-order-item send-button'>
-								Vape it all for <!-- <span id='send-order-button-price'></span> сюда цену -->
-								<div class='overlay'></div>
-							</button>
+				<h3>Contacts</h3>
+				<form>
+					<fieldset>
+						<div class='contacts-selector'>
+							<label class='contacts-selector-block name'>
+								<input id='name-input' type='text' name='name' class='contacts-selector-item input' placeholder='Name & surname. For delivery' autocomplete="name" required pattern='\w+\s\w+'>
+								<span class='address-selector-address-item description'>Name & surname. For delivery</span>
+							</label>
+							<label class='contacts-selector-block contact-method-phone'>
+								<input id='phone-input' type='tel' name='contactMethodPhone' class='contacts-selector-item input' placeholder='Phone number. For delivery' autocomplete="tel" required pattern='[0-9]+'>
+								<span class='address-selector-address-item description'>Phone number. For delivery</span>
+							</label>
+							<label class='contacts-selector-block contact-method-email'>
+								<input id='email-input' type='email' name='contactMethodEmail' class='contacts-selector-item input' placeholder="Email. We'll send you order statuses" autocomplete="email" required>
+								<span class='address-selector-address-item description'>Email. We'll send you order statuses</span>
+							</label>
+							<label class='contacts-selector-block contact-method-email-repeat'>
+								<input id='email-input-verify' type='email' name='contactMethodEmailRepeat' class='contacts-selector-item input' placeholder="Email once more, so there aren't any mistakes" autocomplete="email" required>
+								<span class='address-selector-address-item description'>Email once more, so there aren't any mistakes</span>
+							</label>
 						</div>
-					</form>
+					</fieldset>
+					<div class='review-order-block send-order'>
+						<button id='add-box-button' class='review-order-item add-more' type='button'>
+							Add 1 more box
+							<div class='overlay'></div>
+						</button>
+						<button id='send-order-button' class='review-order-item send-button'>
+							Vape it all for
+							<!-- <span id='send-order-button-price'></span> сюда цену -->
+							<div class='overlay'></div>
+						</button>
+					</div>
+				</form>
 			</div>
+			<!--
 			<div class='side right'>
 				<svg id='changer-map' class='changer-map' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 422 415" fill="hsla(0, 0%, 0%, .2)">
 					<path id="path-albania" d="M286 346l-6-7-3-7 2-8 2-1 2 5 3 1 4 9 6 4-5 9z" />
@@ -771,7 +795,9 @@
 					<path id="path-vatican" d="M225 346h1l1-1h-1z" />
 				</svg>
 			</div>
+		-->
 		</section>
+
 		<section class='slide review'>
 			<div class='side review-order-block contacts'>
 				<h3>Contacts</h3>
@@ -802,13 +828,13 @@
 							<div class='overlay'></div>
 						</button>
 						<button id='send-order-button' class='review-order-item send-button'>
-							Vape it all for <!-- <span id='send-order-button-price'></span> сюда цену -->
+							Vape it all for
+							<!-- <span id='send-order-button-price'></span> сюда цену -->
 							<div class='overlay'></div>
 						</button>
 					</div>
 				</form>
-
-
+			</div>
 		</section>
 
 		<section class='slide brands'>

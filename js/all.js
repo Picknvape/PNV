@@ -29,7 +29,7 @@ function CompileOrderData() {
 function OrderDataIssueHighlighter()
 {
 	//ktrzhnv TODO: classes for lighting up
-	//div to reflect issues with text
+	//div to reflect issues with textx
 	console.log('user info incomplete');
 	//should light up stuff depending on missing data;
 	if (orderData.clientName.length<1) {

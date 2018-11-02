@@ -143,9 +143,8 @@ header {
 }
 
 /* Выбиральник размера набора */
-
 .slide.size {
-	margin-bottom: unset;
+  margin-bottom: unset;
 }
 
 .slide.size .side.left {
@@ -355,6 +354,7 @@ header {
   cursor: pointer;
   padding: .5rem;
   font-family: monospace;
+  font-size: 1rem;
   border-radius: .5em;
   overflow: hidden;
   position: relative;
@@ -368,76 +368,64 @@ header {
 }
 
 .tastes-selector-item-description {
-  transition: opacity .4s;
-  opacity: .2;
+	transition: opacity .4s;
+	opacity: .2;
+	text-shadow: 1px 0px white, 0px 1px hsla(0, 0%, 100%, 1), -1px 0px hsla(0, 0%, 100%, 1), 0px -1px hsla(0, 0%, 100%, 1);
 }
 
 .tastes-selector-item .tastes-selector-item-description::after {
-  width: 125%;
-  height: 125%;
   position: absolute;
-  left: 50%;
-  top: 50%;
-  font-size: 1.5rem;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
   z-index: -1;
+  background-size: cover;
+  background-position: center;
+  content: '';
 }
 
 .tastes-selector-item.mint .tastes-selector-item-description::after {
-  content: '🍃 🍃 🍃 🍃 🍃 🍃 🍃 🍃 🍃 🍃 🍃 🍃 🍃 🍃 🍃 🍃 🍃 🍃 🍃 🍃 🍃 🍃 🍃 🍃';
-  transform: translate(-50%, -50%) rotate(3deg);
-  background-color: hsla(150, 100%, 50%, 1);
+  background-image: url('tastes-pics/mint.png');
 }
 
 .tastes-selector-item.desserts .tastes-selector-item-description::after {
-  content: '🍦 🍪 🍭 🍩 🍬 🍰 🍦 🍪 🍭 🍩 🍬 🍰 🍦 🍪 🍭 🍩 🍬 🍰 🍦 🍪 🍭 🍩 🍬 🍰';
-  transform: translate(-50%, -50%) rotate(2deg);
-  background-color: hsla(320, 100%, 50%, 1);
+  background-image: url('tastes-pics/desserts.png');
 }
 
 .tastes-selector-item.exotic .tastes-selector-item-description::after {
-  content: '🍋 🌵 ☕ 🍷 🍋 🌵 ☕ 🍷 🍋 🌵 ☕ 🍷 🍋 🌵 ☕ 🍷 🍋 🌵 ☕ 🍷 🍋 🌵 ☕ 🍷';
-  transform: translate(-50%, -50%) rotate(1deg);
-  background-color: hsla(200, 100%, 50%, 1);
+background-image: url('tastes-pics/exotic.png');
 }
 
 .tastes-selector-item.fruits .tastes-selector-item-description::after {
-  content: '🍊 🍉 🍍 🥥 🥝 🍎 🍊 🍉 🍍 🥥 🥝 🍎 🍊 🍉 🍍 🥥 🥝 🍎 🍊 🍉 🍍 🥥 🥝 🍎';
-  transform: translate(-50%, -50%) rotate(-1deg);
-  background-color: hsla(60, 100%, 50%, 1);
+  background-image: url('tastes-pics/fruits.png');
 }
 
 .tastes-selector-item.tobacco .tastes-selector-item-description::after {
-  content: '🍂 🍂 🍂 🍂 🍂 🍂 🍂 🍂 🍂 🍂 🍂 🍂 🍂 🍂 🍂 🍂 🍂 🍂 🍂 🍂 🍂 🍂 🍂 🍂';
-  transform: translate(-50%, -50%) rotate(-2deg);
-  background-color: hsla(30, 100%, 50%, 1);
+  background-image: url('tastes-pics/tobacco.png');
 }
 
 .tastes-selector-item.berries .tastes-selector-item-description::after {
-  content: '🍓 🍇 🍒 🍓 🍇 🍒 🍓 🍇 🍒 🍓 🍇 🍒 🍓 🍇 🍒 🍓 🍇 🍒 🍓 🍇 🍒 🍓 🍇 🍒';
-  transform: translate(-50%, -50%) rotate(-3deg);
-  background-color: hsla(280, 100%, 50%, 1);
+  background-image: url('tastes-pics/berries.png');
 }
 
-/* WARNING:  */
-.tastes-selector-item .tastes-selector-item-description::after {
-  content: '' !important;
-}
-
-.tastes-selector-block.negative .tastes-selector-item-description::after {
-  opacity: .05;
-}
-
-.tastes-selector-block.neutral .tastes-selector-item-description::after {
-  opacity: .4;
-}
-
-.tastes-selector-block.positive .tastes-selector-item-description::after {
-  opacity: .6;
-}
 
 .tastes-selector-item input:checked~.tastes-selector-item-description {
   opacity: 1
 }
+
+.tastes-selector-block.negative .tastes-selector-item-description::after {
+  opacity: .25;
+}
+
+.tastes-selector-block.neutral .tastes-selector-item-description::after {
+  opacity: .5;
+}
+
+.tastes-selector-block.positive .tastes-selector-item-description::after {
+  opacity: 1;
+}
+
 
 .slide.bonuses {
   align-items: center;
@@ -725,7 +713,6 @@ header {
 }
 
 .slide.review .side {
-  flex-basis: 80ch;
   ;
 }
 
@@ -927,6 +914,7 @@ input {
   transition: border-bottom-color .4s;
   box-shadow: none;
   outline: none;
+  border: none;
   border-bottom: 2px solid hsla(0, 0%, 0%, .2);
 }
 
