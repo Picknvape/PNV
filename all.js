@@ -1,5 +1,3 @@
-// Набиратель заголовка
-
 var heading = document.getElementById('typing-heading');
 var possibleWords = ['new', 'selected for your taste', 'handpicked', ''];
 var keywordPointer = 0;
@@ -49,6 +47,10 @@ function timer() {
 // Появлялка-убиралка бонусов по ховеру на описание
 var randomItemsContainerBaseClass = document.getElementById('bonus-rotator').className;
 
+function InitialRadioReader() {
+	CompileOrderData();
+	reflectChoiceOnMap();
+}
 function RandomUISetup(firstInit = false) {
   var randomItemsContainer = document.getElementById('bonus-rotator');
   var randomItemsContainerChildren = randomItemsContainer.getElementsByClassName('bonus-rotator-item');
@@ -68,6 +70,7 @@ function RandomUISetup(firstInit = false) {
   }
 }
 RandomUISetup(true);
+InitialRadioReader();
 
 document.getElementById('get-bonus-button').addEventListener('click', DoPseudoRandomAnimationCycle);
 var maxStep = document.getElementById('bonus-rotator').children.length; //changeable, use as public editable variable to adjust amount of steps in animation according to baked elements count
@@ -169,7 +172,7 @@ for (var i = 0; i < addressButtons.length; i++) {
 function CompileOrderData() {
   var orderData = {};
   let orderSizeData = null;
-  orderRadio = document.getElementsByName('box');
+  orderRadio = document.getElementsByName('boxSize');
   for (let i = 0; i < orderRadio.length; i++) {
     console.log(orderRadio[i].value + " is " + orderRadio[i].checked);
     if (orderRadio[i].checked) {
@@ -194,9 +197,7 @@ function CompileOrderData() {
 
 var sizeSelector = document.getElementById('size-selector');
 var sizeSelectorInputs = sizeSelector.getElementsByTagName('input');
-
 var sizeChanger = document.getElementById('changer-size');
-// Алярм - если в индексе поменять checked на другой инпут, всё сломается
 var sizeChangerDefaultClasses = sizeChanger.className.replace('large', '');
 
 for (i = 0; i < sizeSelectorInputs.length; i++) {
