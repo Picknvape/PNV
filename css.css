@@ -149,9 +149,9 @@ header {
 }
 
 .size-selector {
-	display: flex;
-	margin: -.125rem;
-	flex-wrap: wrap;
+  display: flex;
+  margin: -.125rem;
+  flex-wrap: wrap;
 }
 
 .size-selector-button {
@@ -549,98 +549,35 @@ header {
   fill: hsla(0, 0%, 0%, 1);
 }
 
-
 .address-selector {
-	display: flex;
-	margin: -.25rem -1rem;
-	margin-top: .25rem;
-	flex-wrap: wrap;
-	justify-content: space-between;
-}
-
-.address-selector-geo-button {
-  font-family: monospace;
-  font-size: 1.2em;
-  position: relative;
-  overflow: hidden;
-  margin-bottom: calc(.5em - .125em);
-  padding: .25em 1em;
-  cursor: pointer;
-  border: 1px solid hsla(0, 0%, 0%, .2);
-  border-radius: .5em;
-  background-color: transparent;
-}
-
-.address-selector-geo-button .overlay {
-  background-color: hsla(200, 100%, 50%, 1);
-}
-
-.address-selector-geo-button:hover .overlay {
-  transform: none;
-  opacity: .4;
-}
-
-.address-selector-geo-button:active .overlay {
-  opacity: 1;
-}
-
-.address-selector-country {
   display: flex;
-  margin: -.125em;
+  margin: -.25rem -1rem;
   flex-wrap: wrap;
+  justify-content: space-between;
 }
-
-.address-selector-country label {
-  position: relative;
-  overflow: hidden;
-  flex-direction: column;
-  margin: .125em;
-  padding: .125em .25em;
-  cursor: pointer;
-  border: 1px solid hsla(0, 0%, 0%, .2);
-  border-radius: .5em;
-  flex-grow: 1;
-  /*
-  text-align: center;
-  */
-}
-
-.address-selector-country input {
-  position: absolute;
-  max-width: 0;
-  max-height: 0;
-  opacity: 0;
-}
-
-.address-selector-country-item {
-  font-family: monospace;
-  font-size: 1rem;
-  line-height: 1;
-}
-
-.address-selector-country-item.flag {
-  display: inline-block;
-  margin-right: -2px;
-  vertical-align: -15%;
-}
-
-.address-selector-country label:hover .overlay {
-  transform: none;
-}
-
-.address-selector-country input:checked~.overlay {
-  transform: none;
-  opacity: 1;
-}
-
 
 .address-selector-address-block {
   margin: .25rem 1rem;
   flex-grow: 1;
 }
 
+.address-selector-address-block.geo-button {
+	padding: 0 .5rem;
+	font-size: 1rem;
+	font-family: monospace;
+	background-color: transparent;
+	border: 2px solid hsla(0, 0%, 0%, .2);
+	line-height: 1.5;
+	cursor: pointer;
+	border-radius: .5rem;
+}
+
+.address-selector-address-block.geo-button {
+  flex-grow: 0;
+}
+
 .address-selector-address-block.country {
-	flex-basis: 30ch;
+  flex-basis: 30ch;
 }
 
 .address-selector-address-block.postal {
@@ -660,6 +597,7 @@ header {
   margin: unset;
   border: none;
   border-bottom: 2px solid hsla(0, 0%, 0%, .2);
+  line-height: 1.5;
 }
 
 .address-selector-address-block.postal .address-selector-address-item.input {
@@ -1143,6 +1081,7 @@ aside .fieldset.div {
   display: flex;
   overflow-x: scroll;
   flex-basis: auto;
+  align-items: center;
 }
 
 .brands-item {
