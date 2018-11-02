@@ -6,7 +6,8 @@ function InitialRadioReader() {
 	reflectChoiceOnMap();
 	reflectToUI(GetPreferences(true));
 	UpdateBoxVisual();
-}
+	RandomUISetup(true);
+}	
 function CompileOrderData() {
   var orderData = {};
   hasAllInfo = true;
@@ -26,7 +27,7 @@ function CompileOrderData() {
   }
 }
 
-function OrderDataIssueHighlighter()
+function OrderDataIssueHighlighter() 
 {
 	//ktrzhnv TODO: classes for lighting up
 	//div to reflect issues with textx

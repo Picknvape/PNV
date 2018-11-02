@@ -9,7 +9,6 @@ function RandomUISetup(firstInit = false) {
   var randomItemsContainerChildren = randomItemsContainer.getElementsByClassName('bonus-rotator-item');
   var bonusesHighlightenedDescriptions = document.getElementsByClassName('bonuses-description-highlighted');
   if (firstInit) {
-    firstInit = false;
     for (let i = 0; i < bonusesHighlightenedDescriptions.length; i++) {
       let oldClasses = randomItemsContainer.className;
       let newClass = oldClasses + ' highlight ' + bonusesHighlightenedDescriptions[i].classList[1];

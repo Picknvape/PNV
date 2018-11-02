@@ -1,5 +1,6 @@
 # PNV
 Eng version
+<<<<<<< HEAD
 
 Сделать:
 
@@ -12,3 +13,5 @@ Eng version
 2. Вернуть перемешивалку иконок бонусов по рефрешу страницы тупо.
 
 3. Раскури, как подключить https://github.com/mfranzke/datalist-polyfill. И подключи
+=======
+>>>>>>> e25d8ae3e85fcd1eb1f3d2ee8abe0bddc302ac08
