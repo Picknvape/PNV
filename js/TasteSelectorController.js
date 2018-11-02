@@ -107,15 +107,12 @@ function getIcons(juiceType, iconDataArray)
 	
 	if (iconDataArray[pointer]==0) {
 		juiceContainerClassString += ' '+juiceType+'-negative';
-		console.log('juice: '+juiceType+" meh");
 	}
 	if (iconDataArray[pointer]==1) {
 		juiceContainerClassString += ' '+juiceType+'-neutral';
-		console.log('juice: '+juiceType+" ok");
 	}
 	if (iconDataArray[pointer]==2) {
 		juiceContainerClassString += ' '+juiceType+'-positive';
-		console.log('juice: '+juiceType+" yay");
 	}
 	
 	juiceContainer.className = juiceContainerClassString;
@@ -160,11 +157,9 @@ function ApplyListener(tasteType) {
   }
   for (var i = 0; i < radioButtons.length; i++) {
     radioButtons[i].onclick = function() {
-      (prev[pointer]) ? console.log(prev[pointer].value): null;
       if (this !== prev[pointer]) {
         GetPreferences();
       }
-      console.log(this.value)
     };
   }
 }

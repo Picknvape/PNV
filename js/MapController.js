@@ -18,10 +18,8 @@ var countryButtons = document.getElementsByName('country');
 function PositionRequestOK(position) {
   loadJSON("https://geocode-maps.yandex.ru/1.x/?format=json&lang=en_US&geocode=" + position.coords.longitude + "," + position.coords.latitude, function(data) {
         let response = data.response.GeoObjectCollection.featureMember[0].GeoObject.metaDataProperty.GeocoderMetaData.Address;
-        console.log(response.Components[0].name);
         let countryFound = false;
         for (i = 0; i < countryButtons.length; i++) {
-          console.log((response.Components[0].name.toLowerCase()).replace([ ], '') + ' vs ' + countryButtons[i].value.toLowerCase())
           if (response.Components[0].name.toLowerCase().replace(/[ ]/g, '') == countryButtons[i].value.toLowerCase()) {
           countryFound = true;
           countryButtons[i].checked = true;
@@ -46,7 +44,6 @@ function PositionRequestOK(position) {
         //cleanup, just for development
         document.getElementById('address-input').value = response.formatted;
         document.getElementById('zip-code-input').value = response.postal_code;
-        console.log(response.postal_code);
         countryData.country = response.country_code;
         countryData.zip = response.postal_code;
         countryData.address = response.formatted;
@@ -73,7 +70,6 @@ function GetCountryData() {
       return countryData;
     }
   }
-  console.log(countryData);
   return countryData;
 }
 
@@ -103,7 +99,6 @@ function reflectChoiceOnMap() {
     }
   }
   if (prevCountry != countryToLightUp) {
-    console.log(countryToLightUp + " new!");
     document.getElementById('path-' + countryToLightUp.toLowerCase()).classList.add('checked');
     if (prevCountry != null) {
       document.getElementById('path-' + prevCountry.toLowerCase()).classList.remove('checked');
@@ -118,11 +113,9 @@ var addressButtons = document.getElementsByName('country');
 var previous = null;
 for (var i = 0; i < addressButtons.length; i++) {
   addressButtons[i].onclick = function() {
-    (previous) ? console.log(previous.value): null;
     if (this !== previous) {
       previous = this;
       reflectChoiceOnMap();
     }
-    console.log(this.value)
   };
 }
