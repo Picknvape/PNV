@@ -5,6 +5,7 @@ body {
   margin: unset;
   hyphens: auto;
   scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
 }
 
 img {
@@ -1082,12 +1083,16 @@ aside .fieldset.div {
   overflow-x: scroll;
   flex-basis: auto;
   align-items: center;
+  scroll-snap-type: x mandatory;
+  scroll-snap-points-x: repeat(20ch);
+  -webkit-overflow-scrolling: touch;
 }
 
 .brands-item {
   margin: 0 2rem;
   flex-shrink: 0;
   flex-basis: 20ch;
+  scroll-snap-align: center;
 }
 
 .brands-item:first-child {
@@ -1096,4 +1101,70 @@ aside .fieldset.div {
 
 .brands-item:last-child {
   margin-right: 0;
+}
+
+.slide.who-are-we {
+
+}
+
+.who-are-we-block {
+  flex-basis: 30ch;
+  margin: 1rem;
+  border-radius: .5rem;
+  padding: 1rem;
+  /* box-shadow: 0 .5rem 1rem hsla(0, 0%, 0%, .2); */
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.who-are-we-block.description {
+	border: 1px solid hsla(0, 0%, 0%, .2);
+}
+
+.who-are-we-block.pick-n-vape {
+  background: hsla(40, 100%, 50%, .4);
+}
+
+.who-are-we-block.viva-la-cloud {
+  background: hsla(0, 0%, 0%, .05);
+  fill: hsla(0, 0%, 0%, 1);
+}
+
+.who-are-we-block.el-thunder {
+  background-color: hsla(220, 30%, 20%, 1);
+  color: hsl(0, 0%, 100%);
+  fill: hsla(0, 100%, 50%, .8);
+}
+
+.who-are-we-block.mdlr {
+  background-color: hsla(0, 0%, 0%, .9);
+  color: hsla(0, 0%, 100%, .9);
+  fill: hsla(0, 0%, 100%, .9);
+}
+
+.who-are-we-block.toocha {
+  background-color: hsla(50, 100%, 50%, .2);
+  color: hsl(220, 100%, 10%);
+  fill: hsla(220, 100%, 10%, 1);
+}
+
+.who-are-we-element.logo {
+  flex-basis: 7.5ch;
+  margin-bottom: 1rem;
+}
+
+.who-are-we-element.description {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.who-are-we-item.description {
+  margin: .25rem 0;
+}
+
+.who-are-we-element.link {
+  margin-top: 1rem;
+  align-self: flex-start;
 }
