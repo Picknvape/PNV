@@ -59,7 +59,6 @@ function PositionRequestOK(position) {
 }
 
 function GetCountryData() {
-  //countryData.country = response.country_code;
   countryData.zip = document.getElementById('zip-code-input').value
   countryData.address = document.getElementById('address-input').value;
   countryData.country
@@ -89,25 +88,6 @@ function loadJSON(filePath, success, error) {
   xhr.open("GET", filePath, true);
   xhr.send();
 }
-
-function reflectChoiceOnMap() {
-  let countryToLightUp = '';
-  let map = document.getElementsByName('country');
-  for (let i = 0; i < map.length; i++) {
-    if (map[i].checked) {
-      countryToLightUp = map[i].value;
-    }
-  }
-  if (prevCountry != countryToLightUp) {
-    document.getElementById('path-' + countryToLightUp.toLowerCase()).classList.add('checked');
-    if (prevCountry != null) {
-      document.getElementById('path-' + prevCountry.toLowerCase()).classList.remove('checked');
-    }
-  }
-  prevCountry = countryToLightUp;
-}
-
-
 
 var addressButtons = document.getElementsByName('country');
 var previous = null;
