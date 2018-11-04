@@ -868,28 +868,6 @@ input:valid:not(:placeholder-shown) {
   justify-content: space-between;
 }
 
-.review-order-item {
-  font-family: monospace;
-  font-size: 1rem;
-  position: relative;
-  overflow: hidden;
-  margin: .5rem;
-  padding: .5rem 2rem;
-  cursor: pointer;
-  border: 1px solid hsla(0, 0%, 0%, 1);
-  border-radius: .5rem;
-  background-color: transparent;
-}
-
-.review-order-item.add-more {
-  opacity: .4;
-}
-
-.review-order-item:active .overlay {
-  transform: none;
-  opacity: 1;
-}
-
 .after-order-overlay {
   position: fixed;
   top: 0;
@@ -1178,9 +1156,31 @@ aside .fieldset.div {
 .order-element {
 	flex-basis: 60ch;
 	margin: 1rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
 }
 
 .order-item.description-buttons {
 	display: flex;
-	flex-wrap: wrap;
-  justify-content: space-between;
+	flex-direction: column;
+}
+
+
+.send-order-button {
+	font-family: monospace;
+	font-size: 1rem;
+	position: relative;
+	overflow: hidden;
+	padding: .5rem 2rem;
+	cursor: pointer;
+	border: 1px solid hsl(0, 0%, 0%);
+	border-radius: .5rem;
+	background-color: transparent;
+	align-self: center;
+}
+
+.send-order-button:active .overlay {
+  transform: none;
+  opacity: 1;
+}

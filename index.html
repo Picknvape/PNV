@@ -404,12 +404,13 @@
 			</div>
 		</section>
 		<section class='slide order'>
-			<form>
+			<h2>Save money</h2>
+			<form id='review-order-form'>
 				<div class='order-block'>
 					<div class='order-element size'>
 						<div class='order-item size'>
-							<h2>Save money</h2>
-							<p>Pick&amp;Vape offes only russian liquids. We discovered that such liquids offer quality equal with american our european at lower price.</p>
+							<h3>Size</h3>
+							<p>Pick&amp;Vape offes only russian liquids. We discovered that such liquids offer quality equal with american our european at lower price. It's up to <b>40% cheaper</b> than on your local vapeshop.</p>
 							<fieldset>
 								<div id='size-selector' class='size-selector'>
 									<label class='box-selector-item small'>
@@ -579,11 +580,40 @@
 							</fieldset>
 						</div>
 						<div class='order-item description-buttons'>
+							<h3>Your order</h3>
 							<span class='order-info'>
+								<!--
 								Your order:
-								<output name="result"></output>
+							-->
+								<output name='reviewOrderOutput' id="review-order-output"></output>
 							</span>
-							<button id='send-order-button' class='review-order-item send-button'>
+
+
+							<script defer>
+								/* Всратокод для output */
+								let orderForm = document.getElementById('review-order-form');
+								let orderFormInputs = orderForm.getElementsByTagName('input');
+								let orderFormInputsArr = [];
+
+								orderForm.addEventListener('input', function() {
+									orderFormInputsArr.length = 0;
+									for (i = 0; i < orderFormInputs.length; i++) {
+										if (orderFormInputs[i].type == 'radio' && orderFormInputs[i].checked) {
+											orderFormInputsArr[i] = orderFormInputs[i].value;
+										}
+										if (orderFormInputs[i].type != 'radio' && orderFormInputs[i].value != '') {
+											orderFormInputsArr[i] = orderFormInputs[i].value;
+										}
+									}
+									orderFormInputsArr = orderFormInputsArr.filter(element => typeof element == 'string');
+									console.log(orderFormInputsArr);
+									this.reviewOrderOutput.textContent = orderFormInputsArr[0].charAt(0).toUpperCase() + orderFormInputsArr[0].slice(1) + ' box to' + orderFormInputsArr[1] + ', ' + orderFormInputsArr[3] + ', ' + orderFormInputsArr[2];
+								});
+							</script>
+
+
+
+							<button id='send-order-button' class='send-order-button'>
 								Vape it all for
 								<!-- <span id='send-order-button-price'></span> сюда цену -->
 								<div class='overlay'></div>
