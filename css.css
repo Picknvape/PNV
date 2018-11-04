@@ -1168,3 +1168,19 @@ aside .fieldset.div {
   margin-top: 1rem;
   align-self: flex-start;
 }
+
+.order-block {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+}
+
+.order-element {
+	flex-basis: 60ch;
+	margin: 1rem;
+}
+
+.order-item.description-buttons {
+	display: flex;
+	flex-wrap: wrap;
+  justify-content: space-between;
