@@ -6,6 +6,7 @@ body {
   hyphens: auto;
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
+  color-adjust: exact;
 }
 
 img {
@@ -125,7 +126,7 @@ header {
 }
 
 .slide.heading h1 .colored {
-  color: orange;
+  color: hsla(40, 100%, 50%, 1);
 }
 
 .slide.heading p {
@@ -332,10 +333,10 @@ header {
 }
 
 .tastes-selector-block-description {
-	font-size: 1.5rem;
-	text-align: center;
-	margin-bottom: .25rem;
-	line-height: 1;
+  font-size: 1.5rem;
+  text-align: center;
+  margin-bottom: .25rem;
+  line-height: 1;
 }
 
 .tastes-selector-element {
@@ -365,9 +366,9 @@ header {
 }
 
 .tastes-selector-item-description {
-	transition: opacity .4s;
-	line-height: 1.5;
-	padding: 0 .5rem;
+  transition: opacity .4s;
+  line-height: 1.5;
+  padding: 0 .5rem;
 }
 
 .tastes-selector-item .tastes-selector-item-description::after {
@@ -379,6 +380,8 @@ header {
 	height: 100%;
 	content: '';
 	background-position: left;
+	transform: scale(0);
+	transition: transform .2s;
 }
 
 .tastes-selector-item.mint .tastes-selector-item-description {
@@ -435,6 +438,10 @@ header {
   opacity: .05;
 }
 
+.tastes-selector-item input:checked~.tastes-selector-item-description:after {
+  transform: none;
+}
+
 .tastes-selector-block.negative .tastes-selector-item input:checked~.tastes-selector-item-description {
   opacity: .25;
 }
@@ -446,6 +453,8 @@ header {
 .tastes-selector-block.positive .tastes-selector-item input:checked~.tastes-selector-item-description {
   opacity: 1;
 }
+
+
 
 .slide.bonuses {
   align-items: center;
@@ -1021,7 +1030,7 @@ input:valid:not(:placeholder-shown) {
   content: 'Copied';
   color: white;
   border-radius: .5rem;
-  background: hsla(0, 0%, 0%, 1);
+  background-color: hsla(0, 0%, 0%, 1);
 }
 
 .after-order-overlay-item.copy:active::after {
@@ -1048,7 +1057,7 @@ aside {
   display: flex;
   width: 100%;
   padding: .25rem 1rem;
-  background: hsla(0, 0%, 100%, .9);
+  background-color: hsla(0, 0%, 100%, .9);
   flex-wrap: wrap;
   align-items: center;
 }
@@ -1127,11 +1136,11 @@ aside .fieldset.div {
 }
 
 .who-are-we-block.pick-n-vape {
-  background: hsla(40, 100%, 50%, .4);
+  background-color: hsla(40, 100%, 50%, .4);
 }
 
 .who-are-we-block.viva-la-cloud {
-  background: hsla(0, 0%, 0%, .05);
+  background-color: hsla(0, 0%, 0%, .05);
   fill: hsla(0, 0%, 0%, 1);
 }
 
