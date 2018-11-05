@@ -1292,7 +1292,9 @@ footer {
 }
 
 .footer-block.social .footer-item {
+  /*
   background-color: hsla(0, 0%, 100%, 1)
+  */
 }
 
 .footer-item.twitter {
@@ -1319,10 +1321,12 @@ footer {
   height: 8rem;
 }
 
-/*
 .footer-item.icon.doggo {
-  cursor: default;
-  position: relative;
+	cursor: default;
+	position: relative;
+	font-size: 2rem;
+	width: auto;
+	height: auto;
 }
 
 .footer-item.icon.doggo:hover {
@@ -1381,4 +1385,3 @@ footer {
     opacity: 0;
   }
 }
-*/
