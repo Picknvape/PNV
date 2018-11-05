@@ -332,14 +332,16 @@ header {
 }
 
 .tastes-selector-block-description {
-  font-size: 1.5rem;
-  text-align: center;
+	font-size: 1.5rem;
+	text-align: center;
+	margin-bottom: .25rem;
+	line-height: 1;
 }
 
 .tastes-selector-element {
   display: flex;
   flex-direction: column;
-  padding: 0 .125rem;
+  padding: 0 .25rem;
   border: 1px dashed hsla(0, 0%, 0%, .2);
   border-radius: .5rem;
 }
@@ -349,7 +351,7 @@ header {
   font-size: 1rem;
   position: relative;
   overflow: hidden;
-  margin: .125rem 0;
+  margin: .25rem 0;
   padding: .5rem;
   cursor: pointer;
   /* мозиллабаг, йеее */
@@ -363,60 +365,85 @@ header {
 }
 
 .tastes-selector-item-description {
-  transition: opacity .4s;
-  opacity: .2;
-  text-shadow: 1px 0 white, 0 1px hsla(0, 0%, 100%, 1), -1px 0 hsla(0, 0%, 100%, 1), 0 -1px hsla(0, 0%, 100%, 1);
+	transition: opacity .4s;
+	line-height: 1.5;
+	padding: 0 .5rem;
 }
 
 .tastes-selector-item .tastes-selector-item-description::after {
-  position: absolute;
-  z-index: -1;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  content: '';
-  background-position: center;
-  background-size: cover;
+	position: absolute;
+	z-index: -1;
+	top: 0%;
+	left: 0%;
+	width: 100%;
+	height: 100%;
+	content: '';
+	background-position: left;
+}
+
+.tastes-selector-item.mint .tastes-selector-item-description {
+  background-color: hsl(160, 100%, 50%);
 }
 
 .tastes-selector-item.mint .tastes-selector-item-description::after {
-  background-image: url('tastes-pics/mint.png');
+  background-image: url('tastes-pics/mint.svg');
+}
+
+.tastes-selector-item.desserts .tastes-selector-item-description {
+  background-color: hsl(320, 100%, 50%);
 }
 
 .tastes-selector-item.desserts .tastes-selector-item-description::after {
-  background-image: url('tastes-pics/desserts.png');
+  background-image: url('tastes-pics/desserts.svg');
+}
+
+.tastes-selector-item.exotic .tastes-selector-item-description {
+  background-color: hsl(180, 100%, 50%);
 }
 
 .tastes-selector-item.exotic .tastes-selector-item-description::after {
-  background-image: url('tastes-pics/exotic.png');
+  background-image: url('tastes-pics/exotic.svg');
+}
+
+.tastes-selector-item.fruits .tastes-selector-item-description {
+  background-color: hsl(80, 100%, 50%);
 }
 
 .tastes-selector-item.fruits .tastes-selector-item-description::after {
-  background-image: url('tastes-pics/fruits.png');
+  background-image: url('tastes-pics/fruits.svg');
+}
+
+.tastes-selector-item.tobacco .tastes-selector-item-description {
+  background-color: hsl(20, 100%, 50%);
+  color: white;
 }
 
 .tastes-selector-item.tobacco .tastes-selector-item-description::after {
-  background-image: url('tastes-pics/tobacco.png');
+  background-image: url('tastes-pics/tobacco.svg');
+}
+
+.tastes-selector-item.berries .tastes-selector-item-description {
+  color: white;
+  background-color: hsl(260, 100%, 50%);
 }
 
 .tastes-selector-item.berries .tastes-selector-item-description::after {
-  background-image: url('tastes-pics/berries.png');
+  background-image: url('tastes-pics/berries.svg');
 }
 
-.tastes-selector-item input:checked~.tastes-selector-item-description {
-  opacity: 1;
+.tastes-selector-item-description {
+  opacity: .05;
 }
 
-.tastes-selector-block.negative .tastes-selector-item-description::after {
+.tastes-selector-block.negative .tastes-selector-item input:checked~.tastes-selector-item-description {
   opacity: .25;
 }
 
-.tastes-selector-block.neutral .tastes-selector-item-description::after {
+.tastes-selector-block.neutral .tastes-selector-item input:checked~.tastes-selector-item-description {
   opacity: .5;
 }
 
-.tastes-selector-block.positive .tastes-selector-item-description::after {
+.tastes-selector-block.positive .tastes-selector-item input:checked~.tastes-selector-item-description {
   opacity: 1;
 }
 
@@ -887,11 +914,11 @@ input:valid:not(:placeholder-shown) {
   align-items: center;
 }
 
-.after-order-overlay-shown {
+.after-order-overlay.shown {
   overflow: hidden;
 }
 
-.after-order-overlay-shown .after-order-overlay {
+.after-order-overlay.shown .after-order-overlay {
   transform: none;
 }
 
@@ -1064,6 +1091,7 @@ aside .fieldset.div {
   scroll-snap-type: x mandatory;
   scroll-snap-points-x: repeat(20ch);
   -webkit-overflow-scrolling: touch;
+  position: relative;
 }
 
 .brands-item {
@@ -1081,9 +1109,7 @@ aside .fieldset.div {
   margin-right: 0;
 }
 
-.slide.who-are-we {
-
-}
+.slide.who-are-we {}
 
 .who-are-we-block {
   flex-basis: 30ch;
@@ -1097,7 +1123,7 @@ aside .fieldset.div {
 }
 
 .who-are-we-block.description {
-	border: 1px solid hsla(0, 0%, 0%, .2);
+  border: 1px solid hsla(0, 0%, 0%, .2);
 }
 
 .who-are-we-block.pick-n-vape {
@@ -1142,42 +1168,51 @@ aside .fieldset.div {
   margin: .25rem 0;
 }
 
+.who-are-we-block.description .who-are-we-item.description:last-child::after {
+  content: ' →'
+}
+
+@media all and (max-width: calc(8rem + 60ch)) {
+  .who-are-we-block.description .who-are-we-item.description:last-child::after {
+    content: ' ↓'
+  }
+}
+
 .who-are-we-element.link {
   margin-top: 1rem;
   align-self: flex-start;
 }
 
 .order-block {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-evenly;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
 }
 
 .order-element {
-	flex-basis: 60ch;
-	margin: 1rem;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
+  flex-basis: 60ch;
+  margin: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .order-item.description-buttons {
-	display: flex;
-	flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
-
 .send-order-button {
-	font-family: monospace;
-	font-size: 1rem;
-	position: relative;
-	overflow: hidden;
-	padding: .5rem 2rem;
-	cursor: pointer;
-	border: 1px solid hsl(0, 0%, 0%);
-	border-radius: .5rem;
-	background-color: transparent;
-	align-self: center;
+  font-family: monospace;
+  font-size: 1rem;
+  position: relative;
+  overflow: hidden;
+  padding: .5rem 2rem;
+  cursor: pointer;
+  border: 1px solid hsl(0, 0%, 0%);
+  border-radius: .5rem;
+  background-color: transparent;
+  align-self: center;
 }
 
 .send-order-button:active .overlay {
