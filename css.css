@@ -20,10 +20,20 @@ a {
   text-decoration: underline;
   color: hsla(200, 100%, 50%, 1);
   text-decoration-skip: ink;
+  position: relative;
 }
 
 a:hover {
   text-decoration: none;
+}
+
+a::after {
+	content: '';
+	position: absolute;
+	width: 200%;
+	height: 200%;
+	top: -50%;
+	left: -50%;
 }
 
 /* баг в хроме, поэтому фиелдсеты в див завернуты */
@@ -84,6 +94,11 @@ header {
 
 .header-block.button:active .overlay {
   opacity: 1;
+}
+
+#up {
+  position: absolute;
+  opacity: 0;
 }
 
 .slide {
@@ -342,8 +357,10 @@ header {
 .tastes-selector-element {
   display: flex;
   flex-direction: column;
+  /*
   padding: 0 .25rem;
   border: 1px dashed hsla(0, 0%, 0%, .2);
+  */
   border-radius: .5rem;
 }
 
@@ -355,9 +372,18 @@ header {
   margin: .25rem 0;
   padding: .5rem;
   cursor: pointer;
-  /* мозиллабаг, йеее */
+  /* мозиллабаг, йеее
   -moz-transform: rotate(0);
+   */
   border-radius: .5em;
+}
+
+.tastes-selector-item:first-child {
+  margin-top: 0;
+}
+
+.tastes-selector-item:last-child {
+  margin-bottom: 0;
 }
 
 .tastes-selector-item input {
@@ -369,19 +395,20 @@ header {
   transition: opacity .4s;
   line-height: 1.5;
   padding: 0 .5rem;
+  border-radius: .5rem;
 }
 
 .tastes-selector-item .tastes-selector-item-description::after {
-	position: absolute;
-	z-index: -1;
-	top: 0%;
-	left: 0%;
-	width: 100%;
-	height: 100%;
-	content: '';
-	background-position: left;
-	transform: scale(0);
-	transition: transform .2s;
+  position: absolute;
+  z-index: -1;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  content: '';
+  background-position: left;
+  transform: scale(0);
+  transition: transform .2s;
 }
 
 .tastes-selector-item.mint .tastes-selector-item-description {
@@ -453,8 +480,6 @@ header {
 .tastes-selector-block.positive .tastes-selector-item input:checked~.tastes-selector-item-description {
   opacity: 1;
 }
-
-
 
 .slide.bonuses {
   align-items: center;
@@ -704,7 +729,9 @@ header {
   margin: .125rem;
   padding: .5rem;
   cursor: pointer;
+  /*
   border: 1px solid hsla(0, 0%, 0%, .2);
+  */
   border-radius: .5em;
   justify-content: flex-start;
   flex-grow: 1;
@@ -923,11 +950,11 @@ input:valid:not(:placeholder-shown) {
   align-items: center;
 }
 
-.after-order-overlay.shown {
+.after-order-overlay-shown {
   overflow: hidden;
 }
 
-.after-order-overlay.shown .after-order-overlay {
+.after-order-overlay-shown .after-order-overlay {
   transform: none;
 }
 
@@ -1192,6 +1219,11 @@ aside .fieldset.div {
   align-self: flex-start;
 }
 
+#order {
+  position: absolute;
+  opacity: 0;
+}
+
 .order-block {
   display: flex;
   flex-wrap: wrap;
@@ -1228,3 +1260,125 @@ aside .fieldset.div {
   transform: none;
   opacity: 1;
 }
+
+footer {
+  display: flex;
+  background-color: hsla(0, 0%, 0%, .9);
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  fill: hsl(0, 0%, 100%);
+  color: hsl(0, 0%, 100%);
+  align-items: center;
+}
+
+.footer-block {
+  display: flex;
+  flex-grow: 1;
+  justify-content: space-evenly;
+}
+
+.footer-block.link {
+  flex-grow: 100;
+}
+
+.footer-item {
+  margin: 2rem;
+  width: 4rem;
+  height: 4rem;
+  font-size: 4rem;
+  line-height: 1;
+  display: flex;
+}
+
+.footer-block.social .footer-item {
+  background-color: hsla(0, 0%, 100%, 1)
+}
+
+.footer-item.twitter {
+  fill: hsl(200, 75%, 50%);
+}
+
+.footer-item.facebook {
+  fill: hsla(220, 40%, 40%);
+}
+
+.footer-block.link .footer-item {
+  font-size: 1rem;
+  width: auto;
+  height: auto;
+  color: white;
+  text-decoration: none;
+  padding: .5rem 1rem;
+  border: 1px solid hsla(0, 0%, 100%, 1);
+  border-radius: .5rem;
+}
+
+.footer-item.logo {
+  width: 8rem;
+  height: 8rem;
+}
+
+/*
+.footer-item.icon.doggo {
+  cursor: default;
+  position: relative;
+}
+
+.footer-item.icon.doggo:hover {
+  animation: icon-doggo-go 1s;
+}
+
+@keyframes icon-doggo-go {
+  25% {
+    transform: scale(1.05) rotate(-2deg);
+  }
+
+  50% {
+    transform: scale(1);
+  }
+
+  75% {
+    transform: scale(1.05) rotate(2deg)
+  }
+}
+
+.footer-item.icon.doggo::after {
+  content: 'Woof';
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1rem;
+  visibility: hidden;
+  white-space: nowrap;
+}
+
+.footer-item.icon.doggo:hover::after {
+  animation: icon-doggo-after-go 1s;
+}
+
+@keyframes icon-doggo-after-go {
+  0% {
+    visibility: visible;
+    opacity: 0;
+  }
+
+  25% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  75% {
+    opacity: 1;
+  }
+
+  100% {
+    visibility: visible;
+    opacity: 0;
+  }
+}
+*/

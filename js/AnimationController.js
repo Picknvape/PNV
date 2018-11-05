@@ -23,7 +23,7 @@ function RandomUISetup(firstInit = false) {
 }
 
 function DoPseudoRandomAnimationCycle() {
-	document.getElementById('get-bonus-button').removeEventListener('click', DoPseudoRandomAnimationCycle);
+  document.getElementById('get-bonus-button').removeEventListener('click', DoPseudoRandomAnimationCycle);
   let randomItemsContainer = document.getElementById('bonus-rotator');
   randomItemsContainer.className = randomItemsContainerBaseClass;
   if (randomStep == 0) {
@@ -44,10 +44,9 @@ function DoPseudoRandomAnimationCycle() {
         randomItemsContainer.classList.toggle('animation-finished');
       }
     } else {
-		document.getElementById('get-bonus-button').addEventListener('click', DoPseudoRandomAnimationCycle);
-		document.getElementById('random-item-1').classList.remove('checked');
+      document.getElementById('get-bonus-button').addEventListener('click', DoPseudoRandomAnimationCycle);
+      document.getElementById('random-item-1').classList.remove('checked');
     }
   }
   animationStep();
 }
-
