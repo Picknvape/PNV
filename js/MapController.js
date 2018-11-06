@@ -71,14 +71,3 @@ function loadJSON(filePath, success, error) {
   xhr.open("GET", filePath, true);
   xhr.send();
 }
-
-var addressButtons = document.getElementsByName('country');
-var previous = null;
-for (var i = 0; i < addressButtons.length; i++) {
-  addressButtons[i].onclick = function() {
-    if (this !== previous) {
-      previous = this;
-      reflectChoiceOnMap();
-    }
-  };
-}
