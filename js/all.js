@@ -13,10 +13,12 @@ function CompileOrderData() {
   orderData.tastePreferences = GetPreferences(true);
   orderData.shippingInfo = GetCountryData();
   orderData.clientName = document.getElementById('name-input').value;
-  if (orderData.clientName.length<1) 	{hasAllInfo = false;}
   orderData.clientPhone = document.getElementById('phone-input').value;
-  if (orderData.clientPhone.length<1) 	{hasAllInfo = false;}
+  orderData.clientPhone = orderData.clientPhone.replace(new RegExp('[ ()+-]', 'g'), '');
   orderData.clientEmail = document.getElementById('email-input').value;
+  
+  if (orderData.clientName.length<1) 	{hasAllInfo = false;}
+  if (orderData.clientPhone.length<1) 	{hasAllInfo = false;}
   if (orderData.clientEmail.length<1 || !IsEmailVerified()) {hasAllInfo = false;}
   if (!hasAllInfo) {
 	  return false;
