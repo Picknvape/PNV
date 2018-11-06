@@ -5,19 +5,27 @@
 	<title>Pick&amp;Vape</title>
 	<meta charset='utf-8'>
 	<meta name='viewport' content='width=device-width, initial-scale=1'>
+
+	<!-- Favicons & web apps-->
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ffaa00">
+	<meta name="msapplication-TileColor" content="#da532c">
+	<meta name="theme-color" content="#ffaa00">
 	<meta name='apple-mobile-web-app-title' content='Pick&amp;Vape'>
 	<meta name='application-name' content='Pick&amp;Vape'>
-	<meta name='msapplication-TileColor' content='#da532c'>
-	<meta name='theme-color' content='#fa0'>
+
+	<!-- FB opengraph -->
+	<meta property="og:image:width" content="1179">
+	<meta property="og:image:height" content="617">
+	<meta property="og:description" content="E-liquid delivery service. Fits your taste, saves money.">
+	<meta property="og:title" content="Pick&amp;Vape">
+	<meta property="og:url" content="https://whatvivalacloudcando.ru/picknvape/">
+	<meta property="og:image" content="https://pickandvape.com/og-image.jpg">
 
 	<link rel='stylesheet' type='text/css' href='css.css?v=0.01'>
-	<link rel='apple-touch-icon' sizes='180x180' href='favicons/apple-touch-icon.png'>
-	<link rel='icon' type='image/png' sizes='32x32' href='favicons/favicon-32x32.png'>
-	<link rel='icon' type='image/png' sizes='16x16' href='favicons/favicon-16x16.png'>
-	<link rel='manifest' href='favicons/site.webmanifest'>
-	<link rel='mask-icon' href='favicons/safari-pinned-tab.svg' color='#fa0'>
-
-
 	<script defer src='js/BoxSizeController.js'></script>
 	<script defer src='js/TitleController.js'></script>
 	<script defer src='js/TasteSelectorController.js'></script>
@@ -509,48 +517,48 @@
 									<label class='address-selector-address-block country'>
 										<input id='country-input' class='address-selector-address-item input' autocomplete='country' name='country-name' placeholder='Country' required list='countries-selector-list' />
 										<datalist id='countries-selector-list'>
-											<option data-country-name='Albania' value='🇦🇱 Albania'>
-											<option data-country-name='Austria' value='🇦🇹 Austria'>
-											<option data-country-name='Belgium' value='🇧🇪 Belgium'>
-											<option data-country-name='BosniaAndHerzegovina' value='🇧🇦 Bosnia and Herzegovina'>
-											<option data-country-name='Bulgaria' value='🇧🇬 Bulgaria'>
-											<option data-country-name='Croatia' value='🇭🇷 Croatia'>
-											<option data-country-name='Cyprus' value='🇨🇾 Cyprus'>
-											<option data-country-name='Czechia' value='🇨🇿 Czechia'>
-											<option data-country-name='Denmark' value='🇩🇰 Denmark'>
-											<option data-country-name='Estonia' value='🇪🇪 Estonia'>
-											<option data-country-name='Finland' value='🇫🇮 Finland'>
-											<option data-country-name='France' value='🇫🇷 France'>
-											<option data-country-name='Germany' value='🇩🇪 Germany'>
-											<option data-country-name='Greece' value='🇬🇷 Greece'>
-											<option data-country-name='Hungary' value='🇭🇺 Hungary'>
-											<option data-country-name='Iceland' value='🇮🇸 Iceland'>
-											<option data-country-name='Ireland' value='🇮🇪 Ireland'>
-											<option data-country-name='Italy' value='🇮🇹 Italy'>
-											<option data-country-name='Kosovo' value='🇽🇰 Kosovo'>
-											<option data-country-name='Latvia' value='🇱🇻 Latvia'>
-											<option data-country-name='Liechtenstein' value='🇱🇮 Liechtenstein'>
-											<option data-country-name='Lithuania' value='🇱🇹 Lithuania'>
-											<option data-country-name='Luxembourg' value='🇱🇺 Luxembourg'>
-											<option data-country-name='Macedonia' value='🇲🇰 Macedonia'>
-											<option data-country-name='Malta' value='🇲🇹 Malta'>
-											<option data-country-name='Moldavia' value='🇲🇩 Moldavia'>
-											<option data-country-name='Monaco' value='🇲🇨 Monaco'>
-											<option data-country-name='Montenegro' value='🇲🇪 Montenegro'>
-											<option data-country-name='Netherlands' value='🇳🇱 Netherlands'>
-											<option data-country-name='Norway' value='🇳🇴 Norway'>
-											<option data-country-name='Poland' value='🇵🇱 Poland'>
-											<option data-country-name='Portugal' value='🇵🇹 Portugal'>
-											<option data-country-name='Romania' value='🇷🇴 Romania'>
-											<option data-country-name='SanMarino' value='🇸🇲 San Marino'>
-											<option data-country-name='Serbia' value='🇷🇸 Serbia'>
-											<option data-country-name='Slovakia' value='🇸🇰 Slovakia'>
-											<option data-country-name='Slovenia' value='🇸🇮 Slovenia'>
-											<option data-country-name='Spain' value='🇪🇸 Spain'>
-											<option data-country-name='Sweden' value='🇸🇪 Sweden'>
-											<option data-country-name='Switzerland' value='🇨🇭 Switzerland'>
-											<option data-country-name='UnitedKingdom' value='🇬🇧 UK'>
-											<option data-country-name='Vatican' value='🇻🇦 Vatican'>
+											<option value='Albania'>
+											<option value='Austria'>
+											<option value='Belgium'>
+											<option value='Bosnia and Herzegovina'>
+											<option value='Bulgaria'>
+											<option value='Croatia'>
+											<option value='Cyprus'>
+											<option value='Czechia'>
+											<option value='Denmark'>
+											<option value='Estonia'>
+											<option value='Finland'>
+											<option value='France'>
+											<option value='Germany'>
+											<option value='Greece'>
+											<option value='Hungary'>
+											<option value='Iceland'>
+											<option value='Ireland'>
+											<option value='Italy'>
+											<option value='Kosovo'>
+											<option value='Latvia'>
+											<option value='Liechtenstein'>
+											<option value='Lithuania'>
+											<option value='Luxembourg'>
+											<option value='Macedonia'>
+											<option value='Malta'>
+											<option value='Moldavia'>
+											<option value='Monaco'>
+											<option value='Montenegro'>
+											<option value='Netherlands'>
+											<option value='Norway'>
+											<option value='Poland'>
+											<option value='Portugal'>
+											<option value='Romania'>
+											<option value='San Marino'>
+											<option value='Serbia'>
+											<option value='Slovakia'>
+											<option value='Slovenia'>
+											<option value='Spain'>
+											<option value='Sweden'>
+											<option value='Switzerland'>
+											<option value='UK'>
+											<option value='Vatican'>
 										</datalist>
 									</label>
 									<label class='address-selector-address-block postal'>
