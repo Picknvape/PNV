@@ -3,10 +3,8 @@ function IsEmailVerified() {
 	return document.getElementById('email-input').value.toLowerCase() == document.getElementById('email-input-verify').value.toLowerCase();
 }
 function InitialRadioReader() {
-	reflectChoiceOnMap();
-	reflectToUI(GetPreferences(true));
-	UpdateBoxVisual();
 	RandomUISetup(true);
+	reflectToUI(GetPreferences(true));
 }
 function CompileOrderData() {
   var orderData = {};
