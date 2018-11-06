@@ -23,7 +23,7 @@
 	<meta property="og:url" content="https://whatvivalacloudcando.ru/picknvape/">
 	<meta property="og:image" content="https://pickandvape.com/og-image.jpg">
 
-	<link rel='stylesheet' type='text/css' href='css.css?v=0.01'>
+	<link rel='stylesheet' type='text/css' href='css.css?v=0.02'>
 	<script defer src='js/BoxSizeController.js'></script>
 	<script defer src='js/TitleController.js'></script>
 	<script defer src='js/TasteSelectorController.js'></script>
@@ -51,6 +51,7 @@
 			<span class='overlay'></span>
 		</a>
 		<a id='up'></a>
+		<div class='background-overlay'></div>
 	</header>
 	<main>
 		<section class='slide heading'>
@@ -65,6 +66,7 @@
 			</div>
 			<div class='side right'>
 				<img src='img.png'>
+				<div class='background-overlay'></div>
 			</div>
 		</section>
 		<!--
@@ -417,13 +419,16 @@
 			</div>
 		</section>
 		<section class='slide order'>
-			<h2>Save money</h2>
 			<a id='order'></a>
 			<form id='review-order-form'>
 				<div class='order-block'>
+
 					<div class='order-element size'>
 						<div class='order-item size'>
-							<h3>Size</h3>
+							<hgroup>
+								<h2>Choose your size & save money</h2>
+								<h3>Size</h3>
+							</hgroup>
 							<p>Pick&amp;Vape offes only russian liquids. We discovered that such liquids offer quality equal with american our european at lower price. It's up to <b>40% cheaper</b> than on your local vapeshop.</p>
 							<fieldset>
 								<div id='size-selector' class='size-selector'>
@@ -560,7 +565,7 @@
 										</datalist>
 									</label>
 									<label class='address-selector-address-block postal'>
-										<input id='zip-code-input' class='address-selector-address-item input' type='number' name='postal' pattern='[0-9]*' inputmode='numeric' placeholder='Postal code' required>
+										<input id='zip-code-input' class='address-selector-address-item input' type='number' name='postal' pattern='[0-9]' inputmode='numeric' placeholder='Postal code' required>
 										<span class='address-selector-address-item description'>Postal code</span>
 									</label>
 									<label class='address-selector-address-block address'>
@@ -575,19 +580,19 @@
 							<fieldset>
 								<div id='contacts-selector' class='contacts-selector'>
 									<label class='contacts-selector-block contact-method-name'>
-										<input id='name-input' type='text' name='name' class='contacts-selector-item input' placeholder='Name & surname' autocomplete='name' required pattern='\w+\s\w+'>
+										<input id='name-input' type='text' name='name' class='contacts-selector-item input' placeholder='Name & surname' autocomplete='name' required>
 										<span class='address-selector-address-item description'>Name & surnamey</span>
 									</label>
 									<label class='contacts-selector-block contact-method-phone'>
-										<input id='phone-input' type='tel' name='contactMethodPhone' class='contacts-selector-item input' placeholder='Phone number' autocomplete='tel' required pattern='[0-9]+'>
+										<input id='phone-input' type='tel' name='contactMethodPhone' class='contacts-selector-item input' placeholder='Phone number' autocomplete='tel' required pattern='[0-9]' inputmode='tel'>
 										<span class='address-selector-address-item description'>Phone number</span>
 									</label>
 									<label class='contacts-selector-block contact-method-email'>
-										<input id='email-input' type='email' name='contactMethodEmail' class='contacts-selector-item input' placeholder='Email' autocomplete='email' required>
+										<input id='email-input' type='email' inputmode='email' name='contactMethodEmail' class='contacts-selector-item input' placeholder='Email' autocomplete='email' required>
 										<span class='address-selector-address-item description'>Email</span>
 									</label>
 									<label class='contacts-selector-block contact-method-email-repeat'>
-										<input id='email-input-verify' type='email' name='contactMethodEmailRepeat' class='contacts-selector-item input' placeholder='Email again' autocomplete='email' required>
+										<input id='email-input-verify' type='email' inputmode='email' name='contactMethodEmailRepeat' class='contacts-selector-item input' placeholder='Email again' autocomplete='email' required>
 										<span class='address-selector-address-item description'>Email again</span>
 									</label>
 								</div>
