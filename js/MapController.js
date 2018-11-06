@@ -49,16 +49,9 @@ function PositionRequestOK(position) {
 }
 
 function GetCountryData() {
-  countryData.zip = document.getElementById('zip-code-input').value
+  countryData.zip = document.getElementById('zip-code-input').value;
   countryData.address = document.getElementById('address-input').value;
-  countryData.country
-  countryRadioList = document.getElementsByName('country');
-  for (let i = 0; i < countryRadioList.length; i++) {
-    if (countryRadioList[i].checked) {
-      countryData.country = countryRadioList[i].value;
-      return countryData;
-    }
-  }
+  countryData.country = document.getElementById('country-input').value;
   return countryData;
 }
 
