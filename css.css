@@ -140,8 +140,9 @@ header {
 }
 
 .slide h2 {
-  font-size: 3em;
-  line-height: 1.5;
+	font-size: 3em;
+	line-height: 1.5;
+	margin: .5rem 0;
 }
 
 /* Выбиральник размера набора */
@@ -256,6 +257,10 @@ header {
 	align-items: center;
 }
 
+.slide.tastes .side.right {
+  order: -1;
+}
+
 .changer-tastes {
   display: flex;
   margin: -.5rem;
@@ -265,10 +270,9 @@ header {
 }
 
 .changer-tastes-item {
-	flex-basis: 30ch;
-	flex-grow: 1;
+	flex: 1;
+	margin: 0 .5rem;
 }
-
 
 .tastes-selector {
   display: flex;
