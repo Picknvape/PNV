@@ -30,6 +30,7 @@
 	<script defer src='js/MapController.js'></script>
 	<script defer src='js/AnimationController.js'></script>
 	<script defer src='js/datalistPolyfill.js'></script>
+	<script defer src='js/AdditionalBoxController.js'></script>
 	<script defer src='js/all.js'></script>
 </head>
 
@@ -215,7 +216,7 @@
 						<fieldset>
 							<div id='size-selector' class='size-selector'>
 								<label class='box-selector-item small'>
-									<input type='radio' name='boxSize' value='small'>
+									<input type='radio' id='boxSizeSmall' name='boxSize' value='small'>
 									<div class='box-selector-row heading'>
 										<span class='box-selector-heading'>Small</span>
 										<span class='box-selector-volume'>150 ml</span>
@@ -235,7 +236,7 @@
 									<span class='overlay'></span>
 								</label>
 								<label class='box-selector-item medium'>
-									<input type='radio' name='boxSize' value='medium'>
+									<input type='radio' id='boxSizeMedium' name='boxSize' value='medium'>
 									<div class='box-selector-row heading'>
 										<span class='box-selector-heading'>Medium</span>
 										<span class='box-selector-volume'>210 ml</span>
@@ -259,7 +260,7 @@
 									<span class='overlay'></span>
 								</label>
 								<label class='box-selector-item large'>
-									<input type='radio' name='boxSize' checked value='large'>
+									<input type='radio' id='boxSizeLarge' name='boxSize' checked value='large'>
 									<div class='box-selector-row heading'>
 										<span class='box-selector-heading'>Large</span>
 										<span class='box-selector-volume'>300 ml</span>
@@ -471,11 +472,11 @@
 				</div>
 			</form>
 			<div class='order-buttons'>
-				<button id='send-order-button' class='order-button add-more-new'>
+				<button id='new-box-button' class='order-button add-more-new'>
 					Add another box
 					<div class='overlay'></div>
 				</button>
-				<button id='send-order-button' class='order-button add-more-same'>
+				<button id='new-box-same-delivery-button' class='order-button add-more-same'>
 					Add another box w/ same delivery & contacts
 					<div class='overlay'></div>
 				</button>
