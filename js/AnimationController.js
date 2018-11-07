@@ -21,7 +21,6 @@ function RandomUISetup(firstInit = false) {
   for (let i = 0; i<maxStep; i++) {
 	  allRandomItems[i].id = allRandomItems[i].id+'-'+i;
   }
-
   for (let i = 0; i < allRandomItems.length; i++) {
     randomItemsContainer.appendChild(allRandomItems[Math.floor(Math.random() * i)])
   }
@@ -31,12 +30,23 @@ function RandomUISetup(firstInit = false) {
 function LightDownAllRandomItems() {
 	allRandomItems.forEach(function (element) {element.classList.remove('checked');});
 }
+var previousPointers = new Array();
+
+function GetNextPointer() {
+let nextPointer = Math.floor(Math.random()*maxStep);
+		while (previousPointers.includes(nextPointer)) {
+			nextPointer = Math.floor(Math.random()*maxStep);
+		}
+	previousPointers.push(nextPointer);
+	return nextPointer;
+}
 
 function DoPseudoRandomAnimationCycle() {
   document.getElementById('get-bonus-button').removeEventListener('click', DoPseudoRandomAnimationCycle);
   let randomItemsContainer = document.getElementById('bonus-rotator');
   randomItemsContainer.className = randomItemsContainerBaseClass;
   if (randomStep == 0) {
+	previousPointers = new Array();
     randomItemsContainer.className = randomItemsContainerBaseClass;
     RandomUISetup();
     randomStep = maxStep;
@@ -47,7 +57,8 @@ function DoPseudoRandomAnimationCycle() {
         LightDownAllRandomItems();
       }
 	  LightDownAllRandomItems();
-      allRandomItems[randomStep].classList.add('checked');
+      allRandomItems[GetNextPointer()].classList.add('checked');
+	  
       let powMod = 2;
       var newFrameTime = (-Math.pow((randomStep - maxStep / 2), powMod) / Math.pow(maxStep / 2, powMod) + 1.75) * frameTime;
       window.setTimeout(animationStep, newFrameTime);
@@ -56,7 +67,7 @@ function DoPseudoRandomAnimationCycle() {
       }
     } else {
       document.getElementById('get-bonus-button').addEventListener('click', DoPseudoRandomAnimationCycle);
-      allRandomItems[1].classList.remove('checked');
+      LightDownAllRandomItems();
     }
   }
   animationStep();
