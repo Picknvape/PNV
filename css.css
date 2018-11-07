@@ -34,6 +34,62 @@ fieldset {
   border: none;
 }
 
+.monospace {
+  font-family: monospace;
+  font-size: 1rem;
+}
+
+.border {
+  border-radius: .5rem;
+  border: 1px solid hsla(0, 0%, 0%, .2);
+  overflow: hidden;
+}
+
+.overlayed {
+  position: relative;
+}
+
+.parallax {
+	perspective: 1px;
+	height: 100vh;
+	overflow-y: scroll;
+	position: relative;
+	overflow-x: hidden;
+}
+
+.parallax-back {
+	position: absolute;
+	top: 0%;
+	left: 0;
+	z-index: -100;
+	transform: translateZ(-1px) scale(2);
+	width: 100%;
+	opacity: .2;
+	height: 100%;
+}
+
+.parallax-back-shape {
+	position: absolute;
+	width: 75%;
+	mix-blend-mode: overlay;
+	height: auto;
+}
+
+.parallax-back-shape.first {
+	top: 5%;
+	right: 5%;
+}
+
+.parallax-back-shape.second {
+	top: 25%;
+	left: 5%;
+}
+
+.parallax-back-shape.third {
+	top: 100%;
+	right: 5%;
+}
+
 header {
   display: flex;
   width: 100%;
@@ -63,19 +119,13 @@ header {
 }
 
 .header-block.button {
-  font-family: monospace;
-  font-size: 1.2rem;
-  position: relative;
-  overflow: hidden;
   padding: .25em .5em;
   cursor: pointer;
   text-align: center;
   text-decoration: none;
-  color: inherit;
-  border: 1px solid hsla(0, 0%, 0%, .2);
-  border-radius: .5rem;
   flex-grow: 1;
   align-self: center;
+  color: inherit;
 }
 
 .header-block.button:hover .overlay {
@@ -140,9 +190,9 @@ header {
 }
 
 .slide h2 {
-	font-size: 3em;
-	line-height: 1.5;
-	margin: .5rem 0;
+  font-size: 3em;
+  line-height: 1.5;
+  margin: .5rem 0;
 }
 
 /* Выбиральник размера набора */
@@ -252,9 +302,8 @@ header {
   justify-content: center;
 }
 
-
 .slide.tastes {
-	align-items: center;
+  align-items: center;
 }
 
 .slide.tastes .side.right {
@@ -270,8 +319,8 @@ header {
 }
 
 .changer-tastes-item {
-	flex: 1;
-	margin: 0 .5rem;
+  flex: 1;
+  margin: 0 .5rem;
 }
 
 .tastes-selector {
@@ -856,6 +905,7 @@ input {
   border-bottom: 2px solid hsla(0, 0%, 0%, .2);
   outline: none;
   box-shadow: none;
+  background-color: transparent;
 }
 
 input:focus {
@@ -1114,19 +1164,19 @@ aside .fieldset.div {
 }
 
 .who-are-we-block {
-	display: flex;
-	flex-direction: column;
-	box-sizing: border-box;
-	margin: 1rem;
-	padding: 1rem;
-	border-radius: .5rem;
-	flex-basis: 30ch;
-	flex-grow: 1;
-	max-width: 60ch;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  margin: 1rem;
+  padding: 1rem;
+  border-radius: .5rem;
+  flex-basis: 30ch;
+  flex-grow: 1;
+  max-width: 60ch;
 }
 
 .who-are-we-block.heading {
-	flex-basis: auto;
+  flex-basis: auto;
 }
 
 .who-are-we-block.pick-n-vape {
@@ -1181,6 +1231,11 @@ aside .fieldset.div {
   opacity: 0;
 }
 
+.slide.order {
+	background: hsl(0, 0%, 100%);
+	box-shadow: 0 0 2rem 2rem hsl(0, 0%, 100%);
+}
+
 .order-block {
   display: flex;
   flex-wrap: wrap;
@@ -1222,8 +1277,6 @@ aside .fieldset.div {
   transform: none;
   opacity: 1;
 }
-
-
 
 footer {
   display: flex;
