@@ -4,7 +4,7 @@ var maxStep = document.getElementById('bonus-rotator').children.length; //change
 var randomStep = maxStep;
 var frameTime = 200;
 var randomItemsContainer = document.getElementById('bonus-rotator');
-var allRandomItems = [].slice.call(randomItemsContainer.getElementsByClassName('bonus-rotator-item')); 
+var allRandomItems = [].slice.call(randomItemsContainer.getElementsByClassName('bonus-rotator-item'));
 var randomOrderNextBacklog = [-1];
 
 function RandomUISetup(firstInit = false) {
@@ -21,11 +21,11 @@ function RandomUISetup(firstInit = false) {
   for (let i = 0; i<maxStep; i++) {
 	  allRandomItems[i].id = allRandomItems[i].id+'-'+i;
   }
-  
-  for (let i = allRandomItems.length; i >= 0; i--) {
-    randomItemsContainer.appendChild(allRandomItems[Math.random() * i | 0]);
-	
+
+  for (let i = 0; i < allRandomItems.length; i++) {
+    randomItemsContainer.appendChild(allRandomItems[Math.floor(Math.random() * i)])
   }
+
 }
 
 function LightDownAllRandomItems() {
