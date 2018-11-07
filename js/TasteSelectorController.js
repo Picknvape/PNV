@@ -1,10 +1,10 @@
-function GetPreferences(doReturn = false) {
-	var mintSelection		= document.getElementsByName('mint');
-	var dessertsSelection 	= document.getElementsByName('desserts');
-	var exoticSelection 	= document.getElementsByName('exotic');
-	var fruitsSelection 	= document.getElementsByName('fruits');
-	var tobaccoSelection 	= document.getElementsByName('tobacco');
-	var berriesSelection 	= document.getElementsByName('berries');
+function GetPreferences(pointer, doReturn = false) {
+	var mintSelection		= document.getElementsByName('mint'+pointer);
+	var dessertsSelection 	= document.getElementsByName('desserts'+pointer);
+	var exoticSelection 	= document.getElementsByName('exotic'+pointer);
+	var fruitsSelection 	= document.getElementsByName('fruits'+pointer);
+	var tobaccoSelection 	= document.getElementsByName('tobacco'+pointer);
+	var berriesSelection 	= document.getElementsByName('berries'+pointer);
 	var tasteData = {};
 	
 	exoticSelection.forEach(function(element) {
@@ -25,28 +25,7 @@ function GetPreferences(doReturn = false) {
 	berriesSelection.forEach(function(element) {
 		if (element.checked) {tasteData.berries = element.value;}
 	});
-	
-	reflectToUI(tasteData);
 	if (doReturn) {return tasteData;}
-}
-var juiceContainerClassString = 'changer-tastes';
-function reflectToUI(tasteData) {
-	juiceContainerClassString = 'changer-tastes';
-	getIcons(tasteData.tobacco, 'tobacco');
-	getIcons(tasteData.mint, 'mint');
-	getIcons(tasteData.desserts, 'desserts');
-	getIcons(tasteData.exotic, 'exotic');
-	getIcons(tasteData.berries, 'berries');
-	getIcons(tasteData.fruits, 'fruits');
-}
-
-function getIcons(data, objectName)
-{
-	var juiceContainer = document.getElementById('changer-tastes');
-	if (data == 'negative') {juiceContainerClassString += ' '+objectName+'-negative';}
-	if (data == 'positive') {juiceContainerClassString += ' '+objectName+'-positive';}
-	if (data == 'neutral')  {juiceContainerClassString += ' '+objectName+'-neutral';}
-	juiceContainer.className = juiceContainerClassString;
 }
 
 var prev = [1, 1, 1, 1, 1, 1];

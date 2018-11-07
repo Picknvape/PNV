@@ -31,6 +31,7 @@
 	<script defer src='js/MapController.js'></script>
 	<script defer src='js/AnimationController.js'></script>
 	<script defer src='js/datalistPolyfill.js'></script>
+	<script defer src='js/AdditionalBoxController.js'></script>
 	<script defer src='js/all.js'></script>
 </head>
 
@@ -90,6 +91,7 @@
 						<img class="changer-tastes-item mint" src="pics/box-img-3.jpg">
 					</div>
 				</div>
+<<<<<<< HEAD
 			</section>
 			<section class="slide bonuses">
 				<div class="side left">
@@ -201,6 +203,89 @@
 							</svg><svg class="bonus-rotator-item boxmod" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 40" id="-0">
 								<path fill-rule="evenodd" d="M2 0h16a2 2 0 0 1 2 2v36a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2C0 .9.9 0 2 0zm7.4 36a1 1 0 0 0-.7.3L8 37a.6.6 0 0 0 .4 1h3.2a.6.6 0 0 0 .4-1l-.7-.7a1 1 0 0 0-.7-.3H9.4zm3.6-6a1 1 0 0 0-1 1v2c0 .6.4 1 1 1h2c.6 0 1-.4 1-1v-2c0-.6-.4-1-1-1h-2zm-8 0a1 1 0 0 0-1 1v2c0 .6.4 1 1 1h2c.6 0 1-.4 1-1v-2c0-.6-.4-1-1-1H5zm0-18a1 1 0 0 0-1 1v14c0 .6.4 1 1 1h10c.6 0 1-.4 1-1V13c0-.6-.4-1-1-1H5zm5-10a4 4 0 1 0 0 8 4 4 0 0 0 0-8z"></path>
 							</svg></div>
+=======
+			</div>
+		</section>
+		<section class='slide order'>
+			<a id='order'></a>
+			<h2>Choose your size & save money</h2>
+			<form id='review-order-form'>
+				<div id='order-form' class='order-block'>
+					<div id='order-size' class='order-element size'>
+						<h3>Size</h3>
+						<fieldset>
+							<div id='size-selector' class='size-selector'>
+								<label class='box-selector-item small'>
+									<input type='radio' id='boxSizeSmall' name='boxSize' value='small'>
+									<div class='box-selector-row heading'>
+										<span class='box-selector-heading'>Small</span>
+										<span class='box-selector-volume'>150 ml</span>
+									</div>
+									<div class='box-selector-row img'>
+										<img src='pics/box-small.png'>
+									</div>
+									<div class='box-selector-row description'>
+										<span class='box-selector-juices'>3 juices</span>
+										<span class='box-selector-bonuses'>
+											<span class='box-selector-bonus little'>
+												Little bonus
+											</span>
+										</span>
+										<span class='box-selector-button'>Pick for 20 €</span>
+									</div>
+									<span class='overlay'></span>
+								</label>
+								<label class='box-selector-item medium'>
+									<input type='radio' id='boxSizeMedium' name='boxSize' value='medium'>
+									<div class='box-selector-row heading'>
+										<span class='box-selector-heading'>Medium</span>
+										<span class='box-selector-volume'>210 ml</span>
+									</div>
+									<div class='box-selector-row img'>
+										<img src='pics/box-medium.png'>
+									</div>
+									<div class='box-selector-row description'>
+										<span class='box-selector-juices'>4 juices</span>
+										<span class='box-selector-bonuses'>
+											<span class='box-selector-bonus little'>
+												Little bonus
+											</span>
+											+ a chance of
+											<span class='box-selector-bonus big'>
+												big bonus
+											</span>
+										</span>
+										<span class='box-selector-button'>Pick for 30 €</span>
+									</div>
+									<span class='overlay'></span>
+								</label>
+								<label class='box-selector-item large'>
+									<input type='radio' id='boxSizeLarge' name='boxSize' checked value='large'>
+									<div class='box-selector-row heading'>
+										<span class='box-selector-heading'>Large</span>
+										<span class='box-selector-volume'>300 ml</span>
+									</div>
+									<div class='box-selector-row img'>
+										<img src='pics/box-large.png'>
+									</div>
+									<div class='box-selector-row description'>
+										<span class='box-selector-juices'>6 juices</span>
+										<span class='box-selector-bonuses'>
+											<span class='box-selector-bonus little'>
+												Little bonus
+											</span>
+											+ a chance of
+											<span class='box-selector-bonus big'>
+												big bonus
+											</span>
+										</span>
+										<span class='box-selector-button'>Pick for 45 €</span>
+									</div>
+									<span class='overlay'></span>
+								</label>
+							</div>
+						</fieldset>
+>>>>>>> 021af0fef9ce82bda5826d8e054ee353f6f54a8f
 					</div>
 				</div>
 			</section>
@@ -484,6 +569,7 @@
 						<div class="overlay"></div>
 					</button>
 				</div>
+<<<<<<< HEAD
 			</section>
 			<section class="slide brands">
 				<h2>Our partners ❤️</h2>
@@ -509,6 +595,57 @@
 					<img class="brands-item" src="pics/thebakers-logo.svg">
 					<img class="brands-item" src="pics/turbo-logo.svg">
 					<img class="brands-item" src="pics/yoga-logo.png">
+=======
+			</form>
+			<div class='order-buttons'>
+				<button id='new-box-button' class='order-button add-more-new'>
+					Add another box
+					<div class='overlay'></div>
+				</button>
+				<button id='new-box-same-delivery-button' class='order-button add-more-same'>
+					Add another box w/ same delivery & contacts
+					<div class='overlay'></div>
+				</button>
+				<button id='send-order-button' class='order-button send-order'>
+					Vape it all for
+					<!-- <span id='send-order-button-price'></span> сюда цену -->
+					<div class='overlay'></div>
+				</button>
+			</div>
+		</section>
+		<section class='slide brands'>
+			<h2>Our partners ❤️</h2>
+			<div class='brands-block'>
+				<img class='brands-item' src='pics/blackbox-logo.png'>
+				<img class='brands-item' src='pics/budget-logo.svg'>
+				<img class='brands-item' src='pics/cinderella-logo.svg'>
+				<img class='brands-item' src='pics/electrojam-logo.png'>
+				<img class='brands-item' src='pics/fogmix-logo.png'>
+				<img class='brands-item' src='pics/grand-logo.svg'>
+				<img class='brands-item' src='pics/loco-logo.svg'>
+				<img class='brands-item' src='pics/lowslow-logo.svg'>
+				<img class='brands-item' src='pics/maxwells-logo.svg'>
+				<img class='brands-item' src='pics/mixture-logo.svg'>
+				<img class='brands-item' src='pics/nic90-logo.svg'>
+				<img class='brands-item' src='pics/ohmnomnom-logo.svg'>
+				<img class='brands-item' src='pics/samurai-logo.png'>
+				<img class='brands-item' src='pics/sibir-logo.svg'>
+				<img class='brands-item' src='pics/skills-logo.svg'>
+				<img class='brands-item' src='pics/slap-logo.svg'>
+				<img class='brands-item' src='pics/smokekitchen-logo.svg'>
+				<img class='brands-item' src='pics/taboo-logo.svg'>
+				<img class='brands-item' src='pics/thebakers-logo.svg'>
+				<img class='brands-item' src='pics/turbo-logo.svg'>
+				<img class='brands-item' src='pics/yoga-logo.png'>
+			</div>
+		</section>
+		<section class='slide who-are-we'>
+			<div class='who-are-we-unit'>
+				<div class='who-are-we-block heading'>
+					<h2 class='who-are-we-item heading'>Our projects</h2>
+					<span class='who-are-we-item description'>We're russian team behind many vaping projects.</span>
+					<span class='who-are-we-item description'>Have a look ↓</span>
+>>>>>>> 021af0fef9ce82bda5826d8e054ee353f6f54a8f
 				</div>
 			</section>
 			<section class="slide who-are-we">

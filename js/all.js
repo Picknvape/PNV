@@ -4,27 +4,23 @@ function IsEmailVerified() {
 }
 function InitialRadioReader() {
 	RandomUISetup(true);
-	reflectToUI(GetPreferences(true));
 }
 function CompileOrderData() {
-  var orderData = {};
-  hasAllInfo = true;
-  orderData.orderSize = GetChosenBoxSize();
-  orderData.tastePreferences = GetPreferences(true);
-  orderData.shippingInfo = GetCountryData();
-  orderData.clientName = document.getElementById('name-input').value;
-  orderData.clientPhone = document.getElementById('phone-input').value;
-  orderData.clientPhone = orderData.clientPhone.replace(new RegExp('[ ()+-]', 'g'), '');
-  orderData.clientEmail = document.getElementById('email-input').value;
+  var orderData = new Array();
+  for (let i=0; i<GetAdditionalFormPointer(); i++) 
+  {
+	var box = {};
+	box.orderSize = GetChosenBoxSize((i==0)?'':i);
+	box.tastePreferences = GetPreferences((i==0)?'':i,true);
+	box.shippingInfo = GetCountryData();
+	box.clientName = document.getElementById('name-input').value;
+	box.clientPhone = document.getElementById('phone-input').value;
+	box.clientPhone = box.clientPhone.replace(new RegExp('[ ()+-]', 'g'), '');
+	box.clientEmail = document.getElementById('email-input').value;
+	orderData.push(box);
+  } 
   
-  if (orderData.clientName.length<1) 	{hasAllInfo = false;}
-  if (orderData.clientPhone.length<1) 	{hasAllInfo = false;}
-  if (orderData.clientEmail.length<1 || !IsEmailVerified()) {hasAllInfo = false;}
-  if (!hasAllInfo) {
-	  return false;
-  } else {
-	  return orderData;
-  }
+  return orderData;
 }
 
 function OrderDataIssueHighlighter()
