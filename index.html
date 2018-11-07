@@ -5,6 +5,7 @@
 	<title>Pick&amp;Vape</title>
 	<meta charset='utf-8'>
 	<meta name='viewport' content='width=device-width, initial-scale=1'>
+	
 	<!-- Favicons & web apps-->
 	<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 	<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
@@ -13,6 +14,7 @@
 	<link rel="mask-icon" href="safari-pinned-tab.svg" color="#ffaa00">
 	<meta name="msapplication-TileColor" content="#da532c">
 	<meta name="theme-color" content="#ffaa00">
+
 	<!-- FB opengraph -->
 	<meta property="og:image:width" content="1179">
 	<meta property="og:image:height" content="617">
@@ -20,7 +22,8 @@
 	<meta property="og:title" content="Pick&amp;Vape">
 	<meta property="og:url" content="https://whatvivalacloudcando.ru/picknvape/">
 	<meta property="og:image" content="https://pickandvape.com/og-image.jpg">
-	<link rel='stylesheet' type='text/css' href='css.css?v=0.02'>
+	<link rel='stylesheet' type='text/css' href='css.css?v=0.03'>
+
 	<script defer src='js/BoxSizeController.js'></script>
 	<script defer src='js/TitleController.js'></script>
 	<script defer src='js/TasteSelectorController.js'></script>
@@ -464,19 +467,19 @@
 							</div>
 						</fieldset>
 					</div>
-					<div class='order-element buttons'>
-						<h3>Your order</h3>
-						<span class='order-info'>
-							<output name='reviewOrderOutput' id='review-order-output'></output>
-						</span>
-						<button id='send-order-button' class='send-order-button'>
-							Vape it all for
-							<!-- <span id='send-order-button-price'></span> сюда цену -->
-							<div class='overlay'></div>
-						</button>
-					</div>
 				</div>
 			</form>
+			<div class='order-buttons'>
+				<button id='send-order-button' class='order-button add-more'>
+					Add another box
+					<div class='overlay'></div>
+				</button>
+				<button id='send-order-button' class='order-button send-order'>
+					Vape it all for
+					<!-- <span id='send-order-button-price'></span> сюда цену -->
+					<div class='overlay'></div>
+				</button>
+			</div>
 		</section>
 		<section class='slide brands'>
 			<h2>Our partners ❤️</h2>

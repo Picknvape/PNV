@@ -1192,36 +1192,34 @@ aside .fieldset.div {
   flex-wrap: wrap;
 }
 
-.order-element.buttons {
-  flex-basis: auto;
-}
-
 .order-element.tastes .order-item.heading {
   width: 100%;
 }
 
-.order-item.description-buttons {
-  display: flex;
-  flex-direction: column;
-}
-
-.send-order-button {
+.order-button {
   font-family: monospace;
   font-size: 1rem;
   position: relative;
   overflow: hidden;
   padding: .5rem 2rem;
   cursor: pointer;
-  border: 1px solid hsl(0, 0%, 0%);
+  border: 2px solid hsla(0, 0%, 0%, .2);
   border-radius: .5rem;
   background-color: transparent;
   align-self: center;
+  margin: 1rem;
 }
 
-.send-order-button:active .overlay {
+.order-button.add-more .overlay {
+  background-color: hsla(200, 100%, 50%, 1)
+}
+
+.order-button:active .overlay {
   transform: none;
   opacity: 1;
 }
+
+
 
 footer {
   display: flex;
