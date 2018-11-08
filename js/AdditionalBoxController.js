@@ -79,10 +79,23 @@ function AddNewBox(samePerson = true) {
 	{
 		var newAddressNode = document.getElementById('order-delivery').cloneNode(true);
 		newAddressNode.id+='-additional-'+additionalFormPointer;
+		
 		var newContactsNode = document.getElementById('order-contacts').cloneNode(true);
 		newContactsNode.id+='-additional-'+additionalFormPointer;
 		parentNode.appendChild(newAddressNode);
+		
+		newAddressNode.childNodes[5].childNodes[1].childNodes[3].childNodes[1].id+=additionalFormPointer;
+		console.log(newAddressNode.childNodes[5].childNodes[1].childNodes[3].childNodes[1].id);
+		newAddressNode.childNodes[5].childNodes[1].childNodes[5].childNodes[1].id+=additionalFormPointer;
+		newAddressNode.childNodes[5].childNodes[1].childNodes[7].childNodes[1].id+=additionalFormPointer;
+		newAddressNode.childNodes[5].childNodes[1].childNodes[1].remove();
+		
 		parentNode.appendChild(newContactsNode);
+		newContactsNode.childNodes[3].childNodes[1].childNodes[1].childNodes[1].id+=additionalFormPointer; //3 5 7
+		newContactsNode.childNodes[3].childNodes[1].childNodes[3].childNodes[1].id+=additionalFormPointer; //3 5 7
+		newContactsNode.childNodes[3].childNodes[1].childNodes[5].childNodes[1].id+=additionalFormPointer; //3 5 7
+		newContactsNode.childNodes[3].childNodes[1].childNodes[7].childNodes[1].id+=additionalFormPointer; //3 5 7
+
 	}
 	additionalFormPointer++;
 }

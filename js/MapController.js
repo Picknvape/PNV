@@ -48,11 +48,12 @@ function PositionRequestOK(position) {
 
 }
 
-function GetCountryData() {
-  countryData.zip = document.getElementById('zip-code-input').value;
-  countryData.address = document.getElementById('address-input').value;
-  countryData.country = document.getElementById('country-input').value;
-  return countryData;
+function GetCountryData(pointer='') {
+  let toReturn = {};
+  toReturn.zip = document.getElementById('zip-code-input'+pointer).value;
+  toReturn.address = document.getElementById('address-input'+pointer).value;
+  toReturn.country = document.getElementById('country-input'+pointer).value;
+  return toReturn;
 }
 
 function loadJSON(filePath, success, error) {

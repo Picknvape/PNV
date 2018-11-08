@@ -12,11 +12,11 @@ function CompileOrderData() {
 	var box = {};
 	box.orderSize = GetChosenBoxSize((i==0)?'':i);
 	box.tastePreferences = GetPreferences((i==0)?'':i,true);
-	box.shippingInfo = GetCountryData();
-	box.clientName = document.getElementById('name-input').value;
-	box.clientPhone = document.getElementById('phone-input').value;
+	box.shippingInfo = GetCountryData((i==0)?'':i);
+	box.clientName = document.getElementById('name-input'+((i==0)?'':i)).value;
+	box.clientPhone = document.getElementById('phone-input'+((i==0)?'':i)).value;
 	box.clientPhone = box.clientPhone.replace(new RegExp('[ ()+-]', 'g'), '');
-	box.clientEmail = document.getElementById('email-input').value;
+	box.clientEmail = document.getElementById('email-input'+((i==0)?'':i)).value;
 	orderData.push(box);
   } 
   
