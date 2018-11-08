@@ -95,28 +95,27 @@ header {
 
 /* Футер */
 footer {
-	width: 100%;
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-evenly;
-	background-color: hsla(0, 0%, 0%, .9);
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  background-color: hsla(0, 0%, 0%, .9);
 }
 
 .footer-block {
-	display: flex;
-	flex-grow: 1;
-	justify-content: space-evenly;
-	flex-basis: 20ch;
-	margin: 1rem;
+  display: flex;
+  flex-grow: 1;
+  justify-content: space-evenly;
+  flex-basis: 20ch;
+  margin: 1rem;
 }
 
 .footer-block.button {
-	color: hsla(0, 0%, 100%, 1);
-	border-color: hsla(0, 0%, 100%, 1);
-	flex-grow: 0;
-	text-decoration: none;
+  color: hsla(0, 0%, 100%, 1);
+  border-color: hsla(0, 0%, 100%, 1);
+  flex-grow: 0;
+  text-decoration: none;
 }
-
 
 .footer-item.icon.doggo {
   font-size: 2rem;
@@ -182,11 +181,6 @@ footer {
     opacity: 0;
   }
 }
-
-
-
-
-
 
 .slide {
   display: flex;
@@ -1369,4 +1363,23 @@ aside .fieldset.div {
   to {
     opacity: 1;
   }
+}
+
+.text-with-icon {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 1rem 0;
+}
+
+
+.text-with-icon-element.icon {
+  flex-grow: 0;
+  height: auto;
+  flex-basis: 7.5%;
+}
+
+.text-with-icon-element.text {
+	margin: unset;
+	flex-basis: 90%;
 }
