@@ -72,3 +72,11 @@ function loadJSON(filePath, success, error) {
   xhr.open("GET", filePath, true);
   xhr.send();
 }
+
+function CountryInList(countryName) {
+	let countryList = document.getElementById('countries-selector-list').childNodes;
+	let toCompare = new Array();
+	countryList.forEach(function(element){if (element.value) {toCompare.push(element.value.toLowerCase());}});
+	if (toCompare.includes(countryName.toLowerCase())) {return true;}
+	else {return false;}
+}

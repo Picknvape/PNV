@@ -23,24 +23,16 @@ function CompileOrderData() {
   return orderData;
 }
 
+function OnOrderSucsess() {
+	document.body.classList.toggle('after-order-overlay-shown');
+	document.getElementById('hide-after-order-overlay-button').addEventListener('click', function() {document.body.classList.toggle('after-order-overlay-shown')});
+}
 function OrderDataIssueHighlighter()
 {
-	//ktrzhnv TODO: classes for lighting up
-	//div to reflect issues with textx
-	console.log('user info incomplete');
-	//should light up stuff depending on missing data;
-	if (orderData.clientName.length<1) {
-		   document.getElementById('name-input').style.borderBottomColor = "rgba(178,76,76,1)";
-	   }
-	   if (orderData.clientPhone.length<1) {
-		   document.getElementById('phone-input').style.borderBottomColor = "rgba(178,76,76,1)";
-	   }
-	   if (orderData.clientEmail.length<1) {
-		   document.getElementById('email-input').style.borderBottomColor = "rgba(178,76,76,1)";
-	   }
-	   if (!IsEmailVerified()) {
-		   document.getElementById('email-input-verify').style.borderBottomColor = "rgba(178,76,76,1)";
-	   }
+	var od = CompileOrderData();
+	od.forEach(function(element){
+		if (element.shippingInfo.country) {}
+	});
 }
 
 document.getElementById('send-order-button').addEventListener('click', CompileOrderData);
