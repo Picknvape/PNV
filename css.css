@@ -1372,14 +1372,24 @@ aside .fieldset.div {
   margin: 1rem 0;
 }
 
-
 .text-with-icon-element.icon {
-  flex-grow: 0;
-  height: auto;
-  flex-basis: 7.5%;
+	height: auto;
+	flex-basis: 3rem;
+	margin-right: 1rem;
 }
-
 .text-with-icon-element.text {
 	margin: unset;
-	flex-basis: 90%;
+	flex: 1;
+}
+
+.text-with-icon.taste .text-with-icon-element.text {
+	transform: translateY(1rem);
+}
+
+.text-with-icon.gift .text-with-icon-element.text {
+	transform: translateY(.8rem);
+}
+
+.text-with-icon.quality .text-with-icon-element.text {
+	transform: translateY(1.2rem);
 }
