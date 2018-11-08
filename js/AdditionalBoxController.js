@@ -89,6 +89,14 @@ function AddNewBox(samePerson = true) {
 		newAddressNode.childNodes[5].childNodes[1].childNodes[5].childNodes[1].id+=additionalFormPointer;
 		newAddressNode.childNodes[5].childNodes[1].childNodes[7].childNodes[1].id+=additionalFormPointer;
 		newAddressNode.childNodes[5].childNodes[1].childNodes[1].remove();
+		let countryInput = document.getElementById('country-input'+additionalFormPointer);
+		countryInput.addEventListener("input",function (event) {
+			if (!CountryInList(countryInput.value)) {
+				countryInput.setCustomValidity("This country is not in shipping zone. Check for typos and try again");
+			} else {
+				countryInput.setCustomValidity("");				 
+			}			
+		}); 
 		
 		parentNode.appendChild(newContactsNode);
 		newContactsNode.childNodes[3].childNodes[1].childNodes[1].childNodes[1].id+=additionalFormPointer; //3 5 7

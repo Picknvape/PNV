@@ -1,9 +1,17 @@
-InitialRadioReader();
+InitialUISetup();
 function IsEmailVerified() {
 	return document.getElementById('email-input').value.toLowerCase() == document.getElementById('email-input-verify').value.toLowerCase();
 }
-function InitialRadioReader() {
+function InitialUISetup() {
 	RandomUISetup(true);
+	let countryInput = document.getElementById('country-input');
+	countryInput.addEventListener("input",function (event) {
+		if (!CountryInList(countryInput.value)) {
+			countryInput.setCustomValidity("This country is not in shipping zone. Check for typos and try again");
+		} else {
+			countryInput.setCustomValidity("");				 
+		}			
+	}); 
 }
 function CompileOrderData() {
   var orderData = new Array();
