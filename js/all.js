@@ -1,4 +1,7 @@
+var countryInput = document.getElementById('country-input');
+///
 InitialUISetup();
+
 
 function IsEmailVerified() {
   return document.getElementById('email-input').value.toLowerCase() == document.getElementById('email-input-verify').value.toLowerCase();
@@ -6,7 +9,6 @@ function IsEmailVerified() {
 
 
 function countryValidity() {
-  var countryInput = document.getElementById('country-input');
   if (!CountryInList(countryInput.value)) {
     countryInput.setCustomValidity("Nope, select country from the list");
   } else {
@@ -15,12 +17,13 @@ function countryValidity() {
 }
 
 function InitialUISetup() {
-  var countryInput = document.getElementById('country-input');
+ 
+  countryValidity();
   RandomUISetup(true);
   countryInput.addEventListener("input", function(event) {
     countryValidity();
   });
-  countryValidity();
+  
 }
 
 function CompileOrderData() {

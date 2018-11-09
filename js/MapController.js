@@ -77,7 +77,6 @@ function CountryInList(countryName) {
 	let countryList = document.getElementById('countries-selector-list').childNodes;
 	let toCompare = new Array();
 	countryList.forEach(function(element){if (element.value) {toCompare.push(element.value.toLowerCase());}});
-	console.log('comparing '+countryName.toLowerCase()+' with list');
-	if (toCompare.includes(countryName.toLowerCase())) {console.log(countryName.toLowerCase()+'OK'); return true;}
+	if (toCompare.includes(countryName.toLowerCase()))  {return true;}
 	else {return false;}
 }
