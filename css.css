@@ -1393,3 +1393,12 @@ aside .fieldset.div {
 .text-with-icon.quality .text-with-icon-element.text {
 	transform: translateY(1.2rem);
 }
+
+
+.bonus-pics-container {
+	display: flex;
+}
+
+.bonus-pics-container-item {
+	margin: .5rem;
+}
