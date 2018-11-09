@@ -3,11 +3,6 @@ var countryInput = document.getElementById('country-input');
 InitialUISetup();
 
 
-function IsEmailVerified() {
-  return document.getElementById('email-input').value.toLowerCase() == document.getElementById('email-input-verify').value.toLowerCase();
-}
-
-
 function countryValidity() {
   if (!CountryInList(countryInput.value)) {
     countryInput.setCustomValidity("Nope, select country from the list");
@@ -49,12 +44,3 @@ function OnOrderSucsess() {
     document.body.classList.toggle('after-order-overlay-shown')
   });
 }
-
-function OrderDataIssueHighlighter() {
-  var od = CompileOrderData();
-  od.forEach(function(element) {
-    if (element.shippingInfo.country) {}
-  });
-}
-
-document.getElementById('send-order-button').addEventListener('click', CompileOrderData);

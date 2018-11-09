@@ -5,7 +5,6 @@ document.getElementById('new-box-button').addEventListener('click', function() {
 document.getElementById('new-box-same-delivery-button').addEventListener('click', function() {AddNewBox(false)});
 
 function AddNewBox(samePerson = true) {
-	var boxTitle = 'Additional box #'+additionalFormPointer;
 	let tasteData = GetPreferences('',true);
 	var newTasteNode =  document.getElementById('order-tastes').cloneNode(true);
 	newTasteNode.id+='-additional-'+additionalFormPointer;

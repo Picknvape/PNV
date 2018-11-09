@@ -1,6 +1,6 @@
 var randomItemsContainerBaseClass = document.getElementById('bonus-rotator').className;
 document.getElementById('get-bonus-button').addEventListener('click', DoPseudoRandomAnimationCycle);
-var maxStep = document.getElementById('bonus-rotator').children.length; //changeable, use as public editable variable to adjust amount of steps in animation according to baked elements count
+var maxStep = document.getElementById('bonus-rotator').children.length;
 var randomStep = maxStep;
 var frameTime = 200;
 var randomItemsContainer = document.getElementById('bonus-rotator');
