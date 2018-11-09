@@ -1,4 +1,5 @@
 var countryInput = document.getElementById('country-input');
+var additionalEmailInput = document.getElementById('email-input-verify');
 ///
 InitialUISetup();
 
@@ -11,13 +12,22 @@ function countryValidity() {
   }
 }
 
+function AdditionalEmailValidity () {
+	let isEmailTheSame = additionalEmailInput.value.toLowerCase()== document.getElementById('email-input').value.toLowerCase();
+	if (!isEmailTheSame) {
+		additionalEmailInput.setCustomValidity("Email addresses differ. Check them for typos and try again");
+	} else {
+		additionalEmailInput.setCustomValidity("");				 
+	}			
+}
+
 function InitialUISetup() {
  
   countryValidity();
+  AdditionalEmailValidity();
   RandomUISetup(true);
-  countryInput.addEventListener("input", function(event) {
-    countryValidity();
-  });
+  countryInput.addEventListener("input", function(event) {countryValidity();});
+  additionalEmailInput.addEventListener("input", function(event) {AdditionalEmailValidity();});
   
 }
 
