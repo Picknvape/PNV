@@ -4,8 +4,7 @@ var parentNode = document.getElementById('order-form');
 document.getElementById('new-box-button').addEventListener('click', function() {AddNewBox()});
 document.getElementById('new-box-same-delivery-button').addEventListener('click', function() {AddNewBox(false)});
 
-function AddNewBox(samePerson = true) {
-	var boxTitle = 'Additional box #'+additionalFormPointer;
+function AddNewBox(samePerson = false) {
 	let tasteData = GetPreferences('',true);
 	var newTasteNode =  document.getElementById('order-tastes').cloneNode(true);
 	newTasteNode.id+='-additional-'+additionalFormPointer;
@@ -75,7 +74,7 @@ function AddNewBox(samePerson = true) {
 		if (tasteData.berries == element.value) {element.checked = true;}
 	});
 	
-	if (samePerson) 
+	if (!samePerson) 
 	{
 		var newAddressNode = document.getElementById('order-delivery').cloneNode(true);
 		newAddressNode.id+='-additional-'+additionalFormPointer;
@@ -103,6 +102,16 @@ function AddNewBox(samePerson = true) {
 		newContactsNode.childNodes[3].childNodes[1].childNodes[3].childNodes[1].id+=additionalFormPointer; //3 5 7
 		newContactsNode.childNodes[3].childNodes[1].childNodes[5].childNodes[1].id+=additionalFormPointer; //3 5 7
 		newContactsNode.childNodes[3].childNodes[1].childNodes[7].childNodes[1].id+=additionalFormPointer; //3 5 7
+		
+		let additionalEmailInput = document.getElementById('email-input-verify'+additionalFormPointer);
+		additionalEmailInput.addEventListener('input', function (event) {
+			let isEmailTheSame = additionalEmailInput.value.toLowerCase()== document.getElementById('email-input'+additionalFormPointer).value.toLowerCase();
+			if (!isEmailTheSame) {
+				additionalEmailInput.setCustomValidity("Email addresses differ. Check them for typos and try again");
+			} else {
+				additionalEmailInput.setCustomValidity("");				 
+			}			
+		});
 
 	}
 	additionalFormPointer++;

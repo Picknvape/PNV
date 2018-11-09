@@ -1,12 +1,10 @@
+var countryInput = document.getElementById('country-input');
+var additionalEmailInput = document.getElementById('email-input-verify');
+///
 InitialUISetup();
-
-function IsEmailVerified() {
-  return document.getElementById('email-input').value.toLowerCase() == document.getElementById('email-input-verify').value.toLowerCase();
-}
 
 
 function countryValidity() {
-  var countryInput = document.getElementById('country-input');
   if (!CountryInList(countryInput.value)) {
     countryInput.setCustomValidity("Nope, select country from the list");
   } else {
@@ -14,13 +12,23 @@ function countryValidity() {
   }
 }
 
+function AdditionalEmailValidity () {
+	let isEmailTheSame = additionalEmailInput.value.toLowerCase()== document.getElementById('email-input').value.toLowerCase();
+	if (!isEmailTheSame) {
+		additionalEmailInput.setCustomValidity("Email addresses differ. Check them for typos and try again");
+	} else {
+		additionalEmailInput.setCustomValidity("");				 
+	}			
+}
+
 function InitialUISetup() {
-  var countryInput = document.getElementById('country-input');
-  RandomUISetup(true);
-  countryInput.addEventListener("input", function(event) {
-    countryValidity();
-  });
+ 
   countryValidity();
+  AdditionalEmailValidity();
+  RandomUISetup(true);
+  countryInput.addEventListener("input", function(event) {countryValidity();});
+  additionalEmailInput.addEventListener("input", function(event) {AdditionalEmailValidity();});
+  
 }
 
 function CompileOrderData() {
@@ -46,12 +54,3 @@ function OnOrderSucsess() {
     document.body.classList.toggle('after-order-overlay-shown')
   });
 }
-
-function OrderDataIssueHighlighter() {
-  var od = CompileOrderData();
-  od.forEach(function(element) {
-    if (element.shippingInfo.country) {}
-  });
-}
-
-document.getElementById('send-order-button').addEventListener('click', CompileOrderData);
