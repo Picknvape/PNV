@@ -3,6 +3,7 @@
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 300;
+  font-display: fallback;
   src: local('Roboto Light'), local('Roboto-Light'), url(https://fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmSU5fBBc4AMP6lQ.woff2) format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
@@ -12,6 +13,7 @@
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 500;
+  font-display: fallback;
   src: local('Roboto Medium'), local('Roboto-Medium'), url(https://fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmEU9fBBc4AMP6lQ.woff2) format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
@@ -21,6 +23,7 @@
   font-family: 'Roboto Mono';
   font-style: normal;
   font-weight: 400;
+  font-display: fallback;
   src: local('Roboto Mono'), local('RobotoMono-Regular'), url(https://fonts.gstatic.com/s/robotomono/v5/L0x5DF4xlVMF-BfR8bXMIjhLq3-cXbKD.woff2) format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
@@ -71,12 +74,6 @@ fieldset {
   font-family: Roboto Mono, monospace;
 }
 
-.border {
-  border-radius: .5rem;
-  border: 1px solid hsla(0, 0%, 0%, .2);
-  overflow: hidden;
-  padding: .25rem .5rem;
-}
 
 /* Хедер */
 header {
@@ -283,96 +280,6 @@ footer {
   display: flex;
   flex-direction: column;
   justify-content: center;
-}
-
-.size-selector {
-  display: flex;
-  margin: -.125rem;
-  flex-wrap: wrap;
-}
-
-.size-selector-button {
-  position: relative;
-  display: flex;
-  overflow: hidden;
-  flex-direction: column;
-  margin: .25rem;
-  padding: .75rem 1rem;
-  cursor: pointer;
-  border-radius: .5rem;
-  background-color: hsla(0, 0%, 0%, .05);
-  justify-content: space-between;
-}
-
-.size-selector input {
-  position: absolute;
-  max-width: 0;
-  max-height: 0;
-  opacity: 0;
-}
-
-.size-selector-button.small {
-  font-size: 1em;
-  flex-grow: 1;
-}
-
-.size-selector-button.medium {
-  font-size: 1.3em;
-  flex-grow: 5;
-}
-
-.size-selector-button.large {
-  font-size: 1.6em;
-  flex-grow: 10;
-}
-
-.size-selector-button-row {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-}
-
-.size-selector-button .normal {
-  font-weight: 300;
-}
-
-.size-selector-button .smaller {
-  font-family: monospace;
-}
-
-.size-selector-button .bigger {
-  font-weight: 600;
-  display: flex;
-  padding-top: 1em;
-  white-space: nowrap;
-  flex-grow: 1;
-  align-items: flex-end;
-}
-
-/* Ховера
-.size-selector-button */
-.overlay {
-  position: absolute;
-  z-index: -1;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  transition-duration: .2s;
-  transition-property: transform, opacity;
-  transform: scaleY(0);
-  transform-origin: bottom;
-  opacity: .4;
-  background-color: hsla(40, 100%, 50%, 1);
-}
-
-.size-selector-button:hover .overlay {
-  transform: none;
-}
-
-.size-selector-button input:checked~.overlay {
-  transform: none;
-  opacity: 1;
 }
 
 .slide.size .side.right {
@@ -702,93 +609,6 @@ footer {
   fill: hsla(0, 0%, 0%, 1);
 }
 
-.address-selector {
-  display: flex;
-  margin: -.25rem -1rem;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-
-.address-selector-address-block {
-  margin: .25rem 1rem;
-  flex-grow: 1;
-}
-
-.address-selector-address-block.geo-button {
-  font-family: monospace;
-  font-size: 1rem;
-  line-height: 1.5;
-  padding: 0 .5rem;
-  cursor: pointer;
-  border: 1px solid hsla(0, 0%, 0%, .2);
-  border-radius: .5rem;
-  background-color: transparent;
-}
-
-.address-selector-address-block.geo-button {
-  flex-grow: 0;
-}
-
-.address-selector-address-block.country {
-  flex-basis: 30ch;
-}
-
-.address-selector-address-block.postal {
-  flex-basis: 15ch;
-  flex-grow: 0;
-}
-
-.address-selector-address-block.address {
-  flex-basis: 30ch;
-}
-
-.address-selector-address-item.input {
-  font-family: monospace;
-  font-size: 1rem;
-  line-height: 1.5;
-  box-sizing: border-box;
-  width: 100%;
-  margin: unset;
-  border: none;
-  border-bottom: 1px solid hsla(0, 0%, 0%, .2);
-}
-
-.address-selector-address-block.postal .address-selector-address-item.input {
-  letter-spacing: .5ch;
-}
-
-.address-selector-address-item.input::placeholder {
-  text-overflow: ellipsis;
-}
-
-.address-selector-address-block.postal .address-selector-address-item::-webkit-inner-spin-button,
-.address-selector-address-block.postal .address-selector-address-item::-webkit-outer-spin-button {
-  margin: 0;
-  -webkit-appearance: none;
-}
-
-.address-selector-address-block.postal .address-selector-address-item.input::placeholder {
-  letter-spacing: 0;
-}
-
-.address-selector-address-item.description {
-  position: absolute;
-  width: 0;
-  opacity: 0;
-}
-
-.changer-map {
-  fill: hsla(0, 0%, 0%, .2);
-}
-
-.changer-map path {
-  transition: fill .2s;
-}
-
-.changer-map path.checked {
-  fill: hsla(40, 100%, 50%, 1);
-}
-
 .slide.review {
   position: relative;
 }
@@ -959,63 +779,6 @@ footer {
   opacity: 1;
 }
 
-.contacts-selector {
-  display: flex;
-  margin: 0 -1rem;
-  flex-wrap: wrap;
-}
-
-.contacts-selector-block {
-  display: flex;
-  margin: .5rem 1rem;
-  flex-grow: 1;
-}
-
-.contacts-selector-block.contact-method-name {
-  flex-basis: 30ch;
-}
-
-.contacts-selector-block.contact-method-phone {
-  flex-basis: 30ch;
-}
-
-.contacts-selector-block.contact-method-email {
-  flex-basis: 40ch;
-}
-
-.contacts-selector-block.contact-method-email-repeat {
-  flex-basis: 50ch;
-}
-
-.contacts-selector-item {
-  font-family: monospace;
-  font-size: 1rem;
-  transition: border-bottom-color .4s;
-  border: none;
-  border-bottom: 1px solid hsla(0, 0%, 0%, .2);
-  flex-grow: 1;
-}
-
-input {
-  transition: border-bottom-color .4s;
-  border: none;
-  border-bottom: 1px solid hsla(0, 0%, 0%, .2);
-  outline: none;
-  box-shadow: none;
-  background-color: transparent;
-}
-
-input:focus {
-  border-bottom-color: hsla(40, 100%, 50%, .4);
-}
-
-input:invalid:not(:placeholder-shown) {
-  border-bottom-color: hsla(0, 100%, 50%, .4);
-}
-
-input:valid:not(:placeholder-shown) {
-  border-bottom-color: hsla(200, 100%, 50%, .4);
-}
 
 .review-order-block.send-order {
   display: flex;
@@ -1334,47 +1097,7 @@ aside .fieldset.div {
 	box-shadow: 0 0 2rem 2rem hsl(0, 0%, 100%);
 }
 */
-.order-block {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-}
 
-.order-element {
-  flex-basis: 60ch;
-}
-
-.order-element.tastes {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.order-element.tastes .order-item.heading {
-  width: 100%;
-}
-
-.order-button {
-  font-family: monospace;
-  font-size: 1rem;
-  position: relative;
-  overflow: hidden;
-  padding: .5rem 2rem;
-  cursor: pointer;
-  border: 1px solid hsla(0, 0%, 0%, .2);
-  border-radius: .5rem;
-  background-color: transparent;
-  align-self: center;
-  margin: 1rem;
-}
-
-.order-button.add-more .overlay {
-  background-color: hsla(200, 100%, 50%, 1)
-}
-
-.order-button:active .overlay {
-  transform: none;
-  opacity: 1;
-}
 
 .background-overlay {
   position: absolute;
@@ -1449,3 +1172,284 @@ aside .fieldset.div {
 .bonus-pics-container-item {
   margin: .5rem;
 }
+
+
+
+
+
+
+
+/* Заказ */
+
+.order-block {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.order-element {
+	flex-basis: 60ch;
+	margin: 1rem;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.order-element.buttons {
+  flex-basis: auto;
+  margin: unset;
+}
+
+.order-button {
+	cursor: pointer;
+	margin: 1rem;
+}
+
+/* Инпуты */
+
+input {
+  transition: border-color .4s;
+  border: none;
+  border-bottom: 1px solid hsla(0, 0%, 0%, .2);
+  outline: none;
+  box-shadow: none;
+  background-color: transparent;
+}
+
+input[type=button] {
+  border: 1px solid hsla(0, 0%, 0%, .2);
+  padding: .25rem .5rem;
+  border-radius: .5rem;
+}
+
+input:focus {
+  border-color: hsla(40, 100%, 50%, 1);
+  outline: none;
+}
+
+input:invalid:not(:placeholder-shown) {
+  border-color: hsla(0, 100%, 50%, .4);
+}
+
+input:valid:not(:placeholder-shown) {
+  border-color: hsla(200, 100%, 50%, .4);
+}
+
+/* Размер */
+
+.size-selector {
+  display: flex;
+  margin: -.125rem;
+  flex-wrap: wrap;
+}
+
+.size-selector-button {
+  position: relative;
+  display: flex;
+  overflow: hidden;
+  flex-direction: column;
+  margin: .25rem;
+  padding: .75rem 1rem;
+  cursor: pointer;
+  border-radius: .5rem;
+  background-color: hsla(0, 0%, 0%, .05);
+  justify-content: space-between;
+}
+
+.size-selector input {
+  position: absolute;
+  max-width: 0;
+  max-height: 0;
+  opacity: 0;
+}
+
+.size-selector-button.small {
+  font-size: 1em;
+  flex-grow: 1;
+}
+
+.size-selector-button.medium {
+  font-size: 1.3em;
+  flex-grow: 5;
+}
+
+.size-selector-button.large {
+  font-size: 1.6em;
+  flex-grow: 10;
+}
+
+.size-selector-button-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.size-selector-button .normal {
+  font-weight: 300;
+}
+
+.size-selector-button .smaller {
+  font-family: monospace;
+}
+
+.size-selector-button .bigger {
+  font-weight: 600;
+  display: flex;
+  padding-top: 1em;
+  white-space: nowrap;
+  flex-grow: 1;
+  align-items: flex-end;
+}
+
+.overlay {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition-duration: .2s;
+  transition-property: transform, opacity;
+  transform: scaleY(0);
+  transform-origin: bottom;
+  opacity: .4;
+  background-color: hsla(40, 100%, 50%, 1);
+}
+
+.size-selector-button:hover .overlay {
+  transform: none;
+}
+
+.size-selector-button input:checked~.overlay {
+  transform: none;
+  opacity: 1;
+}
+
+/* Адрем */
+
+.address-selector {
+  display: flex;
+  margin: -.25rem -1rem;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.address-selector-address-block {
+  margin: .25rem 1rem;
+  flex-grow: 1;
+}
+
+.address-selector-address-block.geo-button {
+  font-family: monospace;
+  font-size: 1rem;
+  line-height: 1.5;
+  padding: 0 .5rem;
+  cursor: pointer;
+  border: 1px solid hsla(0, 0%, 0%, .2);
+  border-radius: .5rem;
+  background-color: transparent;
+}
+
+.address-selector-address-block.geo-button {
+  flex-grow: 0;
+}
+
+.address-selector-address-block.country {
+  flex-basis: 30ch;
+}
+
+.address-selector-address-block.postal {
+  flex-basis: 15ch;
+  flex-grow: 0;
+}
+
+.address-selector-address-block.address {
+  flex-basis: 30ch;
+}
+
+.address-selector-address-item.input {
+  font-family: monospace;
+  font-size: 1rem;
+  line-height: 1.5;
+  box-sizing: border-box;
+  width: 100%;
+  margin: unset;
+  border: none;
+  border-bottom: 1px solid hsla(0, 0%, 0%, .2);
+}
+
+.address-selector-address-block.postal .address-selector-address-item.input {
+  letter-spacing: .5ch;
+}
+
+.address-selector-address-item.input::placeholder {
+  text-overflow: ellipsis;
+}
+
+.address-selector-address-block.postal .address-selector-address-item::-webkit-inner-spin-button,
+.address-selector-address-block.postal .address-selector-address-item::-webkit-outer-spin-button {
+  margin: 0;
+  -webkit-appearance: none;
+}
+
+.address-selector-address-block.postal .address-selector-address-item.input::placeholder {
+  letter-spacing: 0;
+}
+
+.address-selector-address-item.description {
+  position: absolute;
+  width: 0;
+  opacity: 0;
+}
+
+.changer-map {
+  fill: hsla(0, 0%, 0%, .2);
+}
+
+.changer-map path {
+  transition: fill .2s;
+}
+
+.changer-map path.checked {
+  fill: hsla(40, 100%, 50%, 1);
+}
+
+/* Контакты */
+
+.contacts-selector {
+  display: flex;
+  margin: 0 -1rem;
+  flex-wrap: wrap;
+}
+
+.contacts-selector-block {
+  display: flex;
+  margin: .5rem 1rem;
+  flex-grow: 1;
+}
+
+.contacts-selector-block.contact-method-name {
+  flex-basis: 30ch;
+}
+
+.contacts-selector-block.contact-method-phone {
+  flex-basis: 30ch;
+}
+
+.contacts-selector-block.contact-method-email {
+  flex-basis: 40ch;
+}
+
+.contacts-selector-block.contact-method-email-repeat {
+  flex-basis: 50ch;
+}
+
+.contacts-selector-item {
+  font-family: monospace;
+  font-size: 1rem;
+  transition: border-bottom-color .4s;
+  border: none;
+  border-bottom: 1px solid hsla(0, 0%, 0%, .2);
+  flex-grow: 1;
+}
+
+/* Кнопки */
