@@ -6,10 +6,7 @@
 	<meta charset='utf-8'>
 	<meta name='viewport' content='width=device-width, initial-scale=1'>
 
-	<!-- Ext links + css
-	<link href="https://fonts.googleapis.com/css?family=Roboto:300,500&amp;subset=latin-ext" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Roboto+Mono&amp;subset=latin-ext" rel="stylesheet">
-	-->
+	<!-- Ext links + css	-->
 	<link rel='stylesheet' type='text/css' href='css.css?v=0.03'>
 
 	<!-- Favicons & web apps-->
@@ -60,7 +57,9 @@
 			<div class='side left'>
 				<h1>
 					<span>Try</span>
+					<br />
 					<span id='typing-heading' class='bold'></span>
+					<br />
 					<span>juices up to</span>
 					<span class='bold colored'>40% cheaper</span>
 				</h1>
@@ -106,6 +105,15 @@
 		<section class='slide bonuses'>
 			<div class='side left'>
 				<h2>Test your luck</h2>
+
+				<div class='bonus-pics-container'>
+					<img class='bonus-pics-container-item' src='pics/bonus-bonus.png'>
+					<img class='bonus-pics-container-item' src='pics/bonus-juiciest.png'>
+					<!--
+											<img class='bonus-pics-container-item' src='pics/bonus-bonus-backup.png'>
+											<img class='bonus-pics-container-item' src='pics/bonus-juiciest-backup.png'>
+										-->
+				</div>
 				<p>Each Pick&amp;Vape box contains bonuses. It could be
 					<span class='bonuses-description-highlighted wires'>wires</span>,
 					<span class='bonuses-description-highlighted wicks'>wicks</span>,
@@ -134,15 +142,6 @@
 			<div class='side right'>
 				<div class='bonus-rotator-container'>
 
-					<div class='bonus-pics-container'>
-						<img class='bonus-pics-container-item' src='pics/bonus-bonus.png'>
-						<img class='bonus-pics-container-item' src='pics/bonus-juiciest.png'>
-						<!--
-							<img class='bonus-pics-container-item' src='pics/bonus-bonus-backup.png'>
-							<img class='bonus-pics-container-item' src='pics/bonus-juiciest-backup.png'>
-							--?
-					</div>
-					<!--
 					<div id='bonus-rotator' class='bonus-rotator'>
 						<svg class='bonus-rotator-item boxmod' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 40'>
 							<path fill-rule='evenodd' d='M2 0h16a2 2 0 0 1 2 2v36a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2C0 .9.9 0 2 0zm7.4 36a1 1 0 0 0-.7.3L8 37a.6.6 0 0 0 .4 1h3.2a.6.6 0 0 0 .4-1l-.7-.7a1 1 0 0 0-.7-.3H9.4zm3.6-6a1 1 0 0 0-1 1v2c0 .6.4 1 1 1h2c.6 0 1-.4 1-1v-2c0-.6-.4-1-1-1h-2zm-8 0a1 1 0 0 0-1 1v2c0 .6.4 1 1 1h2c.6 0 1-.4 1-1v-2c0-.6-.4-1-1-1H5zm0-18a1 1 0 0 0-1 1v14c0 .6.4 1 1 1h10c.6 0 1-.4 1-1V13c0-.6-.4-1-1-1H5zm5-10a4 4 0 1 0 0 8 4 4 0 0 0 0-8z' />
@@ -229,10 +228,9 @@
 							<path fill-rule='evenodd' d='M1 0c.6 0 1 .4 1 1v18a1 1 0 1 1-2 0V1c0-.6.4-1 1-1zm3 0c.6 0 1 .4 1 1v8a1 1 0 0 1-2 0V1c0-.6.4-1 1-1zm3 0c.6 0 1 .4 1 1v8a1 1 0 1 1-2 0V1c0-.6.4-1 1-1zm3 0c.6 0 1 .4 1 1v8a1 1 0 0 1-2 0V1c0-.6.4-1 1-1zm3 0c.6 0 1 .4 1 1v8a1 1 0 1 1-2 0V1c0-.6.4-1 1-1zm3 0c.6 0 1 .4 1 1v8a1 1 0 0 1-2 0V1c0-.6.4-1 1-1zm3 0c.6 0 1 .4 1 1v18a1 1 0 1 1-2 0V1c0-.6.4-1 1-1z' />
 						</svg>
 					</div>
-
-				-->
-					</div>
 				</div>
+			</div>
+			<img class='bonuses-back-img' src='pics/octogon.svg'>
 		</section>
 		<section class='slide order'>
 			<a id='order'></a>
@@ -317,7 +315,7 @@
 					<div id='order-tastes' class='order-element tastes'>
 						<h3 class='order-item heading'>Tastes</h3>
 						<div class='tastes-selector-block negative'>
-							<span class='tastes-selector-block-description'>😞</span>
+							<span class='tastes-selector-block-description'>Meh</span>
 							<fieldset>
 								<div class='tastes-selector-element'>
 									<label class='tastes-selector-item desserts'>
@@ -348,7 +346,7 @@
 							</fieldset>
 						</div>
 						<div class='tastes-selector-block neutral'>
-							<span class='tastes-selector-block-description'>😐</span>
+							<span class='tastes-selector-block-description'>So-so</span>
 							<fieldset>
 								<div class='tastes-selector-element neutral'>
 									<label class='tastes-selector-item desserts'>
@@ -379,7 +377,7 @@
 							</fieldset>
 						</div>
 						<div class='tastes-selector-block positive'>
-							<span class='tastes-selector-block-description'>😋</span>
+							<span class='tastes-selector-block-description'>Like</span>
 							<fieldset>
 								<div class='tastes-selector-element positive'>
 									<label class='tastes-selector-item desserts'>
