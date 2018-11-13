@@ -18,3 +18,11 @@ function CompileOrderData() {
 }
 
 document.getElementById('send-order-button').addEventListener('click', CompileOrderData);
+let countryInput = document.getElementById('country-input');
+		countryInput.addEventListener("input",function (event) {
+			if (!CountryInList(countryInput.value)) {
+				countryInput.setCustomValidity("This country is not in shipping zone. Check for typos and try again");
+			} else {
+				countryInput.setCustomValidity("");
+			}
+		});
