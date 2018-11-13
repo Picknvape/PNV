@@ -90,7 +90,7 @@ function loadJSON(filePath, success, error) {
   xhr.send();
 }
 
-function reflectChoiceOnMap() {
+function reflectChoiceOnMap(onlaunch=false) {
   let countryToLightUp = '';
   let map = document.getElementsByName('country');
   for (let i = 0; i < map.length; i++) {
@@ -98,7 +98,7 @@ function reflectChoiceOnMap() {
       countryToLightUp = map[i].value;
     }
   }
-  if (prevCountry != countryToLightUp) {
+  if (prevCountry != countryToLightUp && !onlaunch) {
     document.getElementById('path-' + countryToLightUp.toLowerCase()).classList.add('checked');
     if (prevCountry != null) {
       document.getElementById('path-' + prevCountry.toLowerCase()).classList.remove('checked');
