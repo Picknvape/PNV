@@ -1,6 +1,8 @@
+let countryInput = document.getElementById('country-input');
+
 function UpdateUI() {
-	reflectChoiceOnMap(true);
 	UpdateBoxVisual();
+	CountryValidity();
 }
 
 function CompileOrderData() {
@@ -15,13 +17,15 @@ function CompileOrderData() {
 	return orderData;
 }
 
+function CountryValidity()
+{
+	if (!CountryInList(countryInput.value)) {
+		countryInput.setCustomValidity("This country is not in shipping zone. Check for typos and try again");
+	} else {
+		countryInput.setCustomValidity("");
+	}
+}
+
 UpdateUI();
 document.getElementById('send-order-button').addEventListener('click', CompileOrderData);
-let countryInput = document.getElementById('country-input');
-		countryInput.addEventListener("input",function (event) {
-			if (!CountryInList(countryInput.value)) {
-				countryInput.setCustomValidity("This country is not in shipping zone. Check for typos and try again");
-			} else {
-				countryInput.setCustomValidity("");
-			}
-		});
+countryInput.addEventListener("input",function (event) {CountryValidity();});

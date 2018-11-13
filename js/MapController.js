@@ -1,8 +1,5 @@
 var getLocationButton = document.getElementById('get-location-button');
-var prevCountry = null;
-
 getLocationButton.addEventListener('click', RequestLocation);
-
 let countryData = {};
 
 function RequestLocation() {
@@ -82,32 +79,22 @@ function loadJSON(filePath, success, error) {
   xhr.send();
 }
 
-function reflectChoiceOnMap(onlaunch=false) {
-  let countryToLightUp = '';
-  let map = document.getElementsByName('country');
-  for (let i = 0; i < map.length; i++) {
-    if (map[i].checked) {
-      countryToLightUp = map[i].value;
-    }
-  }
-  if (prevCountry != countryToLightUp && !onlaunch) {
-    document.getElementById('path-' + countryToLightUp.toLowerCase()).classList.add('checked');
-    if (prevCountry != null) {
-      document.getElementById('path-' + prevCountry.toLowerCase()).classList.remove('checked');
-    }
-  }
-  prevCountry = countryToLightUp;
+
+let prevCountry = null;
+function ShowCountryOnMap(countryName) {
+  console.log(countryName);
+  toLightUp = (countryName.toLowerCase()).replace(/\s/g, "");
+  console.log(toLightUp);
+  document.getElementById('path-' + toLightUp).classList.add('checked');
+  if (prevCountry!=null)
+    document.getElementById('path-' + prevCountry).classList.remove('checked');
+  prevCountry=toLightUp;
 }
 
-
-
-var addressButtons = document.getElementsByName('country');
-var previous = null;
-for (var i = 0; i < addressButtons.length; i++) {
-  addressButtons[i].onclick = function() {
-    if (this !== previous) {
-      previous = this;
-      reflectChoiceOnMap();
-    }
-  };
+function CountryInList(countryName) {
+	let countryList = document.getElementById('countries-selector-list').childNodes;
+	let toCompare = new Array();
+	countryList.forEach(function(element){if (element.value) {toCompare.push(element.value.toLowerCase());}});
+	if (toCompare.includes(countryName.toLowerCase()))  {ShowCountryOnMap(countryName); return true;}
+	else {return false;}
 }
