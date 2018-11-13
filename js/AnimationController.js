@@ -1,13 +1,12 @@
 var randomItemsContainerBaseClass = document.getElementById('bonus-rotator').className;
 document.getElementById('get-bonus-button').addEventListener('click', DoPseudoRandomAnimationCycle);
-var maxStep = document.getElementById('bonus-rotator').children.length;
+var maxStep = document.getElementById('bonus-rotator').children.length; //changeable, use as public editable variable to adjust amount of steps in animation according to baked elements count
 var randomStep = maxStep;
 var frameTime = 200;
-var randomItemsContainer = document.getElementById('bonus-rotator');
-var allRandomItems = [].slice.call(randomItemsContainer.getElementsByClassName('bonus-rotator-item'));
-var randomOrderNextBacklog = [-1];
 
 function RandomUISetup(firstInit = false) {
+  var randomItemsContainer = document.getElementById('bonus-rotator');
+  var randomItemsContainerChildren = randomItemsContainer.getElementsByClassName('bonus-rotator-item');
   var bonusesHighlightenedDescriptions = document.getElementsByClassName('bonuses-description-highlighted');
   if (firstInit) {
     for (let i = 0; i < bonusesHighlightenedDescriptions.length; i++) {
@@ -18,35 +17,16 @@ function RandomUISetup(firstInit = false) {
       });
     }
   }
-  for (let i = 0; i<maxStep; i++) {
-	  allRandomItems[i].id = allRandomItems[i].id+'-'+i;
+  for (let i = randomItemsContainerChildren.length; i >= 0; i--) {
+    randomItemsContainer.appendChild(randomItemsContainerChildren[Math.random() * i | 0]);
   }
-  for (let i = 0; i < allRandomItems.length; i++) {
-    randomItemsContainer.appendChild(allRandomItems[Math.floor(Math.random() * i)])
-  }
-
-}
-
-function LightDownAllRandomItems() {
-	allRandomItems.forEach(function (element) {element.classList.remove('checked');});
-}
-var previousPointers = new Array();
-
-function GetNextPointer() {
-let nextPointer = Math.floor(Math.random()*maxStep);
-		while (previousPointers.includes(nextPointer)) {
-			nextPointer = Math.floor(Math.random()*maxStep);
-		}
-	previousPointers.push(nextPointer);
-	return nextPointer;
 }
 
 function DoPseudoRandomAnimationCycle() {
-  document.getElementById('get-bonus-button').removeEventListener('click', DoPseudoRandomAnimationCycle);
+	document.getElementById('get-bonus-button').removeEventListener('click', DoPseudoRandomAnimationCycle);
   let randomItemsContainer = document.getElementById('bonus-rotator');
   randomItemsContainer.className = randomItemsContainerBaseClass;
   if (randomStep == 0) {
-	previousPointers = new Array();
     randomItemsContainer.className = randomItemsContainerBaseClass;
     RandomUISetup();
     randomStep = maxStep;
@@ -54,11 +34,9 @@ function DoPseudoRandomAnimationCycle() {
   var animationStep = function() {
     if (--randomStep > 0) {
       if (randomStep != maxStep - 1) {
-        LightDownAllRandomItems();
+        document.getElementById('random-item-' + (randomStep + 1)).classList.remove('checked');
       }
-	  LightDownAllRandomItems();
-      allRandomItems[GetNextPointer()].classList.add('checked');
-	  
+      document.getElementById('random-item-' + randomStep).classList.add('checked');
       let powMod = 2;
       var newFrameTime = (-Math.pow((randomStep - maxStep / 2), powMod) / Math.pow(maxStep / 2, powMod) + 1.75) * frameTime;
       window.setTimeout(animationStep, newFrameTime);
@@ -66,9 +44,10 @@ function DoPseudoRandomAnimationCycle() {
         randomItemsContainer.classList.toggle('animation-finished');
       }
     } else {
-      document.getElementById('get-bonus-button').addEventListener('click', DoPseudoRandomAnimationCycle);
-      LightDownAllRandomItems();
+		document.getElementById('get-bonus-button').addEventListener('click', DoPseudoRandomAnimationCycle);
+		document.getElementById('random-item-1').classList.remove('checked');
     }
   }
   animationStep();
 }
+

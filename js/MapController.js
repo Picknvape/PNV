@@ -9,6 +9,7 @@ function RequestLocation() {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(PositionRequestOK);
   } else {
+    // Если гонять иннертекст или текстконтент, меняется чайлд
     getLocationButton.childNodes[0].nodeValue = "❌ Service down. Try entering manually";
   }
 }
@@ -28,6 +29,7 @@ function PositionRequestOK(position) {
         document.getElementById('address-input').value = response.formatted;
         document.getElementById('zip-code-input').value = response.postal_code;
         countryData.country = response.Components[0].name;
+        // индекс работает не всегда (скорее, работает иногда)
         countryData.zip = response.postal_code;
         countryData.address = response.formatted;
         reflectChoiceOnMap();
@@ -39,6 +41,14 @@ function PositionRequestOK(position) {
           window.open('https:\\picknvape.ru','_blank');
         }, false);
       } else {
+        //cleanup, just for development
+        document.getElementById('address-input').value = response.formatted;
+        document.getElementById('zip-code-input').value = response.postal_code;
+        countryData.country = response.country_code;
+        countryData.zip = response.postal_code;
+        countryData.address = response.formatted;
+        //
+
         getLocationButton.childNodes[0].nodeValue = "❓ Seems you're not in Europe. Try again or enter european address manually";
       }
     },
@@ -48,12 +58,19 @@ function PositionRequestOK(position) {
 
 }
 
-function GetCountryData(pointer='') {
-  let toReturn = {};
-  toReturn.zip = document.getElementById('zip-code-input'+pointer).value;
-  toReturn.address = document.getElementById('address-input'+pointer).value;
-  toReturn.country = document.getElementById('country-input'+pointer).value;
-  return toReturn;
+function GetCountryData() {
+  //countryData.country = response.country_code;
+  countryData.zip = document.getElementById('zip-code-input').value
+  countryData.address = document.getElementById('address-input').value;
+  countryData.country
+  countryRadioList = document.getElementsByName('country');
+  for (let i = 0; i < countryRadioList.length; i++) {
+    if (countryRadioList[i].checked) {
+      countryData.country = countryRadioList[i].value;
+      return countryData;
+    }
+  }
+  return countryData;
 }
 
 function loadJSON(filePath, success, error) {
@@ -73,10 +90,32 @@ function loadJSON(filePath, success, error) {
   xhr.send();
 }
 
-function CountryInList(countryName) {
-	let countryList = document.getElementById('countries-selector-list').childNodes;
-	let toCompare = new Array();
-	countryList.forEach(function(element){if (element.value) {toCompare.push(element.value.toLowerCase());}});
-	if (toCompare.includes(countryName.toLowerCase()))  {return true;}
-	else {return false;}
+function reflectChoiceOnMap() {
+  let countryToLightUp = '';
+  let map = document.getElementsByName('country');
+  for (let i = 0; i < map.length; i++) {
+    if (map[i].checked) {
+      countryToLightUp = map[i].value;
+    }
+  }
+  if (prevCountry != countryToLightUp) {
+    document.getElementById('path-' + countryToLightUp.toLowerCase()).classList.add('checked');
+    if (prevCountry != null) {
+      document.getElementById('path-' + prevCountry.toLowerCase()).classList.remove('checked');
+    }
+  }
+  prevCountry = countryToLightUp;
+}
+
+
+
+var addressButtons = document.getElementsByName('country');
+var previous = null;
+for (var i = 0; i < addressButtons.length; i++) {
+  addressButtons[i].onclick = function() {
+    if (this !== previous) {
+      previous = this;
+      reflectChoiceOnMap();
+    }
+  };
 }
