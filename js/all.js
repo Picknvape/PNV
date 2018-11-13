@@ -2,7 +2,6 @@ UpdateUI();
 
 function UpdateUI() {
 	reflectChoiceOnMap(true);
-	reflectToUI(GetPreferences(true));
 	UpdateBoxVisual();
 }
 function CompileOrderData() {
