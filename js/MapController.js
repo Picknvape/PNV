@@ -9,7 +9,6 @@ function RequestLocation() {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(PositionRequestOK);
   } else {
-    // Если гонять иннертекст или текстконтент, меняется чайлд
     getLocationButton.childNodes[0].nodeValue = "❌ Service down. Try entering manually";
   }
 }
@@ -41,7 +40,6 @@ function PositionRequestOK(position) {
           window.open('https:\\picknvape.ru','_blank');
         }, false);
       } else {
-        //cleanup, just for development
         document.getElementById('address-input').value = response.formatted;
         document.getElementById('zip-code-input').value = response.postal_code;
         countryData.country = response.country_code;
@@ -58,11 +56,11 @@ function PositionRequestOK(position) {
 
 }
 
-function GetCountryData(pointer='') {
+function GetCountryData(pointer) {
   let toReturn = {};
-  toReturn.zip = document.getElementById('zip-code-input'+pointer).value;
-  toReturn.address = document.getElementById('address-input'+pointer).value;
-  toReturn.country = document.getElementById('country-input'+pointer).value;
+  toReturn.zip = document.getElementById('zip-code-input').value;
+  toReturn.address = document.getElementById('address-input').value;
+  toReturn.country = document.getElementById('country-input').value;
   return toReturn;
 }
 
