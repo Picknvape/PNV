@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 var countryInput = document.getElementById('country-input');
 var additionalEmailInput = document.getElementById('email-input-verify');
 ///
@@ -54,3 +55,5 @@ function OnOrderSucsess() {
     document.body.classList.toggle('after-order-overlay-shown')
   });
 }
+=======
+>>>>>>> parent of e25d8ae... Revert "Merge branch 'master' of https://github.com/Picknvape/PNV"
