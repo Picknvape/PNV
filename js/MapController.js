@@ -58,20 +58,14 @@ function PositionRequestOK(position) {
 
 }
 
-function GetCountryData() {
-  //countryData.country = response.country_code;
-  countryData.zip = document.getElementById('zip-code-input').value
-  countryData.address = document.getElementById('address-input').value;
-  countryData.country
-  countryRadioList = document.getElementsByName('country');
-  for (let i = 0; i < countryRadioList.length; i++) {
-    if (countryRadioList[i].checked) {
-      countryData.country = countryRadioList[i].value;
-      return countryData;
-    }
-  }
-  return countryData;
+function GetCountryData(pointer='') {
+  let toReturn = {};
+  toReturn.zip = document.getElementById('zip-code-input'+pointer).value;
+  toReturn.address = document.getElementById('address-input'+pointer).value;
+  toReturn.country = document.getElementById('country-input'+pointer).value;
+  return toReturn;
 }
+
 
 function loadJSON(filePath, success, error) {
   var xhr = new XMLHttpRequest();

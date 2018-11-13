@@ -1,9 +1,8 @@
-UpdateUI();
-
 function UpdateUI() {
 	reflectChoiceOnMap(true);
 	UpdateBoxVisual();
 }
+
 function CompileOrderData() {
   var orderData = {};
   hasAllInfo = true;
@@ -16,6 +15,7 @@ function CompileOrderData() {
 	return orderData;
 }
 
+UpdateUI();
 document.getElementById('send-order-button').addEventListener('click', CompileOrderData);
 let countryInput = document.getElementById('country-input');
 		countryInput.addEventListener("input",function (event) {
