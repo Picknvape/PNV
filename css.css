@@ -1,10 +1,41 @@
+/* light */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 300;
+  font-display: fallback;
+  src: local('Roboto Light'), local('Roboto-Light'), url(https://fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmSU5fBBc4AMP6lQ.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* medium */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-display: fallback;
+  src: local('Roboto Medium'), local('Roboto-Medium'), url(https://fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmEU9fBBc4AMP6lQ.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* mono */
+@font-face {
+  font-family: 'Roboto Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: fallback;
+  src: local('Roboto Mono'), local('RobotoMono-Regular'), url(https://fonts.gstatic.com/s/robotomono/v5/L0x5DF4xlVMF-BfR8bXMIjhLq3-cXbKD.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
 body {
   font-family: Roboto, sans-serif;
+  overflow-x: hidden;
   margin: unset;
   hyphens: auto;
   scroll-behavior: smooth;
-  line-height: 1.2;
-  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  font-weight: 300;
 }
 
 img {
@@ -12,6 +43,11 @@ img {
   min-width: 1px;
   height: auto;
   object-fit: contain;
+}
+
+svg {
+  width: 100%;
+  height: 100%;
 }
 
 a {
@@ -23,6 +59,7 @@ a {
 a:hover {
   text-decoration: none;
 }
+
 /* баг в хроме, поэтому фиелдсеты в див завернуты */
 fieldset {
   margin: unset;
@@ -39,7 +76,7 @@ header {
 }
 
 .header-block {
-	margin: 1rem;
+  margin: 1rem;
 }
 
 .header-block.logo {
@@ -59,19 +96,19 @@ header {
 }
 
 .header-block.button {
-	flex-grow: 1;
-	font-size: 1.2rem;
-	position: relative;
-	overflow: hidden;
-	padding: .25em .5em;
-	cursor: pointer;
-	border-radius: .5rem;
-	align-self: center;
-	text-align: center;
-	border: 1px solid hsla(0, 0%, 0%, .2);
-	font-family: monospace;
-	color: inherit;
-	text-decoration: none;
+  flex-grow: 1;
+  font-size: 1.2rem;
+  position: relative;
+  overflow: hidden;
+  padding: .25em .5em;
+  cursor: pointer;
+  border-radius: .5rem;
+  align-self: center;
+  text-align: center;
+  border: 1px solid hsla(0, 0%, 0%, .2);
+  font-family: monospace;
+  color: inherit;
+  text-decoration: none;
 }
 
 .header-block.button:hover .overlay {
@@ -105,7 +142,7 @@ header {
 .slide.heading h1 {
   font-size: 5em;
   font-weight: 300;
-  line-height: .8;
+  line-height: .9;
   min-height: 4em;
   margin: unset;
   letter-spacing: -.025em;
@@ -127,7 +164,7 @@ header {
 }
 
 .slide.heading p {
-	font-size: 1.5rem;
+  font-size: 1.5rem;
 }
 
 .slide h2 {
@@ -143,13 +180,7 @@ header {
   justify-content: center;
 }
 
-.size-selector {
-  display: flex;
-  margin: -.25rem;
-  padding: unset;
-  border: none;
-  flex-wrap: wrap;
-}
+.size-selector {}
 
 .size-selector-button {
   position: relative;
@@ -242,10 +273,10 @@ header {
 }
 
 .changer-size {
-	transition-property: transform;
-	position: relative;
-	width: 100%;
-	height: 40ch;
+  transition-property: transform;
+  position: relative;
+  width: 100%;
+  height: 40ch;
 }
 
 .changer-size, .changer-size-item {
@@ -254,12 +285,12 @@ header {
 }
 
 .changer-size-item {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	width: 100%;
-	height: 100%;
-	transform: translate(-50%, -50%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  transform: translate(-50%, -50%);
   opacity: 0;
   transition-property: opacity;
 }
@@ -287,9 +318,6 @@ header {
 .changer-size.large .changer-size-item.large {
   opacity: 1;
 }
-
-
-
 
 .slide.tastes .side.right {
   display: flex;
@@ -335,11 +363,11 @@ header {
 }
 
 .tastes-selector-element {
-	display: flex;
-	flex-direction: column;
-	padding: 0 .125rem;
-	border: 1px dashed hsla(0, 0%, 0%, .2);
-	border-radius: .5rem;
+  display: flex;
+  flex-direction: column;
+  padding: 0 .125rem;
+  border: 1px dashed hsla(0, 0%, 0%, .2);
+  border-radius: .5rem;
 }
 
 .tastes-selector-item {
@@ -347,7 +375,7 @@ header {
   cursor: pointer;
   padding: .5rem;
   font-family: monospace;
-  border-radius: .5em;
+  border-radius: .5rem;
   overflow: hidden;
   position: relative;
   /* мозиллабаг, йеее */
@@ -443,7 +471,7 @@ header {
   padding: .5em 1em;
   cursor: pointer;
   border: 1px solid hsla(0, 0%, 0%, .2);
-  border-radius: .5em;
+  border-radius: .5rem;
   background-color: transparent;
 }
 
@@ -480,7 +508,7 @@ header {
   transition: opacity 1s;
   opacity: 0;
   border: 1px solid hsla(0, 0%, 0%, .2);
-  border-radius: .5em;
+  border-radius: .5rem;
   background-color: hsl(0, 0%, 100%, 1);
   align-items: center;
   justify-content: center;
@@ -559,7 +587,7 @@ header {
 .address-selector {
   display: flex;
   flex-direction: column;
-  border-radius: .5em;
+  border-radius: .5rem;
 }
 
 .address-selector-geo-button {
@@ -571,7 +599,7 @@ header {
   padding: .25em 1em;
   cursor: pointer;
   border: 1px solid hsla(0, 0%, 0%, .2);
-  border-radius: .5em;
+  border-radius: .5rem;
   background-color: transparent;
 }
 
@@ -602,7 +630,7 @@ header {
   padding: .125em .25em;
   cursor: pointer;
   border: 1px solid hsla(0, 0%, 0%, .2);
-  border-radius: .5em;
+  border-radius: .5rem;
   flex-grow: 1;
   /*
   text-align: center;
@@ -722,21 +750,26 @@ header {
 
 .box-selector {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
 }
 
 .box-selector-item {
-  position: relative;
-  overflow: hidden;
   cursor: pointer;
   border: 1px solid hsla(0, 0%, 0%, .2);
-  border-radius: .5em;
+  border-radius: .5rem;
   display: flex;
   flex-direction: column;
-  margin: .125rem;
+  margin: .125rem 0;
   padding: .5rem;
   justify-content: flex-start;
-  flex-grow: 1;
+}
+
+.box-selector-item:first-child {
+  margin-top: 0;
+}
+
+.box-selector-item:last-child {
+  margin-bottom: 0;
 }
 
 .box-selector-item.small {
@@ -763,29 +796,28 @@ header {
   justify-content: space-between;
   align-items: baseline;
   flex-wrap: wrap;
+  margin-bottom: 1rem;
 }
 
 .box-selector-heading {
-  font-size: 1.5rem;
+  font-size: 2rem;
   font-weight: 300;
+  margin: unset;
   margin-right: .5rem;
 }
 
-.box-selector-volume {
-  font-family: monospace;
-}
+.box-selector-volume {}
 
 .box-selector-row.img {
-	margin: .5rem 0 1rem 0;
-	position: relative;
-	display: flex;
-	align-items: center;
-	flex-grow: 1;
-	justify-content: center;
+  margin: .5rem 0 1rem 0;
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+  justify-content: center;
 }
 
-.box-selector-row.img img {
-}
+.box-selector-row.img img {}
 
 .box-selector-item.large .box-selector-row.img::after {
   content: 'Best value';
@@ -793,7 +825,7 @@ header {
   color: hsl(0, 0%, 100%);
   font-weight: bolder;
   padding: .25rem .5rem;
-  border-radius: .5em;
+  border-radius: .5rem;
   transform: translateX(-50%) rotate(5deg);
   position: absolute;
   left: 50%;
@@ -801,10 +833,7 @@ header {
   white-space: nowrap;
 }
 
-.box-selector-row.description {
-  line-height: 1;
-  font-family: monospace;
-}
+.box-selector-row.description {}
 
 .box-selector-juices, .box-selector-bonuses {
   margin-bottom: .5em;
@@ -818,7 +847,6 @@ header {
   cursor: pointer;
   border-bottom: 2px dashed hsl(200, 100%, 50%);
   display: inline-block;
-  line-height: .75;
 }
 
 .box-selector-bonus::after {
@@ -831,12 +859,12 @@ header {
   width: 100%;
   margin-bottom: .25em;
   padding: .25em .5em;
-  border-radius: .5em;
+  border-radius: .5rem;
   background-color: hsla(0, 0%, 100%, .9);
   transform: translateX(-50%);
 }
 
-.box-selector-bonus.little::after {
+.box-selector-bonus.small::after {
   content: 'Wire, wick, vape-band, sticker or extra e-liquid.';
 }
 
@@ -848,16 +876,7 @@ header {
   visibility: visible;
 }
 
-.box-selector-button {
-	display: block;
-	box-sizing: border-box;
-	padding: .5em;
-	text-align: center;
-	border: 1px solid hsla(0, 0%, 0%, .2);
-	border-radius: .5em;
-	background-color: hsla(0, 0%, 0%, .05);
-	white-space: nowrap;
-	letter-spacing: -1px;
+.box-selector-price {
 }
 
 .box-selector-item .overlay {
@@ -1107,42 +1126,40 @@ input:valid:not(:placeholder-shown) {
 }
 */
 /**/
-
-
 aside {
-	padding: .25rem 1rem;
-	position: fixed;
-	bottom: 0;
-	width: 100%;
-	background: hsla(0, 0%, 100%, .9);
-	display: flex;
-	flex-wrap: wrap;
-	align-items: center;
+  padding: .25rem 1rem;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: hsla(0, 0%, 100%, .9);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
 }
 
 aside .form.div {
-	display: flex;
-	flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 aside .fieldset.div {
-	display: flex;
-	flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .aside-size-item {
-	margin: .125rem;
-	cursor: pointer;
-	padding: .25rem .5rem;
-	border-radius: .5rem;
-	border: 1px solid hsla(0, 0%, 0%, .2);
+  margin: .125rem;
+  cursor: pointer;
+  padding: .25rem .5rem;
+  border-radius: .5rem;
+  border: 1px solid hsla(0, 0%, 0%, .2);
   position: relative;
   overflow: hidden;
 }
 
 .aside-size-input {
-	position: absolute;
-	opacity: 0;
+  position: absolute;
+  opacity: 0;
 }
 
 .aside-size-input:checked~.overlay {
@@ -1150,17 +1167,16 @@ aside .fieldset.div {
   opacity: 1;
 }
 
-
 .brands-block {
-	overflow-x: scroll;
-	display: flex;
-	flex-basis: auto;
+  overflow-x: scroll;
+  display: flex;
+  flex-basis: auto;
 }
 
 .brands-item {
-	margin: 0 2rem;
-	flex-shrink: 0;
-	flex-basis: 20ch;
+  margin: 0 2rem;
+  flex-shrink: 0;
+  flex-basis: 20ch;
 }
 
 .brands-item:first-child {
@@ -1169,4 +1185,26 @@ aside .fieldset.div {
 
 .brands-item:last-child {
   margin-right: 0;
+}
+
+.pic-with-shadow {
+  position: relative;
+}
+
+.pic-without-shadow {
+  transform: scale(1.3);
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.pic-shadow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  opacity: 0.1;
+  transform: scale(1.3);
 }

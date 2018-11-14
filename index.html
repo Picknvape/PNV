@@ -2,31 +2,38 @@
 <html lang='en'>
 
 <head>
+	<title>Pick&amp;Vape</title>
 	<meta charset='utf-8'>
 	<meta name='viewport' content='width=device-width, initial-scale=1'>
 
-	<link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-touch-icon.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="favicons/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="favicons/favicon-16x16.png">
-	<link rel="manifest" href="favicons/site.webmanifest">
-	<link rel="mask-icon" href="favicons/safari-pinned-tab.svg" color="#fa0">
-	<meta name="apple-mobile-web-app-title" content="Pick&amp;Vape">
-	<meta name="application-name" content="Pick&amp;Vape">
+	<!-- Ext links + css	-->
+	<link rel='stylesheet' type='text/css' href='css.css?v=0.03'>
+
+	<!-- Favicons & web apps-->
+	<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+	<link rel="manifest" href="site.webmanifest">
+	<link rel="mask-icon" href="safari-pinned-tab.svg" color="#ffaa00">
 	<meta name="msapplication-TileColor" content="#da532c">
-	<meta name="theme-color" content="#fa0">
-	<title>Pick&amp;Vape</title>
-	<link rel='stylesheet' type='text/css' href='css.css'>
+	<meta name="theme-color" content="#ffaa00">
+
+	<!-- FB opengraph -->
+	<meta property="og:image:width" content="1179">
+	<meta property="og:image:height" content="617">
+	<meta property="og:description" content="E-liquid delivery service. Fits your taste, saves money.">
+	<meta property="og:title" content="Pick&amp;Vape">
+	<meta property="og:url" content="https://whatvivalacloudcando.ru/picknvape/">
+	<meta property="og:image" content="https://pickandvape.com/og-image.jpg">
 
 	<script defer src='js/BoxSizeController.js'></script>
 	<script defer src='js/TitleController.js'></script>
 	<script defer src='js/TasteSelectorController.js'></script>
 	<script defer src='js/MapController.js'></script>
 	<script defer src='js/AnimationController.js'></script>
-
-
+	<script defer src='js/datalistPolyfill.js'></script>
+	<script defer src='js/AdditionalBoxController.js'></script>
 	<script defer src='js/all.js'></script>
-
-
 </head>
 
 <body>
@@ -50,14 +57,20 @@
 			<div class='side left'>
 				<h1>
 					<span>Try</span>
+					<br />
 					<span id='typing-heading' class='bold'></span>
+					<br />
 					<span>juices for up to</span>
+					<br />
 					<span class='bold colored'>40% cheaper</span>
 				</h1>
 				<p>Pick&amp;Vape is an e-liquids delivery service. In our boxes we put liquids according to your taste. But you never know what exactly it’ll be.</p>
 			</div>
 			<div class='side right'>
-				<img src='img.png'>
+				<div class='pic-with-shadow'>
+					<img class='pic-without-shadow' src='pics/all-in.png'>
+					<img class='pic-shadow' src='pics/all-in-shadow.png'>
+				</div>
 			</div>
 		</section>
 		<section class='slide size'>
@@ -65,7 +78,7 @@
 				<h2>Save money</h2>
 				<p>Pick&amp;Vape offes only russian liquids. We discovered that such liquids offer quality equal with american our european at lower price.</p>
 				<form>
-					<div id='size-selector' class='size-selector'>
+					<div id='size-selector'>
 						<fieldset>
 							<div class='box-selector'>
 								<label class='box-selector-item small'>
@@ -74,41 +87,35 @@
 										<span class='box-selector-heading'>Small</span>
 										<span class='box-selector-volume'>150 ml</span>
 									</div>
-									<div class='box-selector-row img'>
-										<img src='box-small-icon.svg'>
-									</div>
 									<div class='box-selector-row description'>
 										<span class='box-selector-juices'>3 russian juices</span>
 										<span class='box-selector-bonuses'>
-											<span class='box-selector-bonus little'>
-												Little bonus
+											<span class='box-selector-bonus small'>
+												Small bonus
 											</span>
 										</span>
-										<span class='box-selector-button'>Pick for 20 €</span>
+										<span class='box-selector-price'>20 €</span>
 									</div>
 									<span class='overlay'></span>
 								</label>
 								<label class='box-selector-item medium'>
 									<input type='radio' name='boxSize' value='medium'>
 									<div class='box-selector-row heading'>
-										<span class='box-selector-heading'>Medium</span>
+										<h3 class='box-selector-heading'>Medium</h3>
 										<span class='box-selector-volume'>210 ml</span>
-									</div>
-									<div class='box-selector-row img'>
-										<img src='box-medium-icon.svg'>
 									</div>
 									<div class='box-selector-row description'>
 										<span class='box-selector-juices'>4 incredible russian juices</span>
 										<span class='box-selector-bonuses'>
-											<span class='box-selector-bonus little'>
-												Little bonus
+											<span class='box-selector-bonus small'>
+												Small bonus
 											</span>
 											+ a chance of
 											<span class='box-selector-bonus big'>
 												big bonus
 											</span>
 										</span>
-										<span class='box-selector-button'>Pick for 30 €</span>
+										<span class='box-selector-price'>30 €</span>
 									</div>
 									<span class='overlay'></span>
 								</label>
@@ -118,23 +125,40 @@
 										<span class='box-selector-heading'>Large</span>
 										<span class='box-selector-volume'>300 ml</span>
 									</div>
-									<div class='box-selector-row img'>
-										<img src='box-large-icon.svg'>
-									</div>
 									<div class='box-selector-row description'>
+
 										<span class='box-selector-juices'>6 awesomely incredible russian juices</span>
 										<span class='box-selector-bonuses'>
-											<span class='box-selector-bonus little'>
-												Little bonus
+											<span class='box-selector-bonus small'>
+												Small bonus
 											</span>
 											+ a chance of
 											<span class='box-selector-bonus big'>
 												big bonus
 											</span>
 										</span>
-										<span class='box-selector-button'>Pick for 45 €</span>
+										<span class='box-selector-price'>45 €</span>
 									</div>
-									<span class='overlay'></span>
+								</label>
+
+
+
+								<label class='box-selector-item large'>
+									<input type='radio' name='boxSize' checked value='large'>
+									<h3 class='box-selector-heading'>6 fantastic juices</h3>
+									<div class='box-selector-row description'>
+										<span class='box-selector-juices'>210 ml</span>
+										<span class='box-selector-bonuses'>
+											<span class='box-selector-bonus small'>
+												Small bonus
+											</span>
+											+ a chance of
+											<span class='box-selector-bonus big'>
+												big bonus
+											</span>
+										</span>
+										<span class='box-selector-price'>45 €</span>
+									</div>
 								</label>
 							</div>
 						</fieldset>
@@ -143,9 +167,18 @@
 			</div>
 			<div class='side right'>
 				<div id='changer-size' class='changer-size large'>
-					<img class='changer-size-item small' src='box-small.png'>
-					<img class='changer-size-item medium' src='box-medium.png'>
-					<img class='changer-size-item large' src='box-large.png'>
+					<div class='changer-size-item small'>
+						<img class='pic-without-shadow' src='pics/box-small.png'>
+						<img class='pic-shadow' src='pics/box-small-shadow.png'>
+					</div>
+					<div class='changer-size-item medium'>
+						<img class='pic-without-shadow' src='pics/box-medium.png'>
+						<img class='pic-shadow' src='pics/box-medium-shadow.png'>
+					</div>
+					<div class='changer-size-item large'>
+						<img class='pic-without-shadow' src='pics/box-large.png'>
+						<img class='pic-shadow' src='pics/box-large-shadow.png'>
+					</div>
 				</div>
 		</section>
 		<section class='slide tastes'>
@@ -254,52 +287,27 @@
 			</div>
 			<div class='side right'>
 				<div id='changer-tastes' class='changer-tastes'>
-					<img class='changer-tastes-item tobacco' src='captain.png'>
-					<img class='changer-tastes-item fruits' src='cinderella.png'>
-					<img class='changer-tastes-item exotic' src='lemon-twist.png'>
-					<img class='changer-tastes-item mint' src='shoria.png'>
-					<img class='changer-tastes-item berries' src='smoke-kitchen.png'>
-					<img class='changer-tastes-item tobacco' src='captain.png'>
-					<img class='changer-tastes-item fruits' src='cinderella.png'>
-					<img class='changer-tastes-item exotic' src='lemon-twist.png'>
-					<img class='changer-tastes-item mint' src='shoria.png'>
-					<img class='changer-tastes-item berries' src='smoke-kitchen.png'>
-					<img class='changer-tastes-item' src='captain.png'>
-					<img class='changer-tastes-item fruits' src='cinderella.png'>
-					<img class='changer-tastes-item exotic' src='lemon-twist.png'>
-					<img class='changer-tastes-item mint' src='shoria.png'>
-					<img class='changer-tastes-item berries' src='smoke-kitchen.png'>
-					<img class='changer-tastes-item' src='captain.png'>
-					<img class='changer-tastes-item fruits' src='cinderella.png'>
-					<img class='changer-tastes-item exotic' src='lemon-twist.png'>
-					<img class='changer-tastes-item mint' src='shoria.png'>
-					<img class='changer-tastes-item berries' src='smoke-kitchen.png'>
-					<img class='changer-tastes-item' src='captain.png'>
-					<img class='changer-tastes-item fruits' src='cinderella.png'>
-					<img class='changer-tastes-item exotic' src='lemon-twist.png'>
-					<img class='changer-tastes-item mint' src='shoria.png'>
-					<img class='changer-tastes-item berries' src='smoke-kitchen.png'>
-					<img class='changer-tastes-item' src='captain.png'>
-					<img class='changer-tastes-item fruits' src='cinderella.png'>
-					<img class='changer-tastes-item exotic' src='lemon-twist.png'>
-					<img class='changer-tastes-item mint' src='shoria.png'>
-					<img class='changer-tastes-item berries' src='smoke-kitchen.png'>
-					<img class='changer-tastes-item' src='captain.png'>
-					<img class='changer-tastes-item fruits' src='cinderella.png'>
-					<img class='changer-tastes-item exotic' src='lemon-twist.png'>
-					<img class='changer-tastes-item mint' src='shoria.png'>
-					<img class='changer-tastes-item berries' src='smoke-kitchen.png'>
-					<img class='changer-tastes-item' src='captain.png'>
-					<img class='changer-tastes-item fruits' src='cinderella.png'>
-					<img class='changer-tastes-item exotic' src='lemon-twist.png'>
-					<img class='changer-tastes-item mint' src='shoria.png'>
-					<img class='changer-tastes-item berries' src='smoke-kitchen.png'>
-					<img class='changer-tastes-item' src='captain.png'>
-					<img class='changer-tastes-item fruits' src='cinderella.png'>
-					<img class='changer-tastes-item exotic' src='lemon-twist.png'>
-					<img class='changer-tastes-item mint' src='shoria.png'>
+					<img class='changer-tastes-item tobacco' src='pics/captain.png'>
+					<img class='changer-tastes-item fruits' src='pics/cinderella.png'>
+					<img class='changer-tastes-item exotic' src='pics/lemon-twist.png'>
+					<img class='changer-tastes-item mint' src='pics/shoria.png'>
+					<img class='changer-tastes-item berries' src='pics/smoke-kitchen.png'>
+					<img class='changer-tastes-item tobacco' src='pics/captain.png'>
+					<img class='changer-tastes-item fruits' src='pics/cinderella.png'>
+					<img class='changer-tastes-item exotic' src='pics/lemon-twist.png'>
+					<img class='changer-tastes-item mint' src='pics/shoria.png'>
+					<img class='changer-tastes-item berries' src='pics/smoke-kitchen.png'>
+					<img class='changer-tastes-item' src='pics/captain.png'>
+					<img class='changer-tastes-item fruits' src='pics/cinderella.png'>
+					<img class='changer-tastes-item exotic' src='pics/lemon-twist.png'>
+					<img class='changer-tastes-item mint' src='pics/shoria.png'>
+					<img class='changer-tastes-item berries' src='pics/smoke-kitchen.png'>
+					<img class='changer-tastes-item' src='pics/captain.png'>
+					<img class='changer-tastes-item fruits' src='pics/cinderella.png'>
+					<img class='changer-tastes-item exotic' src='pics/lemon-twist.png'>
+					<img class='changer-tastes-item mint' src='pics/shoria.png'>
+					<img class='changer-tastes-item berries' src='pics/smoke-kitchen.png'>
 				</div>
-			</div>
 		</section>
 		<section class='slide bonuses'>
 			<div class='side left'>
@@ -535,11 +543,11 @@
 									<div class='box-selector-row description'>
 										<span class='box-selector-juices'>3 juices</span>
 										<span class='box-selector-bonuses'>
-											<span class='box-selector-bonus little'>
-												Little bonus
+											<span class='box-selector-bonus small'>
+												Small bonus
 											</span>
 										</span>
-										<span class='box-selector-button'>Pick for 20 €</span>
+										<span class='box-selector-price'>Pick for 20 €</span>
 									</div>
 									<span class='overlay'></span>
 								</label>
@@ -555,15 +563,15 @@
 									<div class='box-selector-row description'>
 										<span class='box-selector-juices'>4 juices</span>
 										<span class='box-selector-bonuses'>
-											<span class='box-selector-bonus little'>
-												Little bonus
+											<span class='box-selector-bonus small'>
+												Small bonus
 											</span>
 											+ a chance of
 											<span class='box-selector-bonus big'>
 												big bonus
 											</span>
 										</span>
-										<span class='box-selector-button'>Pick for 30 €</span>
+										<span class='box-selector-price'>Pick for 30 €</span>
 									</div>
 									<span class='overlay'></span>
 								</label>
@@ -579,15 +587,15 @@
 									<div class='box-selector-row description'>
 										<span class='box-selector-juices'>6 juices</span>
 										<span class='box-selector-bonuses'>
-											<span class='box-selector-bonus little'>
-												Little bonus
+											<span class='box-selector-bonus small'>
+												Small bonus
 											</span>
 											+ a chance of
 											<span class='box-selector-bonus big'>
 												big bonus
 											</span>
 										</span>
-										<span class='box-selector-button'>Pick for 45 €</span>
+										<span class='box-selector-price'>Pick for 45 €</span>
 									</div>
 									<span class='overlay'></span>
 								</label>
