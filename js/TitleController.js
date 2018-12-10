@@ -1,5 +1,5 @@
 var heading = document.getElementById('typing-heading');
-var possibleWords = ['new', 'selected for your taste', 'handpicked', ''];
+var possibleWords = ['new', 'selected', 'handpicked', 'russian'];
 var keywordPointer = 0;
 var currentKeyword = possibleWords[keywordPointer];
 var keyword = '';
@@ -41,5 +41,3 @@ function timer() {
   window.setTimeout(timer, speed);
   KeywordTyper();
 }
-
-
